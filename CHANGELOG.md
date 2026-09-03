@@ -1,5 +1,68 @@
 # Changelog
 
+## [6.0.0](https://github.com/LanceMoe/react-daisyui/compare/v5.0.5...v6.0.0) (2026-09-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* new peer dependency version with breaking changes
+
+### Features
+
+* change prettierrc config ([16af3ad](https://github.com/LanceMoe/react-daisyui/commit/16af3add1fdc4c020b75fb2909e5127fb61b18bb))
+* **Dock:** added Dock component to replace BottomNavigation ([f00654c](https://github.com/LanceMoe/react-daisyui/commit/f00654c9af4554b9acf0cbb97d25f946112e7111))
+* use eslint ([1ef88dc](https://github.com/LanceMoe/react-daisyui/commit/1ef88dc135bcab6a31c97f971bfad02f7c181618))
+* v4 -&gt; v5 ([3da2589](https://github.com/LanceMoe/react-daisyui/commit/3da25894ddeca32247879c2c4d97cdac2f57b253))
+
+
+### Bug Fixes
+
+* align components with daisyUI 5 and accessibility requirements ([2d1d4e9](https://github.com/LanceMoe/react-daisyui/commit/2d1d4e90a0e1342d964e0cd12f71ea4b68fbe55c))
+* **ci:** fix Jest argument forwarding in test workflow ([e14734d](https://github.com/LanceMoe/react-daisyui/commit/e14734de718becaf5855696b6f35525c112b566c))
+* replace deprecated FormEventHandler in Swap ([1763764](https://github.com/LanceMoe/react-daisyui/commit/17637640e5cd2ff73f0701e5136414aadb4bc8bf))
+* restore Tailwind and daisyUI styles after Vite/Storybook upgrade ([7602fbb](https://github.com/LanceMoe/react-daisyui/commit/7602fbb3b835d93e7e629280bc18a4827fde36f3))
+* **storybook:** build full component stories for GitHub Pages ([18acf91](https://github.com/LanceMoe/react-daisyui/commit/18acf91f5ddb26feb8b271a6220efba236eddedc))
+* StoryLayout ([52ec616](https://github.com/LanceMoe/react-daisyui/commit/52ec6168ade9953d4c8e69a08fa88b2584614bef))
+* **Swap:** sync controlled state, add indeterminate, and fix falsy handling in wrapWithElementIfInvalid ([ea8aa83](https://github.com/LanceMoe/react-daisyui/commit/ea8aa838b98e03dd4322230983f101afeeab0eb0))
+* switch theme ([58e8a86](https://github.com/LanceMoe/react-daisyui/commit/58e8a86831d8e30b1ca256cb3b403d1b373c3b58))
+* **Theme:** prevent infinite update loop in Storybook ([c9a6d69](https://github.com/LanceMoe/react-daisyui/commit/c9a6d69bc8547aace9430d63eba263f04a3bb0ea))
+
+
+### Miscellaneous
+
+* add daisyui skills ([99ca2a0](https://github.com/LanceMoe/react-daisyui/commit/99ca2a0f36403ed5761061496876db5132d73ba9))
+* **Alert:** update to 5.0.0 ([96d484d](https://github.com/LanceMoe/react-daisyui/commit/96d484de796e0ac782e6f611263e0e8f878fd9c9))
+* **Avatar:** update to 5.0.0 ([8026430](https://github.com/LanceMoe/react-daisyui/commit/80264303754a0b4912d6d1fa7759848d4263deab))
+* **Badge:** upade to 5.0.0 ([a4a7f07](https://github.com/LanceMoe/react-daisyui/commit/a4a7f07e391088c7d4e3df74ebbe7e6ad17c4c73))
+* bump version 5.7.28 ([f34a313](https://github.com/LanceMoe/react-daisyui/commit/f34a3134d1ea0a4c65f32beb21beaa110bb2a0a1))
+* **Button:** updated to 5.0.0 ([2c177d2](https://github.com/LanceMoe/react-daisyui/commit/2c177d2bc72bb74fd5d3e2535048e2abeaa266e3))
+* **Card:** update to 5.0.0 ([d945a42](https://github.com/LanceMoe/react-daisyui/commit/d945a426bcb7542f169001915b57c644a95533d3))
+* **Chat:** updated to 5.0.0 ([e572a5e](https://github.com/LanceMoe/react-daisyui/commit/e572a5eea8dc2d17b266e5ad3dae135a1ef0386f))
+* **Checkbox:** update to 5.0.0 ([ca27c48](https://github.com/LanceMoe/react-daisyui/commit/ca27c48cfe56899c4e0bc89b8f2d3826f07f1609))
+* **FileInput:** updated to 5.0.0 ([25303f9](https://github.com/LanceMoe/react-daisyui/commit/25303f99cb5aada09f3bc52fe3767b0ec900643c))
+* **Footer:** updated to 5.0.0 ([708cba9](https://github.com/LanceMoe/react-daisyui/commit/708cba9b82307cea25b78c16b91b82e84d30d289))
+* **Input:** updated to 5.0.0 ([f9b33e5](https://github.com/LanceMoe/react-daisyui/commit/f9b33e599f60c49dc1651081a5ca13ebf966bb86))
+* **Kbd:** update to 5.0.0 ([22212fe](https://github.com/LanceMoe/react-daisyui/commit/22212fe4e3cb93cf341d9ff14857de0abb2ab93e))
+* **Loading:** update to 5.0.0 ([e6dfcda](https://github.com/LanceMoe/react-daisyui/commit/e6dfcda4f58b30725ba75a600fcb431931f8f1c6))
+* **Mask:** update to 5.0.0 ([706d1f3](https://github.com/LanceMoe/react-daisyui/commit/706d1f3bb10ca797fc48a671405edfebc6684016))
+* **Menu:** update to 5.0.0 ([eeaf01b](https://github.com/LanceMoe/react-daisyui/commit/eeaf01b9d0e79a34437ab6e6b4fc5c18ecb15160))
+* **Mockup:** update to 5.0.0 ([bfb95a2](https://github.com/LanceMoe/react-daisyui/commit/bfb95a2dee0967504a369f0a8a9ee3a03b339f52))
+* **Modal:** update to 5.0.0 ([4ae2fa8](https://github.com/LanceMoe/react-daisyui/commit/4ae2fa8eb8be0614f9690f81ecd714cbce10db1c))
+* **Radio:** update to 5.0.0 ([79ff7f1](https://github.com/LanceMoe/react-daisyui/commit/79ff7f12d53ccaa4fde2ee9556462eae66274e28))
+* **Range:** update to 5.0.0 ([e814693](https://github.com/LanceMoe/react-daisyui/commit/e814693dd5372a745b43600ac7372e28531f816c))
+* replace Omit with Exclude for literal types ([26ab7cf](https://github.com/LanceMoe/react-daisyui/commit/26ab7cf526788d156f13097298a5ecf479e55bd1))
+* resolve circular dependencies and enforce explicit type imports ([8f02000](https://github.com/LanceMoe/react-daisyui/commit/8f020006cc0c8084f461478388677b12e3e8934b))
+* **Select:** update 5.0.0 ([0945247](https://github.com/LanceMoe/react-daisyui/commit/094524726197076c8d1182ad0652f33c7bfdf016))
+* **Stack:** update to 5.0.0 ([f8ebba9](https://github.com/LanceMoe/react-daisyui/commit/f8ebba9e586f907b1415e152fe493499fd0e12a3))
+* **Table:** update to 5.0.0 ([1ba4caa](https://github.com/LanceMoe/react-daisyui/commit/1ba4caa3f8efee9bb5cbc0e3fb3de08fa45ad76f))
+* **Tabs:** update to 5.0.0 ([ef6a520](https://github.com/LanceMoe/react-daisyui/commit/ef6a5207ebcb4ef9b8bbaf4b32508fcffe4a9f98))
+* **Textarea:** update to 5.0.0 ([d228da4](https://github.com/LanceMoe/react-daisyui/commit/d228da40bc578e34683acd42d6311631ed797820))
+* **Toggle:** update to 5.0.0 ([b066e1a](https://github.com/LanceMoe/react-daisyui/commit/b066e1ae0a36d7ef21cbbd738119c6373984804b))
+* upgrade dependencies and migrate to TypeScript 7 ([5ab27d1](https://github.com/LanceMoe/react-daisyui/commit/5ab27d1531bce13f8ce8342d24297eca9ba17f97))
+* upgrade to daisyui 5.0.0 ([eb32cb1](https://github.com/LanceMoe/react-daisyui/commit/eb32cb14a255fc0364b8ed8512beb6bd3b94ab4a))
+* upgraded github actions versions to latest ([0fcc97b](https://github.com/LanceMoe/react-daisyui/commit/0fcc97b6f3e669349650825759a4f20e495100cd))
+* use ComponentPropsWithoutRef ([7a867aa](https://github.com/LanceMoe/react-daisyui/commit/7a867aac200c98868d673e664b57b260dca75aac))
+
 ## [5.0.5](https://github.com/daisyui/react-daisyui/compare/v5.0.4...v5.0.5) (2024-09-18)
 
 
