@@ -1,35 +1,18 @@
-import React, { forwardRef, ReactNode } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef, ReactNode } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import {
-  IComponentBaseProps,
-  ComponentColor,
-  ComponentSize,
-} from '../types'
+import { IComponentBaseProps, ComponentColor, ComponentSize } from '../types';
 
-export type LoadingProps = 
-  React.HTMLAttributes<HTMLSpanElement>
-  & IComponentBaseProps
-  & {
-    size?: ComponentSize
-    color?: ComponentColor
-    variant?: 'spinner' | 'dots' | 'ring' | 'ball' | 'bars' | 'infinity'
-  }
+export type LoadingProps = React.HTMLAttributes<HTMLSpanElement> &
+  IComponentBaseProps & {
+    size?: ComponentSize;
+    color?: ComponentColor;
+    variant?: 'spinner' | 'dots' | 'ring' | 'ball' | 'bars' | 'infinity';
+  };
 
 const Loading = forwardRef<HTMLSpanElement, LoadingProps>(
-  (
-    {
-      size,
-      variant = 'spinner',
-      color,
-      dataTheme,
-      className,
-      style,
-      ...props
-    },
-    ref
-  ): React.JSX.Element => {
+  ({ size, variant = 'spinner', color, dataTheme, className, style, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'loading',
       className,
@@ -53,21 +36,13 @@ const Loading = forwardRef<HTMLSpanElement, LoadingProps>(
         'text-warning': color === 'warning',
         'text-error': color === 'error',
         'text-ghost': color === 'ghost',
-      })
-    )
+      }),
+    );
 
-    return (
-      <span
-        {...props}
-        ref={ref}
-        data-theme={dataTheme}
-        className={classes}
-        style={style}
-      />
-    )
-  }
-)
+    return <span {...props} ref={ref} data-theme={dataTheme} className={classes} style={style} />;
+  },
+);
 
-Loading.displayName = 'Loading'
+Loading.displayName = 'Loading';
 
-export default Loading
+export default Loading;

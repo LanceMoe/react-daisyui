@@ -1,16 +1,16 @@
-import { Meta, StoryFn as Story } from '@storybook/react'
-import React from 'react'
+import { Meta, StoryFn as Story } from '@storybook/react';
+import React from 'react';
 
-import Table, { TableProps } from '.'
-import Badge from '../Badge'
-import Button from '../Button'
-import Checkbox from '../Checkbox'
-import Mask from '../Mask'
+import Table, { TableProps } from '.';
+import Badge from '../Badge';
+import Button from '../Button';
+import Checkbox from '../Checkbox';
+import Mask from '../Mask';
 
 export default {
   title: 'Data Display/Table',
   component: Table,
-} as Meta
+} as Meta;
 
 const Template: Story<TableProps> = (args) => {
   return (
@@ -47,11 +47,11 @@ const Template: Story<TableProps> = (args) => {
         </Table.Body>
       </Table>
     </div>
-  )
-}
+  );
+};
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = Template.bind({});
+Default.args = {};
 
 export const ActiveRow: Story<TableProps> = (args) => {
   return (
@@ -88,8 +88,8 @@ export const ActiveRow: Story<TableProps> = (args) => {
         </Table.Body>
       </Table>
     </div>
-  )
-}
+  );
+};
 
 export const HighlightsOnHover: Story<TableProps> = (args) => {
   return (
@@ -126,12 +126,12 @@ export const HighlightsOnHover: Story<TableProps> = (args) => {
         </Table.Body>
       </Table>
     </div>
-  )
-}
-export const Zebra = Template.bind({})
+  );
+};
+export const Zebra = Template.bind({});
 Zebra.args = {
   zebra: true,
-}
+};
 
 export const WithVisualElements: Story<TableProps> = (args) => {
   return (
@@ -149,10 +149,7 @@ export const WithVisualElements: Story<TableProps> = (args) => {
           <Table.Row>
             <Checkbox />
             <div className="flex items-center space-x-3 truncate">
-              <Mask
-                variant="squircle"
-                src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-              />
+              <Mask variant="squircle" src="https://img.daisyui.com/images/profile/demo/2@94.webp" />
               <div>
                 <div className="font-bold">Hart Hagerty</div>
                 <div className="text-sm opacity-50">United States</div>
@@ -174,10 +171,7 @@ export const WithVisualElements: Story<TableProps> = (args) => {
           <Table.Row>
             <Checkbox />
             <div className="flex items-center space-x-3 truncate">
-              <Mask
-                variant="squircle"
-                src="https://img.daisyui.com/images/profile/demo/3@94.webp"
-              />
+              <Mask variant="squircle" src="https://img.daisyui.com/images/profile/demo/3@94.webp" />
               <div>
                 <div className="font-bold">Brice Swyre</div>
                 <div className="text-sm opacity-50">China</div>
@@ -199,10 +193,7 @@ export const WithVisualElements: Story<TableProps> = (args) => {
           <Table.Row>
             <Checkbox />
             <div className="flex items-center space-x-3 truncate">
-              <Mask
-                variant="squircle"
-                src="https://img.daisyui.com/images/profile/demo/4@94.webp"
-              />
+              <Mask variant="squircle" src="https://img.daisyui.com/images/profile/demo/4@94.webp" />
               <div>
                 <div className="font-bold">Marjy Ferencz</div>
                 <div className="text-sm opacity-50">Russia</div>
@@ -224,10 +215,7 @@ export const WithVisualElements: Story<TableProps> = (args) => {
           <Table.Row>
             <Checkbox />
             <div className="flex items-center space-x-3 truncate">
-              <Mask
-                variant="squircle"
-                src="https://img.daisyui.com/images/profile/demo/5@94.webp"
-              />
+              <Mask variant="squircle" src="https://img.daisyui.com/images/profile/demo/5@94.webp" />
               <div>
                 <div className="font-bold">Yancy Tear</div>
                 <div className="text-sm opacity-50">Brazil</div>
@@ -256,9 +244,9 @@ export const WithVisualElements: Story<TableProps> = (args) => {
         </Table.Footer>
       </Table>
     </div>
-  )
-}
-WithVisualElements.args = {}
+  );
+};
+WithVisualElements.args = {};
 
 export const Xs: Story<TableProps> = (args) => {
   return (
@@ -487,47 +475,39 @@ export const Xs: Story<TableProps> = (args) => {
         </Table.Footer>
       </Table>
     </div>
-  )
-}
+  );
+};
 Xs.args = {
   size: 'xs',
-}
+};
 
 // set of 50 columns with data to help demo scrolling and pinned headers
-const colCount = 50
+const colCount = 50;
 const tableData: { headers: string[]; row: string[]; footers: string[] } = {
   headers: new Array(colCount).fill('header').map((value, i) => value + i),
   row: new Array(colCount).fill('data').map((value, i) => value + i),
   footers: new Array(colCount).fill('footer').map((value, i) => value + i),
-}
+};
 
 const renderTableItem = (v, i, renderCell = true) => {
   if (renderCell) {
-    return <div>{v}</div>
+    return <div>{v}</div>;
   }
 
   // render every 5th cell as a th, which get pinned as users scroll
-  return i % 5 === 0 ? <th>{v}</th> : <td>{v}</td>
-}
+  return i % 5 === 0 ? <th>{v}</th> : <td>{v}</td>;
+};
 
-const renderHeaders = (noCell) =>
-  tableData.headers.map((v, i) => renderTableItem(v, i, noCell))
-const renderRow = (noCell) =>
-  tableData.row.map((v, i) => renderTableItem(v, i, noCell))
-const renderFooter = (noCell) =>
-  tableData.footers.map((v, i) => renderTableItem(v, i, noCell))
+const renderHeaders = (noCell) => tableData.headers.map((v, i) => renderTableItem(v, i, noCell));
+const renderRow = (noCell) => tableData.row.map((v, i) => renderTableItem(v, i, noCell));
+const renderFooter = (noCell) => tableData.footers.map((v, i) => renderTableItem(v, i, noCell));
 
 interface NoCellStoryProps extends TableProps {
-  noCell?: boolean
+  noCell?: boolean;
 }
 
-export const PinnedRowsOrColsNoCell: Story<NoCellStoryProps> = ({
-  noCell,
-  ...args
-}) => {
-  const renderRows = new Array(10)
-    .fill('')
-    .map(() => <Table.Row noCell={noCell}>{renderRow(!noCell)}</Table.Row>)
+export const PinnedRowsOrColsNoCell: Story<NoCellStoryProps> = ({ noCell, ...args }) => {
+  const renderRows = new Array(10).fill('').map(() => <Table.Row noCell={noCell}>{renderRow(!noCell)}</Table.Row>);
 
   return (
     <div className="overflow-x-auto max-w-lg max-h-80">
@@ -537,11 +517,11 @@ export const PinnedRowsOrColsNoCell: Story<NoCellStoryProps> = ({
         <Table.Footer noCell={noCell}>{renderFooter(!noCell)}</Table.Footer>
       </Table>
     </div>
-  )
-}
+  );
+};
 PinnedRowsOrColsNoCell.args = {
   noCell: true,
   pinRows: true,
   pinCols: true,
   zebra: true,
-}
+};

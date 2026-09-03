@@ -1,8 +1,8 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import PhoneMockup, { PhoneMockupProps } from '.'
-import { componentColors } from '../constants'
+import PhoneMockup, { PhoneMockupProps } from '.';
+import { componentColors } from '../constants';
 
 const meta: Meta = {
   title: 'Mockup/PhoneMockup',
@@ -16,16 +16,16 @@ const meta: Meta = {
       options: componentColors,
     },
   },
-}
+};
 
-export default meta
+export default meta;
 
 const Template: Story<PhoneMockupProps> = (args) => {
-  return <PhoneMockup {...args}>Hi.</PhoneMockup>
-}
+  return <PhoneMockup {...args}>Hi.</PhoneMockup>;
+};
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = Template.bind({});
+Default.args = {};
 
-export const ComponentColors = Template.bind({})
-ComponentColors.args = { color: 'primary' }
+export const ComponentColors = Template.bind({});
+ComponentColors.args = { color: 'primary' };

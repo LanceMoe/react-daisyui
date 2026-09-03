@@ -1,19 +1,19 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentSize } from '../types'
+import { IComponentBaseProps, ComponentSize } from '../types';
 
-import DockItem, { DockItemProps as ItemProps } from './DockItem'
-import DockLabel, { DockLabelProps as LabelProps } from './DockLabel'
+import DockItem, { DockItemProps as ItemProps } from './DockItem';
+import DockLabel, { DockLabelProps as LabelProps } from './DockLabel';
 
-export type DockItemProps = ItemProps
-export type DockLabelProps = LabelProps
+export type DockItemProps = ItemProps;
+export type DockLabelProps = LabelProps;
 
 export type DockProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
-    size?: ComponentSize
-  }
+    size?: ComponentSize;
+  };
 
 const Dock = forwardRef<HTMLDivElement, DockProps>(
   ({ size, dataTheme, className, children, ...props }, ref): React.JSX.Element => {
@@ -25,26 +25,20 @@ const Dock = forwardRef<HTMLDivElement, DockProps>(
         'dock-sm': size === 'sm',
         'dock-xs': size === 'xs',
       }),
-      className
-    )
+      className,
+    );
 
     return (
-      <div
-        {...props}
-        role="navigation"
-        data-theme={dataTheme}
-        className={classes}
-        ref={ref}
-      >
+      <div {...props} role="navigation" data-theme={dataTheme} className={classes} ref={ref}>
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-Dock.displayName = 'Dock'
+Dock.displayName = 'Dock';
 
 export default Object.assign(Dock, {
   Item: DockItem,
   Label: DockLabel,
-})
+});

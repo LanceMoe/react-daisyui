@@ -1,27 +1,22 @@
-import React, { ReactElement } from 'react'
-import { twMerge } from 'tailwind-merge'
+import React, { ReactElement } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-import { AvatarProps } from '../Avatar'
+import { AvatarProps } from '../Avatar';
 
 export type AvatarGroupProps = React.HTMLAttributes<HTMLDivElement> & {
-  children: ReactElement<AvatarProps>[]
-}
+  children: ReactElement<AvatarProps>[];
+};
 
 const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
   ({ children, className, ...props }, ref): React.JSX.Element => {
-    const classes = twMerge('avatar-group -space-x-6', className)
+    const classes = twMerge('avatar-group -space-x-6', className);
 
     return (
-      <div
-        aria-label={`Group of ${children.length} avatar photos`}
-        {...props}
-        className={classes}
-        ref={ref}
-      >
+      <div aria-label={`Group of ${children.length} avatar photos`} {...props} className={classes} ref={ref}>
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-export default AvatarGroup
+export default AvatarGroup;

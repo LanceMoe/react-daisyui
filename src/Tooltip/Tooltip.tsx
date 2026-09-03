@@ -1,35 +1,19 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import {
-  IComponentBaseProps,
-  ComponentColor,
-  ComponentPosition,
-} from '../types'
+import { IComponentBaseProps, ComponentColor, ComponentPosition } from '../types';
 
 export type TooltipProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
   IComponentBaseProps & {
-    message: string
-    open?: boolean
-    color?: ComponentColor
-    position?: ComponentPosition
-  }
+    message: string;
+    open?: boolean;
+    color?: ComponentColor;
+    position?: ComponentPosition;
+  };
 
 const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
-  (
-    {
-      message,
-      children,
-      open,
-      color,
-      position,
-      dataTheme,
-      className,
-      ...props
-    },
-    ref
-  ): React.JSX.Element => {
+  ({ message, children, open, color, position, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'tooltip',
       className,
@@ -46,24 +30,17 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         'tooltip-bottom': position === 'bottom',
         'tooltip-left': position === 'left',
         'tooltip-right': position === 'right',
-      })
-    )
+      }),
+    );
 
     return (
-      <div
-        role="tooltip"
-        {...props}
-        ref={ref}
-        data-theme={dataTheme}
-        data-tip={message}
-        className={classes}
-      >
+      <div role="tooltip" {...props} ref={ref} data-theme={dataTheme} data-tip={message} className={classes}>
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-Tooltip.displayName = 'Tooltip'
+Tooltip.displayName = 'Tooltip';
 
-export default Tooltip
+export default Tooltip;

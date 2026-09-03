@@ -1,23 +1,18 @@
-import React from 'react'
-import { twMerge } from 'tailwind-merge'
+import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types'
+import { IComponentBaseProps } from '../types';
 
-export type CollapseContentProps = React.HTMLAttributes<HTMLDivElement> &
-  IComponentBaseProps
+export type CollapseContentProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
 
-const CollapseContent = ({
-  children,
-  className,
-  ...props
-}: CollapseContentProps): React.JSX.Element => {
-  const classes = twMerge('collapse-content', className)
+const CollapseContent = ({ children, className, ...props }: CollapseContentProps): React.JSX.Element => {
+  const classes = twMerge('collapse-content', className);
 
   return (
     <div {...props} className={classes}>
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default CollapseContent
+export default CollapseContent;

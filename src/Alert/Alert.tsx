@@ -1,27 +1,19 @@
-import React, { forwardRef, ReactNode } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef, ReactNode } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import {
-  IComponentBaseProps,
-  ComponentLayout,
-  ComponentStatus,
-  ComponentVariant,
-} from '../types'
+import { IComponentBaseProps, ComponentLayout, ComponentStatus, ComponentVariant } from '../types';
 
 export type AlertProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
-    icon?: ReactNode
-    layout?: ComponentLayout
-    status?: ComponentStatus
-    variant?: ComponentVariant
-  }
+    icon?: ReactNode;
+    layout?: ComponentLayout;
+    status?: ComponentStatus;
+    variant?: ComponentVariant;
+  };
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(
-  (
-    { children, icon, layout, status, variant, dataTheme, className, ...props },
-    ref
-  ): React.JSX.Element => {
+  ({ children, icon, layout, status, variant, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'alert',
       className,
@@ -35,24 +27,18 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
         'alert-soft': variant === 'soft',
         'alert-dash': variant === 'dash',
         'alert-outline': variant === 'outline',
-      })
-    )
+      }),
+    );
 
     return (
-      <div
-        role="alert"
-        {...props}
-        ref={ref}
-        data-theme={dataTheme}
-        className={classes}
-      >
+      <div role="alert" {...props} ref={ref} data-theme={dataTheme} className={classes}>
         {icon}
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-Alert.displayName = 'Alert'
+Alert.displayName = 'Alert';
 
-export default Alert
+export default Alert;

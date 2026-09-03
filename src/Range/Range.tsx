@@ -1,23 +1,16 @@
-import React, { forwardRef, useMemo } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef, useMemo } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import {
-  IComponentBaseProps,
-  ComponentColor,
-  ComponentSize,
-} from '../types'
+import { IComponentBaseProps, ComponentColor, ComponentSize } from '../types';
 
-export type RangeProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'size'
-> &
+export type RangeProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> &
   IComponentBaseProps & {
-    color?: ComponentColor
-    size?: ComponentSize
-    displayTicks?: boolean
-    ticksStep?: number
-  }
+    color?: ComponentColor;
+    size?: ComponentSize;
+    displayTicks?: boolean;
+    ticksStep?: number;
+  };
 
 const Range = forwardRef<HTMLInputElement, RangeProps>(
   ({ color, size, step, displayTicks, ticksStep, dataTheme, className, ...props }, ref): React.JSX.Element => {
@@ -37,17 +30,15 @@ const Range = forwardRef<HTMLInputElement, RangeProps>(
         'range-success': color === 'success',
         'range-warning': color === 'warning',
         'range-error': color === 'error',
-      })
-    )
+      }),
+    );
 
     const numericStep = step !== undefined ? Number(step) : undefined;
     const hasValidStep = numericStep !== undefined && Number.isFinite(numericStep);
     const calculatedDisplayTicks = displayTicks ?? hasValidStep;
     const calculatedStep = hasValidStep && numericStep > 0 ? numericStep : 1;
     const calculatedTicksStep =
-      ticksStep !== undefined && Number.isFinite(ticksStep) && ticksStep > 0
-        ? ticksStep
-        : calculatedStep;
+      ticksStep !== undefined && Number.isFinite(ticksStep) && ticksStep > 0 ? ticksStep : calculatedStep;
     const min = props.min !== undefined ? Number(props.min) : 0; // default value per HTML standard
     const max = props.max !== undefined ? Number(props.max) : 100; // default value per HTML standard
 
@@ -56,26 +47,19 @@ const Range = forwardRef<HTMLInputElement, RangeProps>(
 
     return (
       <>
-        <input
-          {...props}
-          ref={ref}
-          type="range"
-          step={step}
-          data-theme={dataTheme}
-          className={classes}
-        />
+        <input {...props} ref={ref} type="range" step={step} data-theme={dataTheme} className={classes} />
         {calculatedDisplayTicks && (
           <div className="w-full flex justify-between text-xs px-2">
             {[...Array(numTicks)].map((_, i) => {
-              return <span key={i}>|</span>
+              return <span key={i}>|</span>;
             })}
           </div>
         )}
       </>
-    )
-  }
-)
+    );
+  },
+);
 
-Range.displayName = 'Range'
+Range.displayName = 'Range';
 
-export default Range
+export default Range;

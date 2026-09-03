@@ -1,72 +1,64 @@
-import React, { forwardRef, ReactNode, ElementType } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef, ReactNode, ElementType } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import Loading from '../Loading'
-import {
-  IComponentBaseProps,
-  ComponentColor,
-  ComponentShape,
-  ComponentVariant,
-  ComponentSize,
-} from '../types'
+import Loading from '../Loading';
+import { IComponentBaseProps, ComponentColor, ComponentShape, ComponentVariant, ComponentSize } from '../types';
 
 type ITagProps = {
   a: {
-    attr: React.AnchorHTMLAttributes<HTMLAnchorElement>
-    ele: HTMLAnchorElement
-  }
+    attr: React.AnchorHTMLAttributes<HTMLAnchorElement>;
+    ele: HTMLAnchorElement;
+  };
   button: {
-    attr: React.ButtonHTMLAttributes<HTMLButtonElement>
-    ele: HTMLButtonElement
-  }
+    attr: React.ButtonHTMLAttributes<HTMLButtonElement>;
+    ele: HTMLButtonElement;
+  };
   div: {
-    attr: React.HTMLAttributes<HTMLDivElement>
-    ele: HTMLDivElement
-  }
+    attr: React.HTMLAttributes<HTMLDivElement>;
+    ele: HTMLDivElement;
+  };
   img: {
-    attr: React.ImgHTMLAttributes<HTMLImageElement>
-    ele: HTMLImageElement
-  }
+    attr: React.ImgHTMLAttributes<HTMLImageElement>;
+    ele: HTMLImageElement;
+  };
   input: {
-    attr: React.InputHTMLAttributes<HTMLInputElement>
-    ele: HTMLInputElement
-  }
+    attr: React.InputHTMLAttributes<HTMLInputElement>;
+    ele: HTMLInputElement;
+  };
   label: {
-    attr: React.LabelHTMLAttributes<HTMLLabelElement>
-    ele: HTMLLabelElement
-  }
+    attr: React.LabelHTMLAttributes<HTMLLabelElement>;
+    ele: HTMLLabelElement;
+  };
   span: {
-    attr: React.HTMLAttributes<HTMLSpanElement>
-    ele: HTMLSpanElement
-  }
-}
+    attr: React.HTMLAttributes<HTMLSpanElement>;
+    ele: HTMLSpanElement;
+  };
+};
 
-type GetTagProps<T extends ElementType> = T extends keyof ITagProps
-  ? ITagProps[T]
-  : ITagProps['button']
+type GetTagProps<T extends ElementType> = T extends keyof ITagProps ? ITagProps[T] : ITagProps['button'];
 
 export type ButtonProps<
   T extends ElementType = 'button',
-  A extends React.HTMLAttributes<HTMLElement> = GetTagProps<T>['attr']
+  A extends React.HTMLAttributes<HTMLElement> = GetTagProps<T>['attr'],
 > = Omit<A, 'color' | 'size'> &
   IComponentBaseProps & {
-    shape?: ComponentShape
-    size?: ComponentSize
-    color?: ComponentColor
-    variant?: ComponentVariant | 'link'
-    glass?: boolean
-    wide?: boolean
-    fullWidth?: boolean
-    responsive?: boolean
-    animation?: boolean
-    loading?: boolean
-    active?: boolean
-    startIcon?: ReactNode
-    endIcon?: ReactNode
-    disabled?: boolean
-    tag?: T
-  }
+    shape?: ComponentShape;
+    size?: ComponentSize;
+    color?: ComponentColor;
+    variant?: ComponentVariant | 'link';
+    glass?: boolean;
+    wide?: boolean;
+    fullWidth?: boolean;
+    responsive?: boolean;
+    animation?: boolean;
+    loading?: boolean;
+    active?: boolean;
+    startIcon?: ReactNode;
+    endIcon?: ReactNode;
+    disabled?: boolean;
+    tag?: T;
+  };
 //  https://developer.mozilla.org/en-US/docs/Glossary/Void_element
 const VoidElementList: ElementType[] = [
   'area',
@@ -84,7 +76,7 @@ const VoidElementList: ElementType[] = [
   'source',
   'track',
   'wbr',
-]
+];
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -109,9 +101,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       tag = 'button',
       ...props
     },
-    ref
+    ref,
   ): React.JSX.Element => {
-    const Tag = tag
+    const Tag = tag;
     const classes = twMerge(
       'btn',
       className,
@@ -143,45 +135,29 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         'no-animation': !animation,
         'btn-active': active,
         'btn-disabled': disabled,
-      })
-    )
+      }),
+    );
     if (VoidElementList.includes(Tag)) {
-      return (
-        <Tag
-          {...props}
-          ref={ref}
-          data-theme={dataTheme}
-          className={classes}
-          style={style}
-          disabled={disabled}
-        />
-      )
+      return <Tag {...props} ref={ref} data-theme={dataTheme} className={classes} style={style} disabled={disabled} />;
     } else {
       return (
-        <Tag
-          {...props}
-          ref={ref}
-          data-theme={dataTheme}
-          className={classes}
-          style={style}
-          disabled={disabled}
-        >
+        <Tag {...props} ref={ref} data-theme={dataTheme} className={classes} style={style} disabled={disabled}>
           {loading && <Loading size={size} />}
           {startIcon && !loading && startIcon}
           {children}
           {endIcon && endIcon}
         </Tag>
-      )
+      );
     }
-  }
-)
+  },
+);
 
-Button.displayName = 'Button'
+Button.displayName = 'Button';
 
 export default Button as <
   T extends ElementType = 'button',
   E extends HTMLElement = GetTagProps<T>['ele'],
-  A extends React.HTMLAttributes<HTMLElement> = GetTagProps<T>['attr']
+  A extends React.HTMLAttributes<HTMLElement> = GetTagProps<T>['attr'],
 >(
-  props: ButtonProps<T, A> & { ref?: React.Ref<E> }
-) => React.JSX.Element
+  props: ButtonProps<T, A> & { ref?: React.Ref<E> },
+) => React.JSX.Element;

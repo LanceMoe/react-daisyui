@@ -1,29 +1,24 @@
-import React, { useRef, useState } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { useRef, useState } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types'
+import { IComponentBaseProps } from '../types';
 
-import CollapseDetails from './CollapseDetails'
-import CollapseTitle from './CollapseTitle'
-import CollapseContent from './CollapseContent'
+import CollapseDetails from './CollapseDetails';
+import CollapseTitle from './CollapseTitle';
+import CollapseContent from './CollapseContent';
 
-export type CollapseProps<T extends HTMLElement = HTMLDivElement> =
-  React.HTMLAttributes<T> &
-    IComponentBaseProps & {
-      checkbox?: boolean
-      icon?: 'arrow' | 'plus'
-      open?: boolean
-      onOpen?: () => void
-      onClose?: () => void
-      onToggle?: () => void
-    }
+export type CollapseProps<T extends HTMLElement = HTMLDivElement> = React.HTMLAttributes<T> &
+  IComponentBaseProps & {
+    checkbox?: boolean;
+    icon?: 'arrow' | 'plus';
+    open?: boolean;
+    onOpen?: () => void;
+    onClose?: () => void;
+    onToggle?: () => void;
+  };
 
-export const classesFn = ({
-  className,
-  icon,
-  open,
-}: Pick<CollapseProps, 'className' | 'icon' | 'open'>) =>
+export const classesFn = ({ className, icon, open }: Pick<CollapseProps, 'className' | 'icon' | 'open'>) =>
   twMerge(
     'collapse',
     className,
@@ -32,55 +27,44 @@ export const classesFn = ({
       'collapse-plus': icon === 'plus',
       'collapse-open': open === true,
       'collapse-close': open === false,
-    })
-  )
+    }),
+  );
 
 const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
   (
-    {
-      children,
-      checkbox,
-      icon,
-      open,
-      dataTheme,
-      className,
-      onOpen,
-      onClose,
-      onToggle,
-      ...props
-    },
-    ref
+    { children, checkbox, icon, open, dataTheme, className, onOpen, onClose, onToggle, ...props },
+    ref,
   ): React.JSX.Element => {
-    const [isChecked, setIsChecked] = useState(open)
-    const checkboxRef = useRef<HTMLInputElement>(null)
+    const [isChecked, setIsChecked] = useState(open);
+    const checkboxRef = useRef<HTMLInputElement>(null);
 
     // Handle events for checkbox changes
     const handleCheckboxChange = () => {
       if (onToggle) {
-        onToggle()
+        onToggle();
       }
       if (onOpen && checkboxRef.current?.checked) {
-        onOpen()
+        onOpen();
       } else if (onClose && !checkboxRef.current?.checked) {
-        onClose()
+        onClose();
       }
 
-      setIsChecked(checkboxRef.current?.checked)
-    }
+      setIsChecked(checkboxRef.current?.checked);
+    };
 
     // Handle blur events, specifically handling open/close for non checkbox types
     const handleBlur = (event: React.FocusEvent<HTMLDivElement, Element>) => {
-      if (!checkbox && onToggle) onToggle()
-      if (!checkbox && onClose) onClose()
-      if (props.onBlur) props.onBlur(event)
-    }
+      if (!checkbox && onToggle) onToggle();
+      if (!checkbox && onClose) onClose();
+      if (props.onBlur) props.onBlur(event);
+    };
 
     // Handle focus events, specifically handling open/close for non checkbox types
     const handleFocus = (event: React.FocusEvent<HTMLDivElement, Element>) => {
-      if (!checkbox && onToggle) onToggle()
-      if (!checkbox && onOpen) onOpen()
-      if (props.onFocus) props.onFocus(event)
-    }
+      if (!checkbox && onToggle) onToggle();
+      if (!checkbox && onOpen) onOpen();
+      if (props.onFocus) props.onFocus(event);
+    };
 
     return (
       <div
@@ -104,12 +88,12 @@ const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
         )}
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
 export default Object.assign(Collapse, {
   Details: CollapseDetails,
   Title: CollapseTitle,
   Content: CollapseContent,
-})
+});

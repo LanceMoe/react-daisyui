@@ -1,40 +1,18 @@
-import React, {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-} from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import {
-  IComponentBaseProps,
-  ComponentColor,
-  ComponentSize,
-} from '../types'
+import { IComponentBaseProps, ComponentColor, ComponentSize } from '../types';
 
-export type CheckboxProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'size'
-> &
+export type CheckboxProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> &
   IComponentBaseProps & {
-    color?: Exclude<ComponentColor, 'ghost'>
-    size?: ComponentSize
-    indeterminate?: boolean
-  }
+    color?: Exclude<ComponentColor, 'ghost'>;
+    size?: ComponentSize;
+    indeterminate?: boolean;
+  };
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  (
-    {
-      color,
-      size,
-      indeterminate,
-      dataTheme,
-      className,
-      ...props
-    },
-    ref
-  ): React.JSX.Element => {
+  ({ color, size, indeterminate, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'checkbox',
       className,
@@ -52,36 +30,28 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         'checkbox-success': color === 'success',
         'checkbox-warning': color === 'warning',
         'checkbox-error': color === 'error',
-      })
-    )
+      }),
+    );
 
-    const checkboxRef = useRef<HTMLInputElement>(null)
-    useImperativeHandle(ref, () => checkboxRef.current as HTMLInputElement)
+    const checkboxRef = useRef<HTMLInputElement>(null);
+    useImperativeHandle(ref, () => checkboxRef.current as HTMLInputElement);
 
     useEffect(() => {
       if (!checkboxRef.current) {
-        return
+        return;
       }
 
       if (indeterminate) {
-        checkboxRef.current.indeterminate = true
+        checkboxRef.current.indeterminate = true;
       } else {
-        checkboxRef.current.indeterminate = false
+        checkboxRef.current.indeterminate = false;
       }
-    }, [indeterminate])
+    }, [indeterminate]);
 
-    return (
-      <input
-        {...props}
-        ref={checkboxRef}
-        type="checkbox"
-        data-theme={dataTheme}
-        className={classes}
-      />
-    )
-  }
-)
+    return <input {...props} ref={checkboxRef} type="checkbox" data-theme={dataTheme} className={classes} />;
+  },
+);
 
-Checkbox.displayName = 'Checkbox'
+Checkbox.displayName = 'Checkbox';
 
-export default Checkbox
+export default Checkbox;

@@ -1,24 +1,17 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import {
-  IComponentBaseProps,
-  ComponentBrandColors,
-  ComponentStatus,
-} from '../types'
+import { IComponentBaseProps, ComponentBrandColors, ComponentStatus } from '../types';
 
 export type DockItemProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   IComponentBaseProps & {
-    color?: ComponentBrandColors | ComponentStatus
-    active?: boolean
-  }
+    color?: ComponentBrandColors | ComponentStatus;
+    active?: boolean;
+  };
 
 const DockItem = forwardRef<HTMLButtonElement, DockItemProps>(
-  (
-    { children, className, color, dataTheme, active, disabled, ...props },
-    ref
-  ): React.JSX.Element => {
+  ({ children, className, color, dataTheme, active, disabled, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       className,
       clsx({
@@ -32,14 +25,14 @@ const DockItem = forwardRef<HTMLButtonElement, DockItemProps>(
         'text-error': color === 'error',
         active: active,
         disabled: disabled,
-      })
-    )
+      }),
+    );
     return (
       <button {...props} className={classes} data-theme={dataTheme} ref={ref}>
         {children}
       </button>
-    )
-  }
-)
+    );
+  },
+);
 
-export default DockItem
+export default DockItem;

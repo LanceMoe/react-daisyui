@@ -1,14 +1,14 @@
-import React from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types'
+import { IComponentBaseProps } from '../types';
 
 export type IndicatorItemProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
-    horizontal?: 'start' | 'center' | 'end'
-    vertical?: 'top' | 'middle' | 'bottom'
-  }
+    horizontal?: 'start' | 'center' | 'end';
+    vertical?: 'top' | 'middle' | 'bottom';
+  };
 const classesFn = ({
   className,
   horizontal,
@@ -24,33 +24,18 @@ const classesFn = ({
       'indicator-top': vertical === 'top',
       'indicator-middle': vertical === 'middle',
       'indicator-bottom': vertical === 'bottom',
-    })
-  )
+    }),
+  );
 
 const IndicatorItem = React.forwardRef<HTMLDivElement, IndicatorItemProps>(
-  (
-    {
-      children,
-      horizontal = 'end',
-      vertical = 'top',
-      dataTheme,
-      className,
-      ...props
-    },
-    ref
-  ): React.JSX.Element => {
+  ({ children, horizontal = 'end', vertical = 'top', dataTheme, className, ...props }, ref): React.JSX.Element => {
     return (
-      <div
-        aria-label="Indicator"
-        {...props}
-        className={classesFn({ className, horizontal, vertical })}
-        ref={ref}
-      >
+      <div aria-label="Indicator" {...props} className={classesFn({ className, horizontal, vertical })} ref={ref}>
         {children}
       </div>
-    )
-  }
-)
-IndicatorItem.displayName = 'IndicatorItem'
+    );
+  },
+);
+IndicatorItem.displayName = 'IndicatorItem';
 
-export default Object.assign(IndicatorItem, { className: classesFn })
+export default Object.assign(IndicatorItem, { className: classesFn });

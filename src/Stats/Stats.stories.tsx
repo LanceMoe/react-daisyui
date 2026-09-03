@@ -1,14 +1,14 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Stats, { StatsProps } from '.'
-import Avatar from '../Avatar'
-import Button from '../Button'
+import Stats, { StatsProps } from '.';
+import Avatar from '../Avatar';
+import Button from '../Button';
 
 export default {
   title: 'Data Display/Stats',
   component: Stats,
-} as Meta
+} as Meta;
 
 export const Default: Story<StatsProps> = (args) => {
   return (
@@ -19,8 +19,8 @@ export const Default: Story<StatsProps> = (args) => {
         <Stats.Stat.Desc>21% more than last month</Stats.Stat.Desc>
       </Stats.Stat>
     </Stats>
-  )
-}
+  );
+};
 
 export const IconsOrImage: Story<StatsProps> = (args) => {
   return (
@@ -54,12 +54,7 @@ export const IconsOrImage: Story<StatsProps> = (args) => {
             viewBox="0 0 24 24"
             className="inline-block w-8 h-8 stroke-current"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            ></path>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
         </Stats.Stat.Figure>
         <Stats.Stat.Title>Page Views</Stats.Stat.Title>
@@ -93,13 +88,11 @@ export const IconsOrImage: Story<StatsProps> = (args) => {
         </Stats.Stat.Figure>
         <Stats.Stat.Value>86%</Stats.Stat.Value>
         <Stats.Stat.Title>Tasks done</Stats.Stat.Title>
-        <Stats.Stat.Desc className="text-secondary">
-          31 tasks remaining
-        </Stats.Stat.Desc>
+        <Stats.Stat.Desc className="text-secondary">31 tasks remaining</Stats.Stat.Desc>
       </Stats.Stat>
     </Stats>
-  )
-}
+  );
+};
 
 export const CenteredItems: Story<StatsProps> = (args) => {
   return (
@@ -122,8 +115,8 @@ export const CenteredItems: Story<StatsProps> = (args) => {
         <Stats.Stat.Desc>↘︎ 90 (14%)</Stats.Stat.Desc>
       </Stats.Stat>
     </Stats>
-  )
-}
+  );
+};
 
 export const Vertical: Story<StatsProps> = (args) => {
   return (
@@ -146,11 +139,11 @@ export const Vertical: Story<StatsProps> = (args) => {
         <Stats.Stat.Desc>↘︎ 90 (14%)</Stats.Stat.Desc>
       </Stats.Stat>
     </Stats>
-  )
-}
+  );
+};
 Vertical.args = {
   direction: 'vertical',
-}
+};
 
 export const Responsive: Story<StatsProps> = (args) => {
   return (
@@ -173,8 +166,8 @@ export const Responsive: Story<StatsProps> = (args) => {
         <Stats.Stat.Desc>↘︎ 90 (14%)</Stats.Stat.Desc>
       </Stats.Stat>
     </Stats>
-  )
-}
+  );
+};
 
 export const CustomColorsAndButton: Story<StatsProps> = (args) => {
   return (
@@ -197,5 +190,5 @@ export const CustomColorsAndButton: Story<StatsProps> = (args) => {
         </Stats.Stat.Actions>
       </Stats.Stat>
     </Stats>
-  )
-}
+  );
+};

@@ -1,21 +1,18 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types'
+import { IComponentBaseProps } from '../types';
 
 export type ArtboardProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
-    demo?: boolean
-    size?: 1 | 2 | 3 | 4 | 5 | 6
-    horizontal?: boolean
-  }
+    demo?: boolean;
+    size?: 1 | 2 | 3 | 4 | 5 | 6;
+    horizontal?: boolean;
+  };
 
 const Artboard = forwardRef<HTMLDivElement, ArtboardProps>(
-  (
-    { children, demo = true, size, horizontal, dataTheme, className, ...props },
-    ref
-  ): React.JSX.Element => {
+  ({ children, demo = true, size, horizontal, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'artboard',
       className,
@@ -28,23 +25,17 @@ const Artboard = forwardRef<HTMLDivElement, ArtboardProps>(
         'phone-5': size === 5,
         'phone-6': size === 6,
         horizontal: horizontal,
-      })
-    )
+      }),
+    );
 
     return (
-      <div
-        aria-label="Artboard"
-        {...props}
-        ref={ref}
-        data-theme={dataTheme}
-        className={classes}
-      >
+      <div aria-label="Artboard" {...props} ref={ref} data-theme={dataTheme} className={classes}>
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-Artboard.displayName = 'Artboard'
+Artboard.displayName = 'Artboard';
 
-export default Artboard
+export default Artboard;

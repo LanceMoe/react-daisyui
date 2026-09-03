@@ -1,7 +1,7 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Timeline, { TimelineProps } from '.'
+import Timeline, { TimelineProps } from '.';
 
 const meta: Meta<TimelineProps> = {
   title: 'Data Display/Timeline',
@@ -9,9 +9,9 @@ const meta: Meta<TimelineProps> = {
   parameters: {
     controls: { expanded: true },
   },
-}
+};
 
-export default meta
+export default meta;
 
 export const Default: Story<TimelineProps> = (args) => {
   return (
@@ -42,8 +42,8 @@ export const Default: Story<TimelineProps> = (args) => {
         <Timeline.End>Apple Watch</Timeline.End>
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 
 export const BottomSideOnly: Story<TimelineProps> = (args) => {
   return (
@@ -69,8 +69,8 @@ export const BottomSideOnly: Story<TimelineProps> = (args) => {
         <Timeline.End>Apple Watch</Timeline.End>
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 
 export const TopSideOnly: Story<TimelineProps> = (args) => {
   return (
@@ -96,8 +96,8 @@ export const TopSideOnly: Story<TimelineProps> = (args) => {
         <Timeline.Middle />
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 
 export const DifferentSides: Story<TimelineProps> = (args) => {
   return (
@@ -123,8 +123,8 @@ export const DifferentSides: Story<TimelineProps> = (args) => {
         <Timeline.Middle />
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 
 export const ColorfulLines: Story<TimelineProps> = (args) => {
   return (
@@ -133,11 +133,7 @@ export const ColorfulLines: Story<TimelineProps> = (args) => {
         <Timeline.Start box={true}>First Macintosh computer</Timeline.Start>
         <Timeline.Middle className="text-primary" />
       </Timeline.Item>
-      <Timeline.Item
-        connect="both"
-        startClassName="bg-primary"
-        endClassName="bg-primary"
-      >
+      <Timeline.Item connect="both" startClassName="bg-primary" endClassName="bg-primary">
         <Timeline.Middle className="text-primary" />
         <Timeline.End>iMac</Timeline.End>
       </Timeline.Item>
@@ -154,8 +150,8 @@ export const ColorfulLines: Story<TimelineProps> = (args) => {
         <Timeline.Middle />
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 
 export const WithoutIcons: Story<TimelineProps> = (args) => {
   return (
@@ -176,8 +172,8 @@ export const WithoutIcons: Story<TimelineProps> = (args) => {
         <Timeline.Start box={true}>Apple Watch</Timeline.Start>
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 
 export const Vertical: Story<TimelineProps> = (args) => {
   return (
@@ -208,11 +204,11 @@ export const Vertical: Story<TimelineProps> = (args) => {
         <Timeline.End>Apple Watch</Timeline.End>
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 Vertical.args = {
   vertical: true,
-}
+};
 
 export const VerticalWithBottomSideOnly: Story<TimelineProps> = (args) => {
   return (
@@ -238,11 +234,11 @@ export const VerticalWithBottomSideOnly: Story<TimelineProps> = (args) => {
         <Timeline.End>Apple Watch</Timeline.End>
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 VerticalWithBottomSideOnly.args = {
   vertical: true,
-}
+};
 export const VerticalWithTopSideOnly: Story<TimelineProps> = (args) => {
   return (
     <Timeline {...args}>
@@ -267,11 +263,11 @@ export const VerticalWithTopSideOnly: Story<TimelineProps> = (args) => {
         <Timeline.Middle />
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 VerticalWithTopSideOnly.args = {
   vertical: true,
-}
+};
 
 export const VerticalDifferentSides: Story<TimelineProps> = (args) => {
   return (
@@ -297,11 +293,11 @@ export const VerticalDifferentSides: Story<TimelineProps> = (args) => {
         <Timeline.Middle />
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 VerticalDifferentSides.args = {
   vertical: true,
-}
+};
 
 export const VerticalColorfulLines: Story<TimelineProps> = (args) => {
   return (
@@ -310,11 +306,7 @@ export const VerticalColorfulLines: Story<TimelineProps> = (args) => {
         <Timeline.Start box={true}>First Macintosh computer</Timeline.Start>
         <Timeline.Middle className="text-primary" />
       </Timeline.Item>
-      <Timeline.Item
-        connect="both"
-        startClassName="bg-primary"
-        endClassName="bg-primary"
-      >
+      <Timeline.Item connect="both" startClassName="bg-primary" endClassName="bg-primary">
         <Timeline.Middle className="text-primary" />
         <Timeline.End>iMac</Timeline.End>
       </Timeline.Item>
@@ -331,11 +323,11 @@ export const VerticalColorfulLines: Story<TimelineProps> = (args) => {
         <Timeline.Middle />
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 VerticalColorfulLines.args = {
   vertical: true,
-}
+};
 
 export const VerticalWithoutIcons: Story<TimelineProps> = (args) => {
   return (
@@ -356,11 +348,11 @@ export const VerticalWithoutIcons: Story<TimelineProps> = (args) => {
         <Timeline.Start box={true}>Apple Watch</Timeline.Start>
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 VerticalWithoutIcons.args = {
   vertical: true,
-}
+};
 
 export const Responsive: Story<TimelineProps> = (args) => {
   return (
@@ -391,11 +383,11 @@ export const Responsive: Story<TimelineProps> = (args) => {
         <Timeline.End>Apple Watch</Timeline.End>
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 Responsive.args = {
   responsive: true,
-}
+};
 
 export const IconSnappedToTheStart: Story<TimelineProps> = (args) => {
   return (
@@ -404,12 +396,10 @@ export const IconSnappedToTheStart: Story<TimelineProps> = (args) => {
         <Timeline.Start className="md:text-end mb-10">
           <time className="font-mono italic">1984</time>
           <div className="text-lg font-black">First Macintosh computer</div>
-          The Apple Macintosh—later rebranded as the Macintosh 128K—is the
-          original Apple Macintosh personal computer. It played a pivotal role
-          in establishing desktop publishing as a general office function. The
-          motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were
-          housed in a beige case with integrated carrying handle; it came with a
-          keyboard and single-button mouse.
+          The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh personal computer.
+          It played a pivotal role in establishing desktop publishing as a general office function. The motherboard, a 9
+          in (23 cm) CRT monitor, and a floppy drive were housed in a beige case with integrated carrying handle; it
+          came with a keyboard and single-button mouse.
         </Timeline.Start>
         <Timeline.Middle />
       </Timeline.Item>
@@ -418,23 +408,20 @@ export const IconSnappedToTheStart: Story<TimelineProps> = (args) => {
         <Timeline.End box={false} className="mb-10">
           <time className="font-mono italic">1998</time>
           <div className="text-lg font-black">iMac</div>
-          iMac is a family of all-in-one Mac desktop computers designed and
-          built by Apple Inc. It has been the primary part of Apple's consumer
-          desktop offerings since its debut in August 1998, and has evolved
-          through seven distinct forms
+          iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has been the primary
+          part of Apple's consumer desktop offerings since its debut in August 1998, and has evolved through seven
+          distinct forms
         </Timeline.End>
       </Timeline.Item>
       <Timeline.Item connect="both">
         <Timeline.Start className="md:text-end mb-10">
           <time className="font-mono italic">2001</time>
           <div className="text-lg font-black">iPod</div>
-          The iPod is a discontinued series of portable media players and
-          multi-purpose mobile devices designed and marketed by Apple Inc. The
-          first version was released on October 23, 2001, about 8+1⁄2 months
-          after the Macintosh version of iTunes was released. Apple sold an
-          estimated 450 million iPod products as of 2022. Apple discontinued the
-          iPod product line on May 10, 2022. At over 20 years, the iPod brand is
-          the oldest to be discontinued by Apple
+          The iPod is a discontinued series of portable media players and multi-purpose mobile devices designed and
+          marketed by Apple Inc. The first version was released on October 23, 2001, about 8+1⁄2 months after the
+          Macintosh version of iTunes was released. Apple sold an estimated 450 million iPod products as of 2022. Apple
+          discontinued the iPod product line on May 10, 2022. At over 20 years, the iPod brand is the oldest to be
+          discontinued by Apple
         </Timeline.Start>
         <Timeline.Middle />
       </Timeline.Item>
@@ -443,31 +430,27 @@ export const IconSnappedToTheStart: Story<TimelineProps> = (args) => {
         <Timeline.End box={false} className="mb-10">
           <time className="font-mono italic">2007</time>
           <div className="text-lg font-black">iPhone</div>
-          iPhone is a line of smartphones produced by Apple Inc. that use
-          Apple's own iOS mobile operating system. The first-generation iPhone
-          was announced by then-Apple CEO Steve Jobs on January 9, 2007. Since
-          then, Apple has annually released new iPhone models and iOS updates.
-          As of November 1, 2018, more than 2.2 billion iPhones had been sold.
-          As of 2022, the iPhone accounts for 15.6% of global smartphone market
-          share
+          iPhone is a line of smartphones produced by Apple Inc. that use Apple's own iOS mobile operating system. The
+          first-generation iPhone was announced by then-Apple CEO Steve Jobs on January 9, 2007. Since then, Apple has
+          annually released new iPhone models and iOS updates. As of November 1, 2018, more than 2.2 billion iPhones had
+          been sold. As of 2022, the iPhone accounts for 15.6% of global smartphone market share
         </Timeline.End>
       </Timeline.Item>
       <Timeline.Item connect="start">
         <Timeline.Start className="md:text-end mb-10">
           <time className="font-mono italic">2015</time>
           <div className="text-lg font-black">Apple Watch</div>
-          The Apple Watch is a line of smartwatches produced by Apple Inc. It
-          incorporates fitness tracking, health-oriented capabilities, and
-          wireless telecommunication, and integrates with iOS and other Apple
-          products and services
+          The Apple Watch is a line of smartwatches produced by Apple Inc. It incorporates fitness tracking,
+          health-oriented capabilities, and wireless telecommunication, and integrates with iOS and other Apple products
+          and services
         </Timeline.Start>
         <Timeline.Middle />
       </Timeline.Item>
     </Timeline>
-  )
-}
+  );
+};
 IconSnappedToTheStart.args = {
   snap: true,
   vertical: true,
   className: 'max:md:timeline-compact',
-}
+};

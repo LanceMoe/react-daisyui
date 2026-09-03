@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React, { useState } from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Select, { SelectProps } from '.'
+import Select, { SelectProps } from '.';
 
-const { Option } = Select
+const { Option } = Select;
 
 export default {
   title: 'Data Input/Select',
@@ -15,18 +15,14 @@ export default {
     className: 'w-full max-w-xs',
     disabled: false,
   },
-} as Meta
+} as Meta;
 
 export const Default: Story<SelectProps> = (args) => {
-  const [value, setValue] = useState('default')
+  const [value, setValue] = useState('default');
 
   return (
     <div className="flex w-full component-preview p-4 items-center justify-center gap-2 font-sans">
-      <Select
-        {...args}
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-      >
+      <Select {...args} value={value} onChange={(event) => setValue(event.target.value)}>
         <Option value={'default'} disabled>
           Pick your favorite Simpson
         </Option>
@@ -37,8 +33,8 @@ export const Default: Story<SelectProps> = (args) => {
         <Option value={'Maggie'}>Maggie</Option>
       </Select>
     </div>
-  )
-}
+  );
+};
 
 export const FormControlAndLabels: Story<SelectProps> = (args) => {
   return (
@@ -64,5 +60,5 @@ export const FormControlAndLabels: Story<SelectProps> = (args) => {
         </label>
       </div>
     </div>
-  )
-}
+  );
+};

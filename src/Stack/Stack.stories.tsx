@@ -1,29 +1,23 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Stack, { StackProps } from '.'
-import Card from '../Card'
+import Stack, { StackProps } from '.';
+import Card from '../Card';
 
 export default {
   title: 'Layout/Stack',
   component: Stack,
-} as Meta
+} as Meta;
 
 export const Default: Story<StackProps> = (args) => {
   return (
     <Stack {...args}>
-      <div className="grid w-32 h-20 rounded bg-primary text-primary-content place-content-center">
-        1
-      </div>
-      <div className="grid w-32 h-20 rounded bg-accent text-accent-content place-content-center">
-        2
-      </div>
-      <div className="grid w-32 h-20 rounded bg-secondary text-secondary-content place-content-center">
-        3
-      </div>
+      <div className="grid w-32 h-20 rounded bg-primary text-primary-content place-content-center">1</div>
+      <div className="grid w-32 h-20 rounded bg-accent text-accent-content place-content-center">2</div>
+      <div className="grid w-32 h-20 rounded bg-secondary text-secondary-content place-content-center">3</div>
     </Stack>
-  )
-}
+  );
+};
 
 export const StackedImages: Story<StackProps> = (args) => {
   return (
@@ -44,8 +38,8 @@ export const StackedImages: Story<StackProps> = (args) => {
         className="rounded"
       />
     </Stack>
-  )
-}
+  );
+};
 
 export const StackedCardsWithBorder: Story<StackProps> = (args) => {
   return (
@@ -60,8 +54,8 @@ export const StackedCardsWithBorder: Story<StackProps> = (args) => {
         <Card.Body>C</Card.Body>
       </Card>
     </Stack>
-  )
-}
+  );
+};
 
 export const StackedCardsWithShadow: Story<StackProps> = (args) => {
   return (
@@ -76,8 +70,8 @@ export const StackedCardsWithShadow: Story<StackProps> = (args) => {
         <Card.Body>C</Card.Body>
       </Card>
     </Stack>
-  )
-}
+  );
+};
 
 export const StackedCards: Story<StackProps> = (args) => {
   return (
@@ -101,7 +95,7 @@ export const StackedCards: Story<StackProps> = (args) => {
         </Card.Body>
       </Card>
     </Stack>
-  )
-}
+  );
+};
 
-Default.args = {}
+Default.args = {};

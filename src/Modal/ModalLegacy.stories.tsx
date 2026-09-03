@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React, { useState } from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Modal, { ModalLegacyProps as ModalProps } from '.'
-import Button from '../Button'
+import Modal, { ModalLegacyProps as ModalProps } from '.';
+import Button from '../Button';
 
 export default {
   title: 'Actions/Modal/Legacy',
   component: Modal.Legacy,
-} as Meta
+} as Meta;
 
 export const Default: Story<ModalProps> = (args) => {
-  const [visible, setVisible] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false);
 
   const toggleVisible = () => {
-    setVisible(!visible)
-  }
+    setVisible(!visible);
+  };
 
   return (
     <div className="font-sans">
@@ -28,15 +28,15 @@ export const Default: Story<ModalProps> = (args) => {
         </Modal.Actions>
       </Modal.Legacy>
     </div>
-  )
-}
+  );
+};
 
 export const ClickedOutside: Story<ModalProps> = (args) => {
-  const [visible, setVisible] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false);
 
   const toggleVisible = () => {
-    setVisible(!visible)
-  }
+    setVisible(!visible);
+  };
 
   return (
     <div className="font-sans">
@@ -46,42 +46,36 @@ export const ClickedOutside: Story<ModalProps> = (args) => {
         <Modal.Body>Click outside to close</Modal.Body>
       </Modal.Legacy>
     </div>
-  )
-}
+  );
+};
 
 export const CloseButton: Story<ModalProps> = (args) => {
-  const [visible, setVisible] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false);
 
   const toggleVisible = () => {
-    setVisible(!visible)
-  }
+    setVisible(!visible);
+  };
 
   return (
     <div className="font-sans">
       <Button onClick={toggleVisible}>Open Modal</Button>
       <Modal.Legacy {...args} open={visible}>
-        <Button
-          size="sm"
-          color="ghost"
-          shape="circle"
-          className="absolute right-2 top-2"
-          onClick={toggleVisible}
-        >
+        <Button size="sm" color="ghost" shape="circle" className="absolute right-2 top-2" onClick={toggleVisible}>
           ✕
         </Button>
         <Modal.Header className="font-bold">Hello!</Modal.Header>
         <Modal.Body>Click on X button to close</Modal.Body>
       </Modal.Legacy>
     </div>
-  )
-}
+  );
+};
 
 export const CustomWidth: Story<ModalProps> = (args) => {
-  const [visible, setVisible] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false);
 
   const toggleVisible = () => {
-    setVisible(!visible)
-  }
+    setVisible(!visible);
+  };
 
   return (
     <div className="font-sans">
@@ -94,9 +88,9 @@ export const CustomWidth: Story<ModalProps> = (args) => {
         </Modal.Actions>
       </Modal.Legacy>
     </div>
-  )
-}
+  );
+};
 
 CustomWidth.args = {
   className: 'w-11/12 max-w-5xl',
-}
+};

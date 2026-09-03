@@ -1,40 +1,21 @@
-import React, { ReactElement } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { ReactElement } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import {
-  IComponentBaseProps,
-  ComponentColor,
-  ComponentSize,
-  ListOrItem,
-} from '../types'
+import { IComponentBaseProps, ComponentColor, ComponentSize, ListOrItem } from '../types';
 
-import SelectOption, { SelectOptionProps } from './SelectOption'
+import SelectOption, { SelectOptionProps } from './SelectOption';
 
-export type SelectProps = Omit<
-  React.SelectHTMLAttributes<HTMLSelectElement>,
-  'size' | 'color'
-> &
+export type SelectProps = Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size' | 'color'> &
   IComponentBaseProps & {
-    children: ListOrItem<ReactElement<SelectOptionProps>>
-    size?: ComponentSize
-    color?: ComponentColor
-    bordered?: boolean
-  }
+    children: ListOrItem<ReactElement<SelectOptionProps>>;
+    size?: ComponentSize;
+    color?: ComponentColor;
+    bordered?: boolean;
+  };
 
-const SelectInner = (
-  props: SelectProps,
-  ref: React.ForwardedRef<HTMLSelectElement>
-): React.JSX.Element => {
-  const {
-    children,
-    size,
-    color,
-    bordered,
-    dataTheme,
-    className,
-    ...rest
-  } = props
+const SelectInner = (props: SelectProps, ref: React.ForwardedRef<HTMLSelectElement>): React.JSX.Element => {
+  const { children, size, color, bordered, dataTheme, className, ...rest } = props;
 
   const classes = twMerge(
     'select',
@@ -54,15 +35,15 @@ const SelectInner = (
       'select-warning': color === 'warning',
       'select-error': color === 'error',
       'select-bordered': bordered,
-    })
-  )
+    }),
+  );
 
   return (
     <select {...rest} ref={ref} data-theme={dataTheme} className={classes}>
       {children}
     </select>
-  )
-}
+  );
+};
 
-const Select = React.forwardRef(SelectInner)
-export default Object.assign(Select, { Option: SelectOption })
+const Select = React.forwardRef(SelectInner);
+export default Object.assign(Select, { Option: SelectOption });

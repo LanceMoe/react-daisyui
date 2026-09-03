@@ -1,16 +1,16 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
-import { twMerge } from 'tailwind-merge'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
+import { twMerge } from 'tailwind-merge';
 
-import Navbar, { NavbarProps } from '.'
-import Button from '../Button'
-import Menu from '../Menu'
-import Dropdown from '../Dropdown'
-import Form from '../Form'
-import Input from '../Input'
-import Indicator from '../Indicator'
-import Badge from '../Badge'
-import Card from '../Card'
+import Navbar, { NavbarProps } from '.';
+import Button from '../Button';
+import Menu from '../Menu';
+import Dropdown from '../Dropdown';
+import Form from '../Form';
+import Input from '../Input';
+import Indicator from '../Indicator';
+import Badge from '../Badge';
+import Card from '../Card';
 
 export default {
   title: 'Navigation/Navbar',
@@ -18,7 +18,7 @@ export default {
   args: {
     className: 'bg-base-100 shadow-xl rounded-box',
   },
-} as Meta
+} as Meta;
 
 export const Default: Story<NavbarProps> = (args) => {
   return (
@@ -27,8 +27,8 @@ export const Default: Story<NavbarProps> = (args) => {
         daisyUI
       </Button>
     </Navbar>
-  )
-}
+  );
+};
 
 export const TitleAndIcon: Story<NavbarProps> = (args) => {
   return (
@@ -56,8 +56,8 @@ export const TitleAndIcon: Story<NavbarProps> = (args) => {
         </Button>
       </div>
     </Navbar>
-  )
-}
+  );
+};
 
 export const IconAtStartAndEnd: Story<NavbarProps> = (args) => {
   return (
@@ -70,12 +70,7 @@ export const IconAtStartAndEnd: Story<NavbarProps> = (args) => {
             viewBox="0 0 24 24"
             className="inline-block w-5 h-5 stroke-current"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </Button>
       </div>
@@ -102,8 +97,8 @@ export const IconAtStartAndEnd: Story<NavbarProps> = (args) => {
         </Button>
       </div>
     </Navbar>
-  )
-}
+  );
+};
 
 export const MenuAndSubmenu: Story<NavbarProps> = (args) => {
   return (
@@ -134,11 +129,11 @@ export const MenuAndSubmenu: Story<NavbarProps> = (args) => {
         </Menu>
       </div>
     </Navbar>
-  )
-}
+  );
+};
 MenuAndSubmenu.args = {
   className: 'bg-base-100 mb-32 shadow-xl rounded-box',
-}
+};
 
 export const SearchInputAndDropdown: Story<NavbarProps> = (args) => {
   return (
@@ -150,21 +145,10 @@ export const SearchInputAndDropdown: Story<NavbarProps> = (args) => {
       </div>
       <div className="flex-none gap-2">
         <Form>
-          <Input
-            bordered
-            type="text"
-            placeholder="Search"
-            className="w-24 md:w-auto"
-          />
+          <Input bordered type="text" placeholder="Search" className="w-24 md:w-auto" />
         </Form>
         <Dropdown end>
-          <Button
-            tag="label"
-            tabIndex={0}
-            color="ghost"
-            className="avatar"
-            shape="circle"
-          >
+          <Button tag="label" tabIndex={0} color="ghost" className="avatar" shape="circle">
             <div className="w-10 rounded-full">
               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
@@ -182,11 +166,11 @@ export const SearchInputAndDropdown: Story<NavbarProps> = (args) => {
         </Dropdown>
       </div>
     </Navbar>
-  )
-}
+  );
+};
 SearchInputAndDropdown.args = {
   className: 'bg-base-100 mb-32 shadow-xl round-box',
-}
+};
 
 export const IconIndicatorAndDropdown: Story<NavbarProps> = (args) => {
   return (
@@ -232,13 +216,7 @@ export const IconIndicatorAndDropdown: Story<NavbarProps> = (args) => {
           </Dropdown.Menu>
         </Dropdown>
         <Dropdown end>
-          <Button
-            tag="label"
-            tabIndex={0}
-            color="ghost"
-            className="avatar"
-            shape="circle"
-          >
+          <Button tag="label" tabIndex={0} color="ghost" className="avatar" shape="circle">
             <div className="w-10 rounded-full">
               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
@@ -256,11 +234,11 @@ export const IconIndicatorAndDropdown: Story<NavbarProps> = (args) => {
         </Dropdown>
       </div>
     </Navbar>
-  )
-}
+  );
+};
 IconIndicatorAndDropdown.args = {
   className: 'bg-base-100 mb-40 shadow-xl rounded-box',
-}
+};
 
 export const DropdownCenterLogoAndIcon: Story<NavbarProps> = (args) => {
   return (
@@ -275,12 +253,7 @@ export const DropdownCenterLogoAndIcon: Story<NavbarProps> = (args) => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h7"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
             </svg>
           </Button>
           <Dropdown.Menu className="menu-sm w-52 mt-3 z-[1]">
@@ -314,11 +287,7 @@ export const DropdownCenterLogoAndIcon: Story<NavbarProps> = (args) => {
         </Button>
         <Button color="ghost" shape="circle">
           <Indicator>
-            <Badge
-              size="xs"
-              color="primary"
-              className={Indicator.Item.className()}
-            />
+            <Badge size="xs" color="primary" className={Indicator.Item.className()} />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -337,11 +306,11 @@ export const DropdownCenterLogoAndIcon: Story<NavbarProps> = (args) => {
         </Button>
       </Navbar.End>
     </Navbar>
-  )
-}
+  );
+};
 DropdownCenterLogoAndIcon.args = {
   className: 'bg-base-100 mb-40 shadow-xl rounded-box',
-}
+};
 
 export const Responsive: Story<NavbarProps> = (args) => {
   return (
@@ -356,12 +325,7 @@ export const Responsive: Story<NavbarProps> = (args) => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </Button>
           <Dropdown.Menu tabIndex={0} className="w-52 menu-sm mt-3 z-[1]">
@@ -409,19 +373,16 @@ export const Responsive: Story<NavbarProps> = (args) => {
         <Button tag="a">Button</Button>
       </Navbar.End>
     </Navbar>
-  )
-}
+  );
+};
 Responsive.args = {
   className: 'bg-base-100 mb-48 shadow-xl rounded-box',
-}
+};
 
 export const Colors: Story<NavbarProps> = (args) => {
   return (
     <>
-      <Navbar
-        {...args}
-        className={'rounded-box bg-neutral text-neutral-content'}
-      >
+      <Navbar {...args} className={'rounded-box bg-neutral text-neutral-content'}>
         <Button tag="a" className="text-xl normal-case" color="ghost">
           daisyUI
         </Button>
@@ -431,19 +392,16 @@ export const Colors: Story<NavbarProps> = (args) => {
           daisyUI
         </Button>
       </Navbar>
-      <Navbar
-        {...args}
-        className={'rounded-box bg-primary text-primary-content'}
-      >
+      <Navbar {...args} className={'rounded-box bg-primary text-primary-content'}>
         <Button tag="a" className="text-xl normal-case" color="ghost">
           daisyUI
         </Button>
       </Navbar>
     </>
-  )
-}
+  );
+};
 Colors.argTypes = {
   className: {
     control: false,
   },
-}
+};

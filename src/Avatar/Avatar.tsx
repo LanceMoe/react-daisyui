@@ -1,31 +1,26 @@
-import React from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
-import { isSingleStringChild } from '../utils'
+import React from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import { isSingleStringChild } from '../utils';
 
-import AvatarGroup from './AvatarGroup'
+import AvatarGroup from './AvatarGroup';
 
-import {
-  IComponentBaseProps,
-  ComponentColor,
-  ComponentShape,
-  ComponentSize,
-} from '../types'
+import { IComponentBaseProps, ComponentColor, ComponentShape, ComponentSize } from '../types';
 
 export type AvatarProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
   IComponentBaseProps & {
-    src?: string
-    letters?: string
-    size?: ComponentSize | number
-    shape?: ComponentShape
-    color?: Exclude<ComponentColor, 'ghost'>
-    border?: boolean
-    borderColor?: Exclude<ComponentColor, 'ghost'>
-    online?: boolean
-    offline?: boolean
-    innerClassName?: string
-    children?: React.ReactNode
-  }
+    src?: string;
+    letters?: string;
+    size?: ComponentSize | number;
+    shape?: ComponentShape;
+    color?: Exclude<ComponentColor, 'ghost'>;
+    border?: boolean;
+    borderColor?: Exclude<ComponentColor, 'ghost'>;
+    online?: boolean;
+    offline?: boolean;
+    innerClassName?: string;
+    children?: React.ReactNode;
+  };
 
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
   (
@@ -45,7 +40,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ): React.JSX.Element => {
     const containerClasses = twMerge(
       'avatar',
@@ -56,8 +51,8 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
         online,
         offline,
         'avatar-placeholder': !src,
-      })
-    )
+      }),
+    );
 
     const imgClasses = clsx(innerClassName, {
       'ring ring-offset-base-100 ring-offset-2': border,
@@ -75,7 +70,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       'w-24 h-24': size === 'md',
       'w-14 h-14': size === 'sm',
       'w-10 h-10': size === 'xs',
-    })
+    });
 
     const placeholderClasses = clsx(innerClassName, {
       'bg-neutral-focus': !color,
@@ -110,10 +105,9 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       'w-24 h-24 text-xl': size === 'md',
       'w-14 h-14': size === 'sm',
       'w-10 h-10': size === 'xs',
-    })
+    });
 
-    const customImgDimension =
-      typeof size === 'number' ? { width: size, height: size } : {}
+    const customImgDimension = typeof size === 'number' ? { width: size, height: size } : {};
 
     const renderAvatarContents = () => {
       // Base case, if src is provided, render img
@@ -122,7 +116,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
           <div className={imgClasses} style={customImgDimension}>
             <img src={src} />
           </div>
-        )
+        );
       }
       // Render a text avatar if letters are provided, or a single child that is a string
       else if (letters || isSingleStringChild(children)) {
@@ -130,18 +124,18 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
           <div className={placeholderClasses} style={customImgDimension}>
             <span>{letters ? letters : children}</span>
           </div>
-        )
+        );
       }
       // Render if a single, not string child was provided (allows for SVGs) and merges classes and styles
       else if (React.Children.count(children) === 1) {
         const firstChild = React.Children.only(children) as React.ReactElement<{
-          className?: string
-          style?: React.CSSProperties
-        }>
+          className?: string;
+          style?: React.CSSProperties;
+        }>;
         return React.cloneElement(firstChild, {
           className: twMerge(imgClasses, firstChild.props.className),
           style: { ...customImgDimension, ...firstChild.props.style },
-        })
+        });
       }
       // Render a wrapping div around all children if there is more than one child.
       else {
@@ -149,24 +143,18 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
           <div className={imgClasses} style={customImgDimension}>
             {children}
           </div>
-        )
+        );
       }
-    }
+    };
 
     return (
-      <div
-        aria-label="Avatar photo"
-        {...props}
-        data-theme={dataTheme}
-        className={containerClasses}
-        ref={ref}
-      >
+      <div aria-label="Avatar photo" {...props} data-theme={dataTheme} className={containerClasses} ref={ref}>
         {renderAvatarContents()}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
 export default Object.assign(Avatar, {
   Group: AvatarGroup,
-})
+});

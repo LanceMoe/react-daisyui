@@ -1,34 +1,23 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentColor } from '../types'
+import { IComponentBaseProps, ComponentColor } from '../types';
 
 export type DividerProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
   IComponentBaseProps & {
-    vertical?: boolean
-    horizontal?: boolean
-    responsive?: boolean
-    start?: boolean
-    end?: boolean
-    color?: Exclude<ComponentColor, 'ghost'>
-  }
+    vertical?: boolean;
+    horizontal?: boolean;
+    responsive?: boolean;
+    start?: boolean;
+    end?: boolean;
+    color?: Exclude<ComponentColor, 'ghost'>;
+  };
 
 const Divider = forwardRef<HTMLDivElement, DividerProps>(
   (
-    {
-      children,
-      vertical,
-      horizontal,
-      responsive,
-      color,
-      start,
-      end,
-      dataTheme,
-      className,
-      ...props
-    },
-    ref
+    { children, vertical, horizontal, responsive, color, start, end, dataTheme, className, ...props },
+    ref,
   ): React.JSX.Element => {
     const classes = twMerge(
       'divider',
@@ -46,22 +35,16 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
         'divider-error': color === 'error',
         'divider-start': start,
         'divider-end': end,
-      })
-    )
+      }),
+    );
 
     return (
-      <div
-        role="separator"
-        {...props}
-        data-theme={dataTheme}
-        className={classes}
-        ref={ref}
-      >
+      <div role="separator" {...props} data-theme={dataTheme} className={classes} ref={ref}>
         {children}
       </div>
-    )
-  }
-)
-Divider.displayName = 'Divider'
+    );
+  },
+);
+Divider.displayName = 'Divider';
 
-export default Divider
+export default Divider;

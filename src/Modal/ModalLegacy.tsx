@@ -1,38 +1,27 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types'
+import { IComponentBaseProps } from '../types';
 
 export type ModalProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
-    open?: boolean
-    responsive?: boolean
-    onClickBackdrop?: () => void
-  }
+    open?: boolean;
+    responsive?: boolean;
+    onClickBackdrop?: () => void;
+  };
 
 const Modal = forwardRef<HTMLDivElement, ModalProps>(
-  (
-    {
-      children,
-      open,
-      responsive,
-      onClickBackdrop,
-      dataTheme,
-      className,
-      ...props
-    },
-    ref
-  ): React.JSX.Element => {
+  ({ children, open, responsive, onClickBackdrop, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const containerClasses = twMerge(
       'modal',
       clsx({
         'modal-open': open,
         'modal-bottom sm:modal-middle': responsive,
-      })
-    )
+      }),
+    );
 
-    const bodyClasses = twMerge('modal-box', className)
+    const bodyClasses = twMerge('modal-box', className);
 
     return (
       <div
@@ -42,27 +31,22 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(
         data-theme={dataTheme}
         className={containerClasses}
         onClick={(e) => {
-          e.stopPropagation()
+          e.stopPropagation();
           if (e.target === e.currentTarget) {
-            e.stopPropagation()
+            e.stopPropagation();
             if (onClickBackdrop) {
-              onClickBackdrop()
+              onClickBackdrop();
             }
           }
         }}
       >
-        <div
-          {...props}
-          data-theme={dataTheme}
-          className={bodyClasses}
-          ref={ref}
-        >
+        <div {...props} data-theme={dataTheme} className={bodyClasses} ref={ref}>
           {children}
         </div>
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-Modal.displayName = 'Modal'
-export default Modal
+Modal.displayName = 'Modal';
+export default Modal;

@@ -1,8 +1,8 @@
-import React from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types'
+import { IComponentBaseProps } from '../types';
 
 export type MaskProps = React.ImgHTMLAttributes<HTMLImageElement> &
   IComponentBaseProps & {
@@ -27,12 +27,9 @@ export type MaskProps = React.ImgHTMLAttributes<HTMLImageElement> &
       | 'parallelogram'
       | 'parallelogram-2'
       | 'parallelogram-3'
-      | 'parallelogram-4'
-  }
-const classesFn = ({
-  className,
-  variant,
-}: Pick<MaskProps, 'className' | 'variant'> = {}) =>
+      | 'parallelogram-4';
+  };
+const classesFn = ({ className, variant }: Pick<MaskProps, 'className' | 'variant'> = {}) =>
   twMerge(
     'mask',
     className,
@@ -58,21 +55,13 @@ const classesFn = ({
       'mask-triangle-4': variant === 'triangle-4',
       'mask-half-1': variant === 'half-1',
       'mask-half-2': variant === 'half-2',
-    })
-  )
+    }),
+  );
 
 const Mask = React.forwardRef<HTMLImageElement, MaskProps>(
   ({ src, variant, dataTheme, className, ...props }, ref): React.JSX.Element => {
-    return (
-      <img
-        {...props}
-        data-theme={dataTheme}
-        className={classesFn({ className, variant })}
-        src={src}
-        ref={ref}
-      />
-    )
-  }
-)
-Mask.displayName = 'Mask'
-export default Object.assign(Mask, { className: classesFn })
+    return <img {...props} data-theme={dataTheme} className={classesFn({ className, variant })} src={src} ref={ref} />;
+  },
+);
+Mask.displayName = 'Mask';
+export default Object.assign(Mask, { className: classesFn });

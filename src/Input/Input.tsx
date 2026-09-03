@@ -1,35 +1,21 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentColor, ComponentSize } from '../types'
+import { IComponentBaseProps, ComponentColor, ComponentSize } from '../types';
 
-export type InputProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'size' | 'color'
-> &
+export type InputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'color'> &
   IComponentBaseProps & {
-    size?: ComponentSize
-    color?: ComponentColor
-    bordered?: boolean
-    borderOffset?: boolean
-  }
+    size?: ComponentSize;
+    color?: ComponentColor;
+    bordered?: boolean;
+    borderOffset?: boolean;
+  };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    {
-      value,
-      placeholder,
-      size,
-      color,
-      dataTheme,
-      className,
-      type,
-      bordered,
-      borderOffset,
-      ...props
-    },
-    ref
+    { value, placeholder, size, color, dataTheme, className, type, bordered, borderOffset, ...props },
+    ref,
   ): React.JSX.Element => {
     const classes = twMerge(
       'input',
@@ -51,8 +37,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         'input-bordered': bordered,
         'input-border-offset': borderOffset,
         'focus:outline-offset-0': borderOffset === false,
-      })
-    )
+      }),
+    );
 
     return (
       <input
@@ -64,10 +50,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         data-theme={dataTheme}
         className={classes}
       />
-    )
-  }
-)
+    );
+  },
+);
 
-Input.displayName = 'Input'
+Input.displayName = 'Input';
 
-export default Input
+export default Input;

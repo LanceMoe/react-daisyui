@@ -1,23 +1,17 @@
-import React from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentColor } from '../types'
+import { IComponentBaseProps, ComponentColor } from '../types';
 
-export type StepProps = Omit<
-  React.LiHTMLAttributes<HTMLLIElement>,
-  'value' | 'color'
-> &
+export type StepProps = Omit<React.LiHTMLAttributes<HTMLLIElement>, 'value' | 'color'> &
   IComponentBaseProps & {
-    value?: string
-    color?: 'neutral' | ComponentColor
-  }
+    value?: string;
+    color?: 'neutral' | ComponentColor;
+  };
 
 const Step = React.forwardRef<HTMLLIElement, StepProps>(
-  (
-    { children, value, color, dataTheme, className, ...props },
-    ref
-  ): React.JSX.Element => {
+  ({ children, value, color, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'step',
       className,
@@ -29,21 +23,14 @@ const Step = React.forwardRef<HTMLLIElement, StepProps>(
         'step-success': color === 'success',
         'step-warning': color === 'warning',
         'step-error': color === 'error',
-      })
-    )
+      }),
+    );
 
     return (
-      <li
-        aria-label="Step"
-        {...props}
-        data-theme={dataTheme}
-        data-content={value}
-        className={classes}
-        ref={ref}
-      >
+      <li aria-label="Step" {...props} data-theme={dataTheme} data-content={value} className={classes} ref={ref}>
         {children}
       </li>
-    )
-  }
-)
-export default Step
+    );
+  },
+);
+export default Step;

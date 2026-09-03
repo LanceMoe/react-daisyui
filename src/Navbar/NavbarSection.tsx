@@ -1,12 +1,12 @@
-import React from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { NavbarProps } from './Navbar'
+import { NavbarProps } from './Navbar';
 
 export type NavbarSectionProps = NavbarProps & {
-  section: 'start' | 'center' | 'end'
-}
+  section: 'start' | 'center' | 'end';
+};
 
 const NavbarSection = React.forwardRef<HTMLDivElement, NavbarSectionProps>(
   ({ children, section, dataTheme, className, style }, ref): React.JSX.Element => {
@@ -16,15 +16,15 @@ const NavbarSection = React.forwardRef<HTMLDivElement, NavbarSectionProps>(
         'navbar-start': section === 'start',
         'navbar-center': section === 'center',
         'navbar-end': section === 'end',
-      })
-    )
+      }),
+    );
 
     return (
       <div data-theme={dataTheme} className={classes} style={style} ref={ref}>
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-export default NavbarSection
+export default NavbarSection;

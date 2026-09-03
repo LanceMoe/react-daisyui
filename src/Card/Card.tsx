@@ -1,36 +1,36 @@
-import React from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentSize, ComponentVariant } from '../types'
+import { IComponentBaseProps, ComponentSize, ComponentVariant } from '../types';
 
-import CardActions, { CardActionsProps as ActionProps } from './CardActions'
-import CardBody, { CardBodyProps as BodyProps } from './CardBody'
-import CardTitle, { CardTitleProps as TitleProps } from './CardTitle'
-import CardImage, { CardImageProps as ImageProps } from './CardImage'
+import CardActions, { CardActionsProps as ActionProps } from './CardActions';
+import CardBody, { CardBodyProps as BodyProps } from './CardBody';
+import CardTitle, { CardTitleProps as TitleProps } from './CardTitle';
+import CardImage, { CardImageProps as ImageProps } from './CardImage';
 
-export type CardActionsProps = ActionProps
-export type CardBodyProps = BodyProps
-export type CardTitleProps = TitleProps
-export type CardImageProps = ImageProps
+export type CardActionsProps = ActionProps;
+export type CardBodyProps = BodyProps;
+export type CardTitleProps = TitleProps;
+export type CardImageProps = ImageProps;
 
 export type CardProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
-    size?: ComponentSize
-    border?: boolean
-    bordered?: boolean
-    normal?: boolean
-    compact?: boolean
-    variant?: Exclude<ComponentVariant, 'soft'> | 'border'
-    imageFull?: boolean
+    size?: ComponentSize;
+    border?: boolean;
+    bordered?: boolean;
+    normal?: boolean;
+    compact?: boolean;
+    variant?: Exclude<ComponentVariant, 'soft'> | 'border';
+    imageFull?: boolean;
 
-    side?: ComponentSize | boolean
-  }
+    side?: ComponentSize | boolean;
+  };
 
 interface ModifierMap {
   [key: string]: {
-    [key: string]: string | undefined
-  }
+    [key: string]: string | undefined;
+  };
 }
 
 const DYNAMIC_MODIFIERS: ModifierMap = {
@@ -41,23 +41,12 @@ const DYNAMIC_MODIFIERS: ModifierMap = {
     md: 'md:card-side',
     lg: 'lg:card-side',
   },
-}
+};
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (
-    {
-      size,
-      border = true,
-      bordered,
-      normal,
-      compact,
-      variant,
-      imageFull,
-      side,
-      className,
-      ...props
-    },
-    ref
+    { size, border = true, bordered, normal, compact, variant, imageFull, side, className, ...props },
+    ref,
   ): React.JSX.Element => {
     const classes = twMerge(
       'card',
@@ -75,16 +64,16 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         'card-compact': compact,
         'image-full': imageFull,
         [(side && DYNAMIC_MODIFIERS.side[side.toString()]) || '']: side,
-      })
-    )
+      }),
+    );
 
-    return <div aria-label="Card" {...props} className={classes} ref={ref} />
-  }
-)
+    return <div aria-label="Card" {...props} className={classes} ref={ref} />;
+  },
+);
 
 export default Object.assign(Card, {
   Actions: CardActions,
   Body: CardBody,
   Title: CardTitle,
   Image: CardImage,
-})
+});

@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react'
-import clsx from 'clsx'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React, { ReactNode } from 'react';
+import clsx from 'clsx';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Dock, { DockProps } from '.'
+import Dock, { DockProps } from '.';
 
 export default {
   title: 'Navigation/Dock',
@@ -18,18 +18,14 @@ export default {
   args: {
     className: 'relative',
   },
-} as Meta
+} as Meta;
 
 export const Default: Story<DockProps> = (args) => {
   return (
     <div className="bg-base-300 rounded-box w-full max-w-sm pt-32">
       <Dock {...args} className="relative border border-base-300">
         <Dock.Item>
-          <svg
-            className="size-[1.2em]"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
+          <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <g fill="currentColor" strokeLinejoin="miter" strokeLinecap="butt">
               <polyline
                 points="1 11 12 2 23 11"
@@ -62,11 +58,7 @@ export const Default: Story<DockProps> = (args) => {
           <Dock.Label>Home</Dock.Label>
         </Dock.Item>
         <Dock.Item active>
-          <svg
-            className="size-[1.2em]"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
+          <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <g fill="currentColor" strokeLinejoin="miter" strokeLinecap="butt">
               <polyline
                 points="3 14 9 14 9 17 15 17 15 14 21 14"
@@ -93,11 +85,7 @@ export const Default: Story<DockProps> = (args) => {
           <Dock.Label>Inbox</Dock.Label>
         </Dock.Item>
         <Dock.Item>
-          <svg
-            className="size-[1.2em]"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
+          <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <g fill="currentColor" strokeLinejoin="miter" strokeLinecap="butt">
               <circle
                 cx="12"
@@ -123,5 +111,5 @@ export const Default: Story<DockProps> = (args) => {
         </Dock.Item>
       </Dock>
     </div>
-  )
-}
+  );
+};

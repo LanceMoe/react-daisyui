@@ -1,37 +1,27 @@
-import React, { forwardRef, ReactNode } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef, ReactNode } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types'
+import { IComponentBaseProps } from '../types';
 
-import TimelineItem from './TimelineItem'
-import TimelineStart from './TimelineStart'
-import TimelineMiddle from './TimelineMiddle'
-import TimelineEnd from './TimelineEnd'
+import TimelineItem from './TimelineItem';
+import TimelineStart from './TimelineStart';
+import TimelineMiddle from './TimelineMiddle';
+import TimelineEnd from './TimelineEnd';
 
 export type TimelineProps = React.HTMLAttributes<HTMLUListElement> &
   IComponentBaseProps & {
-    vertical?: boolean
-    horizontal?: boolean
-    responsive?: boolean
-    snap?: boolean
-    compact?: boolean
-  }
+    vertical?: boolean;
+    horizontal?: boolean;
+    responsive?: boolean;
+    snap?: boolean;
+    compact?: boolean;
+  };
 
 const Timeline = forwardRef<HTMLUListElement, TimelineProps>(
   (
-    {
-      dataTheme,
-      className,
-      vertical,
-      horizontal,
-      responsive,
-      snap,
-      compact,
-      children,
-      ...props
-    },
-    ref
+    { dataTheme, className, vertical, horizontal, responsive, snap, compact, children, ...props },
+    ref,
   ): React.JSX.Element => {
     const classes = twMerge(
       'timeline',
@@ -42,22 +32,22 @@ const Timeline = forwardRef<HTMLUListElement, TimelineProps>(
         'timeline-snap-icon': snap,
         'timeline-compact': compact,
       }),
-      className
-    )
+      className,
+    );
 
     return (
       <ul {...props} data-theme={dataTheme} className={classes} ref={ref}>
         {children}
       </ul>
-    )
-  }
-)
+    );
+  },
+);
 
-Timeline.displayName = 'Timeline'
+Timeline.displayName = 'Timeline';
 
 export default Object.assign(Timeline, {
   Item: TimelineItem,
   Start: TimelineStart,
   Middle: TimelineMiddle,
   End: TimelineEnd,
-})
+});

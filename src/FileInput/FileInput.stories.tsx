@@ -1,7 +1,7 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import FileInput, { FileInputProps } from '.'
+import FileInput, { FileInputProps } from '.';
 
 export default {
   title: 'Data Input/FileInput',
@@ -10,14 +10,14 @@ export default {
     className: 'w-full max-w-xs',
     disabled: false,
   },
-} as Meta
+} as Meta;
 
 const Template: Story<FileInputProps> = (args) => {
-  return <FileInput {...args} />
-}
+  return <FileInput {...args} />;
+};
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = Template.bind({});
+Default.args = {};
 
 export const Colors: Story<FileInputProps> = (args) => {
   return (
@@ -31,9 +31,9 @@ export const Colors: Story<FileInputProps> = (args) => {
       <FileInput {...args} color="warning" />
       <FileInput {...args} color="error" />
     </div>
-  )
-}
-Colors.args = {}
+  );
+};
+Colors.args = {};
 
 export const Sizes: Story<FileInputProps> = (args) => {
   return (
@@ -43,9 +43,9 @@ export const Sizes: Story<FileInputProps> = (args) => {
       <FileInput {...args} size="md" />
       <FileInput {...args} size="lg" />
     </div>
-  )
-}
-Sizes.args = {}
+  );
+};
+Sizes.args = {};
 
 export const FormControlAndLabels: Story<FileInputProps> = (args) => {
   return (
@@ -62,6 +62,6 @@ export const FormControlAndLabels: Story<FileInputProps> = (args) => {
         </label>
       </div>
     </div>
-  )
-}
-FormControlAndLabels.args = {}
+  );
+};
+FormControlAndLabels.args = {};

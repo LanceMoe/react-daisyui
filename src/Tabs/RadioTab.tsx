@@ -1,39 +1,24 @@
-import React, { forwardRef, ReactNode } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef, ReactNode } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor } from '../types'
+import { ComponentColor } from '../types';
 
-export type RadioTabProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'type' | 'color'
-> & {
-  color?: ComponentColor
-  bgColor?: string
-  borderColor?: string
-  active?: boolean
-  disabled?: boolean
-  label: string
-  name: string
-  contentClassName?: string
-}
+export type RadioTabProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'color'> & {
+  color?: ComponentColor;
+  bgColor?: string;
+  borderColor?: string;
+  active?: boolean;
+  disabled?: boolean;
+  label: string;
+  name: string;
+  contentClassName?: string;
+};
 
 const RadioTab = forwardRef<HTMLInputElement, RadioTabProps>(
   (
-    {
-      children,
-      className,
-      color,
-      bgColor,
-      borderColor,
-      active,
-      label,
-      disabled,
-      name,
-      contentClassName,
-      ...props
-    },
-    ref
+    { children, className, color, bgColor, borderColor, active, label, disabled, name, contentClassName, ...props },
+    ref,
   ): React.JSX.Element => {
     const classes = twMerge(
       'tab',
@@ -51,9 +36,9 @@ const RadioTab = forwardRef<HTMLInputElement, RadioTabProps>(
         'text-error': color === 'error',
         'tab-active': active,
         'tab-disabled': disabled,
-      })
-    )
-    const contentClasses = twMerge('tab-content', contentClassName)
+      }),
+    );
+    const contentClasses = twMerge('tab-content', contentClassName);
 
     return (
       <>
@@ -69,8 +54,8 @@ const RadioTab = forwardRef<HTMLInputElement, RadioTabProps>(
         />
         <div className={contentClasses}>{children}</div>
       </>
-    )
-  }
-)
+    );
+  },
+);
 
-export default RadioTab
+export default RadioTab;

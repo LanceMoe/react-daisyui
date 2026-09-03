@@ -1,7 +1,7 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Button, { ButtonProps } from '.'
+import Button, { ButtonProps } from '.';
 
 export default {
   title: 'Actions/Button',
@@ -14,11 +14,11 @@ export default {
       control: false,
     },
   },
-} as Meta
+} as Meta;
 
 export const Default: Story<ButtonProps> = (args) => {
-  return <Button {...args}>Button</Button>
-}
+  return <Button {...args}>Button</Button>;
+};
 
 export const BrandColors: Story<ButtonProps> = (args) => {
   return (
@@ -43,9 +43,9 @@ export const BrandColors: Story<ButtonProps> = (args) => {
         Link
       </Button>
     </div>
-  )
-}
-BrandColors.args = {}
+  );
+};
+BrandColors.args = {};
 
 export const SoftStyle: Story<ButtonProps> = (args) => {
   return (
@@ -73,11 +73,11 @@ export const SoftStyle: Story<ButtonProps> = (args) => {
         Error
       </Button>
     </div>
-  )
-}
+  );
+};
 SoftStyle.args = {
   variant: 'soft',
-}
+};
 
 export const OutlineStyle: Story<ButtonProps> = (args) => {
   return (
@@ -105,11 +105,11 @@ export const OutlineStyle: Story<ButtonProps> = (args) => {
         Error
       </Button>
     </div>
-  )
-}
+  );
+};
 OutlineStyle.args = {
   variant: 'outline',
-}
+};
 
 export const DashStyle: Story<ButtonProps> = (args) => {
   return (
@@ -137,11 +137,11 @@ export const DashStyle: Story<ButtonProps> = (args) => {
         Error
       </Button>
     </div>
-  )
-}
+  );
+};
 DashStyle.args = {
   variant: 'dash',
-}
+};
 
 export const ActiveButtons: Story<ButtonProps> = (args) => {
   return (
@@ -166,9 +166,9 @@ export const ActiveButtons: Story<ButtonProps> = (args) => {
         Link
       </Button>
     </div>
-  )
-}
-ActiveButtons.args = { active: true }
+  );
+};
+ActiveButtons.args = { active: true };
 
 export const StateColors: Story<ButtonProps> = (args) => {
   return (
@@ -186,9 +186,9 @@ export const StateColors: Story<ButtonProps> = (args) => {
         Error
       </Button>
     </div>
-  )
-}
-StateColors.args = {}
+  );
+};
+StateColors.args = {};
 
 export const OutlineButtons: Story<ButtonProps> = (args) => {
   return (
@@ -204,11 +204,11 @@ export const OutlineButtons: Story<ButtonProps> = (args) => {
         Accent
       </Button>
     </div>
-  )
-}
+  );
+};
 OutlineButtons.args = {
   variant: 'outline',
-}
+};
 
 export const OutlineButtonsWithStateColors: Story<ButtonProps> = (args) => {
   return (
@@ -226,11 +226,11 @@ export const OutlineButtonsWithStateColors: Story<ButtonProps> = (args) => {
         Error
       </Button>
     </div>
-  )
-}
+  );
+};
 OutlineButtonsWithStateColors.args = {
   variant: 'outline',
-}
+};
 
 export const ButtonSizes: Story<ButtonProps> = (args) => {
   return (
@@ -246,40 +246,37 @@ export const ButtonSizes: Story<ButtonProps> = (args) => {
         Tiny
       </Button>
     </div>
-  )
-}
-ButtonSizes.args = {}
+  );
+};
+ButtonSizes.args = {};
 
 export const ResponsiveButton: Story<ButtonProps> = (args) => {
-  return <Button {...args}>Responsive</Button>
-}
-ResponsiveButton.args = { responsive: true }
+  return <Button {...args}>Responsive</Button>;
+};
+ResponsiveButton.args = { responsive: true };
 
 export const WideButton: Story<ButtonProps> = (args) => {
-  return <Button {...args}>Wide</Button>
-}
-WideButton.args = { wide: true }
+  return <Button {...args}>Wide</Button>;
+};
+WideButton.args = { wide: true };
 
 export const Glass: Story<ButtonProps> = (args) => {
   return (
     <div
       className="w-full flex justify-center py-8 rounded-md"
       style={{
-        backgroundImage:
-          'url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)',
+        backgroundImage: 'url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)',
       }}
     >
       <Button {...args}>Glass button</Button>
     </div>
-  )
-}
+  );
+};
 Glass.args = {
   glass: true,
-}
+};
 
-export const DifferentHtmlTags: Story<
-  ButtonProps<'main', React.HtmlHTMLAttributes<HTMLElement>>
-> = (args) => {
+export const DifferentHtmlTags: Story<ButtonProps<'main', React.HtmlHTMLAttributes<HTMLElement>>> = (args) => {
   return (
     <div className="flex gap-2 items-center justify-center">
       <Button {...args} tag="a" role="button">
@@ -294,28 +291,23 @@ export const DifferentHtmlTags: Story<
       <Button {...args} tag="input" type="checkbox" aria-label="Checkbox" />
       <Button {...args} tag="input" type="reset" value="Reset" />
     </div>
-  )
-}
-DifferentHtmlTags.args = {}
+  );
+};
+DifferentHtmlTags.args = {};
 
 export const DisabledButtons: Story<ButtonProps> = (args) => {
   return (
     <div className="flex items-center gap-2">
       <Button {...args}>Disabled using attribute</Button>
-      <Button
-        className="btn btn-disabled"
-        tabIndex={-1}
-        role="button"
-        aria-disabled="true"
-      >
+      <Button className="btn btn-disabled" tabIndex={-1} role="button" aria-disabled="true">
         Disabled using class name
       </Button>
     </div>
-  )
-}
+  );
+};
 DisabledButtons.args = {
   disabled: true,
-}
+};
 
 export const SquareButton: Story<ButtonProps> = (args) => {
   return (
@@ -328,12 +320,7 @@ export const SquareButton: Story<ButtonProps> = (args) => {
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </Button>
       <Button {...args} variant="outline">
@@ -344,20 +331,15 @@ export const SquareButton: Story<ButtonProps> = (args) => {
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </Button>
     </div>
-  )
-}
+  );
+};
 SquareButton.args = {
   shape: 'square',
-}
+};
 
 export const CircleButton: Story<ButtonProps> = (args) => {
   return (
@@ -370,12 +352,7 @@ export const CircleButton: Story<ButtonProps> = (args) => {
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </Button>
       <Button {...args} variant="outline">
@@ -386,20 +363,15 @@ export const CircleButton: Story<ButtonProps> = (args) => {
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </Button>
     </div>
-  )
-}
+  );
+};
 CircleButton.args = {
   shape: 'circle',
-}
+};
 
 export const IconAtStart: Story<ButtonProps> = (args) => {
   return (
@@ -424,8 +396,8 @@ export const IconAtStart: Story<ButtonProps> = (args) => {
     >
       Button
     </Button>
-  )
-}
+  );
+};
 
 export const IconAtEnd: Story<ButtonProps> = (args) => {
   return (
@@ -450,44 +422,44 @@ export const IconAtEnd: Story<ButtonProps> = (args) => {
     >
       Button
     </Button>
-  )
-}
+  );
+};
 
 export const ButtonBlock: Story<ButtonProps> = (args) => {
-  return <Button {...args}>Block</Button>
-}
+  return <Button {...args}>Block</Button>;
+};
 ButtonBlock.args = {
   fullWidth: true,
-}
+};
 
 export const LoadingSpinner: Story<ButtonProps> = (args) => {
-  return <Button {...args} />
-}
+  return <Button {...args} />;
+};
 LoadingSpinner.args = {
   loading: true,
   shape: 'square',
-}
+};
 
 export const LoadingSpinnerAndText: Story<ButtonProps> = (args) => {
-  return <Button {...args}>loading</Button>
-}
+  return <Button {...args}>loading</Button>;
+};
 LoadingSpinnerAndText.args = {
   loading: true,
-}
+};
 
 export const WithoutClickAnimation: Story<ButtonProps> = (args) => {
-  return <Button {...args}> I don't have click animation </Button>
-}
+  return <Button {...args}> I don't have click animation </Button>;
+};
 WithoutClickAnimation.args = {
   animation: false,
-}
+};
 
 export const LinkButton: Story<ButtonProps<'a'>> = (args) => {
-  return <Button {...args}> Link </Button>
-}
+  return <Button {...args}> Link </Button>;
+};
 LinkButton.args = {
   tag: 'a',
   target: '_blank',
   rel: 'noopener',
   href: 'https://daisyui.com/',
-}
+};

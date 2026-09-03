@@ -1,28 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import { classesFn, DropdownProps } from './Dropdown'
-import DropdownMenu from './DropdownMenu'
-import DropdownItem from './DropdownItem'
-import { Summary } from './DropdownToggle'
+import { classesFn, DropdownProps } from './Dropdown';
+import DropdownMenu from './DropdownMenu';
+import DropdownItem from './DropdownItem';
+import { Summary } from './DropdownToggle';
 
-export type DetailsProps = Omit<
-  DropdownProps<HTMLDetailsElement>,
-  'item' | 'hover'
->
+export type DetailsProps = Omit<DropdownProps<HTMLDetailsElement>, 'item' | 'hover'>;
 const Details = React.forwardRef<HTMLDetailsElement, DetailsProps>(
-  (
-    {
-      children,
-      className,
-      horizontal,
-      vertical,
-      end,
-      dataTheme,
-      open,
-      ...props
-    },
-    ref
-  ): React.JSX.Element => {
+  ({ children, className, horizontal, vertical, end, dataTheme, open, ...props }, ref): React.JSX.Element => {
     return (
       <details
         role="listbox"
@@ -40,11 +25,11 @@ const Details = React.forwardRef<HTMLDetailsElement, DetailsProps>(
       >
         {children}
       </details>
-    )
-  }
-)
+    );
+  },
+);
 
-Details.displayName = 'Details'
+Details.displayName = 'Details';
 export default Object.assign(Details, {
   Toggle: Summary,
-})
+});

@@ -1,10 +1,10 @@
-import React, { useState, useCallback } from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React, { useState, useCallback } from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Drawer, { DrawerProps } from '.'
-import Button from '../Button'
-import Navbar from '../Navbar'
-import Menu from '../Menu'
+import Drawer, { DrawerProps } from '.';
+import Button from '../Button';
+import Navbar from '../Navbar';
+import Menu from '../Menu';
 
 export default {
   title: 'Layout/Drawer',
@@ -14,14 +14,14 @@ export default {
       control: false,
     },
   },
-} as Meta
+} as Meta;
 
 export const Default: Story<DrawerProps> = (args) => {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   const toggleVisible = useCallback(() => {
-    setVisible((visible) => !visible)
-  }, [])
+    setVisible((visible) => !visible);
+  }, []);
   return (
     <Drawer
       {...args}
@@ -42,19 +42,19 @@ export const Default: Story<DrawerProps> = (args) => {
         Open drawer
       </Button>
     </Drawer>
-  )
-}
+  );
+};
 Default.args = {
   sideClassName: 'h-full absolute',
   contentClassName: 'flex h-56 items-center justify-center',
-}
+};
 
 export const Responsive: Story<DrawerProps> = (args) => {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   const toggleVisible = useCallback(() => {
-    setVisible((visible) => !visible)
-  }, [])
+    setVisible((visible) => !visible);
+  }, []);
   return (
     <Drawer
       {...args}
@@ -75,22 +75,20 @@ export const Responsive: Story<DrawerProps> = (args) => {
         Open drawer
       </Button>
     </Drawer>
-  )
-}
+  );
+};
 Responsive.args = {
   className: 'lg:drawer-open',
   sideClassName: 'h-full absolute',
   contentClassName: 'flex h-56 items-center justify-center',
-}
+};
 
-export const NavbarMenuForDesktopSidebarDrawerForMobile: Story<DrawerProps> = (
-  args
-) => {
-  const [visible, setVisible] = useState(false)
+export const NavbarMenuForDesktopSidebarDrawerForMobile: Story<DrawerProps> = (args) => {
+  const [visible, setVisible] = useState(false);
 
   const toggleVisible = useCallback(() => {
-    setVisible((visible) => !visible)
-  }, [])
+    setVisible((visible) => !visible);
+  }, []);
 
   return (
     <Drawer
@@ -117,12 +115,7 @@ export const NavbarMenuForDesktopSidebarDrawerForMobile: Story<DrawerProps> = (
               viewBox="0 0 24 24"
               className="inline-block w-6 h-6 stroke-current"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </Button>
         </div>
@@ -140,19 +133,19 @@ export const NavbarMenuForDesktopSidebarDrawerForMobile: Story<DrawerProps> = (
       </Navbar>
       <div className="flex flex-grow items-center justify-center">Content</div>
     </Drawer>
-  )
-}
+  );
+};
 NavbarMenuForDesktopSidebarDrawerForMobile.args = {
   className: 'h-56 rounded overflow-hidden',
   contentClassName: 'flex flex-col',
-}
+};
 
 export const RightSideOfPage: Story<DrawerProps> = (args) => {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   const toggleVisible = useCallback(() => {
-    setVisible((visible) => !visible)
-  }, [])
+    setVisible((visible) => !visible);
+  }, []);
   return (
     <Drawer
       {...args}
@@ -173,10 +166,10 @@ export const RightSideOfPage: Story<DrawerProps> = (args) => {
         Open drawer
       </Button>
     </Drawer>
-  )
-}
+  );
+};
 RightSideOfPage.args = {
   sideClassName: 'h-full absolute ms-[-100vw] w-[stretch]',
   contentClassName: 'flex h-56 items-center justify-center',
   end: true,
-}
+};

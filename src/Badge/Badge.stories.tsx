@@ -1,18 +1,18 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Badge, { BadgeProps } from '.'
-import Button from '../Button'
+import Badge, { BadgeProps } from '.';
+import Button from '../Button';
 
 export default {
   title: 'Data Display/Badge',
   component: Badge,
-} as Meta
+} as Meta;
 
 export const Default: Story<BadgeProps> = (args) => {
-  return <Badge {...args}>Badge</Badge>
-}
-Default.args = {}
+  return <Badge {...args}>Badge</Badge>;
+};
+Default.args = {};
 
 export const BrandColors: Story<BadgeProps> = (args) => {
   return (
@@ -34,8 +34,8 @@ export const BrandColors: Story<BadgeProps> = (args) => {
         ghost
       </Badge>
     </div>
-  )
-}
+  );
+};
 
 export const SoftStyle: Story<BadgeProps> = (args) => {
   return (
@@ -51,11 +51,11 @@ export const SoftStyle: Story<BadgeProps> = (args) => {
         accent
       </Badge>
     </div>
-  )
-}
+  );
+};
 SoftStyle.args = {
   variant: 'soft',
-}
+};
 
 export const OutlineStyle: Story<BadgeProps> = (args) => {
   return (
@@ -71,11 +71,11 @@ export const OutlineStyle: Story<BadgeProps> = (args) => {
         accent
       </Badge>
     </div>
-  )
-}
+  );
+};
 OutlineStyle.args = {
   variant: 'outline',
-}
+};
 
 export const DashStyle: Story<BadgeProps> = (args) => {
   return (
@@ -91,11 +91,11 @@ export const DashStyle: Story<BadgeProps> = (args) => {
         accent
       </Badge>
     </div>
-  )
-}
+  );
+};
 DashStyle.args = {
   variant: 'dash',
-}
+};
 
 export const Sizes: Story<BadgeProps> = (args) => {
   return (
@@ -113,8 +113,8 @@ export const Sizes: Story<BadgeProps> = (args) => {
         987,654
       </Badge>
     </div>
-  )
-}
+  );
+};
 
 export const Empty: Story<BadgeProps> = (args) => {
   return (
@@ -124,11 +124,11 @@ export const Empty: Story<BadgeProps> = (args) => {
       <Badge {...args} size="sm" />
       <Badge {...args} size="xs" />
     </div>
-  )
-}
+  );
+};
 Empty.args = {
   color: 'primary',
-}
+};
 
 export const StateColors: Story<BadgeProps> = (args) => {
   return (
@@ -140,12 +140,7 @@ export const StateColors: Story<BadgeProps> = (args) => {
           viewBox="0 0 24 24"
           className="inline-block w-4 h-4 stroke-current"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
         info
       </Badge>
@@ -156,12 +151,7 @@ export const StateColors: Story<BadgeProps> = (args) => {
           viewBox="0 0 24 24"
           className="inline-block w-4 h-4 stroke-current"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
         success
       </Badge>
@@ -172,12 +162,7 @@ export const StateColors: Story<BadgeProps> = (args) => {
           viewBox="0 0 24 24"
           className="inline-block w-4 h-4 stroke-current"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
         warning
       </Badge>
@@ -188,21 +173,16 @@ export const StateColors: Story<BadgeProps> = (args) => {
           viewBox="0 0 24 24"
           className="inline-block w-4 h-4 stroke-current"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
         error
       </Badge>
     </div>
-  )
-}
+  );
+};
 StateColors.args = {
   className: 'gap-2',
-}
+};
 
 export const BadgeInText: Story<BadgeProps> = (args) => {
   return (
@@ -233,9 +213,9 @@ export const BadgeInText: Story<BadgeProps> = (args) => {
         </Badge>
       </h5>
     </div>
-  )
-}
-BadgeInText.args = {}
+  );
+};
+BadgeInText.args = {};
 
 export const BadgeInAButton: Story<BadgeProps> = (args) => {
   return (
@@ -251,6 +231,6 @@ export const BadgeInAButton: Story<BadgeProps> = (args) => {
         </Badge>
       </Button>
     </div>
-  )
-}
-BadgeInAButton.args = {}
+  );
+};
+BadgeInAButton.args = {};

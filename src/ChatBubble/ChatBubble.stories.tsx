@@ -1,6 +1,6 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
-import ChatBubble, { ChatBubbleProps } from '.'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
+import ChatBubble, { ChatBubbleProps } from '.';
 
 const meta: Meta = {
   title: 'Data Display/Chat Bubble',
@@ -12,55 +12,44 @@ const meta: Meta = {
       </div>
     ),
   ],
-}
+};
 
-export default meta
+export default meta;
 
 interface DefaultControls {
-  header: boolean
-  time: boolean
-  avatar: boolean
-  footer: boolean
-  side: 'start' | 'end'
+  header: boolean;
+  time: boolean;
+  avatar: boolean;
+  footer: boolean;
+  side: 'start' | 'end';
 }
 
-export const Default: Story<DefaultControls> = ({
-  header,
-  time,
-  avatar,
-  footer,
-  side,
-}) => {
+export const Default: Story<DefaultControls> = ({ header, time, avatar, footer, side }) => {
   return (
     <ChatBubble end={side === 'end' ? true : false}>
       {header && (
-        <ChatBubble.Header>
-          Obi-Wan Kenobi{' '}
-          {time && <ChatBubble.Time>2 hours ago</ChatBubble.Time>}
-        </ChatBubble.Header>
+        <ChatBubble.Header>Obi-Wan Kenobi {time && <ChatBubble.Time>2 hours ago</ChatBubble.Time>}</ChatBubble.Header>
       )}
-      {avatar && (
-        <ChatBubble.Avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-      )}
+      {avatar && <ChatBubble.Avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />}
       <ChatBubble.Message>You were my brother, Anakin.</ChatBubble.Message>
       {footer && <ChatBubble.Footer>Seen</ChatBubble.Footer>}
     </ChatBubble>
-  )
-}
+  );
+};
 Default.args = {
   header: false,
   time: false,
   avatar: false,
   footer: false,
   side: 'start',
-}
+};
 Default.argTypes = {
   side: {
     options: ['start', 'end'],
     control: { type: 'radio' },
   },
-}
-Default.parameters = { controls: { exclude: ['end', 'dataTheme'] } }
+};
+Default.parameters = { controls: { exclude: ['end', 'dataTheme'] } };
 
 export const Side: Story<ChatBubbleProps> = (args) => (
   <>
@@ -74,22 +63,18 @@ export const Side: Story<ChatBubbleProps> = (args) => (
       <ChatBubble.Message>You underestimate my power!</ChatBubble.Message>
     </ChatBubble>
   </>
-)
+);
 
 export const WithImage: Story<ChatBubbleProps> = (args) => (
   <>
     <ChatBubble>
       <ChatBubble.Avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-      <ChatBubble.Message>
-        It was said that you would, destroy the Sith, not join them.
-      </ChatBubble.Message>
+      <ChatBubble.Message>It was said that you would, destroy the Sith, not join them.</ChatBubble.Message>
     </ChatBubble>
 
     <ChatBubble>
       <ChatBubble.Avatar src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-      <ChatBubble.Message>
-        It was you who would bring balance to the Force
-      </ChatBubble.Message>
+      <ChatBubble.Message>It was you who would bring balance to the Force</ChatBubble.Message>
     </ChatBubble>
 
     <ChatBubble>
@@ -97,7 +82,7 @@ export const WithImage: Story<ChatBubbleProps> = (args) => (
       <ChatBubble.Message>Not leave it in Darkness</ChatBubble.Message>
     </ChatBubble>
   </>
-)
+);
 
 export const WithHeader: Story<ChatBubbleProps> = (args) => (
   <>
@@ -117,7 +102,7 @@ export const WithHeader: Story<ChatBubbleProps> = (args) => (
       <ChatBubble.Message>I hate you!</ChatBubble.Message>
     </ChatBubble>
   </>
-)
+);
 
 export const WithFooter: Story<ChatBubbleProps> = (args) => (
   <>
@@ -133,7 +118,7 @@ export const WithFooter: Story<ChatBubbleProps> = (args) => (
       <ChatBubble.Footer>Seen at 12:46</ChatBubble.Footer>
     </ChatBubble>
   </>
-)
+);
 
 export const WithHeaderAndFooter: Story<ChatBubbleProps> = (args) => (
   <>
@@ -153,20 +138,16 @@ export const WithHeaderAndFooter: Story<ChatBubbleProps> = (args) => (
       <ChatBubble.Footer>Seen at 12:46</ChatBubble.Footer>
     </ChatBubble>
   </>
-)
+);
 
 export const Colors: Story<ChatBubbleProps> = (args) => (
   <>
     <ChatBubble>
-      <ChatBubble.Message color="primary">
-        What kind of nonsense is this
-      </ChatBubble.Message>
+      <ChatBubble.Message color="primary">What kind of nonsense is this</ChatBubble.Message>
     </ChatBubble>
 
     <ChatBubble>
-      <ChatBubble.Message color="secondary">
-        Put me on the Council and not make me a Master!??
-      </ChatBubble.Message>
+      <ChatBubble.Message color="secondary">Put me on the Council and not make me a Master!??</ChatBubble.Message>
     </ChatBubble>
 
     <ChatBubble>
@@ -180,21 +161,15 @@ export const Colors: Story<ChatBubbleProps> = (args) => (
     </ChatBubble>
 
     <ChatBubble end>
-      <ChatBubble.Message color="success">
-        You have been given a great honor.
-      </ChatBubble.Message>
+      <ChatBubble.Message color="success">You have been given a great honor.</ChatBubble.Message>
     </ChatBubble>
 
     <ChatBubble end>
-      <ChatBubble.Message color="warning">
-        To be on the Council at your age.
-      </ChatBubble.Message>
+      <ChatBubble.Message color="warning">To be on the Council at your age.</ChatBubble.Message>
     </ChatBubble>
 
     <ChatBubble end>
-      <ChatBubble.Message color="error">
-        It's never happened before.
-      </ChatBubble.Message>
+      <ChatBubble.Message color="error">It's never happened before.</ChatBubble.Message>
     </ChatBubble>
   </>
-)
+);

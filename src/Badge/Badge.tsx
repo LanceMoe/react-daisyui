@@ -1,36 +1,19 @@
-import React, { forwardRef, ReactNode } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef, ReactNode } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import {
-  IComponentBaseProps,
-  ComponentColor,
-  ComponentSize,
-  ComponentVariant,
-} from '../types'
+import { IComponentBaseProps, ComponentColor, ComponentSize, ComponentVariant } from '../types';
 
 export type BadgeProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
   IComponentBaseProps & {
-    size?: ComponentSize
-    color?: ComponentColor
-    variant?: ComponentVariant
-    responsive?: boolean
-  }
+    size?: ComponentSize;
+    color?: ComponentColor;
+    variant?: ComponentVariant;
+    responsive?: boolean;
+  };
 
 const Badge = forwardRef<HTMLDivElement, BadgeProps>(
-  (
-    {
-      children,
-      size,
-      color,
-      variant,
-      responsive,
-      dataTheme,
-      className,
-      ...props
-    },
-    ref
-  ): React.JSX.Element => {
+  ({ children, size, color, variant, responsive, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'badge',
       className,
@@ -53,23 +36,17 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>(
         'badge-warning': color === 'warning',
         'badge-error': color === 'error',
         'badge-xs md:badge-sm lg:badge-md xl:badge-lg': responsive,
-      })
-    )
+      }),
+    );
 
     return (
-      <div
-        aria-label="Badge"
-        {...props}
-        data-theme={dataTheme}
-        className={classes}
-        ref={ref}
-      >
+      <div aria-label="Badge" {...props} data-theme={dataTheme} className={classes} ref={ref}>
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-Badge.displayName = 'Badge'
+Badge.displayName = 'Badge';
 
-export default Badge
+export default Badge;

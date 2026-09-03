@@ -1,10 +1,10 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Dropdown, { DropdownProps } from '.'
-import Card from '../Card/'
-import Navbar from '../Navbar'
-import Button from '../Button'
+import Dropdown, { DropdownProps } from '.';
+import Card from '../Card/';
+import Navbar from '../Navbar';
+import Button from '../Button';
 
 export default {
   title: 'Actions/Dropdown',
@@ -14,7 +14,7 @@ export default {
       control: false,
     },
   },
-} as Meta
+} as Meta;
 
 export const Default: Story<DropdownProps> = (args) => {
   return (
@@ -27,8 +27,8 @@ export const Default: Story<DropdownProps> = (args) => {
         </Dropdown.Menu>
       </Dropdown>
     </div>
-  )
-}
+  );
+};
 
 export const AsCard: Story<DropdownProps> = (args) => {
   return (
@@ -43,15 +43,12 @@ export const AsCard: Story<DropdownProps> = (args) => {
         </Dropdown.Menu>
       </Dropdown>
     </div>
-  )
-}
+  );
+};
 
 export const InNavbar: Story<DropdownProps> = ({ dataTheme, ...args }) => {
   return (
-    <Navbar
-      className="my-32 px-2 font-sans bg-base-300 rounded-box"
-      dataTheme={dataTheme}
-    >
+    <Navbar className="my-32 px-2 font-sans bg-base-300 rounded-box" dataTheme={dataTheme}>
       <Navbar.Start className="px-2 lg:flex-none">
         <span className="text-lg font-bold">daisyUI</span>
       </Navbar.Start>
@@ -70,27 +67,19 @@ export const InNavbar: Story<DropdownProps> = ({ dataTheme, ...args }) => {
         </Dropdown>
       </Navbar.End>
     </Navbar>
-  )
-}
+  );
+};
 InNavbar.args = {
   end: true,
-}
+};
 
 export const Helper: Story<DropdownProps> = (args) => {
   return (
     <div className="my-32 font-sans">
       A normal text and a helper dropdown
       <Dropdown {...args}>
-        <Dropdown.Toggle
-          button={false}
-          className="btn btn-circle btn-ghost btn-xs text-info"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="w-4 h-4 stroke-current"
-          >
+        <Dropdown.Toggle button={false} className="btn btn-circle btn-ghost btn-xs text-info">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 stroke-current">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -107,6 +96,6 @@ export const Helper: Story<DropdownProps> = (args) => {
         </Dropdown.Menu>
       </Dropdown>
     </div>
-  )
-}
-Helper.args = { end: true }
+  );
+};
+Helper.args = { end: true };

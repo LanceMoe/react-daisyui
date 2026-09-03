@@ -1,14 +1,14 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Breadcrumbs, { BreadcrumbsProps } from '.'
+import Breadcrumbs, { BreadcrumbsProps } from '.';
 
-const { Item } = Breadcrumbs
+const { Item } = Breadcrumbs;
 
 export default {
   title: 'Navigation/Breadcrumbs',
   component: Breadcrumbs,
-} as Meta
+} as Meta;
 
 export const Default: Story<BreadcrumbsProps> = (args) => {
   return (
@@ -17,19 +17,14 @@ export const Default: Story<BreadcrumbsProps> = (args) => {
       <Breadcrumbs.Item href="/">Documents</Breadcrumbs.Item>
       <Breadcrumbs.Item href="/">Add Document</Breadcrumbs.Item>
     </Breadcrumbs>
-  )
-}
+  );
+};
 
 export const WithIcons: Story<BreadcrumbsProps> = (args) => {
   return (
     <Breadcrumbs {...args}>
       <Breadcrumbs.Item href="/">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          className="w-4 h-4 mr-2 stroke-current"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 mr-2 stroke-current">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -40,12 +35,7 @@ export const WithIcons: Story<BreadcrumbsProps> = (args) => {
         Home
       </Breadcrumbs.Item>
       <Breadcrumbs.Item href="/">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          className="w-4 h-4 mr-2 stroke-current"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 mr-2 stroke-current">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -56,12 +46,7 @@ export const WithIcons: Story<BreadcrumbsProps> = (args) => {
         Documents
       </Breadcrumbs.Item>
       <Breadcrumbs.Item href="/">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          className="w-4 h-4 mr-2 stroke-current"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-4 h-4 mr-2 stroke-current">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -72,8 +57,8 @@ export const WithIcons: Story<BreadcrumbsProps> = (args) => {
         Add Document
       </Breadcrumbs.Item>
     </Breadcrumbs>
-  )
-}
+  );
+};
 
 export const WithMaxWidth: Story<BreadcrumbsProps> = (args) => {
   return (
@@ -84,9 +69,9 @@ export const WithMaxWidth: Story<BreadcrumbsProps> = (args) => {
       <Breadcrumbs.Item>Long text 4</Breadcrumbs.Item>
       <Breadcrumbs.Item>Long text 5</Breadcrumbs.Item>
     </Breadcrumbs>
-  )
-}
+  );
+};
 
 WithMaxWidth.args = {
   className: 'max-w-xs ',
-}
+};

@@ -1,10 +1,10 @@
-import React from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 type TimelineStartProps = React.HTMLAttributes<HTMLDivElement> & {
-  box?: boolean
-}
+  box?: boolean;
+};
 
 const TimelineStart = React.forwardRef<HTMLDivElement, TimelineStartProps>(
   ({ children, className, box, ...props }, ref) => {
@@ -13,15 +13,15 @@ const TimelineStart = React.forwardRef<HTMLDivElement, TimelineStartProps>(
       clsx({
         'timeline-box': box,
       }),
-      className
-    )
+      className,
+    );
     return (
       <div {...props} className={classes} ref={ref}>
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-TimelineStart.displayName = 'TimelineStart'
-export default TimelineStart
+TimelineStart.displayName = 'TimelineStart';
+export default TimelineStart;

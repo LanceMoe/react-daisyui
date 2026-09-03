@@ -1,22 +1,22 @@
-import React, { cloneElement, LegacyRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { cloneElement, LegacyRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import Button from '../Button'
+import Button from '../Button';
 
-export type CarouselItemWidth = 'full' | 'half'
+export type CarouselItemWidth = 'full' | 'half';
 
 export type CarouselItemProps = React.HTMLAttributes<HTMLDivElement> & {
-  readonly innerRef?: LegacyRef<HTMLDivElement>
-  src?: string
-  alt?: string
-  index?: number
-  width?: CarouselItemWidth
-  hasButtons?: boolean
-  buttonStyle?: (value: string) => React.ReactElement
-  onPrev?: () => void
-  onNext?: () => void
-}
+  readonly innerRef?: LegacyRef<HTMLDivElement>;
+  src?: string;
+  alt?: string;
+  index?: number;
+  width?: CarouselItemWidth;
+  hasButtons?: boolean;
+  buttonStyle?: (value: string) => React.ReactElement;
+  onPrev?: () => void;
+  onNext?: () => void;
+};
 
 const CarouselItem = ({
   children,
@@ -39,12 +39,12 @@ const CarouselItem = ({
       'w-full': width === 'full',
       'w-1/2': width === 'half',
       'h-full': true,
-    })
-  )
+    }),
+  );
 
   const imageClasses = clsx({
     'w-full': width === 'full',
-  })
+  });
 
   const renderButtons = () => {
     if (buttonStyle != null) {
@@ -57,7 +57,7 @@ const CarouselItem = ({
             onClick: onNext,
           })}
         </>
-      )
+      );
     }
 
     return (
@@ -69,8 +69,8 @@ const CarouselItem = ({
           ❯
         </Button>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <div {...props} id={`item${index}`} ref={innerRef} className={classes}>
@@ -81,7 +81,7 @@ const CarouselItem = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default CarouselItem
+export default CarouselItem;

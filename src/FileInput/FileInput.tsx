@@ -1,23 +1,17 @@
-import clsx from 'clsx'
-import React, { forwardRef } from 'react'
-import { twMerge } from 'tailwind-merge'
-import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types'
+import clsx from 'clsx';
+import React, { forwardRef } from 'react';
+import { twMerge } from 'tailwind-merge';
+import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
-export type FileInputProps = Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'size'
-> &
+export type FileInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> &
   IComponentBaseProps & {
-    size?: ComponentSize
-    color?: ComponentColor
-    bordered?: boolean
-  }
+    size?: ComponentSize;
+    color?: ComponentColor;
+    bordered?: boolean;
+  };
 
 const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
-  (
-    { className, size, color, bordered, dataTheme, ...props },
-    ref
-  ): React.JSX.Element => {
+  ({ className, size, color, bordered, dataTheme, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'file-input',
       className,
@@ -36,20 +30,12 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
         'file-input-warning': color === 'warning',
         'file-input-error': color === 'error',
         'file-input-bordered': bordered,
-      })
-    )
-    return (
-      <input
-        {...props}
-        ref={ref}
-        type="file"
-        data-theme={dataTheme}
-        className={classes}
-      />
-    )
-  }
-)
+      }),
+    );
+    return <input {...props} ref={ref} type="file" data-theme={dataTheme} className={classes} />;
+  },
+);
 
-FileInput.displayName = 'FileInput'
+FileInput.displayName = 'FileInput';
 
-export default FileInput
+export default FileInput;

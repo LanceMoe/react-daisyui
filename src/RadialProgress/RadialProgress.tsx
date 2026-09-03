@@ -1,30 +1,21 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, IComponentBaseProps } from '../types'
+import { ComponentColor, IComponentBaseProps } from '../types';
 
 export type RadialProgressProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
-    value: number
-    size?: string
-    thickness?: string
-    color?: ComponentColor
-  }
+    value: number;
+    size?: string;
+    thickness?: string;
+    color?: ComponentColor;
+  };
 
 const RadialProgress = forwardRef<HTMLDivElement, RadialProgressProps>(
   (
-    {
-      value,
-      size = '4rem',
-      thickness = '4px',
-      color,
-      dataTheme,
-      className,
-      children,
-      ...props
-    },
-    ref
+    { value, size = '4rem', thickness = '4px', color, dataTheme, className, children, ...props },
+    ref,
   ): React.JSX.Element => {
     const classes = twMerge(
       'radial-progress',
@@ -37,15 +28,15 @@ const RadialProgress = forwardRef<HTMLDivElement, RadialProgressProps>(
         'text-success': color === 'success',
         'text-warning': color === 'warning',
         'text-error': color === 'error',
-      })
-    )
+      }),
+    );
 
-    const displayedValue = Math.min(100, Math.max(0, value))
+    const displayedValue = Math.min(100, Math.max(0, value));
     const progressStyle: Record<string, string | number> = {
       '--value': displayedValue,
       '--size': size,
       '--thickness': thickness,
-    }
+    };
 
     return (
       <div
@@ -61,10 +52,10 @@ const RadialProgress = forwardRef<HTMLDivElement, RadialProgressProps>(
       >
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-RadialProgress.displayName = 'RadialProgress'
+RadialProgress.displayName = 'RadialProgress';
 
-export default RadialProgress
+export default RadialProgress;

@@ -1,18 +1,18 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentSize, ComponentPosition } from '../types'
+import { IComponentBaseProps, ComponentSize, ComponentPosition } from '../types';
 
-import Tab from './Tab'
-import RadioTab from './RadioTab'
+import Tab from './Tab';
+import RadioTab from './RadioTab';
 
 export type TabsProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
-    variant?: 'bordered' | 'lift' | 'boxed'
-    size?: ComponentSize
-    position?: Extract<ComponentPosition, 'top' | 'bottom'>
-  }
+    variant?: 'bordered' | 'lift' | 'boxed';
+    size?: ComponentSize;
+    position?: Extract<ComponentPosition, 'top' | 'bottom'>;
+  };
 
 const Tabs = forwardRef<HTMLDivElement, TabsProps>(
   ({ children, className, variant, size, position }, ref): React.JSX.Element => {
@@ -30,15 +30,15 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>(
         'tabs-xs': size === 'xs',
         'tabs-top': position === 'top',
         'tabs-bottom': position === 'bottom',
-      })
-    )
+      }),
+    );
 
     return (
       <div role="tablist" className={classes} ref={ref}>
         {children}
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-export default Object.assign(Tabs, { Tab, RadioTab })
+export default Object.assign(Tabs, { Tab, RadioTab });

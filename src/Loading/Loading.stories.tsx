@@ -1,7 +1,7 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Loading, { LoadingProps } from '.'
+import Loading, { LoadingProps } from '.';
 
 const meta: Meta = {
   title: 'Feedback/Loading',
@@ -9,17 +9,17 @@ const meta: Meta = {
   parameters: {
     controls: { expanded: true },
   },
-}
+};
 
-export default meta
+export default meta;
 
 const Template: Story<LoadingProps> = (args) => {
-  return <Loading {...args} />
-}
-export const Default = Template.bind({})
+  return <Loading {...args} />;
+};
+export const Default = Template.bind({});
 Default.args = {
   variant: 'spinner',
-}
+};
 
 export const Colors: Story<LoadingProps> = (args) => {
   return (
@@ -36,11 +36,11 @@ export const Colors: Story<LoadingProps> = (args) => {
         <Loading {...args} color="ghost" />
       </div>
     </div>
-  )
-}
+  );
+};
 Colors.args = {
   className: 'm-1',
-}
+};
 
 export const Variants: Story<LoadingProps> = (args) => {
   return (
@@ -52,8 +52,8 @@ export const Variants: Story<LoadingProps> = (args) => {
       <Loading {...args} variant="bars" />
       <Loading {...args} variant="infinity" />
     </div>
-  )
-}
+  );
+};
 
 export const Sizes: Story<LoadingProps> = (args) => {
   return (
@@ -65,5 +65,5 @@ export const Sizes: Story<LoadingProps> = (args) => {
         <Loading {...args} size="lg" />
       </div>
     </div>
-  )
-}
+  );
+};

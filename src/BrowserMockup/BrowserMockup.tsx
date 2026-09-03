@@ -1,18 +1,18 @@
-import React, { forwardRef, ReactNode } from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React, { forwardRef, ReactNode } from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types'
+import { IComponentBaseProps } from '../types';
 
 export type BrowserMockupProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
-    url: string
-    variant?: 'border' | 'background'
-    inputClassName?: string
-    innerClassName?: string
-    inputRef?: React.Ref<HTMLDivElement>
-    innerRef?: React.Ref<HTMLDivElement>
-  }
+    url: string;
+    variant?: 'border' | 'background';
+    inputClassName?: string;
+    innerClassName?: string;
+    inputRef?: React.Ref<HTMLDivElement>;
+    innerRef?: React.Ref<HTMLDivElement>;
+  };
 
 const BrowserMockup = forwardRef<HTMLDivElement, BrowserMockupProps>(
   (
@@ -28,7 +28,7 @@ const BrowserMockup = forwardRef<HTMLDivElement, BrowserMockupProps>(
       innerRef,
       ...props
     },
-    ref
+    ref,
   ): React.JSX.Element => {
     const classes = twMerge(
       'mockup-browser border',
@@ -36,16 +36,16 @@ const BrowserMockup = forwardRef<HTMLDivElement, BrowserMockupProps>(
         'border-base-300': variant === 'border',
         'bg-base-300': variant === 'background',
       }),
-      className
-    )
+      className,
+    );
 
     const inputClasses = twMerge(
       'input',
       clsx({
         'border-base-300': variant === 'border',
       }),
-      inputClassName
-    )
+      inputClassName,
+    );
 
     const innerClasses = twMerge(
       'flex justify-center px-4 py-16 ',
@@ -53,17 +53,11 @@ const BrowserMockup = forwardRef<HTMLDivElement, BrowserMockupProps>(
         'border-t border-base-300': variant === 'border',
         'bg-base-200': variant === 'background',
       }),
-      innerClassName
-    )
+      innerClassName,
+    );
 
     return (
-      <div
-        aria-label="Browser mockup"
-        {...props}
-        data-theme={dataTheme}
-        className={classes}
-        ref={ref}
-      >
+      <div aria-label="Browser mockup" {...props} data-theme={dataTheme} className={classes} ref={ref}>
         <div className="mockup-browser-toolbar">
           <div className={inputClasses} ref={inputRef}>
             {url}
@@ -73,10 +67,10 @@ const BrowserMockup = forwardRef<HTMLDivElement, BrowserMockupProps>(
           {children}
         </div>
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-BrowserMockup.displayName = 'BrowserMockup'
+BrowserMockup.displayName = 'BrowserMockup';
 
-export default BrowserMockup
+export default BrowserMockup;

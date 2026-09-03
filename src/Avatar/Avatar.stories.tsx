@@ -1,8 +1,8 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Avatar, { AvatarProps } from '.'
-import Mask from '../Mask'
+import Avatar, { AvatarProps } from '.';
+import Mask from '../Mask';
 
 export default {
   title: 'Data Display/Avatar',
@@ -18,24 +18,24 @@ export default {
     innerClassName: 'rounded',
     src: 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp',
   },
-} as Meta
+} as Meta;
 
 const Template: Story<AvatarProps> = (args) => {
-  return <Avatar {...args} />
-}
+  return <Avatar {...args} />;
+};
 
-export const Default: Story<AvatarProps> = Template.bind({})
+export const Default: Story<AvatarProps> = Template.bind({});
 
-export const CustomSize: Story<AvatarProps> = Template.bind({})
+export const CustomSize: Story<AvatarProps> = Template.bind({});
 CustomSize.args = {
   shape: 'circle',
   size: 30,
-}
+};
 CustomSize.argTypes = {
   size: {
     control: { type: 'number', min: 1, step: 1 },
   },
-}
+};
 
 export const Sizes: Story<AvatarProps> = (args) => {
   return (
@@ -47,13 +47,13 @@ export const Sizes: Story<AvatarProps> = (args) => {
       <Avatar {...args} size="sm" />
       <Avatar {...args} size="xs" />
     </div>
-  )
-}
+  );
+};
 Sizes.argTypes = {
   size: {
     control: false,
   },
-}
+};
 
 export const Rounded: Story<AvatarProps> = (args) => {
   return (
@@ -61,8 +61,8 @@ export const Rounded: Story<AvatarProps> = (args) => {
       <Avatar {...args} innerClassName="rounded-xl" />
       <Avatar {...args} shape="circle" />
     </div>
-  )
-}
+  );
+};
 Rounded.argTypes = {
   shape: {
     control: false,
@@ -70,31 +70,22 @@ Rounded.argTypes = {
   innerClassName: {
     control: false,
   },
-}
+};
 
 export const WithMask: Story<AvatarProps> = (args) => {
   return (
     <div className="flex items-center gap-4">
-      <Avatar
-        {...args}
-        innerClassName={Mask.className({ variant: 'squircle' })}
-      />
-      <Avatar
-        {...args}
-        innerClassName={Mask.className({ variant: 'hexagon' })}
-      />
-      <Avatar
-        {...args}
-        innerClassName={Mask.className({ variant: 'triangle' })}
-      />
+      <Avatar {...args} innerClassName={Mask.className({ variant: 'squircle' })} />
+      <Avatar {...args} innerClassName={Mask.className({ variant: 'hexagon' })} />
+      <Avatar {...args} innerClassName={Mask.className({ variant: 'triangle' })} />
     </div>
-  )
-}
+  );
+};
 WithMask.argTypes = {
   innerClassName: {
     control: false,
   },
-}
+};
 
 export const Group: Story<AvatarProps> = (args) => {
   return (
@@ -104,21 +95,17 @@ export const Group: Story<AvatarProps> = (args) => {
       <Avatar {...args} />
       <Avatar {...args} />
     </Avatar.Group>
-  )
-}
+  );
+};
 Group.args = {
   size: 'sm',
   innerClassName: '',
-}
+};
 Group.argTypes = {
   shape: { control: false },
-}
+};
 
-export const GroupWithCounter: Story<AvatarProps> = ({
-  src,
-  letters,
-  ...args
-}) => {
+export const GroupWithCounter: Story<AvatarProps> = ({ src, letters, ...args }) => {
   return (
     <Avatar.Group>
       <Avatar {...args} src={src} />
@@ -126,22 +113,18 @@ export const GroupWithCounter: Story<AvatarProps> = ({
       <Avatar {...args} src={src} />
       <Avatar {...args} letters={letters} />
     </Avatar.Group>
-  )
-}
+  );
+};
 GroupWithCounter.args = {
   size: 'sm',
   letters: '+99',
   innerClassName: '',
-}
+};
 GroupWithCounter.argTypes = {
   shape: { control: false },
-}
+};
 
-export const GroupSpaceBetween: Story<AvatarProps> = ({
-  src,
-  letters,
-  ...args
-}) => {
+export const GroupSpaceBetween: Story<AvatarProps> = ({ src, letters, ...args }) => {
   return (
     <div className="flex flex-col items-center gap-y-2">
       <Avatar.Group className="space-x-4">
@@ -169,23 +152,23 @@ export const GroupSpaceBetween: Story<AvatarProps> = ({
         <Avatar {...args} letters={letters} />
       </Avatar.Group>
     </div>
-  )
-}
+  );
+};
 GroupSpaceBetween.args = {
   size: 'sm',
   letters: '+99',
   innerClassName: '',
-}
+};
 GroupSpaceBetween.argTypes = {
   shape: { control: false },
-}
+};
 
-export const Ring: Story<AvatarProps> = Template.bind({})
+export const Ring: Story<AvatarProps> = Template.bind({});
 Ring.args = {
   border: true,
   borderColor: 'primary',
   shape: 'circle',
-}
+};
 
 export const PresenceIndicator: Story<AvatarProps> = (args) => {
   return (
@@ -193,16 +176,16 @@ export const PresenceIndicator: Story<AvatarProps> = (args) => {
       <Avatar {...args} online />
       <Avatar {...args} offline />
     </div>
-  )
-}
+  );
+};
 PresenceIndicator.argTypes = {
   online: { control: false },
   offline: { control: false },
-}
+};
 PresenceIndicator.args = {
   innerClassName: '',
   shape: 'circle',
-}
+};
 
 export const Placeholder: Story<AvatarProps> = (args) => {
   return (
@@ -212,18 +195,18 @@ export const Placeholder: Story<AvatarProps> = (args) => {
       <Avatar {...args} letters="MX" size="sm" />
       <Avatar {...args} letters="AA" size="xs" />
     </div>
-  )
-}
+  );
+};
 Placeholder.argTypes = {
   size: { control: false },
   online: { control: false },
   letters: { control: false },
   src: { control: false },
-}
+};
 Placeholder.args = {
   shape: 'circle',
   src: '',
-}
+};
 
 const reactLogoSvg = (
   <svg
@@ -284,31 +267,29 @@ const reactLogoSvg = (
       />
     </g>
   </svg>
-)
+);
 
-export const WithSvg = Template.bind({})
+export const WithSvg = Template.bind({});
 WithSvg.args = {
   shape: 'circle',
   children: reactLogoSvg,
   border: true,
   innerClassName: '',
   src: '',
-}
+};
 
-export const MultipleChildren: Story<Omit<AvatarProps, 'children'>> = (
-  args
-) => {
+export const MultipleChildren: Story<Omit<AvatarProps, 'children'>> = (args) => {
   return (
     <Avatar {...args}>
       <span className="absolute text-center font-bold">React</span>
       {reactLogoSvg}
     </Avatar>
-  )
-}
+  );
+};
 MultipleChildren.args = {
   innerClassName: '',
   src: '',
-}
+};
 
 export const Colors: Story<AvatarProps> = ({ src, letters, ...args }) => {
   return (
@@ -324,48 +305,18 @@ export const Colors: Story<AvatarProps> = ({ src, letters, ...args }) => {
         <Avatar {...args} borderColor="error" src={src} />
       </div>
       <div className="flex gap-4 m-4">
-        <Avatar
-          {...args}
-          borderColor="neutral"
-          color="neutral"
-          letters={letters}
-        />
-        <Avatar
-          {...args}
-          borderColor="primary"
-          color="primary"
-          letters={letters}
-        />
-        <Avatar
-          {...args}
-          borderColor="secondary"
-          color="secondary"
-          letters={letters}
-        />
-        <Avatar
-          {...args}
-          borderColor="accent"
-          color="accent"
-          letters={letters}
-        />
+        <Avatar {...args} borderColor="neutral" color="neutral" letters={letters} />
+        <Avatar {...args} borderColor="primary" color="primary" letters={letters} />
+        <Avatar {...args} borderColor="secondary" color="secondary" letters={letters} />
+        <Avatar {...args} borderColor="accent" color="accent" letters={letters} />
         <Avatar {...args} borderColor="info" color="info" letters={letters} />
-        <Avatar
-          {...args}
-          borderColor="success"
-          color="success"
-          letters={letters}
-        />
-        <Avatar
-          {...args}
-          borderColor="warning"
-          color="warning"
-          letters={letters}
-        />
+        <Avatar {...args} borderColor="success" color="success" letters={letters} />
+        <Avatar {...args} borderColor="warning" color="warning" letters={letters} />
         <Avatar {...args} borderColor="error" color="error" letters={letters} />
       </div>
     </div>
-  )
-}
+  );
+};
 Colors.argTypes = {
   color: {
     control: false,
@@ -373,10 +324,10 @@ Colors.argTypes = {
   borderColor: {
     control: false,
   },
-}
+};
 Colors.args = {
   letters: 'Y',
   border: true,
   shape: 'circle',
   size: 'sm',
-}
+};

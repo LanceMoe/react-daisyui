@@ -1,7 +1,7 @@
-import React from 'react'
-import { StoryFn as Story, Meta } from '@storybook/react'
+import React from 'react';
+import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Skeleton, { SkeletonProps } from '.'
+import Skeleton, { SkeletonProps } from '.';
 
 const meta: Meta = {
   title: 'Feedback/Skeleton',
@@ -9,16 +9,16 @@ const meta: Meta = {
   parameters: {
     controls: { expanded: true },
   },
-}
+};
 
-export default meta
+export default meta;
 
 export const Default: Story<SkeletonProps> = (args) => {
-  return <Skeleton {...args} />
-}
+  return <Skeleton {...args} />;
+};
 Default.args = {
   className: 'w-32 h-32',
-}
+};
 
 export const CircleWithContent: Story<SkeletonProps> = ({ dataTheme }) => {
   return (
@@ -32,8 +32,8 @@ export const CircleWithContent: Story<SkeletonProps> = ({ dataTheme }) => {
       </div>
       <Skeleton className="h-32 w-full"></Skeleton>
     </div>
-  )
-}
+  );
+};
 
 export const RectangleWithContent: Story<SkeletonProps> = ({ dataTheme }) => {
   return (
@@ -43,5 +43,5 @@ export const RectangleWithContent: Story<SkeletonProps> = ({ dataTheme }) => {
       <Skeleton className="h-4 w-full"></Skeleton>
       <Skeleton className="h-4 w-full"></Skeleton>
     </div>
-  )
-}
+  );
+};

@@ -1,23 +1,17 @@
-import React from 'react'
-import clsx from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import React from 'react';
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types'
+import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
-export type TextareaProps = Omit<
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-  'color'
-> &
+export type TextareaProps = Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'color'> &
   IComponentBaseProps & {
-    color?: ComponentColor
-    size?: ComponentSize
-  }
+    color?: ComponentColor;
+    size?: ComponentSize;
+  };
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  (
-    { color, size, dataTheme, className, ...props },
-    ref
-  ): React.JSX.Element => {
+  ({ color, size, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'textarea',
       className,
@@ -35,18 +29,11 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         'textarea-success': color === 'success',
         'textarea-warning': color === 'warning',
         'textarea-error': color === 'error',
-      })
-    )
+      }),
+    );
 
-    return (
-      <textarea
-        {...props}
-        data-theme={dataTheme}
-        className={classes}
-        ref={ref}
-      />
-    )
-  }
-)
+    return <textarea {...props} data-theme={dataTheme} className={classes} ref={ref} />;
+  },
+);
 
-export default Textarea
+export default Textarea;

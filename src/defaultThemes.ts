@@ -31,4 +31,4 @@ export const DEFAULT_THEMES = [
   'dim',
   'nord',
   'sunset',
-] as const
+] as const;
