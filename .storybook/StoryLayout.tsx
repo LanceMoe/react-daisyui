@@ -10,6 +10,7 @@ import { useGlobalTheme } from './theming';
 type Props = {
   children: React.ReactNode | React.ReactNode[];
   title: string;
+  description: string;
   source: string;
 };
 
