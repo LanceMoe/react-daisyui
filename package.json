@@ -13,10 +13,12 @@
   },
   "type": "module",
   "exports": {
-    "import": "./dist/react-daisyui.modern.js",
-    "require": "./dist/react-daisyui.cjs",
-    "default": "./dist/react-daisyui.modern.js",
-    "types": "./dist/index.d.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/react-daisyui.modern.js",
+      "require": "./dist/react-daisyui.cjs",
+      "default": "./dist/react-daisyui.modern.js"
+    }
   },
   "main": "./dist/react-daisyui.cjs",
   "module": "./dist/react-daisyui.esm.js",

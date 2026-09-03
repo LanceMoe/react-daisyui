@@ -1,6 +1,15 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "ignoreDeprecations": "6.0"
-  }
+    "ignoreDeprecations": "6.0",
+    "rootDir": "./src",
+    "noEmit": false,
+    "declaration": true
+  },
+  "include": ["./src"],
+  "exclude": [
+    "./src/**/*.stories.tsx",
+    "./src/**/*.test.ts",
+    "./src/**/*.test.tsx"
+  ]
 }
