@@ -34,5 +34,5 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
       - run: pnpm run typecheck
-      - run: pnpm test -- --runInBand
+      - run: pnpm exec jest --runInBand
       - run: pnpm run dist
