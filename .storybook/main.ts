@@ -1,22 +1,21 @@
-import { StorybookConfig } from '@storybook/react-vite';
+import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
-  stories: ['./docs/pages/Welcome.mdx', "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [{
-    name: '@storybook/addon-styling',
-    options: {
-      implementation: require("postcss"),
-    },
-  }, {
-    name: '@storybook/addon-essentials',
-    options: {
-      backgrounds: false
-    }
-  }],
+  stories: ['./docs/pages/Welcome.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-docs'],
   framework: '@storybook/react-vite',
+  features: {
+    backgrounds: false,
+  },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      include: ['src/**/*.tsx', '.storybook/**/*.tsx'],
+    },
+  },
   docs: {
-    autodocs: false
+    autodocs: false,
   }
-};
+}
 
-export default config;
+export default config
