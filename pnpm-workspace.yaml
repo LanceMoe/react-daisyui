@@ -1,5 +1,7 @@
 allowBuilds:
+  '@parcel/watcher': true
   esbuild: true
+  unrs-resolver: true
 minimumReleaseAgeExclude:
   - '@storybook/builder-vite@10.6.0'
   - '@storybook/react-dom-shim@10.6.0'
@@ -7,3 +9,6 @@ minimumReleaseAgeExclude:
   - '@storybook/react@10.6.0'
   - storybook@10.6.0
   - '@storybook/addon-docs@10.6.0'
+  - '@types/react-dom@19.2.7'
+  - daisyui@5.7.28
+  - postcss@8.5.27

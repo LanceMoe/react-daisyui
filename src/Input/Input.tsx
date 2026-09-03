@@ -11,6 +11,8 @@ export type InputProps = Omit<
   IComponentBaseProps & {
     size?: ComponentSize
     color?: ComponentColor
+    bordered?: boolean
+    borderOffset?: boolean
   }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -23,10 +25,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       dataTheme,
       className,
       type,
+      bordered,
+      borderOffset,
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'input',
       className,
@@ -44,6 +48,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         'input-success': color === 'success',
         'input-warning': color === 'warning',
         'input-error': color === 'error',
+        'input-bordered': bordered,
+        'input-border-offset': borderOffset,
+        'focus:outline-offset-0': borderOffset === false,
       })
     )
 

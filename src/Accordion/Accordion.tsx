@@ -20,7 +20,7 @@ const Accordion = forwardRef<HTMLInputElement, AccordionProps>(
   (
     { name = 'accordion', icon, dataTheme, className, children, ...props },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'collapse',
       clsx({

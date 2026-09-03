@@ -38,15 +38,21 @@ export const wrapWithElementIfInvalid = ({
   } else if (!React.isValidElement(node)) {
     return React.cloneElement(wrapper, props, node)
   } else if (isReactFragment(node)) {
+    const element = node as React.ReactElement<{
+      className?: string
+      children?: React.ReactNode
+      [key: string]: unknown
+    }>
     return React.cloneElement(
       wrapper,
-      { ...props, className: twMerge(node.props?.className, props?.className) },
-      node.props.children
+      { ...props, className: twMerge(element.props?.className, props?.className) },
+      element.props.children
     )
   } else {
+    const element = node as React.ReactElement<{ className?: string }>
     return React.cloneElement(node, {
       ...props,
-      className: twMerge(node.props?.className, props?.className),
+      className: twMerge(element.props?.className, props?.className),
     })
   }
 }
@@ -57,6 +63,7 @@ export const isSingleStringChild = (children?: React.ReactNode) => {
     children &&
     React.Children.count(children) === 1 &&
     React.isValidElement(children) &&
-    typeof children.props.children === 'string'
+    typeof (children as React.ReactElement<{ children?: React.ReactNode }>).props
+      .children === 'string'
   )
 }

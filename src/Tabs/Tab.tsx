@@ -22,7 +22,7 @@ const Tab = forwardRef<HTMLAnchorElement, TabProps>(
     active,
     disabled,
     ...props
-  }, ref): JSX.Element => {
+  }, ref): React.JSX.Element => {
     const classes = twMerge(
       'tab',
       className,

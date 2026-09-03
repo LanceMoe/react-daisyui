@@ -60,7 +60,7 @@ const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     return (
       <div
         role="listbox"

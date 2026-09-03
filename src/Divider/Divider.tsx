@@ -29,7 +29,7 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'divider',
       className,

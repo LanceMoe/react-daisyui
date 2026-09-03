@@ -42,7 +42,7 @@ const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'carousel',
       className,
@@ -55,11 +55,11 @@ const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
       })
     )
 
-    const [itemRefs, setItemRefs] = useState<RefObject<HTMLDivElement>[]>([])
+    const [itemRefs, setItemRefs] = useState<RefObject<HTMLDivElement | null>[]>([])
     const [activeIndex, setActiveIndex] = useState(0)
 
     useEffect(() => {
-      const newRefs: RefObject<HTMLDivElement>[] = []
+      const newRefs: RefObject<HTMLDivElement | null>[] = []
       children.map((_) => {
         newRefs.push(createRef<HTMLDivElement>())
       })
@@ -108,7 +108,10 @@ const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
           <div className="flex justify-center w-full py-2 gap-2">
             {children.map((_, i) => {
               if (buttonStyle != null) {
-                return cloneElement(buttonStyle((i + 1).toString()), {
+                const button = buttonStyle((i + 1).toString()) as React.ReactElement<{
+                  onClick?: React.MouseEventHandler
+                }>
+                return cloneElement(button, {
                   key: i,
                   onClick: () => scrollToIndex(i),
                 })

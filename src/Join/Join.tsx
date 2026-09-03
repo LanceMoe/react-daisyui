@@ -23,7 +23,7 @@ const Join = forwardRef<HTMLDivElement, JoinProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'join',
       clsx({

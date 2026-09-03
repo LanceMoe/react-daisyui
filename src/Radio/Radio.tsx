@@ -18,7 +18,7 @@ export type RadioProps = Omit<
   }
 
 const Radio = forwardRef<HTMLInputElement, RadioProps>(
-  ({ color, size, name, dataTheme, className, ...props }, ref): JSX.Element => {
+  ({ color, size, name, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'radio',
       className,

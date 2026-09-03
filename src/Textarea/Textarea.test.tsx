@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 
 import * as React from 'react'
 import { render, fireEvent, screen } from '@testing-library/react'

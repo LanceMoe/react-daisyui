@@ -22,7 +22,7 @@ const Details = React.forwardRef<HTMLDetailsElement, DetailsProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     return (
       <details
         role="listbox"

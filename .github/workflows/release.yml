@@ -28,6 +28,10 @@ jobs:
         if: ${{ steps.release-please.outputs.pr }}
         with:
           ref: ${{ steps.extract-branch.outputs.result }}
+      - uses: actions/setup-node@v4
+        if: ${{ steps.release-please.outputs.pr }}
+        with:
+          node-version: '22.x'
       - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm ci
         if: ${{ steps.release-please.outputs.pr }}
       - run: npm run docs
@@ -52,7 +56,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v4
         with:
-          node-version: '17.x'
+          node-version: '22.x'
         if: ${{ steps.release.outputs.release_created }}
       - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm ci
         if: ${{ steps.release.outputs.release_created }}

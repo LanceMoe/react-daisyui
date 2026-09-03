@@ -17,7 +17,7 @@ const Step = React.forwardRef<HTMLLIElement, StepProps>(
   (
     { children, value, color, dataTheme, className, ...props },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'step',
       className,

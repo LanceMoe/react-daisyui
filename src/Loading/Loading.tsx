@@ -29,7 +29,7 @@ const Loading = forwardRef<HTMLSpanElement, LoadingProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'loading',
       className,

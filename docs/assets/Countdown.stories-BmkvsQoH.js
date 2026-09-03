@@ -1,0 +1,83 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./react-BZJXY1be.js";import{n as r,t as i}from"./bundle-mjs-C6fYOv-m.js";import{t as a}from"./jsx-runtime-DeHZSEgm.js";var o,s;function c(){return(c=t((()=>{n(),i(),o=a(),s=({value:e,dataTheme:t,className:n,...i})=>{let a=r(`countdown`,n),s={"--value":Math.min(99,Math.max(0,e))};return(0,o.jsx)(`span`,{role:`timer`,...i,"data-theme":t,className:a,children:(0,o.jsx)(`span`,{style:s})})};try{s.displayName=`Countdown`,s.__docgenInfo={description:``,displayName:`Countdown`,filePath:`E:/repos/react-daisyui/src/Countdown/Countdown.tsx`,methods:[],props:{dataTheme:{defaultValue:null,declarations:[{fileName:`react-daisyui/src/types.ts`,name:`IComponentBaseProps`}],description:``,name:`dataTheme`,parent:{fileName:`react-daisyui/src/types.ts`,name:`IComponentBaseProps`},required:!1,tags:{},type:{name:`string | undefined`}},value:{defaultValue:null,declarations:[{fileName:`react-daisyui/src/Countdown/Countdown.tsx`,name:`TypeLiteral`}],description:``,name:`value`,required:!0,tags:{},type:{name:`number`}}},tags:{}}}catch{}})))()}var l;function u(){return(u=t((()=>{c(),l=s;try{s.displayName=`Countdown`,s.__docgenInfo={description:``,displayName:`Countdown`,filePath:`E:/repos/react-daisyui/src/Countdown/index.tsx`,methods:[],props:{dataTheme:{defaultValue:null,declarations:[{fileName:`react-daisyui/src/types.ts`,name:`IComponentBaseProps`}],description:``,name:`dataTheme`,parent:{fileName:`react-daisyui/src/types.ts`,name:`IComponentBaseProps`},required:!1,tags:{},type:{name:`string | undefined`}},value:{defaultValue:null,declarations:[{fileName:`react-daisyui/src/Countdown/Countdown.tsx`,name:`TypeLiteral`}],description:``,name:`value`,required:!0,tags:{},type:{name:`number`}}},tags:{}}}catch{}})))()}var d,f,p,m,h,g,_,v;function y(){return(y=t((()=>{d=e(n(),1),u(),f=a(),p={title:`Data Display/Countdown`,component:l},m=e=>{let[t,n]=(0,d.useState)(e.value);return(0,d.useEffect)(()=>{let t=setTimeout(()=>{n(t=>t<=0?e.value:t-1)},1e3);return()=>{clearTimeout(t)}},[t]),(0,f.jsx)(l,{className:`text-2xl`,value:t})},m.args={value:50},h=e=>{let[t,n]=(0,d.useState)(e.value);return(0,d.useEffect)(()=>{let t=setTimeout(()=>{n(t=>t<=0?e.value:t-1)},1e3);return()=>{clearTimeout(t)}},[t]),(0,f.jsxs)(`span`,{className:`font-mono text-2xl`,children:[(0,f.jsx)(l,{value:10}),`:`,(0,f.jsx)(l,{value:24}),`:`,(0,f.jsx)(l,{value:t})]})},h.args={value:34},g=e=>{let[t,n]=(0,d.useState)(e.value);return(0,d.useEffect)(()=>{let t=setTimeout(()=>{n(t=>t<=0?e.value:t-1)},1e3);return()=>{clearTimeout(t)}},[t]),(0,f.jsxs)(`div`,{className:`grid grid-flow-col gap-5 text-center auto-cols-max`,children:[(0,f.jsxs)(`div`,{className:`flex flex-col`,children:[(0,f.jsx)(l,{className:`font-mono text-5xl`,value:15}),`days`]}),(0,f.jsxs)(`div`,{className:`flex flex-col`,children:[(0,f.jsx)(l,{className:`font-mono text-5xl`,value:10}),`hours`]}),(0,f.jsxs)(`div`,{className:`flex flex-col`,children:[(0,f.jsx)(l,{className:`font-mono text-5xl`,value:24}),`min`]}),(0,f.jsxs)(`div`,{className:`flex flex-col`,children:[(0,f.jsx)(l,{className:`font-mono text-5xl`,value:t}),`sec`]})]})},g.args={value:37},_=e=>{let[t,n]=(0,d.useState)(e.value);return(0,d.useEffect)(()=>{let t=setTimeout(()=>{n(t=>t<=0?e.value:t-1)},1e3);return()=>{clearTimeout(t)}},[t]),(0,f.jsxs)(`div`,{className:`grid grid-flow-col gap-5 text-center auto-cols-max`,children:[(0,f.jsxs)(`div`,{className:`flex flex-col p-2 bg-neutral rounded-box text-neutral-content`,children:[(0,f.jsx)(l,{className:`font-mono text-5xl`,value:15}),`days`]}),(0,f.jsxs)(`div`,{className:`flex flex-col p-2 bg-neutral rounded-box text-neutral-content`,children:[(0,f.jsx)(l,{className:`font-mono text-5xl`,value:10}),`hours`]}),(0,f.jsxs)(`div`,{className:`flex flex-col p-2 bg-neutral rounded-box text-neutral-content`,children:[(0,f.jsx)(l,{className:`font-mono text-5xl`,value:24}),`min`]}),(0,f.jsxs)(`div`,{className:`flex flex-col p-2 bg-neutral rounded-box text-neutral-content`,children:[(0,f.jsx)(l,{className:`font-mono text-5xl`,value:t}),`sec`]})]})},_.args={value:26},v=[`Default`,`Clock`,`WithLabels`,`WithBoxes`],m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`args => {
+  const [value, setValue] = useState<number>(args.value);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setValue(v => v <= 0 ? args.value : v - 1);
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value]);
+  return <Countdown className="text-2xl" value={value} />;
+}`,...m.parameters?.docs?.source}}},h.parameters={...h.parameters,docs:{...h.parameters?.docs,source:{originalSource:`args => {
+  const [value, setValue] = useState<number>(args.value);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setValue(v => v <= 0 ? args.value : v - 1);
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value]);
+  return <span className="font-mono text-2xl">\r
+      <Countdown value={10} />:\r
+      <Countdown value={24} />:\r
+      <Countdown value={value} />\r
+    </span>;
+}`,...h.parameters?.docs?.source}}},g.parameters={...g.parameters,docs:{...g.parameters?.docs,source:{originalSource:`args => {
+  const [value, setValue] = useState<number>(args.value);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setValue(v => v <= 0 ? args.value : v - 1);
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value]);
+  return <div className="grid grid-flow-col gap-5 text-center auto-cols-max">\r
+      <div className="flex flex-col">\r
+        <Countdown className="font-mono text-5xl" value={15} />\r
+        days\r
+      </div>\r
+      <div className="flex flex-col">\r
+        <Countdown className="font-mono text-5xl" value={10} />\r
+        hours\r
+      </div>\r
+      <div className="flex flex-col">\r
+        <Countdown className="font-mono text-5xl" value={24} />\r
+        min\r
+      </div>\r
+      <div className="flex flex-col">\r
+        <Countdown className="font-mono text-5xl" value={value} />\r
+        sec\r
+      </div>\r
+    </div>;
+}`,...g.parameters?.docs?.source}}},_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`args => {
+  const [value, setValue] = useState<number>(args.value);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setValue(v => v <= 0 ? args.value : v - 1);
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value]);
+  return <div className="grid grid-flow-col gap-5 text-center auto-cols-max">\r
+      <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">\r
+        <Countdown className="font-mono text-5xl" value={15} />\r
+        days\r
+      </div>\r
+      <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">\r
+        <Countdown className="font-mono text-5xl" value={10} />\r
+        hours\r
+      </div>\r
+      <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">\r
+        <Countdown className="font-mono text-5xl" value={24} />\r
+        min\r
+      </div>\r
+      <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">\r
+        <Countdown className="font-mono text-5xl" value={value} />\r
+        sec\r
+      </div>\r
+    </div>;
+}`,..._.parameters?.docs?.source}}}})))()}y();export{h as Clock,m as Default,_ as WithBoxes,g as WithLabels,v as __namedExportsOrder,p as default};

@@ -34,7 +34,7 @@ const WindowMockup = forwardRef<HTMLDivElement, WindowMockupProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     // Set border color to framecolor or 'bg-base-300', if border color is not defined
     const borderColorValue = borderColor
       ? borderColor
@@ -74,7 +74,12 @@ const WindowMockup = forwardRef<HTMLDivElement, WindowMockupProps>(
     // if more than one child is passed in, or the single child is not a valid element, then we need to wrap the child/children in a div
 
     const numChildren = React.Children.count(children)
-    const firstChild = numChildren > 0 && React.Children.toArray(children)[0]
+    const firstChild =
+      numChildren > 0
+        ? (React.Children.toArray(children)[0] as
+            | React.ReactElement<{ className?: string }>
+            | undefined)
+        : undefined
 
     // List of classes that child element will have
     const innerClasses = clsx(
@@ -86,7 +91,7 @@ const WindowMockup = forwardRef<HTMLDivElement, WindowMockupProps>(
     // Add the innerClasses to the child element, merging classNames if existing, or wrapping with div and adding innerClasses
     const innerEl =
       firstChild && React.isValidElement(firstChild) ? (
-        React.cloneElement(firstChild as React.ReactElement, {
+        React.cloneElement(firstChild, {
           className: twMerge(innerClasses, firstChild.props.className),
         })
       ) : (

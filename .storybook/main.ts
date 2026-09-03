@@ -2,6 +2,7 @@ import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
   stories: ['./docs/pages/Welcome.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  staticDirs: ['../public'],
   addons: ['@storybook/addon-docs'],
   framework: '@storybook/react-vite',
   features: {
@@ -13,9 +14,6 @@ const config: StorybookConfig = {
       include: ['src/**/*.tsx', '.storybook/**/*.tsx'],
     },
   },
-  docs: {
-    autodocs: false,
-  }
 }
 
 export default config

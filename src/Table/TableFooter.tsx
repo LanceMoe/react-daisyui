@@ -10,7 +10,7 @@ export type TableFooterProps =
     }
 
 const TableFooter = React.forwardRef<HTMLTableSectionElement, TableFooterProps>(
-  ({ children, noCell = false, ...props }, ref): JSX.Element => {
+  ({ children, noCell = false, ...props }, ref): React.JSX.Element => {
     const renderChildren = noCell
       ? children
       : children?.map((child, i) =>

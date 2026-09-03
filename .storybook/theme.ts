@@ -1,7 +1,7 @@
-import type { ThemeVars } from 'storybook/theming'
+import type { ThemeVarsPartial } from 'storybook/theming'
 import { create } from 'storybook/theming/create'
 
-const baseTheme: ThemeVars = {
+const baseTheme: ThemeVarsPartial = {
   base: 'dark',
   brandTitle: 'react-daisyUI',
   brandUrl: 'https://github.com/daisyui/react-daisyui',

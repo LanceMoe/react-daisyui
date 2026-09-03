@@ -38,7 +38,7 @@ const IndicatorItem = React.forwardRef<HTMLDivElement, IndicatorItemProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     return (
       <div
         aria-label="Indicator"

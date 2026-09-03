@@ -32,7 +32,7 @@ const Timeline = forwardRef<HTMLUListElement, TimelineProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'timeline',
       clsx({

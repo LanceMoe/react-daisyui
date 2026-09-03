@@ -2,7 +2,7 @@ import React from 'react'
 
 export type RatingItemProps = React.InputHTMLAttributes<HTMLInputElement>
 
-const RatingItem = ({ ...props }: RatingItemProps): JSX.Element => {
+const RatingItem = ({ ...props }: RatingItemProps): React.JSX.Element => {
   return <input {...props} type="checkbox" />
 }
 

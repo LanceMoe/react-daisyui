@@ -1,6 +1,5 @@
 import React, { ReactNode, useEffect, useMemo, useState } from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
-import theme from 'prism-react-renderer/themes/vsDark'
+import { Highlight, themes } from 'prism-react-renderer'
 
 import { useGlobalTheme } from './theming'
 
@@ -28,7 +27,7 @@ const StoryLayout = ({ children, title, description, source }: Props) => {
   const Code = () =>
     useMemo(
       () => (
-        <Highlight {...defaultProps} theme={theme} code={source} language="jsx">
+        <Highlight theme={themes.vsDark} code={source} language="jsx">
           {({ tokens, getLineProps, getTokenProps }) => (
             <pre slot="html">
               {tokens.map((line, i) => (
@@ -42,7 +41,7 @@ const StoryLayout = ({ children, title, description, source }: Props) => {
           )}
         </Highlight>
       ),
-      [theme, source]
+      [source]
     )
 
   return (
@@ -67,7 +66,7 @@ const StoryLayout = ({ children, title, description, source }: Props) => {
 
           {/* Desktop view */}
           <div className="hidden sm:grid">
-            <Tabs className="z-10 -mb-px" variant="lifted">
+            <Tabs className="z-10 -mb-px" variant="lift">
               <Tabs.RadioTab
                 name="content"
                 label="Preview"

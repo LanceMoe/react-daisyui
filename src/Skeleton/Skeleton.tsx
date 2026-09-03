@@ -21,7 +21,7 @@ const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
       ...props
       },
       ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'skeleton',
       clsx({

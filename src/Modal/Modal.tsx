@@ -12,7 +12,7 @@ import ModalLegacy from './ModalLegacy'
 export type ModalProps = React.DialogHTMLAttributes<HTMLDialogElement> &
   IComponentBaseProps & {
     open?: boolean
-    position?: Exclude<ComponentPosition, 'left' | 'right'>
+    position?: Exclude<ComponentPosition, 'left' | 'right'> | 'middle'
     responsive?: boolean
     backdrop?: boolean
     ariaHidden?: boolean
@@ -32,7 +32,7 @@ const Modal = forwardRef<HTMLDialogElement, ModalProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const containerClasses = twMerge(
       'modal',
       clsx({

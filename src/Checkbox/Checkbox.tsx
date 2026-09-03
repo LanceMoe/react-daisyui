@@ -34,7 +34,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'checkbox',
       className,

@@ -36,7 +36,7 @@ const preview: Preview = {
     },
     themes: {
       default: window.localStorage.getItem(STORAGE_KEY) || DEFAULT_THEME,
-      onChange: (theme) => {
+      onChange: (theme: (typeof THEME_PICKER_LIST)[number] | undefined) => {
         // STORAGE_KEY does not work in onChange... not sure why
         if (theme) {
           window.localStorage.setItem(

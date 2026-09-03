@@ -16,7 +16,7 @@ const ChatBubble = forwardRef<HTMLDivElement, ChatBubbleProps>(
   (
     { end = false, color, dataTheme, className, children, ...props },
     ref
-  ): JSX.Element => (
+  ): React.JSX.Element => (
     <div
       {...props}
       data-theme={dataTheme}

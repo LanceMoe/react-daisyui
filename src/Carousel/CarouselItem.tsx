@@ -31,7 +31,7 @@ const CarouselItem = ({
   onNext,
   className,
   ...props
-}: CarouselItemProps): JSX.Element => {
+}: CarouselItemProps): React.JSX.Element => {
   const classes = twMerge(
     'carousel-item relative',
     className,
@@ -50,10 +50,10 @@ const CarouselItem = ({
     if (buttonStyle != null) {
       return (
         <>
-          {cloneElement(buttonStyle('❮'), {
+          {cloneElement(buttonStyle('❮') as React.ReactElement<{ onClick?: React.MouseEventHandler }>, {
             onClick: onPrev,
           })}
-          {cloneElement(buttonStyle('❯'), {
+          {cloneElement(buttonStyle('❯') as React.ReactElement<{ onClick?: React.MouseEventHandler }>, {
             onClick: onNext,
           })}
         </>

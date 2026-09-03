@@ -16,7 +16,7 @@ export type DockProps = React.HTMLAttributes<HTMLDivElement> &
   }
 
 const Dock = forwardRef<HTMLDivElement, DockProps>(
-  ({ size, dataTheme, className, children, ...props }, ref): JSX.Element => {
+  ({ size, dataTheme, className, children, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'dock',
       clsx({

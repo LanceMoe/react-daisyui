@@ -13,7 +13,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
   (
     { position = 'bottom', dataTheme, className, children, ...props },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'stack',
       className,

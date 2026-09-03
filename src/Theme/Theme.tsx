@@ -17,7 +17,7 @@ const Theme = React.forwardRef<HTMLDivElement, ThemeProps>(
   (
     { children, dataTheme, onChange, className, ...props },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     // Either use provided ref or create a new ref
     const themeRef = useRef<HTMLDivElement>(
       (ref as MutableRefObject<HTMLDivElement>)?.current

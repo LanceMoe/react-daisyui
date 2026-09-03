@@ -18,7 +18,7 @@ export type ToggleProps = Omit<
   }
 
 const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
-  ({ color, size, dataTheme, className, ...props }, ref): JSX.Element => {
+  ({ color, size, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'toggle',
       className,

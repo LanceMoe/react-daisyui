@@ -46,13 +46,15 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       ...props
     },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const containerClasses = twMerge(
       'avatar',
       className,
       clsx({
         'avatar-online': online,
         'avatar-offline': offline,
+        online,
+        offline,
         'avatar-placeholder': !src,
       })
     )
@@ -132,7 +134,10 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       }
       // Render if a single, not string child was provided (allows for SVGs) and merges classes and styles
       else if (React.Children.count(children) === 1) {
-        const firstChild = React.Children.only(children) as React.ReactElement
+        const firstChild = React.Children.only(children) as React.ReactElement<{
+          className?: string
+          style?: React.CSSProperties
+        }>
         return React.cloneElement(firstChild, {
           className: twMerge(imgClasses, firstChild.props.className),
           style: { ...customImgDimension, ...firstChild.props.style },

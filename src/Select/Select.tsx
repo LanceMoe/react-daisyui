@@ -19,16 +19,18 @@ export type SelectProps = Omit<
     children: ListOrItem<ReactElement<SelectOptionProps>>
     size?: ComponentSize
     color?: ComponentColor
+    bordered?: boolean
   }
 
 const SelectInner = (
   props: SelectProps,
   ref: React.ForwardedRef<HTMLSelectElement>
-): JSX.Element => {
+): React.JSX.Element => {
   const {
     children,
     size,
     color,
+    bordered,
     dataTheme,
     className,
     ...rest
@@ -51,6 +53,7 @@ const SelectInner = (
       'select-success': color === 'success',
       'select-warning': color === 'warning',
       'select-error': color === 'error',
+      'select-bordered': bordered,
     })
   )
 

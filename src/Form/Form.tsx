@@ -9,7 +9,7 @@ export type FormProps = FormHTMLAttributes<HTMLFormElement> &
   IComponentBaseProps
 
 const Form = React.forwardRef<HTMLFormElement, FormProps>(
-  ({ children, dataTheme, className, ...props }, ref): JSX.Element => {
+  ({ children, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge('form-control', className)
 
     return (

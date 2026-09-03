@@ -15,7 +15,7 @@ const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
   (
     { children, active, noCell = false, className, ...props },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       className,
       clsx({

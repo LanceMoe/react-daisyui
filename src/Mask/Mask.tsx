@@ -24,6 +24,10 @@ export type MaskProps = React.ImgHTMLAttributes<HTMLImageElement> &
       | 'triangle-4'
       | 'half-1'
       | 'half-2'
+      | 'parallelogram'
+      | 'parallelogram-2'
+      | 'parallelogram-3'
+      | 'parallelogram-4'
   }
 const classesFn = ({
   className,
@@ -58,7 +62,7 @@ const classesFn = ({
   )
 
 const Mask = React.forwardRef<HTMLImageElement, MaskProps>(
-  ({ src, variant, dataTheme, className, ...props }, ref): JSX.Element => {
+  ({ src, variant, dataTheme, className, ...props }, ref): React.JSX.Element => {
     return (
       <img
         {...props}

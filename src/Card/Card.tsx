@@ -18,6 +18,9 @@ export type CardProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
     size?: ComponentSize
     border?: boolean
+    bordered?: boolean
+    normal?: boolean
+    compact?: boolean
     variant?: Exclude<ComponentVariant, 'soft'> | 'border'
     imageFull?: boolean
 
@@ -42,9 +45,20 @@ const DYNAMIC_MODIFIERS: ModifierMap = {
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (
-    { size, border = true, variant, imageFull, side, className, ...props },
+    {
+      size,
+      border = true,
+      bordered,
+      normal,
+      compact,
+      variant,
+      imageFull,
+      side,
+      className,
+      ...props
+    },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'card',
       className,
@@ -56,6 +70,9 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         'card-xs': size === 'xs',
         'card-dash': variant === 'dash',
         'card-border': border || variant === 'outline' || variant == 'border',
+        'card-bordered': bordered,
+        'card-normal': normal,
+        'card-compact': compact,
         'image-full': imageFull,
         [(side && DYNAMIC_MODIFIERS.side[side.toString()]) || '']: side,
       })

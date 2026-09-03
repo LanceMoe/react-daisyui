@@ -21,7 +21,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
   (
     { children, icon, layout, status, variant, dataTheme, className, ...props },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       'alert',
       className,

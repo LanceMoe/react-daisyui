@@ -7,7 +7,7 @@ export type TableHeadProps =
   }
 
 const TableHead = React.forwardRef<HTMLTableSectionElement, TableHeadProps>(
-  ({ children, noCell = false, ...props }, ref): JSX.Element => {
+  ({ children, noCell = false, ...props }, ref): React.JSX.Element => {
     const renderChildren = noCell
       ? children
       : children?.map((child, i) =>

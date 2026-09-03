@@ -10,7 +10,7 @@ export type HeroProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps
 
 const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
-  ({ dataTheme, className, children, ...props }, ref): JSX.Element => {
+  ({ dataTheme, className, children, ...props }, ref): React.JSX.Element => {
     const classes = twMerge('hero', className)
 
     return (

@@ -18,7 +18,7 @@ const DockItem = forwardRef<HTMLButtonElement, DockItemProps>(
   (
     { children, className, color, dataTheme, active, disabled, ...props },
     ref
-  ): JSX.Element => {
+  ): React.JSX.Element => {
     const classes = twMerge(
       className,
       clsx({
