@@ -12,7 +12,7 @@ export type MenuItemProps = React.ComponentPropsWithoutRef<'li'> &
   };
 
 const MenuItem = React.forwardRef<HTMLLIElement, MenuItemProps>(
-  ({ className, focus, active, disabled, ...props }, ref) => {
+  ({ className, focus, active, disabled, dataTheme, ...props }, ref) => {
     const classes = twMerge(
       className,
       clsx({
@@ -22,7 +22,9 @@ const MenuItem = React.forwardRef<HTMLLIElement, MenuItemProps>(
       }),
     );
 
-    return <li role="menuitem" className={classes} {...props} ref={ref} />;
+    return (
+      <li role="menuitem" aria-disabled={disabled} data-theme={dataTheme} className={classes} {...props} ref={ref} />
+    );
   },
 );
 

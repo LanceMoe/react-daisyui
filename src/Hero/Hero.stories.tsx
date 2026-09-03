@@ -1,4 +1,4 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
+import { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Button from '../Button';
@@ -70,13 +70,13 @@ export const HeroWithForm: Story<HeroProps> = (args) => {
           <Card.Body>
             <Form>
               <Form.Label title="Email" />
-              <Input type="text" placeholder="email" className="input-bordered" />
+              <Input type="text" placeholder="email" className="border" />
             </Form>
             <Form>
               <Form.Label title="Password" />
-              <Input type="text" placeholder="password" className="input-bordered" />
+              <Input type="text" placeholder="password" className="border" />
               <label className="label">
-                <Link href="#" className="label-text-alt" hover>
+                <Link href="#" className="text-xs text-base-content/60" hover>
                   Forgot password?
                 </Link>
               </label>

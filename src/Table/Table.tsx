@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentSize,IComponentBaseProps } from '../types';
+import { ComponentSize, IComponentBaseProps } from '../types';
 import TableBody from './TableBody';
 import TableFooter from './TableFooter';
 import TableHead from './TableHead';

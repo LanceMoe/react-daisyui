@@ -2,14 +2,14 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentPosition,IComponentBaseProps } from '../types';
+import { ComponentColor, ComponentPosition, IComponentBaseProps } from '../types';
 
 export type TooltipProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'color'> &
   IComponentBaseProps & {
     message: string;
     open?: boolean;
     color?: ComponentColor;
-    position?: ComponentPosition;
+    position?: ComponentPosition | 'center';
   };
 
 const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
@@ -30,6 +30,9 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         'tooltip-bottom': position === 'bottom',
         'tooltip-left': position === 'left',
         'tooltip-right': position === 'right',
+        'tooltip-start': position === 'start',
+        'tooltip-center': position === 'center',
+        'tooltip-end': position === 'end',
       }),
     );
 

@@ -13,10 +13,10 @@ const CodeMockup = forwardRef<HTMLDivElement, CodeMockupProps>(
     return (
       <div aria-label="Code mockup" {...props} data-theme={dataTheme} className={classes} ref={ref}>
         {React.Children.map(children, (child, index) => {
-          const childComponent = child as React.ReactElement<CodeMockupLineProps>;
-          return React.cloneElement(childComponent, {
-            key: index,
-          });
+          if (!React.isValidElement<CodeMockupLineProps>(child)) {
+            return child;
+          }
+          return React.cloneElement(child, { key: child.key ?? index });
         })}
       </div>
     );

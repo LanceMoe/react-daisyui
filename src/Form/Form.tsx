@@ -8,7 +8,7 @@ export type FormProps = React.ComponentPropsWithoutRef<'form'> & IComponentBaseP
 
 const Form = React.forwardRef<HTMLFormElement, FormProps>(
   ({ children, dataTheme, className, ...props }, ref): React.JSX.Element => {
-    const classes = twMerge('form-control', className);
+    const classes = twMerge('flex flex-col gap-2', className);
 
     return (
       <form role="form" {...props} data-theme={dataTheme} className={classes} ref={ref}>

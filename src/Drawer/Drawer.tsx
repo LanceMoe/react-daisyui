@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useId } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
@@ -13,6 +13,7 @@ export type DrawerProps = React.ComponentPropsWithoutRef<'div'> &
     contentClassName?: string;
     sideClassName?: string;
     overlayClassName?: string;
+    toggleId?: string;
     onClickOverlay?: () => void;
   };
 
@@ -27,9 +28,12 @@ function Drawer({
   contentClassName,
   sideClassName,
   overlayClassName,
+  toggleId,
   onClickOverlay,
   ...props
 }: DrawerProps) {
+  const generatedToggleId = useId();
+  const resolvedToggleId = toggleId || `drawer-${generatedToggleId}`;
   const classes = twMerge(
     'drawer',
     className,
@@ -40,10 +44,21 @@ function Drawer({
 
   return (
     <div aria-expanded={open} {...props} data-theme={dataTheme} className={classes}>
-      <input type="checkbox" className={clsx('drawer-toggle', toggleClassName)} checked={open} readOnly />
+      <input
+        id={resolvedToggleId}
+        type="checkbox"
+        className={clsx('drawer-toggle', toggleClassName)}
+        checked={open}
+        readOnly
+      />
       <div className={clsx('drawer-content', contentClassName)}>{children}</div>
       <div className={clsx('drawer-side', sideClassName)}>
-        <label className={clsx('drawer-overlay', overlayClassName)} onClick={onClickOverlay}></label>
+        <label
+          htmlFor={resolvedToggleId}
+          aria-label="Close drawer"
+          className={clsx('drawer-overlay', overlayClassName)}
+          onClick={onClickOverlay}
+        />
         {side}
       </div>
     </div>

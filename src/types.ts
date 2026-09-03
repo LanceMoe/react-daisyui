@@ -13,9 +13,9 @@ import { DEFAULT_THEMES } from './defaultThemes';
 
 export type DataTheme = (typeof DEFAULT_THEMES)[number] | string;
 
-export interface IComponentBaseProps {
+export type IComponentBaseProps = {
   dataTheme?: DataTheme;
-}
+};
 
 export type ComponentColor = (typeof componentColors)[number];
 

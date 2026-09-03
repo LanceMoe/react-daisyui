@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentSize, ComponentVariant,IComponentBaseProps } from '../types';
+import { ComponentSize, ComponentVariant, IComponentBaseProps } from '../types';
 import CardActions, { CardActionsProps as ActionProps } from './CardActions';
 import CardBody, { CardBodyProps as BodyProps } from './CardBody';
 import CardImage, { CardImageProps as ImageProps } from './CardImage';
@@ -26,11 +26,11 @@ export type CardProps = React.ComponentPropsWithoutRef<'div'> &
     side?: ComponentSize | boolean;
   };
 
-interface ModifierMap {
+type ModifierMap = {
   [key: string]: {
     [key: string]: string | undefined;
   };
-}
+};
 
 const DYNAMIC_MODIFIERS: ModifierMap = {
   side: {
@@ -39,12 +39,26 @@ const DYNAMIC_MODIFIERS: ModifierMap = {
     sm: 'sm:card-side',
     md: 'md:card-side',
     lg: 'lg:card-side',
+    xl: 'xl:card-side',
   },
 };
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (
-    { size, border = true, bordered, normal, compact, variant, imageFull, side, className, ...props },
+    {
+      size,
+      border = true,
+      bordered,
+      normal,
+      compact,
+      variant,
+      imageFull,
+      side,
+      dataTheme,
+      className,
+      children,
+      ...props
+    },
     ref,
   ): React.JSX.Element => {
     const classes = twMerge(
@@ -57,16 +71,19 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         'card-sm': size === 'sm',
         'card-xs': size === 'xs',
         'card-dash': variant === 'dash',
-        'card-border': border || variant === 'outline' || variant == 'border',
-        'card-bordered': bordered,
-        'card-normal': normal,
-        'card-compact': compact,
+        'card-border': border || bordered || variant === 'outline' || variant === 'border',
+        '[--card-p:1rem]': compact,
+        'rounded-box': normal,
         'image-full': imageFull,
         [(side && DYNAMIC_MODIFIERS.side[side.toString()]) || '']: side,
       }),
     );
 
-    return <div aria-label="Card" {...props} className={classes} ref={ref} />;
+    return (
+      <div aria-label="Card" {...props} data-theme={dataTheme} className={classes} ref={ref}>
+        {children}
+      </div>
+    );
   },
 );
 

@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 
 import { defaultTheme } from '../constants';
 import { DataTheme, IComponentBaseProps } from '../types';
@@ -12,35 +12,47 @@ export type ThemeProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'>
 
 const Theme = React.forwardRef<HTMLDivElement, ThemeProps>(
   ({ children, dataTheme, onChange, className, ...props }, ref): React.JSX.Element => {
-    // Either use provided ref or create a new ref
-    const themeRef = useRef<HTMLDivElement>((ref as MutableRefObject<HTMLDivElement>)?.current);
+    const themeRef = useRef<HTMLDivElement>(null);
+    const [theme, setTheme] = useState<DataTheme>(dataTheme || defaultTheme);
 
-    const closestAncestorTheme = getThemeFromClosestAncestor(themeRef);
+    const handleThemeChange = useCallback(
+      (nextTheme: DataTheme) => {
+        // Fire custom onChange, if provided. ie, user provided function to store theme in session/local storage
+        if (onChange) {
+          onChange(nextTheme);
+        }
+        // Update state/context
+        setTheme(nextTheme);
+      },
+      [onChange],
+    );
 
-    // If no theme is provided, use the closest ancestor theme, if no ancestor theme, fallback to default theme (defined in constants)
-    const [theme, setTheme] = useState<DataTheme>(dataTheme || closestAncestorTheme || defaultTheme);
-
-    const handleThemeChange = (theme: DataTheme) => {
-      // Fire custom onChange, if provided. ie, user provided function to store theme in session/local storage
-      if (onChange) {
-        onChange(theme);
-      }
-      // Update state/context
-      setTheme(theme);
-    };
-
-    // Properly handle changes to theme prop on Theme component
-    useEffect(() => {
-      if (dataTheme !== theme) {
-        if (dataTheme) {
+    useLayoutEffect(() => {
+      if (dataTheme) {
+        if (dataTheme !== theme) {
           handleThemeChange(dataTheme);
         }
+        return;
       }
-    }, [dataTheme]);
+
+      const closestAncestorTheme = getThemeFromClosestAncestor(themeRef);
+      if (closestAncestorTheme && closestAncestorTheme !== theme) {
+        handleThemeChange(closestAncestorTheme);
+      }
+    }, [dataTheme, handleThemeChange, theme]);
+
+    const setThemeRef = (element: HTMLDivElement | null) => {
+      themeRef.current = element;
+      if (typeof ref === 'function') {
+        ref(element);
+      } else if (ref) {
+        ref.current = element;
+      }
+    };
 
     return (
       <ThemeContext.Provider value={{ theme, setTheme: handleThemeChange }}>
-        <div {...props} data-theme={theme} className={className} ref={themeRef}>
+        <div {...props} data-theme={theme} className={className} ref={setThemeRef}>
           {children}
         </div>
       </ThemeContext.Provider>

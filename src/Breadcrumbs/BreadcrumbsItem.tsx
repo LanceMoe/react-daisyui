@@ -7,7 +7,7 @@ export type BreadcrumbsItemProps = React.ComponentPropsWithoutRef<'li'> & {
 const BreadcrumbsItem = React.forwardRef<HTMLLIElement, BreadcrumbsItemProps>(
   ({ children, href, ...props }, ref): React.JSX.Element => {
     return (
-      <li role="link" {...props} ref={ref}>
+      <li {...props} ref={ref}>
         {href ? <a href={href}>{children}</a> : <>{children}</>}
       </li>
     );

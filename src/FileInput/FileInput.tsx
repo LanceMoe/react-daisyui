@@ -30,7 +30,7 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
         'file-input-success': color === 'success',
         'file-input-warning': color === 'warning',
         'file-input-error': color === 'error',
-        'file-input-bordered': bordered,
+        border: bordered,
       }),
     );
     return <input {...props} ref={ref} type="file" data-theme={dataTheme} className={classes} />;

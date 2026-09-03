@@ -1,4 +1,4 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
+import { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Textarea, { TextareaProps } from '.';
@@ -23,15 +23,15 @@ export const Default: Story<TextareaProps> = (args) => {
 export const FormControlAndLabels: Story<TextareaProps> = (args) => {
   return (
     <div className="flex w-full component-preview p-4 items-center justify-center gap-2 font-sans">
-      <div className="form-control">
+      <div className="flex flex-col gap-2">
         <label className="label">
-          <span className="label-text">Your bio</span>
-          <span className="label-text-alt">Alt label</span>
+          <span>Your bio</span>
+          <span className="text-xs text-base-content/60">Alt label</span>
         </label>
         <Textarea {...args} />
         <label className="label">
-          <span className="label-text-alt">Your bio</span>
-          <span className="label-text-alt">Alt label</span>
+          <span className="text-xs text-base-content/60">Your bio</span>
+          <span className="text-xs text-base-content/60">Alt label</span>
         </label>
       </div>
     </div>

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentSize,IComponentBaseProps } from '../types';
+import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
 export type InputProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'size' | 'color'> &
   IComponentBaseProps & {
@@ -34,8 +34,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         'input-success': color === 'success',
         'input-warning': color === 'warning',
         'input-error': color === 'error',
-        'input-bordered': bordered,
-        'input-border-offset': borderOffset,
+        border: bordered,
         'focus:outline-offset-0': borderOffset === false,
       }),
     );

@@ -1,4 +1,4 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
+import { Meta, StoryFn as Story } from '@storybook/react';
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 

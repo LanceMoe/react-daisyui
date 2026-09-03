@@ -3,23 +3,12 @@
   themes: all;
 }
 
-:root {
-  --base-content: var(--color-base-content);
-  --base-100: var(--color-base-100);
-  --base-200: var(--color-base-200);
-  --alpha: 0.2;
-}
-
-/* FIXME: this class should add the polka-dotted background to story previews. 
- * however we cannot add transparency to the base-content color variable.
- */
-
 .preview {
   background-image: repeating-linear-gradient(
     45deg,
-    var(--fallback-b1, oklch(var(--b1))),
-    var(--fallback-b1, oklch(var(--b1))) 13px,
-    var(--fallback-b2, oklch(var(--b2))) 13px,
-    var(--fallback-b2, oklch(var(--b2))) 14px
+    var(--color-base-100),
+    var(--color-base-100) 13px,
+    var(--color-base-200) 13px,
+    var(--color-base-200) 14px
   );
 }

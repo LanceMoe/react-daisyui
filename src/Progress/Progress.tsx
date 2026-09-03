@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor,IComponentBaseProps } from '../types';
+import { ComponentColor, IComponentBaseProps } from '../types';
 
 export type ProgressProps = Omit<React.ComponentPropsWithoutRef<'progress'>, 'color'> &
   IComponentBaseProps & {
@@ -17,7 +17,6 @@ const Progress = forwardRef<HTMLProgressElement, ProgressProps>(
       clsx({
         'progress-accent': color === 'accent',
         'progress-error': color === 'error',
-        'progress-ghost': color === 'ghost',
         'progress-info': color === 'info',
         'progress-primary': color === 'primary',
         'progress-secondary': color === 'secondary',

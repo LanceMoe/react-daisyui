@@ -2,18 +2,22 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor } from '../types';
+import { ComponentColor, IComponentBaseProps } from '../types';
 
-export type TabProps = Omit<React.ComponentPropsWithoutRef<'a'>, 'color'> & {
-  color?: ComponentColor;
-  bgColor?: string;
-  borderColor?: string;
-  active?: boolean;
-  disabled?: boolean;
-};
+export type TabProps = Omit<React.ComponentPropsWithoutRef<'a'>, 'color'> &
+  IComponentBaseProps & {
+    color?: ComponentColor;
+    bgColor?: string;
+    borderColor?: string;
+    active?: boolean;
+    disabled?: boolean;
+  };
 
 const Tab = forwardRef<HTMLAnchorElement, TabProps>(
-  ({ children, className, color, bgColor, borderColor, active, disabled, ...props }, ref): React.JSX.Element => {
+  (
+    { children, className, color, bgColor, borderColor, active, disabled, dataTheme, ...props },
+    ref,
+  ): React.JSX.Element => {
     const classes = twMerge(
       'tab',
       className,
@@ -33,7 +37,15 @@ const Tab = forwardRef<HTMLAnchorElement, TabProps>(
       }),
     );
     return (
-      <a role="tab" {...props} ref={ref} className={classes}>
+      <a
+        role="tab"
+        {...props}
+        data-theme={dataTheme}
+        aria-disabled={disabled}
+        tabIndex={disabled ? -1 : props.tabIndex}
+        ref={ref}
+        className={classes}
+      >
         {children}
       </a>
     );

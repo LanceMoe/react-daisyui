@@ -1,4 +1,4 @@
-import { fireEvent,render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import Drawer from './';
 
@@ -58,7 +58,7 @@ describe('Drawer component', () => {
   test('Should open when the toggle is clicked', () => {
     render(<Drawer side={<div>Side content</div>}>Content</Drawer>);
 
-    const toggle = screen.getByRole('checkbox', { name: '' });
+    const toggle = screen.getByRole('checkbox', { name: 'Close drawer' });
 
     expect(toggle).toBeInTheDocument();
 

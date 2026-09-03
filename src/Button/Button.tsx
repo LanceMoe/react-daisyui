@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import React, { ElementType,forwardRef, ReactNode } from 'react';
+import React, { ElementType, forwardRef, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import Loading from '../Loading';
-import { ComponentColor, ComponentShape, ComponentSize,ComponentVariant, IComponentBaseProps } from '../types';
+import { ComponentColor, ComponentShape, ComponentSize, ComponentVariant, IComponentBaseProps } from '../types';
 
 type ITagProps = {
   a: {
@@ -77,6 +77,8 @@ const VoidElementList: ElementType[] = [
   'track',
   'wbr',
 ];
+
+const nativeDisabledTags = new Set<ElementType>(['button', 'input']);
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -104,6 +106,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ): React.JSX.Element => {
     const Tag = tag;
+    const supportsDisabledAttribute = nativeDisabledTags.has(Tag);
+    const disabledProps = disabled
+      ? supportsDisabledAttribute
+        ? { disabled: true }
+        : { tabIndex: -1, role: 'button', 'aria-disabled': true }
+      : {};
     const classes = twMerge(
       'btn',
       className,
@@ -138,10 +146,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       }),
     );
     if (VoidElementList.includes(Tag)) {
-      return <Tag {...props} ref={ref} data-theme={dataTheme} className={classes} style={style} disabled={disabled} />;
+      return <Tag {...props} {...disabledProps} ref={ref} data-theme={dataTheme} className={classes} style={style} />;
     } else {
       return (
-        <Tag {...props} ref={ref} data-theme={dataTheme} className={classes} style={style} disabled={disabled}>
+        <Tag {...props} {...disabledProps} ref={ref} data-theme={dataTheme} className={classes} style={style}>
           {loading && <Loading size={size} />}
           {startIcon && !loading && startIcon}
           {children}

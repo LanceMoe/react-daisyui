@@ -1,27 +1,25 @@
-import { Highlight, themes } from 'prism-react-renderer'
-import React, { ReactNode, useEffect, useMemo, useState } from 'react'
+import { Highlight, themes } from 'prism-react-renderer';
+import React, { ReactNode, useEffect, useMemo, useState } from 'react';
 
-import CodeMockup from '../src/CodeMockup'
-import Navbar from '../src/Navbar'
-import Tabs from '../src/Tabs'
-import Theme from '../src/Theme'
-import { useGlobalTheme } from './theming'
+import CodeMockup from '../src/CodeMockup';
+import Navbar from '../src/Navbar';
+import Tabs from '../src/Tabs';
+import Theme from '../src/Theme';
+import { useGlobalTheme } from './theming';
 
 type Props = {
-  children: ReactNode | ReactNode[]
-  title: string
-  description: string
-  source: string
-}
+  children: ReactNode | ReactNode[];
+  title: string;
+  description: string;
+  source: string;
+};
 
 function StoryLayout({ children, title, description, source }: Props) {
-  const globalTheme = useGlobalTheme()
+  const globalTheme = useGlobalTheme();
 
   useEffect(() => {
-    document
-      .getElementsByTagName('html')[0]
-      .setAttribute('data-theme', globalTheme)
-  }, [globalTheme])
+    document.getElementsByTagName('html')[0].setAttribute('data-theme', globalTheme);
+  }, [globalTheme]);
 
   const Code = () =>
     useMemo(
@@ -40,8 +38,8 @@ function StoryLayout({ children, title, description, source }: Props) {
           )}
         </Highlight>
       ),
-      [source]
-    )
+      [source],
+    );
 
   return (
     <Theme dataTheme={globalTheme} className="w-full h-screen p-8 bg-base-100">
@@ -70,12 +68,11 @@ function StoryLayout({ children, title, description, source }: Props) {
                 name="content"
                 label="Preview"
                 defaultChecked={true}
-                className="checked:[--tab-bg:var(--fallback-b1,oklch(var(--b1)))] checked:!border-base-300  
-                          [--tab-border-color:transparent]"
+                className="checked:[--tab-bg:var(--color-base-100)] checked:!border-base-300 [--tab-border-color:transparent]"
                 contentClassName="overflow-x-auto"
               >
                 <div
-                  className="preview border-base-300 bg-base-100 rounded-se-box rounded-b-box
+                  className="preview border-base-300 bg-base-100 rounded-tr-box rounded-b-box
                             flex min-h-[6rem] min-w-[18rem] flex-wrap items-center justify-center gap-2
                             overflow-x-hidden overflow-y-hidden border bg-cover bg-top p-4"
                 >
@@ -85,9 +82,7 @@ function StoryLayout({ children, title, description, source }: Props) {
               <Tabs.RadioTab
                 name="content"
                 label="HTML"
-                className="[--tab-border-color:transparent] [--tab-bg:var(--fallback-n,oklch(var(--n)))] 
-                checked:[--tab-color:var(--fallback-nc,oklch(var(--nc)))]
-                checked:[--tab-border-color:var(--fallback-n,oklch(var(--n)))]"
+                className="[--tab-border-color:transparent] [--tab-bg:var(--color-neutral)] checked:[--tab-color:var(--color-neutral-content)] checked:[--tab-border-color:var(--color-neutral)]"
                 contentClassName="overflow-x-auto"
               >
                 <CodeMockup className="w-full mb-8">
@@ -99,7 +94,7 @@ function StoryLayout({ children, title, description, source }: Props) {
         </div>
       </div>
     </Theme>
-  )
+  );
 }
 
-export default StoryLayout
+export default StoryLayout;

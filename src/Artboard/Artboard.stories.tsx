@@ -1,4 +1,4 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
+import { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Artboard, { ArtboardProps } from '.';

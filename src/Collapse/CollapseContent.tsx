@@ -5,11 +5,11 @@ import { IComponentBaseProps } from '../types';
 
 export type CollapseContentProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
-function CollapseContent({ children, className, ...props }: CollapseContentProps): React.JSX.Element {
+function CollapseContent({ children, dataTheme, className, ...props }: CollapseContentProps): React.JSX.Element {
   const classes = twMerge('collapse-content', className);
 
   return (
-    <div {...props} className={classes}>
+    <div {...props} data-theme={dataTheme} className={classes}>
       {children}
     </div>
   );

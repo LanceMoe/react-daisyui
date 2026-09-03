@@ -1,4 +1,4 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
+import { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Button from '../Button';
@@ -35,7 +35,7 @@ export const AsCard: Story<DropdownProps> = (args) => {
     <div className="my-32">
       <Dropdown {...args}>
         <Dropdown.Toggle>Click</Dropdown.Toggle>
-        <Dropdown.Menu className="card card-compact w-64 p-2 shadow bg-primary text-primary-content m-1">
+        <Dropdown.Menu className="card [--card-p:1rem] w-64 p-2 shadow bg-primary text-primary-content m-1">
           <Card.Body>
             <Card.Title tag="h3">Card title!</Card.Title>
             <p>you can use any element as a dropdown.</p>
@@ -57,7 +57,7 @@ export const InNavbar: Story<DropdownProps> = ({ dataTheme, ...args }) => {
           Button
         </Button>
         <Dropdown {...args} dataTheme={dataTheme}>
-          <Dropdown.Toggle className="btn btn-ghost rounded-btn" button={false}>
+          <Dropdown.Toggle className="btn btn-ghost rounded-field" button={false}>
             Dropdown
           </Dropdown.Toggle>
           <Dropdown.Menu className="w-52 mt-4">

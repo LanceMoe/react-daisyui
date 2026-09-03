@@ -8,10 +8,12 @@ export type CardTitleProps = React.ComponentPropsWithoutRef<'div'> &
     tag?: ElementType;
   };
 
-const CardTitle = React.forwardRef<HTMLElement, CardTitleProps>(({ className, tag = 'div', ...props }, ref) => {
-  const Tag = tag;
+const CardTitle = React.forwardRef<HTMLElement, CardTitleProps>(
+  ({ dataTheme, className, tag = 'div', ...props }, ref) => {
+    const Tag = tag;
 
-  return <Tag {...props} className={twMerge('card-title', className)} ref={ref} />;
-});
+    return <Tag {...props} data-theme={dataTheme} className={twMerge('card-title', className)} ref={ref} />;
+  },
+);
 
 export default CardTitle;

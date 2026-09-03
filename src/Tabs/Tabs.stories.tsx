@@ -1,4 +1,4 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
+import { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Tabs, { TabsProps } from '.';
@@ -29,7 +29,7 @@ Bordered.args = {
 };
 export const Lifted: Story<TabsProps> = Template.bind({});
 Lifted.args = {
-  variant: 'lifted',
+  variant: 'lift',
 };
 
 export const Boxed: Story<TabsProps> = Template.bind({});
@@ -73,7 +73,7 @@ Sizes.argTypes = {
   },
 };
 Sizes.args = {
-  variant: 'lifted',
+  variant: 'lift',
 };
 
 export const RadioTabBordered: Story<TabsProps> = (args) => {
@@ -117,7 +117,7 @@ export const RadioTabLifted: Story<TabsProps> = (args) => {
 };
 RadioTabLifted.args = {
   className: 'w-full my-10 lg:mx-10',
-  variant: 'lifted',
+  variant: 'lift',
 };
 
 export const TabsWithCustomColor: Story<TabsProps> = (args) => {
@@ -133,5 +133,5 @@ export const TabsWithCustomColor: Story<TabsProps> = (args) => {
 };
 TabsWithCustomColor.args = {
   className: 'w-full my-10 lg:mx-10',
-  variant: 'lifted',
+  variant: 'lift',
 };

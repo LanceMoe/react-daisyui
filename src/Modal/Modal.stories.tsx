@@ -1,5 +1,5 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
-import React, { useCallback,useRef } from 'react';
+import { Meta, StoryFn as Story } from '@storybook/react';
+import React, { useCallback, useRef } from 'react';
 
 import Button from '../Button';
 import Modal, { ModalProps } from '.';

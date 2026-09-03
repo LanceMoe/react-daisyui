@@ -11,12 +11,16 @@ describe('Artboard', () => {
 
   it('renders a size', () => {
     render(<Artboard size={1}>Test</Artboard>);
-    expect(screen.getByLabelText('Artboard')).toHaveClass('phone-1');
+    expect(screen.getByLabelText('Artboard')).toHaveClass('w-[320px]', 'h-[568px]');
   });
 
   it('renders a direction', () => {
-    render(<Artboard horizontal>Test</Artboard>);
-    expect(screen.getByLabelText('Artboard')).toHaveClass('horizontal');
+    render(
+      <Artboard size={1} horizontal>
+        Test
+      </Artboard>,
+    );
+    expect(screen.getByLabelText('Artboard')).toHaveClass('w-[568px]', 'h-[320px]');
   });
 
   it.each`
@@ -27,9 +31,9 @@ describe('Artboard', () => {
   `('renders a demo', ({ demo, expected }) => {
     render(<Artboard demo={demo}>Test</Artboard>);
     if (expected) {
-      expect(screen.getByLabelText('Artboard')).toHaveClass('artboard-demo');
+      expect(screen.getByLabelText('Artboard')).toHaveClass('p-4');
     } else {
-      expect(screen.getByLabelText('Artboard')).not.toHaveClass('artboard-demo');
+      expect(screen.getByLabelText('Artboard')).not.toHaveClass('p-4');
     }
   });
 

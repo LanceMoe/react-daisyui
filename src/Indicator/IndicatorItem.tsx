@@ -30,7 +30,13 @@ const classesFn = ({
 const IndicatorItem = React.forwardRef<HTMLDivElement, IndicatorItemProps>(
   ({ children, horizontal = 'end', vertical = 'top', dataTheme, className, ...props }, ref): React.JSX.Element => {
     return (
-      <div aria-label="Indicator" {...props} className={classesFn({ className, horizontal, vertical })} ref={ref}>
+      <div
+        aria-label="Indicator"
+        {...props}
+        data-theme={dataTheme}
+        className={classesFn({ className, horizontal, vertical })}
+        ref={ref}
+      >
         {children}
       </div>
     );

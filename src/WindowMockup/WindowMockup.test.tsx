@@ -39,6 +39,18 @@ describe('WindowMockup', () => {
     expect(windowMockup).toHaveClass('mockup-window', 'custom-class');
   });
 
+  it('Should preserve all children when more than one child is provided', () => {
+    render(
+      <WindowMockup>
+        <span>First</span>
+        <span>Second</span>
+      </WindowMockup>,
+    );
+
+    expect(screen.getByText('First')).toBeInTheDocument();
+    expect(screen.getByText('Second')).toBeInTheDocument();
+  });
+
   it('Should render with data-theme attribute', () => {
     render(<WindowMockup dataTheme="dark">Content</WindowMockup>);
     const windowMockup = screen.getByLabelText('Window mockup');

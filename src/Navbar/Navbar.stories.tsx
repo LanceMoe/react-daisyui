@@ -1,4 +1,4 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
+import { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -203,7 +203,7 @@ export const IconIndicatorAndDropdown: Story<NavbarProps> = (args) => {
               </svg>
             </Indicator>
           </Button>
-          <Dropdown.Menu className="mt-3 z-[1] card card-compact w-52 !p-0">
+          <Dropdown.Menu className="mt-3 z-[1] card [--card-p:1rem] w-52 !p-0">
             <Card.Body>
               <span className="font-bold text-lg">8 Items</span>
               <span className="text-info">Subtotal: $999</span>

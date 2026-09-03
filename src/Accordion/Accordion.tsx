@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { forwardRef, ReactNode } from 'react';
+import React, { forwardRef, useId } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import CollapseContent from '../Collapse/CollapseContent';
@@ -13,7 +13,8 @@ export type AccordionProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'type
   };
 
 const Accordion = forwardRef<HTMLInputElement, AccordionProps>(
-  ({ name = 'accordion', icon, dataTheme, className, children, ...props }, ref): React.JSX.Element => {
+  ({ name, icon, dataTheme, className, children, ...props }, ref): React.JSX.Element => {
+    const generatedName = useId();
     const classes = twMerge(
       'collapse',
       clsx({
@@ -25,7 +26,7 @@ const Accordion = forwardRef<HTMLInputElement, AccordionProps>(
 
     return (
       <div data-theme={dataTheme} className={classes}>
-        <input {...props} ref={ref} type="radio" name={name} />
+        <input {...props} ref={ref} type="radio" name={name || generatedName} />
         {children}
       </div>
     );

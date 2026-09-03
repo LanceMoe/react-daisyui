@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 export type TableHeadProps = React.ComponentPropsWithoutRef<'thead'> & {
-  children?: ReactNode[];
+  children?: React.ReactNode[];
   noCell?: boolean; // don't wrap children in th/td, should pass children as th/tds manually
 };
 

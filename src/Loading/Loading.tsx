@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import React, { forwardRef, ReactNode } from 'react';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentSize,IComponentBaseProps } from '../types';
+import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
 export type LoadingProps = React.ComponentPropsWithoutRef<'span'> &
   IComponentBaseProps & {
@@ -35,7 +35,6 @@ const Loading = forwardRef<HTMLSpanElement, LoadingProps>(
         'text-success': color === 'success',
         'text-warning': color === 'warning',
         'text-error': color === 'error',
-        'text-ghost': color === 'ghost',
       }),
     );
 

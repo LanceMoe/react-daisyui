@@ -31,9 +31,9 @@ describe('Input', () => {
     expect(mockType).toHaveBeenCalledTimes(0);
   });
 
-  it('Should forward the bordered prop to Input', () => {
+  it('Should not add a border utility when bordered is false', () => {
     render(<Input bordered={false} />);
-    expect(screen.getByRole('textbox')).not.toHaveClass('input-bordered');
+    expect(screen.getByRole('textbox')).not.toHaveClass('border');
   });
 
   it('Should forward the borderOffset prop to Input', () => {

@@ -22,7 +22,7 @@ function DropdownToggle({
   ...props
 }: DropdownToggleProps) {
   return (
-    <label tabIndex={0} className={className} {...props}>
+    <label tabIndex={0} data-theme={dataTheme} className={className} {...props}>
       {button ? (
         <Button type="button" dataTheme={dataTheme} color={color} size={size} disabled={disabled}>
           {children}

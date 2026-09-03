@@ -1,4 +1,4 @@
-import { fireEvent,render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 
 import FileInput from './';
@@ -20,7 +20,7 @@ describe('FileInput', () => {
 
   test('Should apply the bordered class', () => {
     const { container } = render(<FileInput bordered />);
-    expect(container.firstChild).toHaveClass('file-input-bordered');
+    expect(container.firstChild).toHaveClass('border');
   });
 
   test('Should apply additional class names', () => {

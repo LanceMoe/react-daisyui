@@ -13,10 +13,8 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
     const classes = twMerge('label', className);
 
     return (
-      <label {...props} className={classes}>
-        <span className="label-text cursor-pointer" ref={ref}>
-          {title}
-        </span>
+      <label {...props} data-theme={dataTheme} className={classes} ref={ref}>
+        <span className="cursor-pointer">{title}</span>
         {children}
       </label>
     );

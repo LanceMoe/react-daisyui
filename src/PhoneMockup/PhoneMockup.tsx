@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor,IComponentBaseProps } from '../types';
+import { ComponentColor, IComponentBaseProps } from '../types';
 
 export type PhoneMockupProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
@@ -32,7 +32,7 @@ const PhoneMockup = forwardRef<HTMLDivElement, PhoneMockupProps>(
         <div className="mockup-phone-display">
           <div
             {...innerProps}
-            className={twMerge('artboard artboard-demo phone-1', innerProps?.className)}
+            className={twMerge('min-h-full w-full bg-base-100', innerProps?.className)}
             ref={innerRef}
           >
             {children}

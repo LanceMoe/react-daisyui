@@ -24,11 +24,11 @@ describe('Theme', () => {
   it('Should use closest ancestor theme if no dataTheme prop is provided', () => {
     render(
       <div data-theme="ancestor-theme" data-testid="ancestor-div">
-        <Theme />
+        <Theme data-testid="nested-theme" />
       </div>,
     );
 
-    const renderedDiv = screen.getByTestId('ancestor-div');
+    const renderedDiv = screen.getByTestId('nested-theme');
     expect(renderedDiv).toHaveAttribute('data-theme', 'ancestor-theme');
   });
 

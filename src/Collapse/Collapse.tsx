@@ -54,27 +54,27 @@ const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
     // Handle blur events, specifically handling open/close for non checkbox types
     const handleBlur = (event: React.FocusEvent<HTMLDivElement, Element>) => {
       if (!checkbox && onToggle) {
-onToggle();
-}
+        onToggle();
+      }
       if (!checkbox && onClose) {
-onClose();
-}
+        onClose();
+      }
       if (props.onBlur) {
-props.onBlur(event);
-}
+        props.onBlur(event);
+      }
     };
 
     // Handle focus events, specifically handling open/close for non checkbox types
     const handleFocus = (event: React.FocusEvent<HTMLDivElement, Element>) => {
       if (!checkbox && onToggle) {
-onToggle();
-}
+        onToggle();
+      }
       if (!checkbox && onOpen) {
-onOpen();
-}
+        onOpen();
+      }
       if (props.onFocus) {
-props.onFocus(event);
-}
+        props.onFocus(event);
+      }
     };
 
     return (

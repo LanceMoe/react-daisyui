@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useId } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentSize,IComponentBaseProps } from '../types';
+import { ComponentSize, IComponentBaseProps } from '../types';
 import RatingItem, { RatingItemProps } from './RatingItem';
 
 export type RatingProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> &
@@ -11,11 +11,14 @@ export type RatingProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'
     half?: boolean;
     hidden?: boolean;
     value: number;
+    name?: string;
     onChange?: (newRating: number) => void;
   };
 
 const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
-  ({ children, size, half, hidden, dataTheme, className, value, onChange, ...props }, ref): React.JSX.Element => {
+  ({ children, size, half, hidden, dataTheme, className, value, name, onChange, ...props }, ref): React.JSX.Element => {
+    const generatedName = useId();
+    const ratingName = name || `rating-${generatedName}`;
     const classes = twMerge(
       'rating',
       className,
@@ -24,6 +27,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
         'rating-md': size === 'md',
         'rating-sm': size === 'sm',
         'rating-xs': size === 'xs',
+        'rating-xl': size === 'xl',
         'rating-half': half,
         'rating-hidden': hidden || value === 0,
       }),
@@ -31,12 +35,13 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
 
     return (
       <div aria-label="Rating" {...props} ref={ref} data-theme={dataTheme} className={classes}>
-        {value === 0 && <RatingItem className={clsx(classes, 'hidden')} checked readOnly />}
+        {value === 0 && <RatingItem className="rating-hidden hidden" name={ratingName} checked readOnly />}
         {React.Children.map(children, (child, index) => {
           const childComponent = child as ReactElement<RatingItemProps>;
           return React.cloneElement(childComponent, {
             key: index + value,
             checked: value === index + 1,
+            name: childComponent.props.name || ratingName,
             readOnly: onChange == null,
             onChange: () => {
               onChange?.(index + 1);

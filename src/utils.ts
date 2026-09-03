@@ -14,8 +14,8 @@ export const toTitleCase = (str: string) => {
 // Returns true if an element is a react fragment
 export const isReactFragment = (node: React.ReactNode | typeof React.Fragment) => {
   if (!node) {
-return false;
-}
+    return false;
+  }
 
   if ((node as React.ReactElement)?.type) {
     return (node as React.ReactElement)?.type === React.Fragment;

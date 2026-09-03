@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentSize,IComponentBaseProps } from '../types';
+import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
 export type RangeProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'size'> &
   IComponentBaseProps & {
@@ -39,11 +39,13 @@ const Range = forwardRef<HTMLInputElement, RangeProps>(
     const calculatedStep = hasValidStep && numericStep > 0 ? numericStep : 1;
     const calculatedTicksStep =
       ticksStep !== undefined && Number.isFinite(ticksStep) && ticksStep > 0 ? ticksStep : calculatedStep;
-    const min = props.min !== undefined ? Number(props.min) : 0; // default value per HTML standard
-    const max = props.max !== undefined ? Number(props.max) : 100; // default value per HTML standard
+    const parsedMin = props.min !== undefined ? Number(props.min) : 0;
+    const parsedMax = props.max !== undefined ? Number(props.max) : 100;
+    const min = Number.isFinite(parsedMin) ? parsedMin : 0;
+    const max = Number.isFinite(parsedMax) ? parsedMax : 100;
 
     // use Math.max to solve multiple issues with negative numbers throwing errors
-    const numTicks = Math.max(Math.ceil((max - min) / calculatedTicksStep), 1) + 1;
+    const numTicks = Math.min(Math.max(Math.ceil(Math.abs(max - min) / calculatedTicksStep), 1) + 1, 1001);
 
     return (
       <>

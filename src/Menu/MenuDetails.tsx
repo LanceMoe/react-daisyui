@@ -9,9 +9,9 @@ export type MenuDetailsProps = React.ComponentPropsWithoutRef<'details'> &
   };
 
 const MenuDetails = React.forwardRef<HTMLDetailsElement, MenuDetailsProps>(
-  ({ className, label, open, children, ...props }, ref) => {
+  ({ className, label, open, children, dataTheme, ...props }, ref) => {
     return (
-      <details {...props} open={open} className={className} ref={ref}>
+      <details {...props} open={open} data-theme={dataTheme} className={className} ref={ref}>
         <summary>{label}</summary>
         <ul>{children}</ul>
       </details>

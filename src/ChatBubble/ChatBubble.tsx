@@ -14,7 +14,7 @@ export type ChatBubbleProps = React.ComponentPropsWithoutRef<'div'> &
   };
 
 const ChatBubble = forwardRef<HTMLDivElement, ChatBubbleProps>(
-  ({ end = false, color, dataTheme, className, children, ...props }, ref): React.JSX.Element => (
+  ({ end = false, dataTheme, className, children, ...props }, ref): React.JSX.Element => (
     <div
       {...props}
       data-theme={dataTheme}

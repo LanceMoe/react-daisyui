@@ -9,6 +9,34 @@ export const windowMockupColors = [...bgColors, ...brandColors, ...componentStat
 
 type WindowMockupColors = (typeof windowMockupColors)[number];
 
+const borderClasses: Record<WindowMockupColors, string> = {
+  'base-100': 'border-base-100',
+  'base-200': 'border-base-200',
+  'base-300': 'border-base-300',
+  neutral: 'border-neutral',
+  primary: 'border-primary',
+  secondary: 'border-secondary',
+  accent: 'border-accent',
+  info: 'border-info',
+  success: 'border-success',
+  warning: 'border-warning',
+  error: 'border-error',
+};
+
+const backgroundClasses: Record<WindowMockupColors, string> = {
+  'base-100': 'bg-base-100',
+  'base-200': 'bg-base-200',
+  'base-300': 'bg-base-300',
+  neutral: 'bg-neutral',
+  primary: 'bg-primary',
+  secondary: 'bg-secondary',
+  accent: 'bg-accent',
+  info: 'bg-info',
+  success: 'bg-success',
+  warning: 'bg-warning',
+  error: 'bg-error',
+};
+
 export type WindowMockupProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     frameColor?: WindowMockupColors;
@@ -27,31 +55,9 @@ const WindowMockup = forwardRef<HTMLDivElement, WindowMockupProps>(
 
     const classes = twMerge(
       'mockup-window',
-      border && `border border-${borderColorValue}`,
-      clsx({
-        'border-primary': borderColorValue === 'primary',
-        'border-secondary': borderColorValue === 'secondary',
-        'border-accent': borderColorValue === 'accent',
-        'border-info': borderColorValue === 'info',
-        'border-success': borderColorValue === 'success',
-        'border-warning': borderColorValue === 'warning',
-        'border-error': borderColorValue === 'error',
-        'border-base-100': borderColorValue === 'base-100',
-        'border-base-200': borderColorValue === 'base-200',
-        'border-base-300': borderColorValue === 'base-300',
-        'border-neutral': borderColorValue === 'neutral',
-        'bg-primary': frameColor === 'primary',
-        'bg-secondary': frameColor === 'secondary',
-        'bg-accent': frameColor === 'accent',
-        'bg-info': frameColor === 'info',
-        'bg-success': frameColor === 'success',
-        'bg-warning': frameColor === 'warning',
-        'bg-error': frameColor === 'error',
-        'bg-base-100': frameColor === 'base-100',
-        'bg-base-200': frameColor === 'base-200',
-        'bg-base-300': frameColor === 'base-300',
-        'bg-neutral': frameColor === 'neutral',
-      }),
+      borderClasses[borderColorValue],
+      border && 'border',
+      frameColor && backgroundClasses[frameColor],
       className,
     );
 
@@ -66,14 +72,14 @@ const WindowMockup = forwardRef<HTMLDivElement, WindowMockupProps>(
 
     // List of classes that child element will have
     const innerClasses = clsx(
-      backgroundColor && `bg-${backgroundColor}`,
-      border && `border-t border-${borderColorValue}`,
+      backgroundColor && backgroundClasses[backgroundColor],
+      border && `border-t ${borderClasses[borderColorValue]}`,
       'p-4',
     );
 
     // Add the innerClasses to the child element, merging classNames if existing, or wrapping with div and adding innerClasses
     const innerEl =
-      firstChild && React.isValidElement(firstChild) ? (
+      numChildren === 1 && firstChild && React.isValidElement(firstChild) ? (
         React.cloneElement(firstChild, {
           className: twMerge(innerClasses, firstChild.props.className),
         })

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentShape, ComponentSize,IComponentBaseProps } from '../types';
+import { ComponentColor, ComponentShape, ComponentSize, IComponentBaseProps } from '../types';
 import { isSingleStringChild } from '../utils';
 import AvatarGroup from './AvatarGroup';
 
@@ -18,6 +18,7 @@ export type AvatarProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'color'> &
     online?: boolean;
     offline?: boolean;
     innerClassName?: string;
+    alt?: string;
     children?: React.ReactNode;
   };
 
@@ -36,6 +37,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       dataTheme,
       className,
       innerClassName,
+      alt = 'Avatar photo',
       children,
       ...props
     },
@@ -47,8 +49,6 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       clsx({
         'avatar-online': online,
         'avatar-offline': offline,
-        online,
-        offline,
         'avatar-placeholder': !src,
       }),
     );
@@ -63,7 +63,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       'ring-secondary': borderColor === 'secondary',
       'ring-success': borderColor === 'success',
       'ring-warning': borderColor === 'warning',
-      'rounded-btn': shape === 'square',
+      'rounded-box': shape === 'square',
       'rounded-full': shape === 'circle',
       'w-32 h-32': size === 'lg',
       'w-24 h-24': size === 'md',
@@ -72,12 +72,11 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
     });
 
     const placeholderClasses = clsx(innerClassName, {
-      'bg-neutral-focus': !color,
+      'bg-neutral': !color || color === 'neutral',
       'text-neutral-content': !color || color === 'neutral',
       'bg-accent': color === 'accent',
       'bg-error': color === 'error',
       'bg-info': color === 'info',
-      'bg-neutral': color === 'neutral',
       'bg-primary': color === 'primary',
       'bg-secondary': color === 'secondary',
       'bg-success': color === 'success',
@@ -98,7 +97,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       'ring-secondary': borderColor === 'secondary',
       'ring-success': borderColor === 'success',
       'ring-warning': borderColor === 'warning',
-      'rounded-btn': shape === 'square',
+      'rounded-box': shape === 'square',
       'rounded-full': shape === 'circle',
       'w-32 h-32 text-3xl': size === 'lg',
       'w-24 h-24 text-xl': size === 'md',
@@ -113,7 +112,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       if (src) {
         return (
           <div className={imgClasses} style={customImgDimension}>
-            <img src={src} />
+            <img src={src} alt={alt} />
           </div>
         );
       }
@@ -138,7 +137,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       }
       // Render a wrapping div around all children if there is more than one child.
       return (
-        <div className={imgClasses} style={customImgDimension}>
+        <div className={placeholderClasses} style={customImgDimension}>
           {children}
         </div>
       );

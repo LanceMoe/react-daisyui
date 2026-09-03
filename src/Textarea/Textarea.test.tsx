@@ -19,7 +19,7 @@ describe('Textarea', () => {
 
   it('should render with label', () => {
     render(
-      <Form className="form-control">
+      <Form className="flex flex-col gap-2">
         <Form.Label title="label text">
           <Textarea />
         </Form.Label>

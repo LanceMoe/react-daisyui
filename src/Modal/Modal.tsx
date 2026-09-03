@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef, useCallback, useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentPosition,IComponentBaseProps } from '../types';
+import { ComponentPosition, IComponentBaseProps } from '../types';
 import ModalActions from './ModalActions';
 import ModalBody from './ModalBody';
 import ModalHeader from './ModalHeader';

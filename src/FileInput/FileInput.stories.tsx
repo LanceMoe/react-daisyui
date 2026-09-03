@@ -1,4 +1,4 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
+import { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import FileInput, { FileInputProps } from '.';
@@ -50,15 +50,15 @@ Sizes.args = {};
 export const FormControlAndLabels: Story<FileInputProps> = (args) => {
   return (
     <div className="flex w-full component-preview p-4 items-center justify-center gap-2 font-sans">
-      <div className="form-control w-full max-w-xs">
+      <div className="flex w-full max-w-xs flex-col gap-2">
         <label className="label">
-          <span className="label-text">Pick a file</span>
-          <span className="label-text-alt">Alt label</span>
+          <span>Pick a file</span>
+          <span className="text-xs text-base-content/60">Alt label</span>
         </label>
         <FileInput {...args} />
         <label className="label">
-          <span className="label-text-alt">Alt label</span>
-          <span className="label-text-alt">Alt label</span>
+          <span className="text-xs text-base-content/60">Alt label</span>
+          <span className="text-xs text-base-content/60">Alt label</span>
         </label>
       </div>
     </div>

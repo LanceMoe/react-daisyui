@@ -22,10 +22,11 @@ export type ToastProps = React.ComponentPropsWithoutRef<'div'> & {
 } & IComponentBaseProps;
 
 const Toast = forwardRef<HTMLDivElement, ToastProps>(
-  ({ horizontal = 'end', vertical = 'bottom', className, children, ...props }: ToastProps, ref) => {
+  ({ horizontal = 'end', vertical = 'bottom', dataTheme, className, children, ...props }: ToastProps, ref) => {
     return (
       <div
         {...props}
+        data-theme={dataTheme}
         className={twMerge('toast', horizontalOptions[horizontal], verticalOptions[vertical], className)}
         ref={ref}
       >

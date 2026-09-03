@@ -14,7 +14,7 @@ export type RadialProgressProps = React.ComponentPropsWithoutRef<'div'> &
 
 const RadialProgress = forwardRef<HTMLDivElement, RadialProgressProps>(
   (
-    { value, size = '4rem', thickness = '4px', color, dataTheme, className, children, ...props },
+    { value, size = '4rem', thickness = '4px', color, dataTheme, className, style, children, ...props },
     ref,
   ): React.JSX.Element => {
     const classes = twMerge(
@@ -31,12 +31,13 @@ const RadialProgress = forwardRef<HTMLDivElement, RadialProgressProps>(
       }),
     );
 
-    const displayedValue = Math.min(100, Math.max(0, value));
-    const progressStyle: Record<string, string | number> = {
+    const displayedValue = Number.isFinite(value) ? Math.min(100, Math.max(0, value)) : 0;
+    const progressStyle: React.CSSProperties = {
+      ...style,
       '--value': displayedValue,
       '--size': size,
       '--thickness': thickness,
-    };
+    } as React.CSSProperties;
 
     return (
       <div
@@ -50,7 +51,7 @@ const RadialProgress = forwardRef<HTMLDivElement, RadialProgressProps>(
         className={classes}
         style={progressStyle}
       >
-        {children}
+        {children ?? `${displayedValue}%`}
       </div>
     );
   },

@@ -10,8 +10,7 @@ export type ThemeItemProps = React.ComponentPropsWithoutRef<'div'> & {
 function ThemeItem({ selected, children, dataTheme, className, ...props }: ThemeItemProps) {
   const classes = twMerge(
     className,
-    'border-base-content/20 hover:border-base-content/40 outline-base-content\
-        overflow-hidden rounded-lg border outline-2 outline-offset-2',
+    'border-base-content/20 hover:border-base-content/40 outline-base-content overflow-hidden rounded-lg border outline-2 outline-offset-2',
     clsx({
       outline: selected,
     }),
@@ -35,11 +34,11 @@ function ThemeItem({ selected, children, dataTheme, className, ...props }: Theme
               </div>
 
               <div className="bg-accent flex aspect-square w-5 items-center justify-center rounded lg:w-6">
-                <div className="text-primary-content text-sm font-bold">A</div>
+                <div className="text-accent-content text-sm font-bold">A</div>
               </div>
 
               <div className="bg-neutral flex aspect-square w-5 items-center justify-center rounded lg:w-6">
-                <div className="text-primary-content text-sm font-bold">A</div>
+                <div className="text-neutral-content text-sm font-bold">A</div>
               </div>
             </div>
             {children && <div className="my-2">{children}</div>}

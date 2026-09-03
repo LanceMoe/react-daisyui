@@ -1,23 +1,37 @@
 import clsx from 'clsx';
-import React, { forwardRef, ReactNode } from 'react';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor } from '../types';
+import { ComponentColor, IComponentBaseProps } from '../types';
 
-export type RadioTabProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'type' | 'color'> & {
-  color?: ComponentColor;
-  bgColor?: string;
-  borderColor?: string;
-  active?: boolean;
-  disabled?: boolean;
-  label: string;
-  name: string;
-  contentClassName?: string;
-};
+export type RadioTabProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'type' | 'color'> &
+  IComponentBaseProps & {
+    color?: ComponentColor;
+    bgColor?: string;
+    borderColor?: string;
+    active?: boolean;
+    disabled?: boolean;
+    label: string;
+    name: string;
+    contentClassName?: string;
+  };
 
-const RadioTab = forwardRef<HTMLInputElement, RadioTabProps>(
+const RadioTab = forwardRef<HTMLInputElement, RadioTabProps & IComponentBaseProps>(
   (
-    { children, className, color, bgColor, borderColor, active, label, disabled, name, contentClassName, ...props },
+    {
+      children,
+      className,
+      color,
+      bgColor,
+      borderColor,
+      active,
+      label,
+      disabled,
+      name,
+      contentClassName,
+      dataTheme,
+      ...props
+    },
     ref,
   ): React.JSX.Element => {
     const classes = twMerge(
@@ -49,10 +63,14 @@ const RadioTab = forwardRef<HTMLInputElement, RadioTabProps>(
           name={name}
           disabled={disabled}
           aria-label={label}
+          data-theme={dataTheme}
           {...props}
           ref={ref}
+          checked={active ?? props.checked}
         />
-        <div className={contentClasses}>{children}</div>
+        <div data-theme={dataTheme} className={contentClasses}>
+          {children}
+        </div>
       </>
     );
   },

@@ -10,7 +10,7 @@ export type StatSectionProps = React.ComponentPropsWithoutRef<'div'> &
   };
 
 const StatSection = React.forwardRef<HTMLDivElement, StatSectionProps>(
-  ({ children, section, className, ...props }, ref): React.JSX.Element => {
+  ({ children, section, dataTheme, className, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       className,
       clsx({
@@ -23,7 +23,7 @@ const StatSection = React.forwardRef<HTMLDivElement, StatSectionProps>(
     );
 
     return (
-      <div {...props} className={classes} ref={ref}>
+      <div {...props} data-theme={dataTheme} className={classes} ref={ref}>
         {children}
       </div>
     );

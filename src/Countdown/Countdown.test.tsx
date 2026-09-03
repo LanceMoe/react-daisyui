@@ -9,6 +9,9 @@ describe('Countdown', () => {
     const countdownElement = screen.getByRole('timer');
     const innerSpan = countdownElement.querySelector('span');
     expect(countdownElement).toBeInTheDocument();
+    expect(countdownElement).toHaveAttribute('aria-live', 'polite');
+    expect(countdownElement).toHaveAttribute('aria-label', String(value));
+    expect(innerSpan).toHaveTextContent(String(value));
 
     expect(innerSpan).toHaveStyle(`--value: ${value}`);
   });

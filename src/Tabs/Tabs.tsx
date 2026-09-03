@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentPosition,ComponentSize, IComponentBaseProps } from '../types';
+import { ComponentPosition, ComponentSize, IComponentBaseProps } from '../types';
 import RadioTab from './RadioTab';
 import Tab from './Tab';
 
@@ -14,13 +14,13 @@ export type TabsProps = React.ComponentPropsWithoutRef<'div'> &
   };
 
 const Tabs = forwardRef<HTMLDivElement, TabsProps>(
-  ({ children, className, variant, size, position }, ref): React.JSX.Element => {
+  ({ children, className, variant, size, position, dataTheme, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       'tabs',
       className,
       clsx({
-        'tabs-boxed': variant === 'boxed',
-        'tabs-bordered': variant === 'bordered',
+        'tabs-box': variant === 'boxed',
+        'tabs-border': variant === 'bordered',
         'tabs-lift': variant === 'lift',
         'tabs-xl': size === 'xl',
         'tabs-lg': size === 'lg',
@@ -33,7 +33,7 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>(
     );
 
     return (
-      <div role="tablist" className={classes} ref={ref}>
+      <div role="tablist" {...props} data-theme={dataTheme} className={classes} ref={ref}>
         {children}
       </div>
     );

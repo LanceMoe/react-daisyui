@@ -9,7 +9,7 @@ export type NavbarSectionProps = NavbarProps & {
 };
 
 const NavbarSection = React.forwardRef<HTMLDivElement, NavbarSectionProps>(
-  ({ children, section, dataTheme, className, style }, ref): React.JSX.Element => {
+  ({ children, section, dataTheme, className, style, ...props }, ref): React.JSX.Element => {
     const classes = twMerge(
       className,
       clsx({
@@ -20,7 +20,7 @@ const NavbarSection = React.forwardRef<HTMLDivElement, NavbarSectionProps>(
     );
 
     return (
-      <div data-theme={dataTheme} className={classes} style={style} ref={ref}>
+      <div {...props} data-theme={dataTheme} className={classes} style={style} ref={ref}>
         {children}
       </div>
     );

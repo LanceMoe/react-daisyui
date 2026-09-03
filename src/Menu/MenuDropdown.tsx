@@ -11,15 +11,17 @@ export type MenuDropdownProps = React.ComponentPropsWithoutRef<'span'> &
   };
 
 const MenuDropdown = React.forwardRef<HTMLSpanElement, MenuDropdownProps>(
-  ({ className, label, open, children, ...props }, ref) => {
+  ({ className, label, open, children, dataTheme, ...props }, ref) => {
     const classes = twMerge('menu-dropdown-toggle', className, clsx({ 'menu-dropdown-show': open }));
 
     return (
       <>
-        <span {...props} className={classes} ref={ref}>
+        <span {...props} data-theme={dataTheme} className={classes} ref={ref}>
           {label}
         </span>
-        <ul className={clsx('menu-dropdown', { 'menu-dropdown-show': open })}>{children}</ul>
+        <ul data-theme={dataTheme} className={clsx('menu-dropdown', { 'menu-dropdown-show': open })}>
+          {children}
+        </ul>
       </>
     );
   },

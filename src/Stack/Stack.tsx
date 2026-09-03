@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentPosition,IComponentBaseProps } from '../types';
+import { ComponentPosition, IComponentBaseProps } from '../types';
 
 export type StackProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {

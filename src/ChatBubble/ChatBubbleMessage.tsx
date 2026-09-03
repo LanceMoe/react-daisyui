@@ -10,7 +10,7 @@ export type ChatBubbleMessageProps = React.ComponentPropsWithoutRef<'div'> &
   };
 
 const ChatBubbleMessage = React.forwardRef<HTMLDivElement, ChatBubbleMessageProps>(
-  ({ color, className, ...props }, ref) => {
+  ({ color, dataTheme, className, ...props }, ref) => {
     const classes = twMerge(
       'chat-bubble',
       clsx({
@@ -26,7 +26,7 @@ const ChatBubbleMessage = React.forwardRef<HTMLDivElement, ChatBubbleMessageProp
       className,
     );
 
-    return <div {...props} className={classes} ref={ref} />;
+    return <div {...props} data-theme={dataTheme} className={classes} ref={ref} />;
   },
 );
 

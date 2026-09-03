@@ -33,7 +33,7 @@ function SelectInner(props: SelectProps, ref: React.ForwardedRef<HTMLSelectEleme
       'select-success': color === 'success',
       'select-warning': color === 'warning',
       'select-error': color === 'error',
-      'select-bordered': bordered,
+      border: bordered,
     }),
   );
 

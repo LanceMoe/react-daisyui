@@ -1,5 +1,5 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
-import React, { useCallback,useState } from 'react';
+import { Meta, StoryFn as Story } from '@storybook/react';
+import React, { useCallback, useState } from 'react';
 
 import Badge from '../Badge';
 import Tooltip from '../Tooltip';

@@ -11,7 +11,7 @@ describe('Artboard', () => {
 
   it('renders an image', () => {
     render(<Avatar src="i.png" />);
-    expect(screen.getByRole('img')).toBeTruthy();
+    expect(screen.getByRole('img', { hidden: true })).toBeTruthy();
   });
 
   it('renders letters', () => {
@@ -43,14 +43,14 @@ describe('Artboard', () => {
     expect(content).toHaveClass('ring ring-offset-base-100 ring-offset-2');
   });
 
-  it('renders an online', () => {
+  it('renders an online avatar', () => {
     render(<Avatar online />);
-    expect(screen.getByLabelText('Avatar photo')).toHaveClass('online');
+    expect(screen.getByLabelText('Avatar photo')).toHaveClass('avatar-online');
   });
 
-  it('renders an offline', () => {
+  it('renders an offline avatar', () => {
     render(<Avatar offline />);
-    expect(screen.getByLabelText('Avatar photo')).toHaveClass('offline');
+    expect(screen.getByLabelText('Avatar photo')).toHaveClass('avatar-offline');
   });
 
   it('should be able to access the native div', () => {

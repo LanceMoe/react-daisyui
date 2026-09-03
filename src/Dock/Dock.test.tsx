@@ -31,7 +31,7 @@ describe('Dock', () => {
     expect(screen.getByText('Item 3')).toBeInTheDocument();
   });
 
-  it('Should apply active styles to child element with active class', () => {
+  it('Should apply the daisyUI active class to a child element', () => {
     render(
       <Dock>
         <Dock.Item active>Tab 1</Dock.Item>
@@ -43,12 +43,12 @@ describe('Dock', () => {
     const tab2 = screen.getByText('Tab 2');
     const tab3 = screen.getByText('Tab 3');
 
-    expect(tab1).toHaveClass('active');
-    expect(tab2).not.toHaveClass('active');
-    expect(tab3).not.toHaveClass('active');
+    expect(tab1).toHaveClass('dock-active');
+    expect(tab2).not.toHaveClass('dock-active');
+    expect(tab3).not.toHaveClass('dock-active');
   });
 
-  it('Should apply disabled styles to child element with disabled class', () => {
+  it('Should disable a child element natively', () => {
     render(
       <Dock>
         <Dock.Item disabled>Tab 1</Dock.Item>
@@ -60,9 +60,9 @@ describe('Dock', () => {
     const tab2 = screen.getByText('Tab 2');
     const tab3 = screen.getByText('Tab 3');
 
-    expect(tab1).toHaveClass('disabled');
-    expect(tab2).not.toHaveClass('disabled');
-    expect(tab3).not.toHaveClass('disabled');
+    expect(tab1).toBeDisabled();
+    expect(tab2).not.toBeDisabled();
+    expect(tab3).not.toBeDisabled();
   });
 
   it('Should render Label with correct class name', () => {

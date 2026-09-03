@@ -1,4 +1,4 @@
-import { Meta,StoryFn as Story } from '@storybook/react';
+import { Meta, StoryFn as Story } from '@storybook/react';
 import React, { useState } from 'react';
 
 import Select, { SelectProps } from '.';
@@ -39,10 +39,10 @@ export const Default: Story<SelectProps> = (args) => {
 export const FormControlAndLabels: Story<SelectProps> = (args) => {
   return (
     <div className="flex w-full component-preview p-4 items-center justify-center gap-2 font-sans">
-      <div className="form-control w-full max-w-xs">
+      <div className="flex w-full max-w-xs flex-col gap-2">
         <label className="label">
-          <span className="label-text">Pick the best fantasy franchise</span>
-          <span className="label-text-alt">Alt label</span>
+          <span>Pick the best fantasy franchise</span>
+          <span className="text-xs text-base-content/60">Alt label</span>
         </label>
         <Select defaultValue="default" onChange={console.log} {...args}>
           <Option value="default" disabled>
@@ -55,8 +55,8 @@ export const FormControlAndLabels: Story<SelectProps> = (args) => {
           <Option value="Star Trek">Star Trek</Option>
         </Select>
         <label className="label">
-          <span className="label-text-alt">Alt label</span>
-          <span className="label-text-alt">Alt label</span>
+          <span className="text-xs text-base-content/60">Alt label</span>
+          <span className="text-xs text-base-content/60">Alt label</span>
         </label>
       </div>
     </div>

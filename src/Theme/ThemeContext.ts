@@ -1,13 +1,13 @@
-import React from 'react';
+import { createContext } from 'react';
 
 import { DataTheme } from '../types';
 
-export interface IThemeContext {
+export type IThemeContext = {
   theme: DataTheme;
   setTheme: (theme: DataTheme) => void;
-}
+};
 
-export const ThemeContext = React.createContext<IThemeContext>({
+export const ThemeContext = createContext<IThemeContext>({
   theme: 'light',
-  setTheme: () => {},
+  setTheme: () => undefined,
 });
