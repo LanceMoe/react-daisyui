@@ -13,7 +13,7 @@ export type SwapProps = Omit<React.ComponentPropsWithoutRef<'label'>, 'onClick' 
     rotate?: boolean;
     flip?: boolean;
     onClick?: React.MouseEventHandler<HTMLInputElement>;
-    onChange?: React.FormEventHandler<HTMLInputElement>;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
   };
 
 const Swap = React.forwardRef<HTMLLabelElement, SwapProps>(

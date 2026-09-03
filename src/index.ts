@@ -4,10 +4,12 @@
 import { AccordionProps as TAccordionProps } from './Accordion';
 import { AlertProps as TAlertProps } from './Alert';
 import { ArtboardProps as TArtboardProps } from './Artboard';
+import type { AuraProps as TAuraProps } from './Aura';
 import { AvatarProps as TAvatarProps } from './Avatar';
 import { BadgeProps as TBadgeProps } from './Badge';
 import { BreadcrumbsProps as TBreadcrumbsProps } from './Breadcrumbs';
 import { ButtonProps as TButtonProps } from './Button';
+import type { CalendarProps as TCalendarProps } from './Calendar';
 import { CardProps as TCardProps } from './Card';
 import { CarouselProps as TCarouselProps } from './Carousel';
 import { ChatBubbleProps as TChatBubbleProps } from './ChatBubble';
@@ -20,20 +22,29 @@ import { DividerProps as TDividerProps } from './Divider';
 import { DockProps as TDockProps } from './Dock';
 import { DrawerProps as TDrawerProps } from './Drawer';
 import { DropdownProps as TDropdownProps } from './Dropdown';
+import type { FabProps as TFabProps } from './Fab';
+import type { FieldsetProps as TFieldsetProps } from './Fieldset';
 import { FileInputProps as TFileInputProps } from './FileInput';
+import type { FilterProps as TFilterProps } from './Filter';
 import { FooterProps as TFooterProps } from './Footer';
 import { FormProps as TFormProps } from './Form';
 import { HeroProps as THeroProps } from './Hero';
+import type { Hover3dProps as THover3dProps } from './Hover3d';
+import type { HoverGalleryProps as THoverGalleryProps } from './HoverGallery';
 import { IndicatorProps as TIndicatorProps } from './Indicator';
 import { InputProps as TInputProps } from './Input';
 import { JoinProps as TJoinProps } from './Join';
 import { KbdProps as TKbdProps } from './Kbd';
+import type { LabelProps as TLabelProps } from './Label';
 import { LinkProps as TLinkProps } from './Link';
+import type { ListProps as TListProps, ListRowProps as TListRowProps } from './List';
 import { LoadingProps as TLoadingProps } from './Loading';
 import { MaskProps as TMaskProps } from './Mask';
+import type { MegamenuProps as TMegamenuProps } from './Megamenu';
 import { MenuProps as TMenuProps } from './Menu';
 import { ModalLegacyProps as TModalLegacyProps, ModalProps as TModalProps } from './Modal';
 import { NavbarProps as TNavbarProps } from './Navbar';
+import type { OtpProps as TOtpProps } from './Otp';
 import { PaginationProps as TPaginationProps } from './Pagination';
 import { PhoneMockupProps as TPhoneProps } from './PhoneMockup';
 import { ProgressProps as TProgressProps } from './Progress';
@@ -45,19 +56,27 @@ import { SelectProps as TSelectProps } from './Select';
 import { SkeletonProps as TSkeletonProps } from './Skeleton';
 import { StackProps as TStackProps } from './Stack';
 import { StatsProps as TStatsProps } from './Stats';
+import type { StatusProps as TStatusProps } from './Status';
 import { StepsProps as TStepsProps } from './Steps';
 import { SwapProps as TSwapProps } from './Swap';
 import { TableProps as TTableProps } from './Table';
 import { TabsProps as TTabsProps } from './Tabs';
 import { TextareaProps as TTextareaProps } from './Textarea';
+import type { TextRotateProps as TTextRotateProps } from './TextRotate';
 import { ThemeProps as TThemeProps } from './Theme';
+import type { ThemeControllerProps as TThemeControllerProps } from './ThemeController';
 import { TimelineProps as TTimelineProps } from './Timeline';
 import { ToastProps as TToastProps } from './Toast';
 import { ToggleProps as TToggleProps } from './Toggle';
 import { TooltipProps as TTooltipProps } from './Tooltip';
+import type { ValidatorProps as TValidatorProps } from './Validator';
 import { WindowMockupProps as TWindowMockupProps } from './WindowMockup';
 export { default as Button } from './Button';
 export type ButtonProps = TButtonProps;
+
+// Actions > FAB
+export { default as Fab } from './Fab';
+export type FabProps = TFabProps;
 
 // Actions > Dropdown
 export { default as Dropdown } from './Dropdown';
@@ -72,11 +91,19 @@ export type ModalLegacyProps = TModalLegacyProps;
 export { default as Swap } from './Swap';
 export type SwapProps = TSwapProps;
 
+// Actions > Filter
+export { default as Filter } from './Filter';
+export type FilterProps = TFilterProps;
+
 // ----------------------- < Data Display > ----------------------- //
 
 // Data Display > Avatar
 export { default as Avatar } from './Avatar';
 export type AvatarProps = TAvatarProps;
+
+// Data Display > Aura
+export { default as Aura } from './Aura';
+export type AuraProps = TAuraProps;
 
 // Data Display > Badge
 export { default as Badge } from './Badge';
@@ -102,9 +129,22 @@ export type CollapseProps = TCollapseProps;
 export { default as Countdown } from './Countdown';
 export type CountdownProps = TCountdownProps;
 
+// Data Display > Hover 3D
+export { default as Hover3d } from './Hover3d';
+export type Hover3dProps = THover3dProps;
+
+// Data Display > Hover Gallery
+export { default as HoverGallery } from './HoverGallery';
+export type HoverGalleryProps = THoverGalleryProps;
+
 // Data Display > Kdb
 export { default as Kbd } from './Kbd';
 export type KbdProps = TKbdProps;
+
+// Data Display > List
+export { default as List } from './List';
+export type ListProps = TListProps;
+export type ListRowProps = TListRowProps;
 
 // Data Display > Stats
 export { default as Stats } from './Stats';
@@ -126,6 +166,14 @@ export type DiffProps = TDiffProps;
 export { default as Timeline } from './Timeline';
 export type TimelineProps = TTimelineProps;
 
+// Data Display > Status
+export { default as Status } from './Status';
+export type StatusProps = TStatusProps;
+
+// Data Display > Text Rotate
+export { default as TextRotate } from './TextRotate';
+export type TextRotateProps = TTextRotateProps;
+
 // ----------------------- < Navigation > ----------------------- //
 
 // Navigation > Breadcrumbs
@@ -143,6 +191,10 @@ export type LinkProps = TLinkProps;
 // Navigation > Menu
 export { default as Menu } from './Menu';
 export type MenuProps = TMenuProps;
+
+// Navigation > Megamenu
+export { default as Megamenu } from './Megamenu';
+export type MegamenuProps = TMegamenuProps;
 
 // Navigation > Navbar
 export { default as Navbar } from './Navbar';
@@ -196,6 +248,18 @@ export type TooltipProps = TTooltipProps;
 export { default as Form } from './Form';
 export type FormProps = TFormProps;
 
+// Data Input > Calendar
+export { default as Calendar } from './Calendar';
+export type CalendarProps = TCalendarProps;
+
+// Data Input > Fieldset
+export { default as Fieldset } from './Fieldset';
+export type FieldsetProps = TFieldsetProps;
+
+// Data Input > Label
+export { default as Label } from './Label';
+export type LabelProps = TLabelProps;
+
 // Data Input > Checkbox
 export { default as Checkbox } from './Checkbox';
 export type CheckboxProps = TCheckboxProps;
@@ -228,9 +292,17 @@ export type ToggleProps = TToggleProps;
 export { default as Textarea } from './Textarea';
 export type TextareaProps = TTextareaProps;
 
+// Data Input > OTP
+export { default as Otp } from './Otp';
+export type OtpProps = TOtpProps;
+
 // Data Input > FileInput
 export { default as FileInput } from './FileInput';
 export type FileInputProps = TFileInputProps;
+
+// Data Input > Validator
+export { default as Validator } from './Validator';
+export type ValidatorProps = TValidatorProps;
 
 // ----------------------- < Layout > ----------------------- //
 
@@ -290,3 +362,7 @@ export type WindowMockupProps = TWindowMockupProps;
 export { default as Theme } from './Theme';
 export type ThemeProps = TThemeProps;
 export { useTheme } from './Theme/useTheme';
+
+// Utils > ThemeController
+export { default as ThemeController } from './ThemeController';
+export type ThemeControllerProps = TThemeControllerProps;
