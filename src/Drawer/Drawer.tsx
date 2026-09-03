@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
 import clsx from 'clsx';
+import React, { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
@@ -16,7 +16,7 @@ export type DrawerProps = React.HTMLAttributes<HTMLDivElement> &
     onClickOverlay?: () => void;
   };
 
-const Drawer = ({
+function Drawer({
   children,
   side,
   open,
@@ -29,7 +29,7 @@ const Drawer = ({
   overlayClassName,
   onClickOverlay,
   ...props
-}: DrawerProps) => {
+}: DrawerProps) {
   const classes = twMerge(
     'drawer',
     className,
@@ -48,6 +48,6 @@ const Drawer = ({
       </div>
     </div>
   );
-};
+}
 
 export default Drawer;

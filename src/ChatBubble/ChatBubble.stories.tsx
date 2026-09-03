@@ -1,5 +1,6 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
+
 import ChatBubble, { ChatBubbleProps } from '.';
 
 const meta: Meta = {

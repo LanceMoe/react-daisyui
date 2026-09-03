@@ -1,8 +1,8 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Avatar, { AvatarProps } from '.';
 import Mask from '../Mask';
+import Avatar, { AvatarProps } from '.';
 
 export default {
   title: 'Data Display/Avatar',

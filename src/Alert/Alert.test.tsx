@@ -1,5 +1,6 @@
 import { render, screen, within } from '@testing-library/react';
 import { createRef } from 'react';
+
 import Alert from './Alert';
 
 describe('Alert', () => {

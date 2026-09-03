@@ -1,5 +1,6 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
+
 import { IComponentBaseProps } from '../types';
 
 export type ChatBubbleHeaderProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;

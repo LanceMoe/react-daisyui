@@ -1,6 +1,6 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
-import { defaultTheme } from '../constants';
 
+import { defaultTheme } from '../constants';
 import { DataTheme, IComponentBaseProps } from '../types';
 import { ThemeContext } from './ThemeContext';
 import { getThemeFromClosestAncestor } from './utils';
@@ -22,7 +22,9 @@ const Theme = React.forwardRef<HTMLDivElement, ThemeProps>(
 
     const handleThemeChange = (theme: DataTheme) => {
       // Fire custom onChange, if provided. ie, user provided function to store theme in session/local storage
-      onChange && onChange(theme);
+      if (onChange) {
+        onChange(theme);
+      }
       // Update state/context
       setTheme(theme);
     };
@@ -30,7 +32,9 @@ const Theme = React.forwardRef<HTMLDivElement, ThemeProps>(
     // Properly handle changes to theme prop on Theme component
     useEffect(() => {
       if (dataTheme !== theme) {
-        dataTheme && handleThemeChange(dataTheme);
+        if (dataTheme) {
+          handleThemeChange(dataTheme);
+        }
       }
     }, [dataTheme]);
 

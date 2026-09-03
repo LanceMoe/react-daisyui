@@ -1,8 +1,8 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Card, { CardProps } from '.';
 import Button from '../Button';
+import Card, { CardProps } from '.';
 
 export default {
   title: 'Data Display/Card',

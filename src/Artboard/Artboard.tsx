@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
@@ -24,7 +24,7 @@ const Artboard = forwardRef<HTMLDivElement, ArtboardProps>(
         'phone-4': size === 4,
         'phone-5': size === 5,
         'phone-6': size === 6,
-        horizontal: horizontal,
+        horizontal,
       }),
     );
 

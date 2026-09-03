@@ -1,8 +1,8 @@
-import React, { forwardRef, useMemo } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentColor, ComponentSize } from '../types';
+import { ComponentColor, ComponentSize,IComponentBaseProps } from '../types';
 
 export type RangeProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> &
   IComponentBaseProps & {

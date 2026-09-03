@@ -1,8 +1,8 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Pagination, { PaginationProps } from '.';
 import Button from '../Button';
+import Pagination, { PaginationProps } from '.';
 
 export default {
   title: 'Navigation/Pagination',

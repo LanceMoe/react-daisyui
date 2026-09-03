@@ -1,8 +1,7 @@
 import React, { forwardRef } from 'react';
 
-import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
-
 import Button, { ButtonProps } from '../Button';
+import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
 export type DropdownToggleProps = Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'color'> &
   IComponentBaseProps & {
@@ -12,7 +11,7 @@ export type DropdownToggleProps = Omit<React.LabelHTMLAttributes<HTMLLabelElemen
     disabled?: boolean;
   };
 
-const DropdownToggle = ({
+function DropdownToggle({
   children,
   color,
   size,
@@ -21,7 +20,7 @@ const DropdownToggle = ({
   className,
   disabled,
   ...props
-}: DropdownToggleProps) => {
+}: DropdownToggleProps) {
   return (
     <label tabIndex={0} className={className} {...props}>
       {button ? (
@@ -33,7 +32,7 @@ const DropdownToggle = ({
       )}
     </label>
   );
-};
+}
 
 export type SummaryProps = Omit<ButtonProps, 'tag'>;
 export const Summary = forwardRef<HTMLElement, SummaryProps>((props, ref): React.JSX.Element => {

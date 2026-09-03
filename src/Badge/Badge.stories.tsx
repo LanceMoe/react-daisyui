@@ -1,8 +1,8 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Badge, { BadgeProps } from '.';
 import Button from '../Button';
+import Badge, { BadgeProps } from '.';
 
 export default {
   title: 'Data Display/Badge',

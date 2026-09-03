@@ -1,9 +1,8 @@
-import React, { forwardRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentSize } from '../types';
-
+import { ComponentSize,IComponentBaseProps } from '../types';
 import DockItem, { DockItemProps as ItemProps } from './DockItem';
 import DockLabel, { DockLabelProps as LabelProps } from './DockLabel';
 

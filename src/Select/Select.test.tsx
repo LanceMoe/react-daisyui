@@ -1,15 +1,16 @@
 import '@testing-library/jest-dom';
-import '@testing-library/jest-dom';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import * as React from 'react';
 import { useState } from 'react';
-import { render, screen } from '@testing-library/react';
-import Select from './index';
-import userEvent from '@testing-library/user-event';
-import { SelectProps } from './Select';
-import { ComponentColor, ComponentSize } from '../types';
-import Checkbox from '../Checkbox';
 
-const TestComponent = (props?: Omit<SelectProps, 'children'>) => {
+import Checkbox from '../Checkbox';
+import { ComponentColor, ComponentSize } from '../types';
+import Select from './index';
+import { SelectProps } from './Select';
+
+function TestComponent(props?: Omit<SelectProps, 'children'>) {
   return (
     <Select {...props}>
       <Select.Option value="" disabled>
@@ -22,13 +23,13 @@ const TestComponent = (props?: Omit<SelectProps, 'children'>) => {
       <Select.Option value="Maggie">Maggie</Select.Option>
     </Select>
   );
-};
+}
 
-const ControlledTestComponent = (props?: Omit<SelectProps, 'children'>) => {
+function ControlledTestComponent(props?: Omit<SelectProps, 'children'>) {
   const [value, setValue] = useState(props?.value);
 
   return <TestComponent {...props} value={value} onChange={({ target: { value } }) => setValue(value)} />;
-};
+}
 
 describe('Select', () => {
   it('Should render', () => {

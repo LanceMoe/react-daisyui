@@ -1,17 +1,18 @@
 import '@testing-library/jest-dom';
-import '@testing-library/jest-dom';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import * as React from 'react';
 import { useState } from 'react';
-import { render, screen } from '@testing-library/react';
-import Checkbox from './index';
-import userEvent from '@testing-library/user-event';
-import { ComponentColor, ComponentSize } from '../types';
 
-const ControlledCheckbox = () => {
+import { ComponentColor, ComponentSize } from '../types';
+import Checkbox from './index';
+
+function ControlledCheckbox() {
   const [checked, setChecked] = useState(false);
 
   return <Checkbox checked={checked} onChange={({ target: { checked } }) => setChecked(checked)} />;
-};
+}
 
 describe('Checkbox', () => {
   it('Should render', () => {

@@ -1,9 +1,8 @@
-import React, { ReactElement } from 'react';
 import clsx from 'clsx';
+import React, { ReactElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentColor, ComponentSize, ListOrItem } from '../types';
-
+import { ComponentColor, ComponentSize, IComponentBaseProps, ListOrItem } from '../types';
 import SelectOption, { SelectOptionProps } from './SelectOption';
 
 export type SelectProps = Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size' | 'color'> &
@@ -14,7 +13,7 @@ export type SelectProps = Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 's
     bordered?: boolean;
   };
 
-const SelectInner = (props: SelectProps, ref: React.ForwardedRef<HTMLSelectElement>): React.JSX.Element => {
+function SelectInner(props: SelectProps, ref: React.ForwardedRef<HTMLSelectElement>): React.JSX.Element {
   const { children, size, color, bordered, dataTheme, className, ...rest } = props;
 
   const classes = twMerge(
@@ -43,7 +42,7 @@ const SelectInner = (props: SelectProps, ref: React.ForwardedRef<HTMLSelectEleme
       {children}
     </select>
   );
-};
+}
 
 const Select = React.forwardRef(SelectInner);
 export default Object.assign(Select, { Option: SelectOption });

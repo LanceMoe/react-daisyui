@@ -5,7 +5,7 @@ import { IComponentBaseProps } from '../types';
 
 export type CollapseContentProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
 
-const CollapseContent = ({ children, className, ...props }: CollapseContentProps): React.JSX.Element => {
+function CollapseContent({ children, className, ...props }: CollapseContentProps): React.JSX.Element {
   const classes = twMerge('collapse-content', className);
 
   return (
@@ -13,6 +13,6 @@ const CollapseContent = ({ children, className, ...props }: CollapseContentProps
       {children}
     </div>
   );
-};
+}
 
 export default CollapseContent;

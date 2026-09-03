@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
+import { Meta,StoryFn as Story } from '@storybook/react';
 import clsx from 'clsx';
-import { StoryFn as Story, Meta } from '@storybook/react';
+import React, { ReactNode } from 'react';
 
 import Dock, { DockProps } from '.';
 
@@ -31,7 +31,7 @@ export const Default: Story<DockProps> = (args) => {
                 points="1 11 12 2 23 11"
                 fill="none"
                 stroke="currentColor"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 strokeWidth="2"
               ></polyline>
               <path
@@ -39,7 +39,7 @@ export const Default: Story<DockProps> = (args) => {
                 fill="none"
                 stroke="currentColor"
                 strokeLinecap="square"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 strokeWidth="2"
               ></path>
               <line
@@ -50,7 +50,7 @@ export const Default: Story<DockProps> = (args) => {
                 fill="none"
                 stroke="currentColor"
                 strokeLinecap="square"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 strokeWidth="2"
               ></line>
             </g>
@@ -64,7 +64,7 @@ export const Default: Story<DockProps> = (args) => {
                 points="3 14 9 14 9 17 15 17 15 14 21 14"
                 fill="none"
                 stroke="currentColor"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 strokeWidth="2"
               ></polyline>
               <rect
@@ -77,7 +77,7 @@ export const Default: Story<DockProps> = (args) => {
                 fill="none"
                 stroke="currentColor"
                 strokeLinecap="square"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 strokeWidth="2"
               ></rect>
             </g>
@@ -94,7 +94,7 @@ export const Default: Story<DockProps> = (args) => {
                 fill="none"
                 stroke="currentColor"
                 strokeLinecap="square"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 strokeWidth="2"
               ></circle>
               <path
@@ -102,7 +102,7 @@ export const Default: Story<DockProps> = (args) => {
                 fill="none"
                 stroke="currentColor"
                 strokeLinecap="square"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 strokeWidth="2"
               ></path>
             </g>

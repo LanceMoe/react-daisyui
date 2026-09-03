@@ -1,5 +1,5 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
 import Tabs, { TabsProps } from '.';
 
@@ -40,25 +40,25 @@ Boxed.args = {
 export const Sizes: Story<TabsProps> = ({ size, ...args }) => {
   return (
     <div className="flex flex-col items-center gap-6">
-      {/*xs*/}
+      {/* xs*/}
       <Tabs {...args} size="xs">
         <Tabs.Tab>Tiny</Tabs.Tab>
         <Tabs.Tab active={true}>Tiny</Tabs.Tab>
         <Tabs.Tab>Tiny</Tabs.Tab>
       </Tabs>
-      {/*sm*/}
+      {/* sm*/}
       <Tabs {...args} size="sm">
         <Tabs.Tab>Small</Tabs.Tab>
         <Tabs.Tab active={true}>Small</Tabs.Tab>
         <Tabs.Tab>Small</Tabs.Tab>
       </Tabs>
-      {/*md*/}
+      {/* md*/}
       <Tabs {...args} size="md">
         <Tabs.Tab>Normal</Tabs.Tab>
         <Tabs.Tab active={true}>Normal</Tabs.Tab>
         <Tabs.Tab>Normal</Tabs.Tab>
       </Tabs>
-      {/*lg*/}
+      {/* lg*/}
       <Tabs {...args} size="lg">
         <Tabs.Tab>Large</Tabs.Tab>
         <Tabs.Tab active={true}>Large</Tabs.Tab>

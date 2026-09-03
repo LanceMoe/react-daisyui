@@ -1,11 +1,10 @@
-import React, { cloneElement, createRef, forwardRef, ReactElement, RefObject, useEffect, useState } from 'react';
 import clsx from 'clsx';
+import React, { cloneElement, createRef, forwardRef, ReactElement, RefObject, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
-
-import CarouselItem, { CarouselItemProps, CarouselItemWidth } from './CarouselItem';
 import Button from '../Button';
+import { IComponentBaseProps } from '../types';
+import CarouselItem, { CarouselItemProps, CarouselItemWidth } from './CarouselItem';
 
 export type CarouselProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {

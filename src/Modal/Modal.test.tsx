@@ -1,10 +1,11 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Modal from './';
-import Button from '../Button';
+import React from 'react';
 
-const TestModal = ({ state }: { state: boolean }) => {
+import Button from '../Button';
+import Modal from './';
+
+function TestModal({ state }: { state: boolean }) {
   const [open, setOpen] = React.useState(state);
 
   const toggleModal = () => setOpen((o) => !o);
@@ -17,7 +18,7 @@ const TestModal = ({ state }: { state: boolean }) => {
       </Modal>
     </>
   );
-};
+}
 
 describe('Modal', () => {
   it('should not show modal', () => {

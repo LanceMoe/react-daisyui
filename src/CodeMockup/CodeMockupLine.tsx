@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { ComponentStatus, IComponentBaseProps } from '../types';
@@ -32,7 +32,7 @@ export const CodeMockupLine = forwardRef<HTMLPreElement, CodeMockupLineProps>(
       ...props,
       className: classes,
       ...(dataPrefix !== false && { 'data-prefix': dataPrefix || '>' }),
-    } as Record<string, any>;
+    } as Record<string, unknown>;
 
     return (
       <pre {...allProps} data-theme={dataTheme} className={classes} ref={ref}>

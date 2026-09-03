@@ -5,7 +5,7 @@ export const toTitleCase = (str: string) => {
   return str
     .toLowerCase()
     .split(' ')
-    .map(function (word) {
+    .map((word) => {
       return word.charAt(0).toUpperCase() + word.slice(1);
     })
     .join(' ');
@@ -13,7 +13,9 @@ export const toTitleCase = (str: string) => {
 
 // Returns true if an element is a react fragment
 export const isReactFragment = (node: React.ReactNode | typeof React.Fragment) => {
-  if (!node) return false;
+  if (!node) {
+return false;
+}
 
   if ((node as React.ReactElement)?.type) {
     return (node as React.ReactElement)?.type === React.Fragment;
@@ -31,12 +33,14 @@ export const wrapWithElementIfInvalid = ({
 }: {
   node: React.ReactNode;
   wrapper: React.ReactElement;
-  props?: any;
+  props?: React.HTMLAttributes<HTMLElement> & Record<string, unknown>;
 }) => {
+  const wrapperElement = wrapper as React.ReactElement<Record<string, unknown>>;
+
   if (!node) {
-    return React.cloneElement(wrapper, props);
+    return React.cloneElement(wrapperElement, props);
   } else if (!React.isValidElement(node)) {
-    return React.cloneElement(wrapper, props, node);
+    return React.cloneElement(wrapperElement, props, node);
   } else if (isReactFragment(node)) {
     const element = node as React.ReactElement<{
       className?: string;
@@ -44,13 +48,13 @@ export const wrapWithElementIfInvalid = ({
       [key: string]: unknown;
     }>;
     return React.cloneElement(
-      wrapper,
+      wrapperElement,
       { ...props, className: twMerge(element.props?.className, props?.className) },
       element.props.children,
     );
   } else {
     const element = node as React.ReactElement<{ className?: string }>;
-    return React.cloneElement(node, {
+    return React.cloneElement(element, {
       ...props,
       className: twMerge(element.props?.className, props?.className),
     });

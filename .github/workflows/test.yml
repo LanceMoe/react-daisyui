@@ -28,4 +28,5 @@ jobs:
       - run: npm ci
         env:
           NPM_TOKEN: ${{ secrets.LEV_NPM_TOKEN }}
+      - run: npm run lint
       - run: npm run test

@@ -1,13 +1,13 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Indicator, { IndicatorItemProps } from '.';
 import Avatar from '../Avatar';
 import Badge from '../Badge';
 import Button from '../Button';
-import Tabs from '../Tabs';
-import Input from '../Input';
 import Card from '../Card';
+import Input from '../Input';
+import Tabs from '../Tabs';
+import Indicator, { IndicatorItemProps } from '.';
 
 export default {
   title: 'Layout/Indicator',

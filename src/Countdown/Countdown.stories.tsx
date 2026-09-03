@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
+import { Meta,StoryFn as Story } from '@storybook/react';
+import React, { useEffect,useState } from 'react';
 
 import Countdown, { CountdownProps } from '.';
 

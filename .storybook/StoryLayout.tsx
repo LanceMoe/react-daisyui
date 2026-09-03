@@ -1,12 +1,11 @@
-import React, { ReactNode, useEffect, useMemo, useState } from 'react'
 import { Highlight, themes } from 'prism-react-renderer'
-
-import { useGlobalTheme } from './theming'
+import React, { ReactNode, useEffect, useMemo, useState } from 'react'
 
 import CodeMockup from '../src/CodeMockup'
 import Navbar from '../src/Navbar'
 import Tabs from '../src/Tabs'
 import Theme from '../src/Theme'
+import { useGlobalTheme } from './theming'
 
 type Props = {
   children: ReactNode | ReactNode[]
@@ -15,7 +14,7 @@ type Props = {
   source: string
 }
 
-const StoryLayout = ({ children, title, description, source }: Props) => {
+function StoryLayout({ children, title, description, source }: Props) {
   const globalTheme = useGlobalTheme()
 
   useEffect(() => {
@@ -31,9 +30,9 @@ const StoryLayout = ({ children, title, description, source }: Props) => {
           {({ tokens, getLineProps, getTokenProps }) => (
             <pre slot="html">
               {tokens.map((line, i) => (
-                <div {...getLineProps({ line, key: i })}>
+                <div key={i} {...getLineProps({ line, key: i })}>
                   {line.map((token, key) => (
-                    <span {...getTokenProps({ token, key })} />
+                    <span key={key} {...getTokenProps({ token, key })} />
                   ))}
                 </div>
               ))}

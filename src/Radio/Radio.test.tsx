@@ -1,11 +1,12 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Radio from './Radio';
-import Form from '../Form';
-import Button from '../Button';
+import React from 'react';
 
-const TestRadio2 = () => {
+import Button from '../Button';
+import Form from '../Form';
+import Radio from './Radio';
+
+function TestRadio2() {
   const [pill, setPill] = React.useState('blue');
   return (
     <>
@@ -27,9 +28,9 @@ const TestRadio2 = () => {
       <Button onClick={() => setPill('')}>Clear</Button>
     </>
   );
-};
+}
 
-const TestRadio1 = () => {
+function TestRadio1() {
   const [value, setValue] = React.useState('blue');
   return (
     <>
@@ -45,7 +46,7 @@ const TestRadio1 = () => {
       </Form>
     </>
   );
-};
+}
 
 describe('Radio', () => {
   test('render Radio', () => {

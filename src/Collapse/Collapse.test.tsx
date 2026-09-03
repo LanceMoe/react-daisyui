@@ -1,5 +1,6 @@
+import { fireEvent,render, screen } from '@testing-library/react';
 import React from 'react';
-import { screen, render, fireEvent } from '@testing-library/react';
+
 import Collapse from './';
 
 describe('Collapse', () => {

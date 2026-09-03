@@ -1,11 +1,11 @@
-import React from 'react'
+import '../src/styles.css'
+
 import type { Preview } from '@storybook/react'
+import React from 'react'
 
 import StoryLayout from './StoryLayout'
-
-import '../src/styles.css'
-import { DEFAULT_THEME, STORAGE_KEY, THEME_PICKER_LIST } from './theming'
 import theme from './theme'
+import { DEFAULT_THEME, STORAGE_KEY, THEME_PICKER_LIST } from './theming'
 
 const preview: Preview = {
   parameters: {
@@ -50,7 +50,7 @@ const preview: Preview = {
       list: THEME_PICKER_LIST,
     },
     docs: {
-      theme: theme,
+      theme,
       options: {
         layout: 'fullscreen',
       },

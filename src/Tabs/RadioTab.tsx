@@ -1,5 +1,5 @@
-import React, { forwardRef, ReactNode } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor } from '../types';

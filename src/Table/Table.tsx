@@ -1,13 +1,12 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentSize } from '../types';
-
-import TableHead from './TableHead';
+import { ComponentSize,IComponentBaseProps } from '../types';
 import TableBody from './TableBody';
-import TableRow from './TableRow';
 import TableFooter from './TableFooter';
+import TableHead from './TableHead';
+import TableRow from './TableRow';
 
 export type TableProps = React.TableHTMLAttributes<HTMLTableElement> &
   IComponentBaseProps & {

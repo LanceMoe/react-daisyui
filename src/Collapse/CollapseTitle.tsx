@@ -7,13 +7,13 @@ export type CollapseTitleProps<T extends HTMLElement = HTMLDivElement> = React.H
 
 const classesFn = ({ className }: Pick<CollapseTitleProps, 'className'>) => twMerge('collapse-title', className);
 
-const CollapseTitle = ({ children, className, ...props }: CollapseTitleProps): React.JSX.Element => {
+function CollapseTitle({ children, className, ...props }: CollapseTitleProps): React.JSX.Element {
   return (
     <div {...props} className={classesFn({ className })}>
       {children}
     </div>
   );
-};
+}
 
 export type SummaryProps = CollapseTitleProps<HTMLElement>;
 export const Summary = React.forwardRef<HTMLElement, SummaryProps>(

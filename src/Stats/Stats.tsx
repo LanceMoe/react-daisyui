@@ -1,9 +1,8 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
-
 import Stat from './Stat';
 
 export type StatsProps = React.HTMLAttributes<HTMLDivElement> &

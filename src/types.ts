@@ -1,13 +1,13 @@
 import {
+  bgColors,
+  brandColors,
   componentColors,
   componentLayouts,
   componentPositions,
-  componentSizes,
   componentShapes,
+  componentSizes,
   componentStatuses,
   componentVariants,
-  bgColors,
-  brandColors,
 } from './constants';
 import { DEFAULT_THEMES } from './defaultThemes';
 

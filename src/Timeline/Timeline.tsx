@@ -1,13 +1,12 @@
-import React, { forwardRef, ReactNode } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
-
-import TimelineItem from './TimelineItem';
-import TimelineStart from './TimelineStart';
-import TimelineMiddle from './TimelineMiddle';
 import TimelineEnd from './TimelineEnd';
+import TimelineItem from './TimelineItem';
+import TimelineMiddle from './TimelineMiddle';
+import TimelineStart from './TimelineStart';
 
 export type TimelineProps = React.HTMLAttributes<HTMLUListElement> &
   IComponentBaseProps & {

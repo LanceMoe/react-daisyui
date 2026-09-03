@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import Rating, { RatingProps } from './Rating';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';
 
-const TestComponent = (props: RatingProps) => {
+import Rating, { RatingProps } from './Rating';
+
+function TestComponent(props: RatingProps) {
   return (
     <Rating {...props}>
       <Rating.Item name="rating-1" />
@@ -13,13 +14,13 @@ const TestComponent = (props: RatingProps) => {
       <Rating.Item name="rating-1" />
     </Rating>
   );
-};
+}
 
-const ControlledTestComponent = (props?: Partial<RatingProps>) => {
+function ControlledTestComponent(props?: Partial<RatingProps>) {
   const [value, setValue] = useState(0);
 
   return <TestComponent value={value} onChange={(i) => setValue(i)} {...props} />;
-};
+}
 
 describe('Rating', () => {
   it('Should render', () => {

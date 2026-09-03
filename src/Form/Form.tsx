@@ -2,7 +2,6 @@ import React, { FormHTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
-
 import Label from './Label';
 
 export type FormProps = FormHTMLAttributes<HTMLFormElement> & IComponentBaseProps;

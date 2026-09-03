@@ -1,9 +1,9 @@
-import React, { forwardRef, ReactNode, ElementType } from 'react';
 import clsx from 'clsx';
+import React, { ElementType,forwardRef, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import Loading from '../Loading';
-import { IComponentBaseProps, ComponentColor, ComponentShape, ComponentVariant, ComponentSize } from '../types';
+import { ComponentColor, ComponentShape, ComponentSize,ComponentVariant, IComponentBaseProps } from '../types';
 
 type ITagProps = {
   a: {
@@ -128,7 +128,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         'btn-warning': color === 'warning',
         'btn-error': color === 'error',
         'btn-ghost': color === 'ghost',
-        glass: glass,
+        glass,
         'btn-wide': wide,
         'btn-block': fullWidth,
         'btn-xs sm:btn-sm md:btn-md lg:btn-lg': responsive,

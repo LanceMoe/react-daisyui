@@ -1,9 +1,8 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentLayout } from '../types';
-
+import { ComponentLayout,IComponentBaseProps } from '../types';
 import FooterTitle from './FooterTitle';
 
 export type FooterProps = React.HTMLAttributes<HTMLDivElement> &

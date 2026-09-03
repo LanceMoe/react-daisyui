@@ -8,7 +8,7 @@ export type CountdownProps = React.HTMLAttributes<HTMLSpanElement> &
     value: number;
   };
 
-const Countdown = ({ value, dataTheme, className, ...props }: CountdownProps): React.JSX.Element => {
+function Countdown({ value, dataTheme, className, ...props }: CountdownProps): React.JSX.Element {
   const classes = twMerge('countdown', className);
 
   const displayedValue = Math.min(99, Math.max(0, value));
@@ -19,6 +19,6 @@ const Countdown = ({ value, dataTheme, className, ...props }: CountdownProps): R
       <span style={countdownStyle} />
     </span>
   );
-};
+}
 
 export default Countdown;

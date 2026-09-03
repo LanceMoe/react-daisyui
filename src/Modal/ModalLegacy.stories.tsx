@@ -1,8 +1,8 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React, { useState } from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Modal, { ModalLegacyProps as ModalProps } from '.';
 import Button from '../Button';
+import Modal, { ModalLegacyProps as ModalProps } from '.';
 
 export default {
   title: 'Actions/Modal/Legacy',

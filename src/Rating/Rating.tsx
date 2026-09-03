@@ -1,9 +1,8 @@
-import React, { ReactElement } from 'react';
 import clsx from 'clsx';
+import React, { ReactElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentSize } from '../types';
-
+import { ComponentSize,IComponentBaseProps } from '../types';
 import RatingItem, { RatingItemProps } from './RatingItem';
 
 export type RatingProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> &

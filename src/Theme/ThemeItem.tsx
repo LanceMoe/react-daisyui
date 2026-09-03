@@ -1,5 +1,5 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export type ThemeItemProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -7,7 +7,7 @@ export type ThemeItemProps = React.HTMLAttributes<HTMLDivElement> & {
   selected?: boolean;
 };
 
-const ThemeItem = ({ selected, children, dataTheme, className, ...props }: ThemeItemProps) => {
+function ThemeItem({ selected, children, dataTheme, className, ...props }: ThemeItemProps) {
   const classes = twMerge(
     className,
     'border-base-content/20 hover:border-base-content/40 outline-base-content\
@@ -48,6 +48,6 @@ const ThemeItem = ({ selected, children, dataTheme, className, ...props }: Theme
       </div>
     </div>
   );
-};
+}
 
 export default ThemeItem;

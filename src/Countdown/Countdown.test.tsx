@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+
 import Countdown from './';
 
 describe('Countdown', () => {
@@ -19,7 +20,7 @@ describe('Countdown', () => {
     const innerSpan = countdownElement.querySelector('span');
 
     expect(countdownElement).toBeInTheDocument();
-    expect(innerSpan).toHaveStyle(`--value: 99`);
+    expect(innerSpan).toHaveStyle('--value: 99');
   });
 
   test('Should render Countdown with a default value when value is below the range', () => {
@@ -29,7 +30,7 @@ describe('Countdown', () => {
     const innerSpan = countdownElement.querySelector('span');
 
     expect(countdownElement).toBeInTheDocument();
-    expect(innerSpan).toHaveStyle(`--value: 0`);
+    expect(innerSpan).toHaveStyle('--value: 0');
   });
 
   test('Should allow passing extra props', () => {

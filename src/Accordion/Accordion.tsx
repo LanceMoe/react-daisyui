@@ -1,11 +1,10 @@
-import React, { forwardRef, ReactNode } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
-
-import CollapseTitle from '../Collapse/CollapseTitle';
 import CollapseContent from '../Collapse/CollapseContent';
+import CollapseTitle from '../Collapse/CollapseTitle';
+import { IComponentBaseProps } from '../types';
 
 export type AccordionProps = Omit<React.HTMLAttributes<HTMLInputElement>, 'type'> &
   IComponentBaseProps & {

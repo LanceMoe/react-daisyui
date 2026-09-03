@@ -1,12 +1,12 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Hero, { HeroProps } from '.';
 import Button from '../Button';
 import Card from '../Card';
-import Input from '../Input';
 import Form from '../Form';
+import Input from '../Input';
 import Link from '../Link';
+import Hero, { HeroProps } from '.';
 
 export default {
   title: 'Layout/Hero',

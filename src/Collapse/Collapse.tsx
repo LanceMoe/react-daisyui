@@ -1,12 +1,11 @@
-import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
+import React, { useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
-
+import CollapseContent from './CollapseContent';
 import CollapseDetails from './CollapseDetails';
 import CollapseTitle from './CollapseTitle';
-import CollapseContent from './CollapseContent';
 
 export type CollapseProps<T extends HTMLElement = HTMLDivElement> = React.HTMLAttributes<T> &
   IComponentBaseProps & {
@@ -54,16 +53,28 @@ const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
 
     // Handle blur events, specifically handling open/close for non checkbox types
     const handleBlur = (event: React.FocusEvent<HTMLDivElement, Element>) => {
-      if (!checkbox && onToggle) onToggle();
-      if (!checkbox && onClose) onClose();
-      if (props.onBlur) props.onBlur(event);
+      if (!checkbox && onToggle) {
+onToggle();
+}
+      if (!checkbox && onClose) {
+onClose();
+}
+      if (props.onBlur) {
+props.onBlur(event);
+}
     };
 
     // Handle focus events, specifically handling open/close for non checkbox types
     const handleFocus = (event: React.FocusEvent<HTMLDivElement, Element>) => {
-      if (!checkbox && onToggle) onToggle();
-      if (!checkbox && onOpen) onOpen();
-      if (props.onFocus) props.onFocus(event);
+      if (!checkbox && onToggle) {
+onToggle();
+}
+      if (!checkbox && onOpen) {
+onOpen();
+}
+      if (props.onFocus) {
+props.onFocus(event);
+}
     };
 
     return (

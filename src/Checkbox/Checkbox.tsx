@@ -1,8 +1,8 @@
-import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentColor, ComponentSize } from '../types';
+import { ComponentColor, ComponentSize,IComponentBaseProps } from '../types';
 
 export type CheckboxProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> &
   IComponentBaseProps & {

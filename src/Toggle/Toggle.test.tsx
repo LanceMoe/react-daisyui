@@ -1,10 +1,11 @@
-import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Toggle from './Toggle';
-import Form from '../Form';
+import { useState } from 'react';
 
-const ToggleTest = () => {
+import Form from '../Form';
+import Toggle from './Toggle';
+
+function ToggleTest() {
   const [toggleState, setToggleState] = useState(false);
 
   const toggle = () => setToggleState((o) => !o);
@@ -15,7 +16,7 @@ const ToggleTest = () => {
       </Form.Label>
     </Form>
   );
-};
+}
 
 describe('Toggle', () => {
   it('should render', () => {

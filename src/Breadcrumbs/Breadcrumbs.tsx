@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
-
 import BreadcrumbsItem, { BreadcrumbsItemProps } from './BreadcrumbsItem';
 
 export type BreadcrumbsProps = React.HTMLAttributes<HTMLDivElement> &

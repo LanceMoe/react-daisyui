@@ -1,9 +1,8 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
-
 import Step from './Step';
 
 export type StepsProps = React.HTMLAttributes<HTMLUListElement> &

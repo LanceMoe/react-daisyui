@@ -2,7 +2,6 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
-
 import NavbarSection, { NavbarSectionProps } from './NavbarSection';
 
 export type NavbarProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;

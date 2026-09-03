@@ -1,3 +1,5 @@
+import '../styles/welcome.css'
+
 import React from 'react'
 
 import Button from '../../../src/Button'
@@ -5,11 +7,8 @@ import CodeMockup from '../../../src/CodeMockup'
 import Hero from '../../../src/Hero'
 import Link from '../../../src/Link'
 import Tooltip from '../../../src/Tooltip'
-
-import { DocsWrapper } from '../DocsWrapper'
 import { CopyButton } from '../components/CopyButton'
-
-import '../styles/welcome.css'
+import { DocsWrapper } from '../DocsWrapper'
 
 const githubMark = (
   <svg
@@ -45,7 +44,7 @@ const checkMark = (
   </svg>
 )
 
-export const HomePage = () => {
+export function HomePage() {
   const bulletPoints = [
     'React components',
     'Faster development',

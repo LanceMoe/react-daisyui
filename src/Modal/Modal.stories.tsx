@@ -1,8 +1,8 @@
-import React, { useRef, useCallback } from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
+import { Meta,StoryFn as Story } from '@storybook/react';
+import React, { useCallback,useRef } from 'react';
 
-import Modal, { ModalProps } from '.';
 import Button from '../Button';
+import Modal, { ModalProps } from '.';
 
 export default {
   title: 'Actions/Modal',

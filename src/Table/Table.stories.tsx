@@ -1,11 +1,11 @@
 import { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Table, { TableProps } from '.';
 import Badge from '../Badge';
 import Button from '../Button';
 import Checkbox from '../Checkbox';
 import Mask from '../Mask';
+import Table, { TableProps } from '.';
 
 export default {
   title: 'Data Display/Table',
@@ -507,7 +507,9 @@ interface NoCellStoryProps extends TableProps {
 }
 
 export const PinnedRowsOrColsNoCell: Story<NoCellStoryProps> = ({ noCell, ...args }) => {
-  const renderRows = new Array(10).fill('').map(() => <Table.Row noCell={noCell}>{renderRow(!noCell)}</Table.Row>);
+  const renderRows = new Array(10)
+    .fill('')
+    .map((_, index) => <Table.Row key={index} noCell={noCell}>{renderRow(!noCell)}</Table.Row>);
 
   return (
     <div className="overflow-x-auto max-w-lg max-h-80">

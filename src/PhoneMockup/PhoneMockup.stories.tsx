@@ -1,8 +1,8 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import PhoneMockup, { PhoneMockupProps } from '.';
 import { componentColors } from '../constants';
+import PhoneMockup, { PhoneMockupProps } from '.';
 
 const meta: Meta = {
   title: 'Mockup/PhoneMockup',

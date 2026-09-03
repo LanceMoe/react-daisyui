@@ -1,16 +1,16 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 import { twMerge } from 'tailwind-merge';
 
-import Navbar, { NavbarProps } from '.';
+import Badge from '../Badge';
 import Button from '../Button';
-import Menu from '../Menu';
+import Card from '../Card';
 import Dropdown from '../Dropdown';
 import Form from '../Form';
-import Input from '../Input';
 import Indicator from '../Indicator';
-import Badge from '../Badge';
-import Card from '../Card';
+import Input from '../Input';
+import Menu from '../Menu';
+import Navbar, { NavbarProps } from '.';
 
 export default {
   title: 'Navigation/Navbar',
@@ -382,17 +382,17 @@ Responsive.args = {
 export const Colors: Story<NavbarProps> = (args) => {
   return (
     <>
-      <Navbar {...args} className={'rounded-box bg-neutral text-neutral-content'}>
+      <Navbar {...args} className="rounded-box bg-neutral text-neutral-content">
         <Button tag="a" className="text-xl normal-case" color="ghost">
           daisyUI
         </Button>
       </Navbar>
-      <Navbar {...args} className={'rounded-box bg-base-300'}>
+      <Navbar {...args} className="rounded-box bg-base-300">
         <Button tag="a" className="text-xl normal-case" color="ghost">
           daisyUI
         </Button>
       </Navbar>
-      <Navbar {...args} className={'rounded-box bg-primary text-primary-content'}>
+      <Navbar {...args} className="rounded-box bg-primary text-primary-content">
         <Button tag="a" className="text-xl normal-case" color="ghost">
           daisyUI
         </Button>

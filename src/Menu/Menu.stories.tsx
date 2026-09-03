@@ -1,9 +1,9 @@
-import React, { useState, useCallback } from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
+import { Meta,StoryFn as Story } from '@storybook/react';
+import React, { useCallback,useState } from 'react';
 
-import Menu, { MenuProps } from '.';
-import Tooltip from '../Tooltip';
 import Badge from '../Badge';
+import Tooltip from '../Tooltip';
+import Menu, { MenuProps } from '.';
 
 const responsiveArgType = {
   control: 'select',
@@ -615,7 +615,7 @@ export const CollapsibleSubmenu: Story<MenuProps> = (args) => {
         <a>Item 1</a>
       </Menu.Item>
       <Menu.Item>
-        <Menu.Details open={true} label={'Parent'}>
+        <Menu.Details open={true} label="Parent">
           <Menu.Item>
             <a>level 2 item 1</a>
           </Menu.Item>
@@ -623,7 +623,7 @@ export const CollapsibleSubmenu: Story<MenuProps> = (args) => {
             <a>level 2 item 2</a>
           </Menu.Item>
           <Menu.Item>
-            <Menu.Details open={true} label={'Parent'}>
+            <Menu.Details open={true} label="Parent">
               <Menu.Item>
                 <a>level 3 item 1</a>
               </Menu.Item>
@@ -1079,7 +1079,7 @@ export const CollapsibleWithSubmenuResponsive: Story<MenuProps> = (args) => {
         <a>Item 1</a>
       </Menu.Item>
       <Menu.Item>
-        <Menu.Details open={true} label={'Parent item'}>
+        <Menu.Details open={true} label="Parent item">
           <Menu.Item>
             <a>level 2 item 1</a>
           </Menu.Item>
@@ -1087,7 +1087,7 @@ export const CollapsibleWithSubmenuResponsive: Story<MenuProps> = (args) => {
             <a>level 2 item 2</a>
           </Menu.Item>
           <Menu.Item>
-            <Menu.Details open={true} label={'Parent'}>
+            <Menu.Details open={true} label="Parent">
               <Menu.Item>
                 <a>item 1</a>
               </Menu.Item>

@@ -1,5 +1,5 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React, { useState } from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
 import Select, { SelectProps } from '.';
 
@@ -23,14 +23,14 @@ export const Default: Story<SelectProps> = (args) => {
   return (
     <div className="flex w-full component-preview p-4 items-center justify-center gap-2 font-sans">
       <Select {...args} value={value} onChange={(event) => setValue(event.target.value)}>
-        <Option value={'default'} disabled>
+        <Option value="default" disabled>
           Pick your favorite Simpson
         </Option>
-        <Option value={'Homer'}>Homer</Option>
-        <Option value={'Marge'}>Marge</Option>
-        <Option value={'Bart'}>Bart</Option>
-        <Option value={'Lisa'}>Lisa</Option>
-        <Option value={'Maggie'}>Maggie</Option>
+        <Option value="Homer">Homer</Option>
+        <Option value="Marge">Marge</Option>
+        <Option value="Bart">Bart</Option>
+        <Option value="Lisa">Lisa</Option>
+        <Option value="Maggie">Maggie</Option>
       </Select>
     </div>
   );
@@ -44,8 +44,8 @@ export const FormControlAndLabels: Story<SelectProps> = (args) => {
           <span className="label-text">Pick the best fantasy franchise</span>
           <span className="label-text-alt">Alt label</span>
         </label>
-        <Select defaultValue={'default'} onChange={console.log} {...args}>
-          <Option value={'default'} disabled>
+        <Select defaultValue="default" onChange={console.log} {...args}>
+          <Option value="default" disabled>
             Pick one
           </Option>
           <Option value="Star Wars">Star Wars</Option>

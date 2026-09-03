@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentColor, ComponentPosition } from '../types';
+import { ComponentColor, ComponentPosition,IComponentBaseProps } from '../types';
 
 export type TooltipProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
   IComponentBaseProps & {

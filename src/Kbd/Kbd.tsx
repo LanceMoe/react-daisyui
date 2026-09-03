@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentSize } from '../types';
+import { ComponentSize,IComponentBaseProps } from '../types';
 
 export type KbdProps = React.HTMLAttributes<HTMLElement> &
   IComponentBaseProps & {

@@ -1,9 +1,9 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Toast, { ToastProps } from '.';
 import Alert from '../Alert';
 import Button from '../Button';
+import Toast, { ToastProps } from '.';
 
 export default {
   title: 'Feedback/Toast',

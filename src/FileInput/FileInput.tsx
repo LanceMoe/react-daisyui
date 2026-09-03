@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
+
 import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
 export type FileInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> &

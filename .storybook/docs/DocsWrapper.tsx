@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Theme from '../../src/Theme'
 import { useGlobalTheme } from '../../.storybook/theming/useGlobalTheme'
+import Theme from '../../src/Theme'
 
-export const DocsWrapper = ({ children }: { children: React.ReactNode }) => {
+export function DocsWrapper({ children }: { children: React.ReactNode }) {
   const theme = useGlobalTheme()
   return <Theme dataTheme={theme}>{children}</Theme>
 }

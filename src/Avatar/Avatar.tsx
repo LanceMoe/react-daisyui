@@ -1,11 +1,10 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
+
+import { ComponentColor, ComponentShape, ComponentSize,IComponentBaseProps } from '../types';
 import { isSingleStringChild } from '../utils';
-
 import AvatarGroup from './AvatarGroup';
-
-import { IComponentBaseProps, ComponentColor, ComponentShape, ComponentSize } from '../types';
 
 export type AvatarProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
   IComponentBaseProps & {
@@ -119,7 +118,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
         );
       }
       // Render a text avatar if letters are provided, or a single child that is a string
-      else if (letters || isSingleStringChild(children)) {
+      if (letters || isSingleStringChild(children)) {
         return (
           <div className={placeholderClasses} style={customImgDimension}>
             <span>{letters ? letters : children}</span>
@@ -127,7 +126,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
         );
       }
       // Render if a single, not string child was provided (allows for SVGs) and merges classes and styles
-      else if (React.Children.count(children) === 1) {
+      if (React.Children.count(children) === 1) {
         const firstChild = React.Children.only(children) as React.ReactElement<{
           className?: string;
           style?: React.CSSProperties;
@@ -138,13 +137,11 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
         });
       }
       // Render a wrapping div around all children if there is more than one child.
-      else {
-        return (
-          <div className={imgClasses} style={customImgDimension}>
-            {children}
-          </div>
-        );
-      }
+      return (
+        <div className={imgClasses} style={customImgDimension}>
+          {children}
+        </div>
+      );
     };
 
     return (

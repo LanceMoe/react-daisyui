@@ -1,9 +1,9 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Stats, { StatsProps } from '.';
 import Avatar from '../Avatar';
 import Button from '../Button';
+import Stats, { StatsProps } from '.';
 
 export default {
   title: 'Data Display/Stats',

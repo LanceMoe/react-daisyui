@@ -1,12 +1,11 @@
-import React, { ReactNode } from 'react';
 import clsx from 'clsx';
+import React, { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
-
 import DropdownDetails from './DropdownDetails';
-import DropdownMenu from './DropdownMenu';
 import DropdownItem from './DropdownItem';
+import DropdownMenu from './DropdownMenu';
 import DropdownToggle from './DropdownToggle';
 
 export type DropdownProps<T extends HTMLElement = HTMLDivElement> = React.HTMLAttributes<T> &

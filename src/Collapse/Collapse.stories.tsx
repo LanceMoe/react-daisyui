@@ -1,5 +1,5 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React, { useState } from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
 import Collapse, { CollapseProps } from '.';
 

@@ -1,8 +1,8 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Tooltip, { TooltipProps } from '.';
 import Button from '../Button';
+import Tooltip, { TooltipProps } from '.';
 
 export default {
   title: 'Feedback/Tooltip',

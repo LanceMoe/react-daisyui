@@ -1,9 +1,9 @@
-import React, { forwardRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
 import { bgColors, brandColors, componentStatuses } from '../constants';
+import { IComponentBaseProps } from '../types';
 
 export const windowMockupColors = [...bgColors, ...brandColors, ...componentStatuses] as const;
 

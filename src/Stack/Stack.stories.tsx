@@ -1,8 +1,8 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
 
-import Stack, { StackProps } from '.';
 import Card from '../Card';
+import Stack, { StackProps } from '.';
 
 export default {
   title: 'Layout/Stack',

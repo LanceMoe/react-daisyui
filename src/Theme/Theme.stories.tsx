@@ -1,10 +1,9 @@
+import { Meta,StoryFn as Story } from '@storybook/react';
 import React from 'react';
-import { StoryFn as Story, Meta } from '@storybook/react';
-
-import Theme, { ThemeProps } from '.';
-import ThemeItem from './ThemeItem';
 
 import { DEFAULT_THEMES } from '../defaultThemes';
+import Theme, { ThemeProps } from '.';
+import ThemeItem from './ThemeItem';
 import { useTheme } from './useTheme';
 
 export default {

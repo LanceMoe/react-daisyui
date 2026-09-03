@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+
 import Range from './Range';
 
 describe('Range', () => {

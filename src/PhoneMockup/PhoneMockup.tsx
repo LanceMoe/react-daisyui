@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentColor } from '../types';
+import { ComponentColor,IComponentBaseProps } from '../types';
 
 export type PhoneMockupProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {

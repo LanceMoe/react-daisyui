@@ -1,8 +1,8 @@
-import React, { forwardRef, ReactNode } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentColor, ComponentSize, ComponentVariant } from '../types';
+import { ComponentColor, ComponentSize, ComponentVariant,IComponentBaseProps } from '../types';
 
 export type BadgeProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
   IComponentBaseProps & {

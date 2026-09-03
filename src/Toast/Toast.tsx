@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
+
 import { IComponentBaseProps } from '../types';
 
 const horizontalOptions = {

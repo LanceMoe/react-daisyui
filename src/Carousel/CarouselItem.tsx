@@ -1,5 +1,5 @@
-import React, { cloneElement, LegacyRef } from 'react';
 import clsx from 'clsx';
+import React, { cloneElement, LegacyRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import Button from '../Button';
@@ -18,7 +18,7 @@ export type CarouselItemProps = React.HTMLAttributes<HTMLDivElement> & {
   onNext?: () => void;
 };
 
-const CarouselItem = ({
+function CarouselItem({
   children,
   innerRef,
   src,
@@ -31,7 +31,7 @@ const CarouselItem = ({
   onNext,
   className,
   ...props
-}: CarouselItemProps): React.JSX.Element => {
+}: CarouselItemProps): React.JSX.Element {
   const classes = twMerge(
     'carousel-item relative',
     className,
@@ -82,6 +82,6 @@ const CarouselItem = ({
       )}
     </div>
   );
-};
+}
 
 export default CarouselItem;

@@ -1,4 +1,4 @@
-import Modal, { ModalProps as TModalProps, DialogProps as TDialogProps } from './Modal';
+import Modal, { DialogProps as TDialogProps,ModalProps as TModalProps } from './Modal';
 import { ModalProps as TModalLegacyProps } from './ModalLegacy';
 export type ModalProps = TModalProps;
 export type ModalLegacyProps = TModalLegacyProps;

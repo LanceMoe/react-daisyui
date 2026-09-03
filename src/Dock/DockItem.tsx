@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentBrandColors, ComponentStatus } from '../types';
+import { ComponentBrandColors, ComponentStatus,IComponentBaseProps } from '../types';
 
 export type DockItemProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   IComponentBaseProps & {
@@ -23,8 +23,8 @@ const DockItem = forwardRef<HTMLButtonElement, DockItemProps>(
         'text-success': color === 'success',
         'text-warning': color === 'warning',
         'text-error': color === 'error',
-        active: active,
-        disabled: disabled,
+        active,
+        disabled,
       }),
     );
     return (

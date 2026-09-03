@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { ButtonProps } from '../../../src/Button'
-import Button from '../../../src/Button'
+
+import Button, { ButtonProps } from '../../../src/Button'
 
 export type CopyButtonProps = ButtonProps & {
   text?: string
 }
 
-export const CopyButton = ({ text = '', ...props }: CopyButtonProps) => {
+export function CopyButton({ text = '', ...props }: CopyButtonProps) {
   const [isCopied, setIsCopied] = useState(false)
 
   const copy = async () => {

@@ -1,9 +1,8 @@
-import React, { forwardRef, useCallback, useRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef, useCallback, useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentPosition } from '../types';
-
+import { ComponentPosition,IComponentBaseProps } from '../types';
 import ModalActions from './ModalActions';
 import ModalBody from './ModalBody';
 import ModalHeader from './ModalHeader';
@@ -77,13 +76,13 @@ const useDialog = () => {
     dialogRef.current?.close();
   }, [dialogRef]);
 
-  const Dialog = ({ children, ...props }: DialogProps) => {
+  function Dialog({ children, ...props }: DialogProps) {
     return (
       <Modal {...props} ref={dialogRef}>
         {children}
       </Modal>
     );
-  };
+  }
   Dialog.displayName = 'Dialog';
   return { dialogRef, Dialog, handleShow, handleHide };
 };

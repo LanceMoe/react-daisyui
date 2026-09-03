@@ -1,11 +1,10 @@
-import React, { forwardRef } from 'react';
 import clsx from 'clsx';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps, ComponentSize, ComponentPosition } from '../types';
-
-import Tab from './Tab';
+import { ComponentPosition,ComponentSize, IComponentBaseProps } from '../types';
 import RadioTab from './RadioTab';
+import Tab from './Tab';
 
 export type TabsProps = React.HTMLAttributes<HTMLDivElement> &
   IComponentBaseProps & {
