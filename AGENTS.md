@@ -13,32 +13,32 @@ This is a browser-focused React library. It does not contain an Electron main pr
 - `generators/` and `plopfile.js`: component scaffolding.
 - `public/`: static assets copied into the Storybook output.
 - `dist/`: package build output. It is ignored by Git and must not be edited by hand.
-- `docs/`: generated Storybook documentation. Regenerate it with `npm run docs`; do not hand-edit generated assets.
+- `docs/`: generated Storybook documentation. Regenerate it with `pnpm run docs`; do not hand-edit generated assets.
 - `eslint.config.js`: the active ESLint Flat Config.
 - `tsconfig.json`: the TypeScript 7 type-check configuration.
 - `tsconfig.build.json`: the legacy bundler compatibility configuration used by Microbundle.
 
 ## Commands and Verification
 
-The CI workflow uses npm, so npm is the canonical install and verification path. Because both `package-lock.json` and `pnpm-lock.yaml` are committed, dependency changes must keep both lockfiles synchronized.
+The CI workflow uses pnpm, so pnpm is the canonical install and verification path. `pnpm-lock.yaml` is the committed single source of truth for dependencies.
 
 ```bash
-npm ci
-npm run lint
-npm run typecheck
-npm test -- --runInBand
-npm run dist
-npm run docs
+pnpm install --frozen-lockfile
+pnpm run lint
+pnpm run typecheck
+pnpm test -- --runInBand
+pnpm run dist
+pnpm run docs
 ```
 
-- `npm run lint` runs ESLint over TypeScript and TSX files.
-- `npm run typecheck` invokes the TypeScript 7 compiler through `node_modules/typescript-7`.
-- `npm test -- --runInBand` runs the Jest suite in jsdom.
-- `npm run dist` builds the distributable CJS, ESM, and modern bundles.
-- `npm run docs` regenerates the Storybook documentation output.
-- `npm run format` runs Prettier over `src/`. The repository uses single quotes, semicolons, two-space indentation, trailing commas, and a 120-character print width.
+- `pnpm run lint` runs ESLint over TypeScript and TSX files.
+- `pnpm run typecheck` invokes the TypeScript 7 compiler through `node_modules/typescript-7`.
+- `pnpm test -- --runInBand` runs the Jest suite in jsdom.
+- `pnpm run dist` builds the distributable CJS, ESM, and modern bundles.
+- `pnpm run docs` regenerates the Storybook documentation output.
+- `pnpm run format` runs Prettier over `src/`. The repository uses single quotes, semicolons, two-space indentation, trailing commas, and a 120-character print width.
 
-Every change should leave lint, type checking, tests, and the relevant build command passing. Do not use `npm audit fix --force` as a routine dependency-upgrade step.
+Every change should leave lint, type checking, tests, and the relevant build command passing.
 
 ## TypeScript Rules
 
@@ -112,12 +112,12 @@ type PanelPropsWithRef = React.ComponentPropsWithRef<typeof Panel>;
 - Add or update a colocated unit test when changing component behavior.
 - Add or update a Storybook story when introducing or changing a user-visible component state, variant, or interaction.
 - Keep tests focused on public behavior and accessibility-visible output rather than implementation details.
-- Do not hand-edit generated Storybook bundles. Run `npm run docs` after relevant story or Storybook changes and review the generated diff.
+- Do not hand-edit generated Storybook bundles. Run `pnpm run docs` after relevant story or Storybook changes and review the generated diff.
 
 ## Dependencies and Lockfiles
 
 - Keep React, React DOM, Tailwind CSS, and daisyUI peer-dependency expectations compatible with the public package.
-- Use the package manager command appropriate to the lockfile being updated. After a dependency change, run `npm install` and `pnpm install --lockfile-only --ignore-scripts` as needed so both committed lockfiles describe the same dependency graph.
+- `pnpm-lock.yaml` is the committed single source of truth for dependencies. Use `pnpm install` or `pnpm add` for dependency management.
 - Check peer-dependency warnings before accepting an upgrade. In particular, Microbundle currently constrains the Babel major version used by the package build.
 - Do not remove a dependency only because it is not imported from `src/`; build, test, Storybook, PostCSS, and release tooling are all part of the development dependency graph.
 
