@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.0.1](https://github.com/LanceMoe/react-daisyui/compare/v7.0.0...v7.0.1) (2026-09-03)
+
+
+### Bug Fixes
+
+* build path ([1a48307](https://github.com/LanceMoe/react-daisyui/commit/1a483071adf70c54d4f8564e3376c1e7f43a1522))
+
 ## [7.0.0](https://github.com/LanceMoe/react-daisyui/compare/v6.0.0...v7.0.0) (2026-09-03)
 
 
