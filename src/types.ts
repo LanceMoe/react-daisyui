@@ -1,4 +1,4 @@
-import {
+import type {
   bgColors,
   brandColors,
   componentColors,
@@ -9,7 +9,7 @@ import {
   componentStatuses,
   componentVariants,
 } from './constants';
-import { DEFAULT_THEMES } from './defaultThemes';
+import type { DEFAULT_THEMES } from './defaultThemes';
 
 export type DataTheme = (typeof DEFAULT_THEMES)[number] | string;
 

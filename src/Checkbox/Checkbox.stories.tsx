@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Form from '../Form';
-import Checkbox, { CheckboxProps } from '.';
+import type { CheckboxProps } from '.';
+import Checkbox from '.';
 
 export default {
   title: 'Data Input/Checkbox',

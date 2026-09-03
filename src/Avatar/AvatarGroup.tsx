@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { AvatarProps } from '../Avatar';
+import type { AvatarProps } from '../Avatar';
 
 export type AvatarGroupProps = React.ComponentPropsWithoutRef<'div'> & {
-  children: ReactElement<AvatarProps>[];
+  children: React.ReactElement<AvatarProps>[];
 };
 
 const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(

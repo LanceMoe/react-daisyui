@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Link, { LinkProps } from '.';
+import type { LinkProps } from '.';
+import Link from '.';
 
 export default {
   title: 'Navigation/Link',

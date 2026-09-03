@@ -1,11 +1,11 @@
-import { type ComponentPropsWithoutRef, forwardRef, type ReactNode } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IComponentBaseProps } from '../types';
 
-export type TextRotateProps = ComponentPropsWithoutRef<'span'> &
+export type TextRotateProps = React.ComponentPropsWithoutRef<'span'> &
   IComponentBaseProps & {
-    texts?: ReactNode[];
+    texts?: React.ReactNode[];
   };
 
 const TextRotate = forwardRef<HTMLSpanElement, TextRotateProps>(

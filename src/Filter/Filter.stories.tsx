@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Filter, { FilterProps } from '.';
+import type { FilterProps } from '.';
+import Filter from '.';
 
 export default { title: 'Actions/Filter', component: Filter } as Meta;
 

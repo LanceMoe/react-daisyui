@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 export type MenuDetailsProps = React.ComponentPropsWithoutRef<'details'> &
   IComponentBaseProps & {
-    label: ReactNode;
+    label: React.ReactNode;
     open?: boolean;
   };
 

@@ -1,4 +1,4 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Badge from '../Badge';
@@ -6,7 +6,8 @@ import Button from '../Button';
 import Indicator from '../Indicator';
 import Input from '../Input';
 import Select from '../Select';
-import Join, { JoinProps } from '.';
+import type { JoinProps } from '.';
+import Join from '.';
 
 export default {
   title: 'Layout/Join (group items)',

@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import React, { ElementType, forwardRef, ReactNode } from 'react';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import Loading from '../Loading';
-import { ComponentColor, ComponentShape, ComponentSize, ComponentVariant, IComponentBaseProps } from '../types';
+import type { ComponentColor, ComponentShape, ComponentSize, ComponentVariant, IComponentBaseProps } from '../types';
 
 type ITagProps = {
   a: {
@@ -36,11 +36,11 @@ type ITagProps = {
   };
 };
 
-type GetTagProps<T extends ElementType> = T extends keyof ITagProps ? ITagProps[T] : ITagProps['button'];
+type GetTagProps<T extends React.ElementType> = T extends keyof ITagProps ? ITagProps[T] : ITagProps['button'];
 
 export type ButtonProps<
-  T extends ElementType = 'button',
-  A extends React.ComponentPropsWithoutRef<ElementType> = GetTagProps<T>['attr'],
+  T extends React.ElementType = 'button',
+  A extends React.ComponentPropsWithoutRef<React.ElementType> = GetTagProps<T>['attr'],
 > = Omit<A, 'color' | 'size'> &
   IComponentBaseProps & {
     shape?: ComponentShape;
@@ -54,13 +54,13 @@ export type ButtonProps<
     animation?: boolean;
     loading?: boolean;
     active?: boolean;
-    startIcon?: ReactNode;
-    endIcon?: ReactNode;
+    startIcon?: React.ReactNode;
+    endIcon?: React.ReactNode;
     disabled?: boolean;
     tag?: T;
   };
 //  https://developer.mozilla.org/en-US/docs/Glossary/Void_element
-const VoidElementList: ElementType[] = [
+const VoidElementList: React.ElementType[] = [
   'area',
   'base',
   'br',
@@ -78,7 +78,7 @@ const VoidElementList: ElementType[] = [
   'wbr',
 ];
 
-const nativeDisabledTags = new Set<ElementType>(['button', 'input']);
+const nativeDisabledTags = new Set<React.ElementType>(['button', 'input']);
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -163,9 +163,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = 'Button';
 
 export default Button as <
-  T extends ElementType = 'button',
+  T extends React.ElementType = 'button',
   E extends HTMLElement = GetTagProps<T>['ele'],
-  A extends React.ComponentPropsWithoutRef<ElementType> = GetTagProps<T>['attr'],
+  A extends React.ComponentPropsWithoutRef<React.ElementType> = GetTagProps<T>['attr'],
 >(
   props: ButtonProps<T, A> & { ref?: React.Ref<E> },
 ) => React.JSX.Element;

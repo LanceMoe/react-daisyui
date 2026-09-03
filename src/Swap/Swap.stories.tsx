@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Swap, { SwapProps } from '.';
+import type { SwapProps } from '.';
+import Swap from '.';
 
 export default {
   title: 'Actions/Swap',

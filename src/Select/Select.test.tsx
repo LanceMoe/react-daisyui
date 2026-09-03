@@ -6,9 +6,9 @@ import * as React from 'react';
 import { useState } from 'react';
 
 import Checkbox from '../Checkbox';
-import { ComponentColor, ComponentSize } from '../types';
+import type { ComponentColor, ComponentSize } from '../types';
 import Select from './index';
-import { SelectProps } from './Select';
+import type { SelectProps } from './Select';
 
 function TestComponent(props?: Omit<SelectProps, 'children'>) {
   return (

@@ -1,3 +1,4 @@
-import Breadcrumbs, { BreadcrumbsProps as TBreadcrumbsProps } from './Breadcrumbs';
+import type { BreadcrumbsProps as TBreadcrumbsProps } from './Breadcrumbs';
+import Breadcrumbs from './Breadcrumbs';
 export type BreadcrumbsProps = TBreadcrumbsProps;
 export default Breadcrumbs;

@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Megamenu, { MegamenuProps } from '.';
+import type { MegamenuProps } from '.';
+import Megamenu from '.';
 
 export default { title: 'Navigation/Megamenu', component: Megamenu } as Meta;
 

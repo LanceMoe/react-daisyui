@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { cloneElement, LegacyRef } from 'react';
+import React, { cloneElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import Button from '../Button';
@@ -7,7 +7,7 @@ import Button from '../Button';
 export type CarouselItemWidth = 'full' | 'half';
 
 export type CarouselItemProps = React.ComponentPropsWithoutRef<'div'> & {
-  readonly innerRef?: LegacyRef<HTMLDivElement>;
+  readonly innerRef?: React.LegacyRef<HTMLDivElement>;
   src?: string;
   alt?: string;
   index?: number;

@@ -1,12 +1,12 @@
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 export type MenuDropdownProps = React.ComponentPropsWithoutRef<'span'> &
   IComponentBaseProps & {
-    label: ReactNode;
+    label: React.ReactNode;
     open?: boolean;
   };
 

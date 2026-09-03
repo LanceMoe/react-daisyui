@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { bgColors, brandColors, componentStatuses } from '../constants';
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 export const windowMockupColors = [...bgColors, ...brandColors, ...componentStatuses] as const;
 

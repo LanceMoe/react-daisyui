@@ -1,9 +1,10 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Alert from '../Alert';
 import Button from '../Button';
-import Toast, { ToastProps } from '.';
+import type { ToastProps } from '.';
+import Toast from '.';
 
 export default {
   title: 'Feedback/Toast',

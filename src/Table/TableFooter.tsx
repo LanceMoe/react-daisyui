@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 export type TableFooterProps = React.ComponentPropsWithoutRef<'tfoot'> &
   IComponentBaseProps & {

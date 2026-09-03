@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import HoverGallery, { HoverGalleryProps } from '.';
+import type { HoverGalleryProps } from '.';
+import HoverGallery from '.';
 
 export default { title: 'Data Display/Hover Gallery', component: HoverGallery } as Meta;
 

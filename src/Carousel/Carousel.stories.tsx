@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Button from '../Button';
-import Carousel, { CarouselProps } from '.';
+import type { CarouselProps } from '.';
+import Carousel from '.';
 
 export default {
   title: 'Data Display/Carousel',

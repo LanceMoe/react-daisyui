@@ -1,12 +1,12 @@
 import clsx from 'clsx';
-import React, { forwardRef, ReactNode } from 'react';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentLayout, ComponentStatus, ComponentVariant, IComponentBaseProps } from '../types';
+import type { ComponentLayout, ComponentStatus, ComponentVariant, IComponentBaseProps } from '../types';
 
 export type AlertProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
-    icon?: ReactNode;
+    icon?: React.ReactNode;
     layout?: ComponentLayout;
     status?: ComponentStatus;
     variant?: ComponentVariant;

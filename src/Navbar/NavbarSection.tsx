@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { NavbarProps } from './Navbar';
+import type { NavbarProps } from './Navbar';
 
 export type NavbarSectionProps = NavbarProps & {
   section: 'start' | 'center' | 'end';

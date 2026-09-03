@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Artboard, { ArtboardProps } from '.';
+import type { ArtboardProps } from '.';
+import Artboard from '.';
 
 export default {
   title: 'Layout/Artboard',

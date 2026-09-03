@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Otp, { OtpProps } from '.';
+import type { OtpProps } from '.';
+import Otp from '.';
 
 export default { title: 'Data Input/OTP', component: Otp } as Meta;
 

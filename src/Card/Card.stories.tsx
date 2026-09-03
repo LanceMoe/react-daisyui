@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Button from '../Button';
-import Card, { CardProps } from '.';
+import type { CardProps } from '.';
+import Card from '.';
 
 export default {
   title: 'Data Display/Card',

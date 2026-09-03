@@ -2,11 +2,15 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentSize, ComponentVariant, IComponentBaseProps } from '../types';
-import CardActions, { CardActionsProps as ActionProps } from './CardActions';
-import CardBody, { CardBodyProps as BodyProps } from './CardBody';
-import CardImage, { CardImageProps as ImageProps } from './CardImage';
-import CardTitle, { CardTitleProps as TitleProps } from './CardTitle';
+import type { ComponentSize, ComponentVariant, IComponentBaseProps } from '../types';
+import type { CardActionsProps as ActionProps } from './CardActions';
+import CardActions from './CardActions';
+import type { CardBodyProps as BodyProps } from './CardBody';
+import CardBody from './CardBody';
+import type { CardImageProps as ImageProps } from './CardImage';
+import CardImage from './CardImage';
+import type { CardTitleProps as TitleProps } from './CardTitle';
+import CardTitle from './CardTitle';
 
 export type CardActionsProps = ActionProps;
 export type CardBodyProps = BodyProps;

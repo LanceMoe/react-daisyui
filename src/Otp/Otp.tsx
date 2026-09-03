@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
-export type OtpProps = Omit<ComponentPropsWithoutRef<'input'>, 'type' | 'size' | 'maxLength' | 'pattern'> &
+export type OtpProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'type' | 'size' | 'maxLength' | 'pattern'> &
   IComponentBaseProps & {
     length?: 4 | 5 | 6;
     size?: ComponentSize;

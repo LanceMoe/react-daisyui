@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Mask, { MaskProps } from '.';
+import type { MaskProps } from '.';
+import Mask from '.';
 
 export default {
   title: 'Layout/Mask',

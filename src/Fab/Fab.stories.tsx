@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Fab, { FabProps } from '.';
+import type { FabProps } from '.';
+import Fab from '.';
 
 export default { title: 'Actions/Fab', component: Fab } as Meta;
 

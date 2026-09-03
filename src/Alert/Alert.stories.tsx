@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Button from '../Button';
-import Alert, { AlertProps } from '.';
+import type { AlertProps } from '.';
+import Alert from '.';
 
 export default {
   title: 'Feedback/Alert',

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentLayout, IComponentBaseProps } from '../types';
+import type { ComponentLayout, IComponentBaseProps } from '../types';
 import FooterTitle from './FooterTitle';
 
 export type FooterProps = React.ComponentPropsWithoutRef<'div'> &

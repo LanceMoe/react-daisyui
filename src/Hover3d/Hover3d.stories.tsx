@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Hover3d, { Hover3dProps } from '.';
+import type { Hover3dProps } from '.';
+import Hover3d from '.';
 
 export default { title: 'Data Display/Hover 3D', component: Hover3d } as Meta;
 

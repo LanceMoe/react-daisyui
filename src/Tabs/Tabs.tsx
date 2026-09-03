@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentPosition, ComponentSize, IComponentBaseProps } from '../types';
+import type { ComponentPosition, ComponentSize, IComponentBaseProps } from '../types';
 import RadioTab from './RadioTab';
 import Tab from './Tab';
 

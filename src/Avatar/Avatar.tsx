@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentShape, ComponentSize, IComponentBaseProps } from '../types';
+import type { ComponentColor, ComponentShape, ComponentSize, IComponentBaseProps } from '../types';
 import { isSingleStringChild } from '../utils';
 import AvatarGroup from './AvatarGroup';
 

@@ -1,4 +1,4 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -10,7 +10,8 @@ import Form from '../Form';
 import Indicator from '../Indicator';
 import Input from '../Input';
 import Menu from '../Menu';
-import Navbar, { NavbarProps } from '.';
+import type { NavbarProps } from '.';
+import Navbar from '.';
 
 export default {
   title: 'Navigation/Navbar',

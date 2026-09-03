@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Join from '../Join';
-import Accordion, { AccordionProps } from '.';
+import type { AccordionProps } from '.';
+import Accordion from '.';
 
 export default {
   title: 'Data Display/Accordion',

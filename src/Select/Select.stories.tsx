@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React, { useState } from 'react';
 
-import Select, { SelectProps } from '.';
+import type { SelectProps } from '.';
+import Select from '.';
 
 const { Option } = Select;
 

@@ -60,4 +60,28 @@ describe('Collapse', () => {
     const contentElement = screen.getByText('Test Content');
     expect(contentElement).toBeInTheDocument();
   });
+
+  describe('Collapse.Details', () => {
+    test('Should render Collapse.Details with correct classes', () => {
+      render(
+        <Collapse.Details data-testid="collapse-details" icon="arrow" open>
+          <Collapse.Details.Title>Title</Collapse.Details.Title>
+          <Collapse.Content>Content</Collapse.Content>
+        </Collapse.Details>,
+      );
+
+      const element = screen.getByTestId('collapse-details');
+      expect(element).toBeInTheDocument();
+      expect(element.tagName).toBe('DETAILS');
+      expect(element).toHaveClass('collapse', 'collapse-arrow', 'collapse-open');
+      expect(screen.getByText('Title')).toBeInTheDocument();
+      expect(screen.getByText('Content')).toBeInTheDocument();
+    });
+
+    test('Should forward ref to details element', () => {
+      const ref = React.createRef<HTMLDetailsElement>();
+      render(<Collapse.Details ref={ref}>Test</Collapse.Details>);
+      expect(ref.current).toBeInstanceOf(HTMLDetailsElement);
+    });
+  });
 });

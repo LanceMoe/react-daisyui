@@ -1,11 +1,11 @@
-import { type ComponentPropsWithoutRef, forwardRef, type ReactNode } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IComponentBaseProps } from '../types';
 
-export type HoverGalleryProps = ComponentPropsWithoutRef<'figure'> &
+export type HoverGalleryProps = React.ComponentPropsWithoutRef<'figure'> &
   IComponentBaseProps & {
-    children?: ReactNode;
+    children?: React.ReactNode;
   };
 
 const HoverGallery = forwardRef<HTMLElement, HoverGalleryProps>(({ children, dataTheme, className, ...props }, ref) => {

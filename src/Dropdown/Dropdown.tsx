@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 import DropdownDetails from './DropdownDetails';
 import DropdownItem from './DropdownItem';
 import DropdownMenu from './DropdownMenu';
@@ -10,7 +10,7 @@ import DropdownToggle from './DropdownToggle';
 
 export type DropdownProps<T extends React.ElementType = 'div'> = React.ComponentPropsWithoutRef<T> &
   IComponentBaseProps & {
-    item?: ReactNode;
+    item?: React.ReactNode;
     horizontal?: 'left' | 'right';
     vertical?: 'top' | 'bottom';
     end?: boolean;

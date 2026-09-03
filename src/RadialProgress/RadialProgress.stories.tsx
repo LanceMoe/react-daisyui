@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import RadialProgress, { RadialProgressProps } from '.';
+import type { RadialProgressProps } from '.';
+import RadialProgress from '.';
 
 export default {
   title: 'Feedback/Radial Progress',

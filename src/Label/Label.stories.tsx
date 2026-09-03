@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Label, { LabelProps } from '.';
+import type { LabelProps } from '.';
+import Label from '.';
 
 export default { title: 'Data Input/Label', component: Label } as Meta;
 

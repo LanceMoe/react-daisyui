@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentBrandColors, ComponentStatus, IComponentBaseProps } from '../types';
+import type { ComponentBrandColors, ComponentStatus, IComponentBaseProps } from '../types';
 
 export type DockItemProps = React.ComponentPropsWithoutRef<'button'> &
   IComponentBaseProps & {

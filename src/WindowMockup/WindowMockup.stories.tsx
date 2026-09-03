@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import { componentColors } from '../constants';
-import WindowMockup, { WindowMockupProps } from '.';
+import type { WindowMockupProps } from '.';
+import WindowMockup from '.';
 
 const meta: Meta = {
   title: 'Mockup/WindowMockup',

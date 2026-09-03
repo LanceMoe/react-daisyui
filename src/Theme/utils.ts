@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const getThemeFromClosestAncestor = (ref: React.RefObject<HTMLElement | null>) => {
   if (!ref.current) {
     return;

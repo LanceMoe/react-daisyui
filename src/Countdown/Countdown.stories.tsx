@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React, { useEffect, useState } from 'react';
 
-import Countdown, { CountdownProps } from '.';
+import type { CountdownProps } from '.';
+import Countdown from '.';
 
 export default {
   title: 'Data Display/Countdown',

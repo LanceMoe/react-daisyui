@@ -70,7 +70,7 @@ export default defineConfig(
       camelcase: 'error',
       'spaced-comment': 'error',
       quotes: ['error', 'single'],
-      'no-duplicate-imports': 'error',
+      'no-duplicate-imports': 'off',
       'no-empty-function': 'off',
       '@typescript-eslint/no-empty-function': 'warn',
       'sort-imports': 'off',
@@ -83,6 +83,14 @@ export default defineConfig(
       '@next/next/no-img-element': 'off',
       'brace-style': ['error', '1tbs'],
       curly: ['error', 'all'],
+
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'separate-type-imports',
+        },
+      ],
 
       'react/jsx-curly-brace-presence': [
         'error',
@@ -108,6 +116,19 @@ export default defineConfig(
       'import/no-unresolved': [
         'error',
         { ignore: ['^@/', '^virtual:', '\\?react$'] },
+      ],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: "ImportDeclaration[source.value='react'][importKind='type']",
+          message:
+            'Do not import types from react. Use React.<Type> (e.g. React.KeyboardEvent, React.ReactNode) directly.',
+        },
+        {
+          selector: "ImportDeclaration[source.value='react'] > ImportSpecifier[importKind='type']",
+          message:
+            'Do not import types from react. Use React.<Type> (e.g. React.KeyboardEvent, React.ReactNode) directly.',
+        },
       ],
     },
   },

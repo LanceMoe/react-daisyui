@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Calendar, { CalendarProps } from '.';
+import type { CalendarProps } from '.';
+import Calendar from '.';
 
 export default { title: 'Data Input/Calendar', component: Calendar } as Meta;
 

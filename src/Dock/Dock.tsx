@@ -2,9 +2,11 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentSize, IComponentBaseProps } from '../types';
-import DockItem, { DockItemProps as ItemProps } from './DockItem';
-import DockLabel, { DockLabelProps as LabelProps } from './DockLabel';
+import type { ComponentSize, IComponentBaseProps } from '../types';
+import type { DockItemProps as ItemProps } from './DockItem';
+import DockItem from './DockItem';
+import type { DockLabelProps as LabelProps } from './DockLabel';
+import DockLabel from './DockLabel';
 
 export type DockItemProps = ItemProps;
 export type DockLabelProps = LabelProps;

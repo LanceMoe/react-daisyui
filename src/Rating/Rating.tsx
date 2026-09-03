@@ -1,9 +1,10 @@
 import clsx from 'clsx';
-import React, { ReactElement, useId } from 'react';
+import React, { useId } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentSize, IComponentBaseProps } from '../types';
-import RatingItem, { RatingItemProps } from './RatingItem';
+import type { ComponentSize, IComponentBaseProps } from '../types';
+import type { RatingItemProps } from './RatingItem';
+import RatingItem from './RatingItem';
 
 export type RatingProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> &
   IComponentBaseProps & {
@@ -37,7 +38,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
       <div aria-label="Rating" {...props} ref={ref} data-theme={dataTheme} className={classes}>
         {value === 0 && <RatingItem className="rating-hidden hidden" name={ratingName} checked readOnly />}
         {React.Children.map(children, (child, index) => {
-          const childComponent = child as ReactElement<RatingItemProps>;
+          const childComponent = child as React.ReactElement<RatingItemProps>;
           return React.cloneElement(childComponent, {
             key: index + value,
             checked: value === index + 1,

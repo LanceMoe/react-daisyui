@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Steps, { StepsProps } from '.';
+import type { StepsProps } from '.';
+import Steps from '.';
 import Step from './Step';
 
 export default {

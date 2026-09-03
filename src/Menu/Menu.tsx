@@ -2,11 +2,15 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentSize, IComponentBaseProps } from '../types';
-import MenuDetails, { MenuDetailsProps as DetailsProps } from './MenuDetails';
-import MenuDropdown, { MenuDropdownProps as DropdownProps } from './MenuDropdown';
-import MenuItem, { MenuItemProps as ItemProps } from './MenuItem';
-import MenuTitle, { MenuTitleProps as TitleProps } from './MenuTitle';
+import type { ComponentSize, IComponentBaseProps } from '../types';
+import type { MenuDetailsProps as DetailsProps } from './MenuDetails';
+import MenuDetails from './MenuDetails';
+import type { MenuDropdownProps as DropdownProps } from './MenuDropdown';
+import MenuDropdown from './MenuDropdown';
+import type { MenuItemProps as ItemProps } from './MenuItem';
+import MenuItem from './MenuItem';
+import type { MenuTitleProps as TitleProps } from './MenuTitle';
+import MenuTitle from './MenuTitle';
 
 export type MenuTitleProps = TitleProps;
 export type MenuItemProps = ItemProps;

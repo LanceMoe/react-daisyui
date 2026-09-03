@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IComponentBaseProps } from '../types';
 
-export type FabProps = ComponentPropsWithoutRef<'div'> &
+export type FabProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     flower?: boolean;
   };

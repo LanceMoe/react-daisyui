@@ -1,7 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 import Label from './Label';
 
 export type FormProps = React.ComponentPropsWithoutRef<'form'> & IComponentBaseProps;

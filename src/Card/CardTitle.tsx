@@ -1,11 +1,11 @@
-import React, { ElementType } from 'react';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 export type CardTitleProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
-    tag?: ElementType;
+    tag?: React.ElementType;
   };
 
 const CardTitle = React.forwardRef<HTMLElement, CardTitleProps>(

@@ -2,7 +2,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';
 
-import Rating, { RatingProps } from './Rating';
+import type { RatingProps } from './Rating';
+import Rating from './Rating';
 
 function TestComponent(props: RatingProps) {
   return (

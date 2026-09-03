@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Diff, { DiffProps } from '.';
+import type { DiffProps } from '.';
+import Diff from '.';
 
 const meta: Meta<DiffProps> = {
   title: 'Data Display/Diff',

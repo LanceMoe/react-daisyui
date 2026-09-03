@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import CollapseContent from '../Collapse/CollapseContent';
 import CollapseTitle from '../Collapse/CollapseTitle';
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 export type AccordionProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'type'> &
   IComponentBaseProps & {

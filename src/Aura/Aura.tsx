@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { ComponentSize, IComponentBaseProps } from '../types';
 
-export type AuraProps = ComponentPropsWithoutRef<'div'> &
+export type AuraProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     variant?: 'dual' | 'rainbow' | 'holo' | 'gold' | 'silver' | 'glow';
     size?: ComponentSize;

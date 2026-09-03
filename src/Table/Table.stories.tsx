@@ -1,11 +1,12 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Badge from '../Badge';
 import Button from '../Button';
 import Checkbox from '../Checkbox';
 import Mask from '../Mask';
-import Table, { TableProps } from '.';
+import type { TableProps } from '.';
+import Table from '.';
 
 export default {
   title: 'Data Display/Table',

@@ -1,12 +1,12 @@
 import clsx from 'clsx';
-import React, { forwardRef, ReactNode } from 'react';
+import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 export type DiffProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
-    secondItem: ReactNode;
+    secondItem: React.ReactNode;
   };
 
 const Diff = forwardRef<HTMLDivElement, DiffProps>(

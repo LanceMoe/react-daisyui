@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Footer, { FooterProps } from '.';
+import type { FooterProps } from '.';
+import Footer from '.';
 
 export default {
   title: 'Layout/Footer',

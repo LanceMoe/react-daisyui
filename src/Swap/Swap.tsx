@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 import { wrapWithElementIfInvalid } from '../utils';
 
 export type SwapProps = Omit<React.ComponentPropsWithoutRef<'label'>, 'onClick' | 'onChange'> &

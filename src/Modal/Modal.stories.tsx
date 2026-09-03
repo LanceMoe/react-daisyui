@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React, { useCallback, useRef } from 'react';
 
 import Button from '../Button';
-import Modal, { ModalProps } from '.';
+import type { ModalProps } from '.';
+import Modal from '.';
 
 export default {
   title: 'Actions/Modal',
@@ -96,11 +97,11 @@ CustomWidth.args = {
 };
 
 export const UseDialogHook: Story<ModalProps> = (args) => {
-  const { Dialog, handleShow } = Modal.useDialog();
+  const { dialogRef, show } = Modal.useDialog();
   return (
     <div className="font-sans">
-      <Button onClick={handleShow}>Open Modal</Button>
-      <Dialog {...args}>
+      <Button onClick={show}>Open Modal</Button>
+      <Modal {...args} ref={dialogRef}>
         <Modal.Header className="font-bold">Hello!</Modal.Header>
         <Modal.Body>This modal works with useDialog hook!</Modal.Body>
         <Modal.Actions>
@@ -108,7 +109,7 @@ export const UseDialogHook: Story<ModalProps> = (args) => {
             <Button>Close</Button>
           </form>
         </Modal.Actions>
-      </Dialog>
+      </Modal>
     </div>
   );
 };

@@ -1,12 +1,12 @@
-import { type ComponentPropsWithoutRef, forwardRef, type ReactNode } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IComponentBaseProps } from '../types';
 
-export type FieldsetProps = ComponentPropsWithoutRef<'fieldset'> &
+export type FieldsetProps = React.ComponentPropsWithoutRef<'fieldset'> &
   IComponentBaseProps & {
-    legend?: ReactNode;
-    description?: ReactNode;
+    legend?: React.ReactNode;
+    description?: React.ReactNode;
   };
 
 const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(

@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Button, { ButtonProps } from '.';
+import type { ButtonProps } from '.';
+import Button from '.';
 
 export default {
   title: 'Actions/Button',

@@ -71,4 +71,27 @@ describe('Dropdown', () => {
     expect(screen.getByRole('listbox')).toHaveClass('dropdown-hover');
     expect(screen.getByRole('listbox')).toHaveClass('dropdown-open');
   });
+
+  describe('Dropdown.Details', () => {
+    test('Should render Dropdown.Details with correct classes', () => {
+      render(
+        <Dropdown.Details data-testid="dropdown-details" horizontal="right" vertical="bottom" end open>
+          <Dropdown.Details.Toggle>Click</Dropdown.Details.Toggle>
+          <Dropdown.Menu>{DropdownItems}</Dropdown.Menu>
+        </Dropdown.Details>,
+      );
+
+      const element = screen.getByTestId('dropdown-details');
+      expect(element).toBeInTheDocument();
+      expect(element.tagName).toBe('DETAILS');
+      expect(element).toHaveClass('dropdown', 'dropdown-right', 'dropdown-bottom', 'dropdown-end', 'dropdown-open');
+      expect(screen.getByText('Click')).toBeInTheDocument();
+    });
+
+    test('Should forward ref to details element', () => {
+      const ref = React.createRef<HTMLDetailsElement>();
+      render(<Dropdown.Details ref={ref}>Test</Dropdown.Details>);
+      expect(ref.current).toBeInstanceOf(HTMLDetailsElement);
+    });
+  });
 });

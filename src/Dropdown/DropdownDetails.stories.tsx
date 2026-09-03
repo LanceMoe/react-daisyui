@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Dropdown, { DetailsProps } from '.';
+import type { DetailsProps } from '.';
+import Dropdown from '.';
 
 export default {
   title: 'Actions/Dropdown/Details',

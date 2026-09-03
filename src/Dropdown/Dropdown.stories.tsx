@@ -1,10 +1,11 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Button from '../Button';
 import Card from '../Card/';
 import Navbar from '../Navbar';
-import Dropdown, { DropdownProps } from '.';
+import type { DropdownProps } from '.';
+import Dropdown from '.';
 
 export default {
   title: 'Actions/Dropdown',

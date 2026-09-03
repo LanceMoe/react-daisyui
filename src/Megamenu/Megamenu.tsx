@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { ComponentSize, IComponentBaseProps } from '../types';
 
-export type MegamenuProps = ComponentPropsWithoutRef<'div'> &
+export type MegamenuProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     variant?: 'wide' | 'full';
     vertical?: boolean;

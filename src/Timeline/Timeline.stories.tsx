@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Timeline, { TimelineProps } from '.';
+import type { TimelineProps } from '.';
+import Timeline from '.';
 
 const meta: Meta<TimelineProps> = {
   title: 'Data Display/Timeline',

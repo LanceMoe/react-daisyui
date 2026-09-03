@@ -1,9 +1,9 @@
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IComponentBaseProps } from '../types';
 
-export type FilterProps = ComponentPropsWithoutRef<'form'> &
+export type FilterProps = React.ComponentPropsWithoutRef<'form'> &
   IComponentBaseProps & {
     reset?: boolean;
     resetLabel?: string;

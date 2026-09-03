@@ -1,10 +1,11 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
 
 import Button from '../Button';
 import Menu from '../Menu';
 import Navbar from '../Navbar';
-import Drawer, { DrawerProps } from '.';
+import type { DrawerProps } from '.';
+import Drawer from '.';
 
 export default {
   title: 'Layout/Drawer',

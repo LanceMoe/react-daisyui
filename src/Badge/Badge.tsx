@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentSize, ComponentVariant, IComponentBaseProps } from '../types';
+import type { ComponentColor, ComponentSize, ComponentVariant, IComponentBaseProps } from '../types';
 
 export type BadgeProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'color'> &
   IComponentBaseProps & {

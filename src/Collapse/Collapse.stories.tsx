@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React, { useState } from 'react';
 
-import Collapse, { CollapseProps } from '.';
+import type { CollapseProps } from '.';
+import Collapse from '.';
 
 export default {
   title: 'Data Display/Collapse',

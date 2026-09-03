@@ -1,12 +1,12 @@
 import clsx from 'clsx';
-import React, { ReactNode, useId } from 'react';
+import React, { useId } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 export type DrawerProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
-    side: ReactNode;
+    side: React.ReactNode;
     open?: boolean;
     end?: boolean;
     toggleClassName?: string;

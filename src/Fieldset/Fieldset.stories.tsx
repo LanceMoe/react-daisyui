@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Fieldset, { FieldsetProps } from '.';
+import type { FieldsetProps } from '.';
+import Fieldset from '.';
 
 export default { title: 'Data Input/Fieldset', component: Fieldset } as Meta;
 

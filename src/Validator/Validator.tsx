@@ -1,11 +1,11 @@
-import { type ComponentPropsWithoutRef, forwardRef, type ReactNode } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IComponentBaseProps } from '../types';
 
-export type ValidatorProps = ComponentPropsWithoutRef<'div'> &
+export type ValidatorProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
-    hint?: ReactNode;
+    hint?: React.ReactNode;
   };
 
 const Validator = forwardRef<HTMLDivElement, ValidatorProps>(

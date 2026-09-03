@@ -1,5 +1,5 @@
 import { Highlight, themes } from 'prism-react-renderer';
-import React, { ReactNode, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import CodeMockup from '../src/CodeMockup';
 import Navbar from '../src/Navbar';
@@ -8,9 +8,8 @@ import Theme from '../src/Theme';
 import { useGlobalTheme } from './theming';
 
 type Props = {
-  children: ReactNode | ReactNode[];
+  children: React.ReactNode | React.ReactNode[];
   title: string;
-  description: string;
   source: string;
 };
 

@@ -1,14 +1,15 @@
 import clsx from 'clsx';
-import React, { cloneElement, createRef, forwardRef, ReactElement, RefObject, useEffect, useState } from 'react';
+import React, { cloneElement, createRef, forwardRef, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import Button from '../Button';
-import { IComponentBaseProps } from '../types';
-import CarouselItem, { CarouselItemProps, CarouselItemWidth } from './CarouselItem';
+import type { IComponentBaseProps } from '../types';
+import type { CarouselItemProps, CarouselItemWidth } from './CarouselItem';
+import CarouselItem from './CarouselItem';
 
 export type CarouselProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
-    children: ReactElement<CarouselItemProps>[];
+    children: React.ReactElement<CarouselItemProps>[];
     display?: 'slider' | 'numbered' | 'sequential';
     snap?: 'start' | 'center' | 'end';
     vertical?: boolean;
@@ -33,11 +34,11 @@ const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
       }),
     );
 
-    const [itemRefs, setItemRefs] = useState<RefObject<HTMLDivElement | null>[]>([]);
+    const [itemRefs, setItemRefs] = useState<React.RefObject<HTMLDivElement | null>[]>([]);
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
-      const newRefs: RefObject<HTMLDivElement | null>[] = [];
+      const newRefs: React.RefObject<HTMLDivElement | null>[] = [];
       Array.from({ length: children.length }, () => {
         newRefs.push(createRef<HTMLDivElement>());
       });

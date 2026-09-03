@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import Button, { ButtonProps } from '../../../src/Button'
+import type { ButtonProps } from '../../../src/Button';
+import Button from '../../../src/Button'
 
 export type CopyButtonProps = ButtonProps & {
   text?: string

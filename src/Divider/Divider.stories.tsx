@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Card from '../Card';
-import Divider, { DividerProps } from '.';
+import type { DividerProps } from '.';
+import Divider from '.';
 
 const meta: Meta<DividerProps> = {
   title: 'Layout/Divider',

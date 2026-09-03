@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import FileInput, { FileInputProps } from '.';
+import type { FileInputProps } from '.';
+import FileInput from '.';
 
 export default {
   title: 'Data Input/FileInput',

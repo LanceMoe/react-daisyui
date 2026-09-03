@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Validator, { ValidatorProps } from '.';
+import type { ValidatorProps } from '.';
+import Validator from '.';
 
 export default { title: 'Data Input/Validator', component: Validator } as Meta;
 

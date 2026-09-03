@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import { DEFAULT_THEMES } from '../defaultThemes';
-import Theme, { ThemeProps } from '.';
+import type { ThemeProps } from '.';
+import Theme from '.';
 import ThemeItem from './ThemeItem';
 import { useTheme } from './useTheme';
 

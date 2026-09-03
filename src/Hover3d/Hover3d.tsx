@@ -1,11 +1,11 @@
-import { type ComponentPropsWithoutRef, forwardRef, type ReactNode } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IComponentBaseProps } from '../types';
 
-export type Hover3dProps = ComponentPropsWithoutRef<'div'> &
+export type Hover3dProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
-    children?: ReactNode;
+    children?: React.ReactNode;
   };
 
 const Hover3d = forwardRef<HTMLDivElement, Hover3dProps>(({ children, dataTheme, className, ...props }, ref) => {

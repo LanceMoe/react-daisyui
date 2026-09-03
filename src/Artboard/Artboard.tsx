@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 const sizeClasses = {
   1: { portrait: 'w-[320px] h-[568px]', landscape: 'w-[568px] h-[320px]' },

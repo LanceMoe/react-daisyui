@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import React, { forwardRef, useCallback, useRef } from 'react';
+import React, { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentPosition, IComponentBaseProps } from '../types';
+import type { ComponentPosition, IComponentBaseProps } from '../types';
 import ModalActions from './ModalActions';
 import ModalBody from './ModalBody';
 import ModalHeader from './ModalHeader';
@@ -64,27 +64,60 @@ const Modal = forwardRef<HTMLDialogElement, ModalProps>(
 
 Modal.displayName = 'Modal';
 
-export type DialogProps = Omit<ModalProps, 'ref'>;
-const useDialog = () => {
+type UseDialogReturn = {
+  dialogRef: React.RefObject<HTMLDialogElement | null>;
+  isOpen: boolean;
+  show: () => void;
+  hide: () => void;
+};
+
+export const useDialog = (): UseDialogReturn => {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleShow = useCallback(() => {
-    dialogRef.current?.showModal();
-  }, [dialogRef]);
+    const dialog = dialogRef.current;
+    if (dialog && !dialog.open) {
+      if (typeof dialog.showModal === 'function') {
+        dialog.showModal();
+      }
+      dialog.removeAttribute('aria-hidden');
+      setIsOpen(true);
+    }
+  }, []);
 
   const handleHide = useCallback(() => {
-    dialogRef.current?.close();
-  }, [dialogRef]);
+    const dialog = dialogRef.current;
+    if (dialog?.open) {
+      if (typeof dialog.close === 'function') {
+        dialog.close();
+      }
+      setIsOpen(false);
+    }
+  }, []);
 
-  function Dialog({ children, ...props }: DialogProps) {
-    return (
-      <Modal {...props} ref={dialogRef}>
-        {children}
-      </Modal>
-    );
-  }
-  Dialog.displayName = 'Dialog';
-  return { dialogRef, Dialog, handleShow, handleHide };
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) {
+      return;
+    }
+
+    const onNativeClose = () => {
+      setIsOpen(false);
+    };
+
+    dialog.addEventListener('close', onNativeClose);
+    return () => {
+      dialog.removeEventListener('close', onNativeClose);
+    };
+  }, []);
+
+  return {
+    dialogRef,
+    isOpen,
+    show: handleShow,
+    hide: handleHide,
+  };
 };
 export default Object.assign(Modal, {
   Header: ModalHeader,

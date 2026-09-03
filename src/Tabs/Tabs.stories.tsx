@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Tabs, { TabsProps } from '.';
+import type { TabsProps } from '.';
+import Tabs from '.';
 
 const { Tab, RadioTab } = Tabs;
 

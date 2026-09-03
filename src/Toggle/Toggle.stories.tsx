@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Form from '../Form';
-import Toggle, { ToggleProps } from '.';
+import type { ToggleProps } from '.';
+import Toggle from '.';
 
 export default {
   title: 'Data Input/Toggle',

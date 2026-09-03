@@ -1,9 +1,9 @@
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IComponentBaseProps } from '../types';
 
-export type CalendarProps = ComponentPropsWithoutRef<'div'> &
+export type CalendarProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     library?: 'cally' | 'react-day-picker' | 'vc';
   };

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
+import type { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
 export type TextareaProps = Omit<React.ComponentPropsWithoutRef<'textarea'>, 'color'> &
   IComponentBaseProps & {

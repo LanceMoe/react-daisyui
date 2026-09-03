@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
 import Form from '../Form';
-import Radio, { RadioProps } from '.';
+import type { RadioProps } from '.';
+import Radio from '.';
 
 export default {
   title: 'Data Input/Radio',

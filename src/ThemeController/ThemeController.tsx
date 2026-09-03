@@ -1,9 +1,9 @@
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { DataTheme, IComponentBaseProps } from '../types';
 
-export type ThemeControllerProps = Omit<ComponentPropsWithoutRef<'input'>, 'type' | 'value' | 'size'> &
+export type ThemeControllerProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'type' | 'value' | 'size'> &
   IComponentBaseProps & {
     theme: DataTheme;
     type?: 'checkbox' | 'radio';

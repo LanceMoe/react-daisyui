@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, IComponentBaseProps } from '../types';
+import type { ComponentColor, IComponentBaseProps } from '../types';
 
 export type LinkProps = React.ComponentPropsWithoutRef<'a'> &
   IComponentBaseProps & {

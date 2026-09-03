@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 import ChatBubbleAvatar from './ChatBubbleAvatar';
 import ChatBubbleFooter from './ChatBubbleFooter';
 import ChatBubbleHeader from './ChatBubbleHeader';

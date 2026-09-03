@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Aura, { AuraProps } from '.';
+import type { AuraProps } from '.';
+import Aura from '.';
 
 export default { title: 'Data Display/Aura', component: Aura } as Meta;
 

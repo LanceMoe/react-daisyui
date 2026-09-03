@@ -1,8 +1,9 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
-import IndicatorItem, { IndicatorItemProps as ItemProps } from './IndicatorItem';
+import type { IComponentBaseProps } from '../types';
+import type { IndicatorItemProps as ItemProps } from './IndicatorItem';
+import IndicatorItem from './IndicatorItem';
 
 export type IndicatorItemProps = ItemProps;
 export type IndicatorProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;

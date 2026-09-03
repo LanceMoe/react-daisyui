@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
-import StatSection, { StatSectionProps } from './StatSection';
+import type { IComponentBaseProps } from '../types';
+import type { StatSectionProps } from './StatSection';
+import StatSection from './StatSection';
 
 export type StatProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 

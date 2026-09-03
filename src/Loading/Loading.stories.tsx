@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Loading, { LoadingProps } from '.';
+import type { LoadingProps } from '.';
+import Loading from '.';
 
 const meta: Meta = {
   title: 'Feedback/Loading',

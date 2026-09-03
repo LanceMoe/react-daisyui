@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
-export type StatusProps = Omit<ComponentPropsWithoutRef<'span'>, 'color'> &
+export type StatusProps = Omit<React.ComponentPropsWithoutRef<'span'>, 'color'> &
   IComponentBaseProps & {
     color?: Exclude<ComponentColor, 'ghost'>;
     size?: ComponentSize;

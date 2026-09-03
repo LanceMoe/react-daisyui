@@ -1,8 +1,9 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
-import NavbarSection, { NavbarSectionProps } from './NavbarSection';
+import type { IComponentBaseProps } from '../types';
+import type { NavbarSectionProps } from './NavbarSection';
+import NavbarSection from './NavbarSection';
 
 export type NavbarProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 

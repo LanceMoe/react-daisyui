@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import CodeMockup, { CodeMockupProps } from '.';
+import type { CodeMockupProps } from '.';
+import CodeMockup from '.';
 
 const meta: Meta = {
   title: 'Mockup/CodeMockup',

@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { DataTheme } from '../types';
+import type { DataTheme } from '../types';
 
 export type IThemeContext = {
   theme: DataTheme;

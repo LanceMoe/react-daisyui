@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import List, { ListProps } from '.';
+import type { ListProps } from '.';
+import List from '.';
 
 export default { title: 'Data Display/List', component: List } as Meta;
 

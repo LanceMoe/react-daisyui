@@ -1,4 +1,5 @@
-import Join, { JoinProps } from '../Join';
+import type { JoinProps } from '../Join';
+import Join from '../Join';
 
 export type PaginationProps = JoinProps;
 const Pagination = Join;

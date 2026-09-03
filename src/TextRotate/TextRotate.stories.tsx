@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import TextRotate, { TextRotateProps } from '.';
+import type { TextRotateProps } from '.';
+import TextRotate from '.';
 
 export default { title: 'Data Display/Text Rotate', component: TextRotate } as Meta;
 

@@ -1,8 +1,9 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 
-import Dock, { DockProps } from '.';
+import type { DockProps } from '.';
+import Dock from '.';
 
 export default {
   title: 'Navigation/Dock',

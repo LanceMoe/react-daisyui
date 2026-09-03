@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentSize, IComponentBaseProps } from '../types';
+import type { ComponentSize, IComponentBaseProps } from '../types';
 
 export type KbdProps = React.ComponentPropsWithoutRef<'kbd'> &
   IComponentBaseProps & {

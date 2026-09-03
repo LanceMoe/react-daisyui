@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
-import { CodeMockupLine, CodeMockupLineProps } from './CodeMockupLine';
+import type { IComponentBaseProps } from '../types';
+import type { CodeMockupLineProps } from './CodeMockupLine';
+import { CodeMockupLine } from './CodeMockupLine';
 
 export type CodeMockupProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 

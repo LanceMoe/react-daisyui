@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentStatus, IComponentBaseProps } from '../types';
+import type { ComponentStatus, IComponentBaseProps } from '../types';
 
 export type CodeMockupLineProps = React.ComponentPropsWithoutRef<'pre'> &
   IComponentBaseProps & {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IComponentBaseProps } from '../types';
+import type { IComponentBaseProps } from '../types';
 
 export type CardActionsProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 

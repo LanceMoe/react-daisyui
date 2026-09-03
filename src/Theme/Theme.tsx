@@ -1,7 +1,7 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 
 import { defaultTheme } from '../constants';
-import { DataTheme, IComponentBaseProps } from '../types';
+import type { DataTheme, IComponentBaseProps } from '../types';
 import { ThemeContext } from './ThemeContext';
 import { getThemeFromClosestAncestor } from './utils';
 

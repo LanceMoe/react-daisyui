@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import ThemeController, { ThemeControllerProps } from '.';
+import type { ThemeControllerProps } from '.';
+import ThemeController from '.';
 
 export default { title: 'Utils/Theme Controller', component: ThemeController } as Meta;
 

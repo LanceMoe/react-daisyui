@@ -1,6 +1,7 @@
 import type { Meta, StoryFn as Story } from '@storybook/react';
 
-import Status, { StatusProps } from '.';
+import type { StatusProps } from '.';
+import Status from '.';
 
 export default { title: 'Data Display/Status', component: Status } as Meta;
 

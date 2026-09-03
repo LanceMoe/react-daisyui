@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Kbd, { KbdProps } from '.';
+import type { KbdProps } from '.';
+import Kbd from '.';
 
 export default {
   title: 'Data Display/Kbd',

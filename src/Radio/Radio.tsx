@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
+import type { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
 export type RadioProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'size'> &
   IComponentBaseProps & {

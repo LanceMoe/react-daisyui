@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import Textarea, { TextareaProps } from '.';
+import type { TextareaProps } from '.';
+import Textarea from '.';
 
 export default {
   title: 'Data Input/Textarea',

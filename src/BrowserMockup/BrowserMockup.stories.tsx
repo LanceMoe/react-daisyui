@@ -1,7 +1,8 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React from 'react';
 
-import BrowserMockup, { BrowserMockupProps } from '.';
+import type { BrowserMockupProps } from '.';
+import BrowserMockup from '.';
 
 export default {
   title: 'Mockup/BrowserMockup',

@@ -1,4 +1,5 @@
-import Steps, { StepsProps as TStepsProps } from './Steps';
+import type { StepsProps as TStepsProps } from './Steps';
+import Steps from './Steps';
 
 export * from './Steps';
 export type StepsProps = TStepsProps;

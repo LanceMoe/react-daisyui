@@ -1,9 +1,10 @@
-import { Meta, StoryFn as Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
 
 import Badge from '../Badge';
 import Tooltip from '../Tooltip';
-import Menu, { MenuProps } from '.';
+import type { MenuProps } from '.';
+import Menu from '.';
 
 const responsiveArgType = {
   control: 'select',
