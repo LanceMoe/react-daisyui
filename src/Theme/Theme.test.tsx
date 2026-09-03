@@ -1,6 +1,13 @@
 import { render, screen } from '@testing-library/react';
 
 import Theme from './';
+import { useTheme } from './useTheme';
+
+function ThemeWithInitialValue() {
+  const { theme } = useTheme('corporate');
+
+  return <span data-testid="current-theme">{theme}</span>;
+}
 
 describe('Theme', () => {
   it('Should render children elements', () => {
@@ -40,14 +47,24 @@ describe('Theme', () => {
   });
 
   it('Should update theme when dataTheme prop changes', () => {
-    render(<Theme dataTheme="light" data-testid="theme-div-1" />);
+    const { rerender } = render(<Theme dataTheme="light" data-testid="theme-div" />);
 
-    let renderedDiv = screen.getByTestId('theme-div-1');
+    const renderedDiv = screen.getByTestId('theme-div');
     expect(renderedDiv).toHaveAttribute('data-theme', 'light');
 
-    render(<Theme dataTheme="dark" data-testid="theme-div-2" />);
+    rerender(<Theme dataTheme="dark" data-testid="theme-div" />);
 
-    renderedDiv = screen.getByTestId('theme-div-2');
     expect(renderedDiv).toHaveAttribute('data-theme', 'dark');
+  });
+
+  it('Should not overwrite context theme updates when dataTheme has not changed', () => {
+    render(
+      <Theme dataTheme="light" data-testid="theme-div">
+        <ThemeWithInitialValue />
+      </Theme>,
+    );
+
+    expect(screen.getByTestId('theme-div')).toHaveAttribute('data-theme', 'corporate');
+    expect(screen.getByTestId('current-theme')).toHaveTextContent('corporate');
   });
 });

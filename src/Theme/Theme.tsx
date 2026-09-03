@@ -14,32 +14,29 @@ const Theme = React.forwardRef<HTMLDivElement, ThemeProps>(
   ({ children, dataTheme, onChange, className, ...props }, ref): React.JSX.Element => {
     const themeRef = useRef<HTMLDivElement>(null);
     const [theme, setTheme] = useState<DataTheme>(dataTheme || defaultTheme);
-
-    const handleThemeChange = useCallback(
-      (nextTheme: DataTheme) => {
-        // Fire custom onChange, if provided. ie, user provided function to store theme in session/local storage
-        if (onChange) {
-          onChange(nextTheme);
-        }
-        // Update state/context
-        setTheme(nextTheme);
-      },
-      [onChange],
-    );
+    const currentThemeRef = useRef(theme);
+    const onChangeRef = useRef(onChange);
 
     useLayoutEffect(() => {
-      if (dataTheme) {
-        if (dataTheme !== theme) {
-          handleThemeChange(dataTheme);
-        }
+      onChangeRef.current = onChange;
+    }, [onChange]);
+
+    const handleThemeChange = useCallback((nextTheme: DataTheme) => {
+      if (nextTheme === currentThemeRef.current) {
         return;
       }
 
-      const closestAncestorTheme = getThemeFromClosestAncestor(themeRef);
-      if (closestAncestorTheme && closestAncestorTheme !== theme) {
-        handleThemeChange(closestAncestorTheme);
+      currentThemeRef.current = nextTheme;
+      onChangeRef.current?.(nextTheme);
+      setTheme(nextTheme);
+    }, []);
+
+    useLayoutEffect(() => {
+      const nextTheme = dataTheme || getThemeFromClosestAncestor(themeRef);
+      if (nextTheme) {
+        handleThemeChange(nextTheme);
       }
-    }, [dataTheme, handleThemeChange, theme]);
+    }, [dataTheme, handleThemeChange]);
 
     const setThemeRef = (element: HTMLDivElement | null) => {
       themeRef.current = element;
