@@ -72,8 +72,8 @@ export const HomePage = () => {
               <div className="mb-2 text-5xl lg:text-7xl">react-daisyUI</div>
               <div className="text-2xl lg:text-3xl">
                 A React wrapper for{' '}
-                <Link color="info" href="https://v4.daisyui.com/" target="_blank">
-                  daisyUI 4
+                <Link color="info" href="https://v5.daisyui.com/" target="_blank">
+                  daisyUI 5
                 </Link>
                 , <br />
                 the most popular, free and open-source <br />
