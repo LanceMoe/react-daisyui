@@ -6,7 +6,7 @@ import { ComponentPosition,ComponentSize, IComponentBaseProps } from '../types';
 import RadioTab from './RadioTab';
 import Tab from './Tab';
 
-export type TabsProps = React.HTMLAttributes<HTMLDivElement> &
+export type TabsProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     variant?: 'bordered' | 'lift' | 'boxed';
     size?: ComponentSize;

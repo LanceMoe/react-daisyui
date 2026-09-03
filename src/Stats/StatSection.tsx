@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type StatSectionProps = React.HTMLAttributes<HTMLDivElement> &
+export type StatSectionProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     section: 'title' | 'value' | 'desc' | 'figure' | 'actions';
   };

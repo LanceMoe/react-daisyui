@@ -6,7 +6,7 @@ import Button from '../Button';
 import { IComponentBaseProps } from '../types';
 import CarouselItem, { CarouselItemProps, CarouselItemWidth } from './CarouselItem';
 
-export type CarouselProps = React.HTMLAttributes<HTMLDivElement> &
+export type CarouselProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     children: ReactElement<CarouselItemProps>[];
     display?: 'slider' | 'numbered' | 'sequential';

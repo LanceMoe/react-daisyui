@@ -8,7 +8,7 @@ import TableFooter from './TableFooter';
 import TableHead from './TableHead';
 import TableRow from './TableRow';
 
-export type TableProps = React.TableHTMLAttributes<HTMLTableElement> &
+export type TableProps = React.ComponentPropsWithoutRef<'table'> &
   IComponentBaseProps & {
     size?: ComponentSize;
     zebra?: boolean;

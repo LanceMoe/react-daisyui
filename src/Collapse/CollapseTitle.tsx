@@ -3,7 +3,8 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type CollapseTitleProps<T extends HTMLElement = HTMLDivElement> = React.HTMLAttributes<T> & IComponentBaseProps;
+export type CollapseTitleProps<T extends React.ElementType = 'div'> = React.ComponentPropsWithoutRef<T> &
+  IComponentBaseProps;
 
 const classesFn = ({ className }: Pick<CollapseTitleProps, 'className'>) => twMerge('collapse-title', className);
 
@@ -15,7 +16,7 @@ function CollapseTitle({ children, className, ...props }: CollapseTitleProps): R
   );
 }
 
-export type SummaryProps = CollapseTitleProps<HTMLElement>;
+export type SummaryProps = CollapseTitleProps<'summary'>;
 export const Summary = React.forwardRef<HTMLElement, SummaryProps>(
   ({ children, className }, ref): React.JSX.Element => {
     return (

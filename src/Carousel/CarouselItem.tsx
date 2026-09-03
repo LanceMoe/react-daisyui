@@ -6,7 +6,7 @@ import Button from '../Button';
 
 export type CarouselItemWidth = 'full' | 'half';
 
-export type CarouselItemProps = React.HTMLAttributes<HTMLDivElement> & {
+export type CarouselItemProps = React.ComponentPropsWithoutRef<'div'> & {
   readonly innerRef?: LegacyRef<HTMLDivElement>;
   src?: string;
   alt?: string;

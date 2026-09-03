@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type ChatBubbleTimeProps = React.TimeHTMLAttributes<HTMLTimeElement> & IComponentBaseProps;
+export type ChatBubbleTimeProps = React.ComponentPropsWithoutRef<'time'> & IComponentBaseProps;
 
 const ChatBubbleTime = React.forwardRef<HTMLTimeElement, ChatBubbleTimeProps>(({ className, ...props }, ref) => (
   <time {...props} className={twMerge('text-xs opacity-50', className)} ref={ref} />

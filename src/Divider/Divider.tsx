@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor,IComponentBaseProps } from '../types';
 
-export type DividerProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
+export type DividerProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'color'> &
   IComponentBaseProps & {
     vertical?: boolean;
     horizontal?: boolean;

@@ -8,7 +8,7 @@ import ChatBubbleHeader from './ChatBubbleHeader';
 import ChatBubbleMessage from './ChatBubbleMessage';
 import ChatBubbleTime from './ChatBubbleTime';
 
-export type ChatBubbleProps = React.HTMLAttributes<HTMLDivElement> &
+export type ChatBubbleProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     end?: boolean;
   };

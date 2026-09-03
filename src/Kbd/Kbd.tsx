@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentSize,IComponentBaseProps } from '../types';
 
-export type KbdProps = React.HTMLAttributes<HTMLElement> &
+export type KbdProps = React.ComponentPropsWithoutRef<'kbd'> &
   IComponentBaseProps & {
     size?: ComponentSize;
   };

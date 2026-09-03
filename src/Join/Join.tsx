@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type JoinProps = React.HTMLAttributes<HTMLDivElement> &
+export type JoinProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     responsive?: boolean;
     vertical?: boolean;

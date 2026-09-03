@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type CardTitleProps = React.HTMLAttributes<HTMLDivElement> &
+export type CardTitleProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     tag?: ElementType;
   };

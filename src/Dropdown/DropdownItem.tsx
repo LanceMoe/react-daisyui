@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Anchor = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+type Anchor = React.ComponentPropsWithoutRef<'a'> & {
   anchor?: true;
 };
 

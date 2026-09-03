@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export type DockLabelProps = React.HTMLAttributes<HTMLSpanElement>;
+export type DockLabelProps = React.ComponentPropsWithoutRef<'span'>;
 
 const DockLabel = forwardRef<HTMLSpanElement, DockLabelProps>(
   ({ children, className, ...props }, ref): React.JSX.Element => {

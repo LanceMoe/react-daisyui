@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type MenuItemProps = React.LiHTMLAttributes<HTMLLIElement> &
+export type MenuItemProps = React.ComponentPropsWithoutRef<'li'> &
   IComponentBaseProps & {
     focus?: boolean;
     active?: boolean;

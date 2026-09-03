@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor, IComponentBaseProps } from '../types';
 
-export type RadialProgressProps = React.HTMLAttributes<HTMLDivElement> &
+export type RadialProgressProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     value: number;
     size?: string;

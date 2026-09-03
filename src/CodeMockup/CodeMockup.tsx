@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 import { IComponentBaseProps } from '../types';
 import { CodeMockupLine, CodeMockupLineProps } from './CodeMockupLine';
 
-export type CodeMockupProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
+export type CodeMockupProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
 const CodeMockup = forwardRef<HTMLDivElement, CodeMockupProps>(
   ({ dataTheme, className, children, ...props }, ref): React.JSX.Element => {

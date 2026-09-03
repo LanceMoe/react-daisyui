@@ -5,7 +5,7 @@ import { IComponentBaseProps } from '../types';
 import HeroContent from './HeroContent';
 import HeroOverlay from './HeroOverlay';
 
-export type HeroProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
+export type HeroProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
 const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
   ({ dataTheme, className, children, ...props }, ref): React.JSX.Element => {

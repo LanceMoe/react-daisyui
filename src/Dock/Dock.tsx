@@ -9,7 +9,7 @@ import DockLabel, { DockLabelProps as LabelProps } from './DockLabel';
 export type DockItemProps = ItemProps;
 export type DockLabelProps = LabelProps;
 
-export type DockProps = React.HTMLAttributes<HTMLDivElement> &
+export type DockProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     size?: ComponentSize;
   };

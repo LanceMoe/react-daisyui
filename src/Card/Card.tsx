@@ -13,7 +13,7 @@ export type CardBodyProps = BodyProps;
 export type CardTitleProps = TitleProps;
 export type CardImageProps = ImageProps;
 
-export type CardProps = React.HTMLAttributes<HTMLDivElement> &
+export type CardProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     size?: ComponentSize;
     border?: boolean;

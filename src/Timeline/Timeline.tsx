@@ -8,7 +8,7 @@ import TimelineItem from './TimelineItem';
 import TimelineMiddle from './TimelineMiddle';
 import TimelineStart from './TimelineStart';
 
-export type TimelineProps = React.HTMLAttributes<HTMLUListElement> &
+export type TimelineProps = React.ComponentPropsWithoutRef<'ul'> &
   IComponentBaseProps & {
     vertical?: boolean;
     horizontal?: boolean;

@@ -276,7 +276,7 @@ Glass.args = {
   glass: true,
 };
 
-export const DifferentHtmlTags: Story<ButtonProps<'main', React.HtmlHTMLAttributes<HTMLElement>>> = (args) => {
+export const DifferentHtmlTags: Story<ButtonProps<'main', React.ComponentPropsWithoutRef<'main'>>> = (args) => {
   return (
     <div className="flex gap-2 items-center justify-center">
       <Button {...args} tag="a" role="button">

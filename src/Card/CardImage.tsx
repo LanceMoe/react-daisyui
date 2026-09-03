@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type CardImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
+export type CardImageProps = React.ComponentPropsWithoutRef<'img'>;
 
 const CardImage = React.forwardRef<HTMLElement, CardImageProps>(({ ...props }, ref) => {
   return (

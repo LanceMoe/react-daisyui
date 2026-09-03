@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type DiffProps = React.HTMLAttributes<HTMLDivElement> &
+export type DiffProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     secondItem: ReactNode;
   };

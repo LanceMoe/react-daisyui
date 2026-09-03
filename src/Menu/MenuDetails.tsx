@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 import { IComponentBaseProps } from '../types';
 
-export type MenuDetailsProps = React.DetailsHTMLAttributes<HTMLDetailsElement> &
+export type MenuDetailsProps = React.ComponentPropsWithoutRef<'details'> &
   IComponentBaseProps & {
     label: ReactNode;
     open?: boolean;

@@ -4,10 +4,10 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor,IComponentBaseProps } from '../types';
 
-export type PhoneMockupProps = React.HTMLAttributes<HTMLDivElement> &
+export type PhoneMockupProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     color?: Exclude<ComponentColor, 'ghost'>;
-    innerProps?: React.HTMLAttributes<HTMLDivElement>;
+    innerProps?: React.ComponentPropsWithoutRef<'div'>;
     innerRef?: React.Ref<HTMLDivElement>;
   };
 

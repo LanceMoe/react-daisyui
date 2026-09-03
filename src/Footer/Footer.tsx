@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { ComponentLayout,IComponentBaseProps } from '../types';
 import FooterTitle from './FooterTitle';
 
-export type FooterProps = React.HTMLAttributes<HTMLDivElement> &
+export type FooterProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     center?: boolean;
     layout?: ComponentLayout;

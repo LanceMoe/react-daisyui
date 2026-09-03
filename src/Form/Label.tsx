@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> &
+export type LabelProps = React.ComponentPropsWithoutRef<'label'> &
   IComponentBaseProps & {
     title?: string;
   };

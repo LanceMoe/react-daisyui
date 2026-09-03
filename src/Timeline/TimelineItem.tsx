@@ -1,7 +1,7 @@
 import React from 'react';
 
 type IConnectType = 'both' | 'start' | 'end';
-type TimelineItemProps = React.HTMLAttributes<HTMLLIElement> & {
+type TimelineItemProps = React.ComponentPropsWithoutRef<'li'> & {
   connect?: IConnectType;
   startClassName?: string;
   endClassName?: string;

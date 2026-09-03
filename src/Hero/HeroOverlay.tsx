@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type HeroOverlayProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
+export type HeroOverlayProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
 const HeroOverlay = React.forwardRef<HTMLDivElement, HeroOverlayProps>(
   ({ dataTheme, className, children, ...props }, ref): React.JSX.Element => {

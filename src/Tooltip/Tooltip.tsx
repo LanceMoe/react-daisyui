@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor, ComponentPosition,IComponentBaseProps } from '../types';
 
-export type TooltipProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
+export type TooltipProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'color'> &
   IComponentBaseProps & {
     message: string;
     open?: boolean;

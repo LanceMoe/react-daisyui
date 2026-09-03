@@ -4,11 +4,11 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentStatus, IComponentBaseProps } from '../types';
 
-export type CodeMockupLineProps = React.HTMLAttributes<HTMLPreElement> &
+export type CodeMockupLineProps = React.ComponentPropsWithoutRef<'pre'> &
   IComponentBaseProps & {
     dataPrefix?: string | boolean;
     status?: ComponentStatus;
-    innerProps?: React.HTMLAttributes<HTMLElement>;
+    innerProps?: React.ComponentPropsWithoutRef<'code'>;
     innerRef?: React.Ref<HTMLElement>;
   };
 

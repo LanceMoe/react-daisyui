@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor, ComponentSize,IComponentBaseProps } from '../types';
 
-export type LoadingProps = React.HTMLAttributes<HTMLSpanElement> &
+export type LoadingProps = React.ComponentPropsWithoutRef<'span'> &
   IComponentBaseProps & {
     size?: ComponentSize;
     color?: ComponentColor;

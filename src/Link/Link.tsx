@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor,IComponentBaseProps } from '../types';
 
-export type LinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
+export type LinkProps = React.ComponentPropsWithoutRef<'a'> &
   IComponentBaseProps & {
     color?: 'neutral' | ComponentColor;
     hover?: boolean;

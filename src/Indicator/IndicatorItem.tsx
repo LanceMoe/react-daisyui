@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type IndicatorItemProps = React.HTMLAttributes<HTMLDivElement> &
+export type IndicatorItemProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     horizontal?: 'start' | 'center' | 'end';
     vertical?: 'top' | 'middle' | 'bottom';

@@ -6,7 +6,7 @@ import { ComponentColor, ComponentShape, ComponentSize,IComponentBaseProps } fro
 import { isSingleStringChild } from '../utils';
 import AvatarGroup from './AvatarGroup';
 
-export type AvatarProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
+export type AvatarProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'color'> &
   IComponentBaseProps & {
     src?: string;
     letters?: string;

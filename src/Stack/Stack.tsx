@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentPosition,IComponentBaseProps } from '../types';
 
-export type StackProps = React.HTMLAttributes<HTMLDivElement> &
+export type StackProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     position?: Exclude<ComponentPosition, 'left' | 'right' | 'middle'>;
   };

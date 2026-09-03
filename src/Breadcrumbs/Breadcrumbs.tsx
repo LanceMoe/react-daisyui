@@ -4,11 +4,11 @@ import { twMerge } from 'tailwind-merge';
 import { IComponentBaseProps } from '../types';
 import BreadcrumbsItem, { BreadcrumbsItemProps } from './BreadcrumbsItem';
 
-export type BreadcrumbsProps = React.HTMLAttributes<HTMLDivElement> &
+export type BreadcrumbsProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     children?: ReactElement<BreadcrumbsItemProps> | ReactElement<BreadcrumbsItemProps>[];
     innerRef?: React.Ref<HTMLUListElement>;
-    innerProps?: React.HTMLAttributes<HTMLUListElement>;
+    innerProps?: React.ComponentPropsWithoutRef<'ul'>;
   };
 
 const Breadcrumbs = React.forwardRef<HTMLDivElement, BreadcrumbsProps>(

@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-type ModalActionsProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
+type ModalActionsProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
 const ModalActions = React.forwardRef<HTMLDivElement, ModalActionsProps>(({ children, className, ...props }, ref) => {
   const classes = twMerge('modal-action', className);

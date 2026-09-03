@@ -7,7 +7,7 @@ import CollapseContent from './CollapseContent';
 import CollapseDetails from './CollapseDetails';
 import CollapseTitle from './CollapseTitle';
 
-export type CollapseProps<T extends HTMLElement = HTMLDivElement> = React.HTMLAttributes<T> &
+export type CollapseProps<T extends React.ElementType = 'div'> = React.ComponentPropsWithoutRef<T> &
   IComponentBaseProps & {
     checkbox?: boolean;
     icon?: 'arrow' | 'plus';

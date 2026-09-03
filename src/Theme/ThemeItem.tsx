@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export type ThemeItemProps = React.HTMLAttributes<HTMLDivElement> & {
+export type ThemeItemProps = React.ComponentPropsWithoutRef<'div'> & {
   dataTheme: string;
   selected?: boolean;
 };

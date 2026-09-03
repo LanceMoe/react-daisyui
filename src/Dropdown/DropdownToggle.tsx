@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import Button, { ButtonProps } from '../Button';
 import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
-export type DropdownToggleProps = Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'color'> &
+export type DropdownToggleProps = Omit<React.ComponentPropsWithoutRef<'label'>, 'color'> &
   IComponentBaseProps & {
     color?: ComponentColor;
     size?: ComponentSize;

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-export type TableHeadProps = React.TableHTMLAttributes<HTMLTableSectionElement> & {
+export type TableHeadProps = React.ComponentPropsWithoutRef<'thead'> & {
   children?: ReactNode[];
   noCell?: boolean; // don't wrap children in th/td, should pass children as th/tds manually
 };

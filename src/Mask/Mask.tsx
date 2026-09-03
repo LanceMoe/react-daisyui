@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type MaskProps = React.ImgHTMLAttributes<HTMLImageElement> &
+export type MaskProps = React.ComponentPropsWithoutRef<'img'> &
   IComponentBaseProps & {
     variant?:
       | 'squircle'

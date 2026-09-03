@@ -5,7 +5,7 @@ import { DataTheme, IComponentBaseProps } from '../types';
 import { ThemeContext } from './ThemeContext';
 import { getThemeFromClosestAncestor } from './utils';
 
-export type ThemeProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> &
+export type ThemeProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> &
   IComponentBaseProps & {
     onChange?: (theme: DataTheme) => void;
   };

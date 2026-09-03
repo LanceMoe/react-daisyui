@@ -7,31 +7,31 @@ import { ComponentColor, ComponentShape, ComponentSize,ComponentVariant, ICompon
 
 type ITagProps = {
   a: {
-    attr: React.AnchorHTMLAttributes<HTMLAnchorElement>;
+    attr: React.ComponentPropsWithoutRef<'a'>;
     ele: HTMLAnchorElement;
   };
   button: {
-    attr: React.ButtonHTMLAttributes<HTMLButtonElement>;
+    attr: React.ComponentPropsWithoutRef<'button'>;
     ele: HTMLButtonElement;
   };
   div: {
-    attr: React.HTMLAttributes<HTMLDivElement>;
+    attr: React.ComponentPropsWithoutRef<'div'>;
     ele: HTMLDivElement;
   };
   img: {
-    attr: React.ImgHTMLAttributes<HTMLImageElement>;
+    attr: React.ComponentPropsWithoutRef<'img'>;
     ele: HTMLImageElement;
   };
   input: {
-    attr: React.InputHTMLAttributes<HTMLInputElement>;
+    attr: React.ComponentPropsWithoutRef<'input'>;
     ele: HTMLInputElement;
   };
   label: {
-    attr: React.LabelHTMLAttributes<HTMLLabelElement>;
+    attr: React.ComponentPropsWithoutRef<'label'>;
     ele: HTMLLabelElement;
   };
   span: {
-    attr: React.HTMLAttributes<HTMLSpanElement>;
+    attr: React.ComponentPropsWithoutRef<'span'>;
     ele: HTMLSpanElement;
   };
 };
@@ -40,7 +40,7 @@ type GetTagProps<T extends ElementType> = T extends keyof ITagProps ? ITagProps[
 
 export type ButtonProps<
   T extends ElementType = 'button',
-  A extends React.HTMLAttributes<HTMLElement> = GetTagProps<T>['attr'],
+  A extends React.ComponentPropsWithoutRef<ElementType> = GetTagProps<T>['attr'],
 > = Omit<A, 'color' | 'size'> &
   IComponentBaseProps & {
     shape?: ComponentShape;
@@ -157,7 +157,7 @@ Button.displayName = 'Button';
 export default Button as <
   T extends ElementType = 'button',
   E extends HTMLElement = GetTagProps<T>['ele'],
-  A extends React.HTMLAttributes<HTMLElement> = GetTagProps<T>['attr'],
+  A extends React.ComponentPropsWithoutRef<ElementType> = GetTagProps<T>['attr'],
 >(
   props: ButtonProps<T, A> & { ref?: React.Ref<E> },
 ) => React.JSX.Element;

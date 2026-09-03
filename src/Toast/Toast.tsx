@@ -15,7 +15,7 @@ const verticalOptions = {
   bottom: 'toast-bottom',
 };
 
-export type ToastProps = React.HTMLAttributes<HTMLDivElement> & {
+export type ToastProps = React.ComponentPropsWithoutRef<'div'> & {
   horizontal?: keyof typeof horizontalOptions;
   vertical?: keyof typeof verticalOptions;
   className?: string;

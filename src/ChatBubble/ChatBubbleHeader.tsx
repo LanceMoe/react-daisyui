@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type ChatBubbleHeaderProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
+export type ChatBubbleHeaderProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
 const ChatBubbleHeader = React.forwardRef<HTMLDivElement, ChatBubbleHeaderProps>(({ className, ...props }, ref) => (
   <div {...props} className={twMerge('chat-header', className)} ref={ref} />

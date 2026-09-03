@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type BrowserMockupProps = React.HTMLAttributes<HTMLDivElement> &
+export type BrowserMockupProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     url: string;
     variant?: 'border' | 'background';

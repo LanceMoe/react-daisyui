@@ -5,7 +5,7 @@ import { IComponentBaseProps } from '../types';
 import IndicatorItem, { IndicatorItemProps as ItemProps } from './IndicatorItem';
 
 export type IndicatorItemProps = ItemProps;
-export type IndicatorProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
+export type IndicatorProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
 const classesFn = ({ className }: Pick<IndicatorProps, 'className'> = {}) => twMerge('indicator', className);
 const Indicator = React.forwardRef<HTMLDivElement, IndicatorProps>(

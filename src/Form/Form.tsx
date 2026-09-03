@@ -1,10 +1,10 @@
-import React, { FormHTMLAttributes } from 'react';
+import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 import Label from './Label';
 
-export type FormProps = FormHTMLAttributes<HTMLFormElement> & IComponentBaseProps;
+export type FormProps = React.ComponentPropsWithoutRef<'form'> & IComponentBaseProps;
 
 const Form = React.forwardRef<HTMLFormElement, FormProps>(
   ({ children, dataTheme, className, ...props }, ref): React.JSX.Element => {

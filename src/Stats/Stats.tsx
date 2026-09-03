@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { IComponentBaseProps } from '../types';
 import Stat from './Stat';
 
-export type StatsProps = React.HTMLAttributes<HTMLDivElement> &
+export type StatsProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     direction?: 'horizontal' | 'vertical';
   };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type BreadcrumbsItemProps = React.LiHTMLAttributes<HTMLLIElement> & {
+export type BreadcrumbsItemProps = React.ComponentPropsWithoutRef<'li'> & {
   href?: string;
 };
 

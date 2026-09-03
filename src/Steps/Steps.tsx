@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { IComponentBaseProps } from '../types';
 import Step from './Step';
 
-export type StepsProps = React.HTMLAttributes<HTMLUListElement> &
+export type StepsProps = React.ComponentPropsWithoutRef<'ul'> &
   IComponentBaseProps & {
     vertical?: boolean;
     horizontal?: boolean;

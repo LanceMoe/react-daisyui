@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type HeroContentProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
+export type HeroContentProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
 const HeroContent = React.forwardRef<HTMLDivElement, HeroContentProps>(
   ({ dataTheme, className, children, ...props }, ref): React.JSX.Element => {

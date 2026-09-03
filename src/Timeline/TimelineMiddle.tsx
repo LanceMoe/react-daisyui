@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-type TimelineMiddleProps = React.HTMLAttributes<HTMLDivElement> & {};
+type TimelineMiddleProps = React.ComponentPropsWithoutRef<'div'> & {};
 
 const TimelineMiddle = React.forwardRef<HTMLDivElement, TimelineMiddleProps>(
   (

@@ -8,7 +8,7 @@ import ModalBody from './ModalBody';
 import ModalHeader from './ModalHeader';
 import ModalLegacy from './ModalLegacy';
 
-export type ModalProps = React.DialogHTMLAttributes<HTMLDialogElement> &
+export type ModalProps = React.ComponentPropsWithoutRef<'dialog'> &
   IComponentBaseProps & {
     open?: boolean;
     position?: Exclude<ComponentPosition, 'left' | 'right'> | 'middle';

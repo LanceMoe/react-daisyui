@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor } from '../types';
 
-export type TabProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> & {
+export type TabProps = Omit<React.ComponentPropsWithoutRef<'a'>, 'color'> & {
   color?: ComponentColor;
   bgColor?: string;
   borderColor?: string;

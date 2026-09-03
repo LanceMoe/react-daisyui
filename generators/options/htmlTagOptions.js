@@ -2,36 +2,36 @@ export const htmlTagOptions = {
   div: {
     value: 'div',
     refType: 'HTMLDivElement',
-    attributesType: 'React.HTMLAttributes',
+    attributesType: "React.ComponentPropsWithoutRef<'div'>",
   },
   button: {
     value: 'button',
     refType: 'HTMLButtonElement',
-    attributesType: 'React.ButtonHTMLAttributes',
+    attributesType: "React.ComponentPropsWithoutRef<'button'>",
   },
   input: {
     value: 'input',
     refType: 'HTMLInputElement',
-    attributesType: 'React.InputHTMLAttributes',
+    attributesType: "React.ComponentPropsWithoutRef<'input'>",
   },
   a: {
     value: 'a',
     refType: 'HTMLAnchorElement',
-    attributesType: 'React.AnchorHTMLAttributes',
+    attributesType: "React.ComponentPropsWithoutRef<'a'>",
   },
   span: {
     value: 'span',
     refType: 'HTMLSpanElement',
-    attributesType: 'React.HTMLAttributes',
+    attributesType: "React.ComponentPropsWithoutRef<'span'>",
   },
   ul: {
     value: 'ul',
     refType: 'HTMLUListElement',
-    attributesType: 'React.HTMLAttributes',
+    attributesType: "React.ComponentPropsWithoutRef<'ul'>",
   },
   li: {
     value: 'li',
     refType: 'HTMLLIElement',
-    attributesType: 'React.LiHTMLAttributes',
+    attributesType: "React.ComponentPropsWithoutRef<'li'>",
   },
 }

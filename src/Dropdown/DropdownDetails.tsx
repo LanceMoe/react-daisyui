@@ -5,7 +5,7 @@ import DropdownItem from './DropdownItem';
 import DropdownMenu from './DropdownMenu';
 import { Summary } from './DropdownToggle';
 
-export type DetailsProps = Omit<DropdownProps<HTMLDetailsElement>, 'item' | 'hover'>;
+export type DetailsProps = Omit<DropdownProps<'details'>, 'item' | 'hover'>;
 const Details = React.forwardRef<HTMLDetailsElement, DetailsProps>(
   ({ children, className, horizontal, vertical, end, dataTheme, open, ...props }, ref): React.JSX.Element => {
     return (

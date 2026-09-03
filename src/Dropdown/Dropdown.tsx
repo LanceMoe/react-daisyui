@@ -8,7 +8,7 @@ import DropdownItem from './DropdownItem';
 import DropdownMenu from './DropdownMenu';
 import DropdownToggle from './DropdownToggle';
 
-export type DropdownProps<T extends HTMLElement = HTMLDivElement> = React.HTMLAttributes<T> &
+export type DropdownProps<T extends React.ElementType = 'div'> = React.ComponentPropsWithoutRef<T> &
   IComponentBaseProps & {
     item?: ReactNode;
     horizontal?: 'left' | 'right';

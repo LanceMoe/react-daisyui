@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type ModalProps = React.HTMLAttributes<HTMLDivElement> &
+export type ModalProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     open?: boolean;
     responsive?: boolean;

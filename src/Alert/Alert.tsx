@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentLayout, ComponentStatus, ComponentVariant,IComponentBaseProps } from '../types';
 
-export type AlertProps = React.HTMLAttributes<HTMLDivElement> &
+export type AlertProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     icon?: ReactNode;
     layout?: ComponentLayout;

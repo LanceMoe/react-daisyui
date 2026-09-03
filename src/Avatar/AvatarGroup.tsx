@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { AvatarProps } from '../Avatar';
 
-export type AvatarGroupProps = React.HTMLAttributes<HTMLDivElement> & {
+export type AvatarGroupProps = React.ComponentPropsWithoutRef<'div'> & {
   children: ReactElement<AvatarProps>[];
 };
 

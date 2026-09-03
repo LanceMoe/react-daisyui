@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor, ComponentSize, ComponentVariant,IComponentBaseProps } from '../types';
 
-export type BadgeProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> &
+export type BadgeProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'color'> &
   IComponentBaseProps & {
     size?: ComponentSize;
     color?: ComponentColor;

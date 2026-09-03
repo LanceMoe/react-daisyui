@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type TableBodyProps = React.TableHTMLAttributes<HTMLTableSectionElement>;
+export type TableBodyProps = React.ComponentPropsWithoutRef<'tbody'>;
 
 const TableBody = React.forwardRef<HTMLTableSectionElement, TableBodyProps>(
   ({ children, ...props }, ref): React.JSX.Element => {

@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 import { IComponentBaseProps } from '../types';
 import StatSection, { StatSectionProps } from './StatSection';
 
-export type StatProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
+export type StatProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
 const Stat = forwardRef<HTMLDivElement, StatProps>(({ dataTheme, className, ...props }, ref): React.JSX.Element => {
   const classes = twMerge('stat', className);

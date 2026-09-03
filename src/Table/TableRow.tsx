@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type TableRowProps = React.TableHTMLAttributes<HTMLTableRowElement> &
+export type TableRowProps = React.ComponentPropsWithoutRef<'tr'> &
   IComponentBaseProps & {
     children?: ReactElement[];
     active?: boolean;

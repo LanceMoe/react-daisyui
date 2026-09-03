@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { ComponentSize,IComponentBaseProps } from '../types';
 import RatingItem, { RatingItemProps } from './RatingItem';
 
-export type RatingProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> &
+export type RatingProps = Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> &
   IComponentBaseProps & {
     size?: ComponentSize;
     half?: boolean;

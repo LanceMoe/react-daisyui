@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import { IComponentBaseProps } from '../types';
 
-export type TableFooterProps = React.TableHTMLAttributes<HTMLTableSectionElement> &
+export type TableFooterProps = React.ComponentPropsWithoutRef<'tfoot'> &
   IComponentBaseProps & {
     children?: ReactElement[];
     noCell?: boolean; // don't wrap children in th/td, should pass children as th/tds manually

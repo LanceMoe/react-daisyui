@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type SkeletonProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps & {};
+export type SkeletonProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps & {};
 
 const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
   ({ dataTheme, className, children, ...props }, ref): React.JSX.Element => {

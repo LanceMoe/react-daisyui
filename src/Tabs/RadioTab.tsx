@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor } from '../types';
 
-export type RadioTabProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'color'> & {
+export type RadioTabProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'type' | 'color'> & {
   color?: ComponentColor;
   bgColor?: string;
   borderColor?: string;

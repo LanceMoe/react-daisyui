@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 import { IComponentBaseProps } from '../types';
 import NavbarSection, { NavbarSectionProps } from './NavbarSection';
 
-export type NavbarProps = React.HTMLAttributes<HTMLDivElement> & IComponentBaseProps;
+export type NavbarProps = React.ComponentPropsWithoutRef<'div'> & IComponentBaseProps;
 
 const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
   ({ children, dataTheme, className, ...props }, ref): React.JSX.Element => {

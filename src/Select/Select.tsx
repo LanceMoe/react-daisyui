@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { ComponentColor, ComponentSize, IComponentBaseProps, ListOrItem } from '../types';
 import SelectOption, { SelectOptionProps } from './SelectOption';
 
-export type SelectProps = Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size' | 'color'> &
+export type SelectProps = Omit<React.ComponentPropsWithoutRef<'select'>, 'size' | 'color'> &
   IComponentBaseProps & {
     children: ListOrItem<ReactElement<SelectOptionProps>>;
     size?: ComponentSize;

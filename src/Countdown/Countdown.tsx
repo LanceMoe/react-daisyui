@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type CountdownProps = React.HTMLAttributes<HTMLSpanElement> &
+export type CountdownProps = React.ComponentPropsWithoutRef<'span'> &
   IComponentBaseProps & {
     value: number;
   };

@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';
 
-export type TextareaProps = Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'color'> &
+export type TextareaProps = Omit<React.ComponentPropsWithoutRef<'textarea'>, 'color'> &
   IComponentBaseProps & {
     color?: ComponentColor;
     size?: ComponentSize;

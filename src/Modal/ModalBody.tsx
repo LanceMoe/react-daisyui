@@ -1,6 +1,6 @@
 import React from 'react';
 
-type ModalBodyProps = React.HTMLAttributes<HTMLDivElement>;
+type ModalBodyProps = React.ComponentPropsWithoutRef<'div'>;
 
 const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>(({ children, className, ...props }, ref) => {
   return (

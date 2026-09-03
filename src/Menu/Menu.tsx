@@ -13,7 +13,7 @@ export type MenuItemProps = ItemProps;
 export type MenuDropdownProps = DropdownProps;
 export type MenuDetailsProps = DetailsProps;
 
-export type MenuProps = React.HTMLAttributes<HTMLUListElement> &
+export type MenuProps = React.ComponentPropsWithoutRef<'ul'> &
   IComponentBaseProps & {
     vertical?: boolean; // Vertical menu (default)
     horizontal?: boolean; // Horizontal menu

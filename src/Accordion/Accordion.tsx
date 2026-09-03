@@ -6,7 +6,7 @@ import CollapseContent from '../Collapse/CollapseContent';
 import CollapseTitle from '../Collapse/CollapseTitle';
 import { IComponentBaseProps } from '../types';
 
-export type AccordionProps = Omit<React.HTMLAttributes<HTMLInputElement>, 'type'> &
+export type AccordionProps = Omit<React.ComponentPropsWithoutRef<'input'>, 'type'> &
   IComponentBaseProps & {
     name?: string;
     icon?: 'arrow' | 'plus';

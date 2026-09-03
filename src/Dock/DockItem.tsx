@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentBrandColors, ComponentStatus,IComponentBaseProps } from '../types';
 
-export type DockItemProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+export type DockItemProps = React.ComponentPropsWithoutRef<'button'> &
   IComponentBaseProps & {
     color?: ComponentBrandColors | ComponentStatus;
     active?: boolean;

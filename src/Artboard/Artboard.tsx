@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type ArtboardProps = React.HTMLAttributes<HTMLDivElement> &
+export type ArtboardProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     demo?: boolean;
     size?: 1 | 2 | 3 | 4 | 5 | 6;

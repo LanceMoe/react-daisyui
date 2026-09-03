@@ -9,7 +9,7 @@ export const windowMockupColors = [...bgColors, ...brandColors, ...componentStat
 
 type WindowMockupColors = (typeof windowMockupColors)[number];
 
-export type WindowMockupProps = React.HTMLAttributes<HTMLDivElement> &
+export type WindowMockupProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     frameColor?: WindowMockupColors;
     backgroundColor?: WindowMockupColors;

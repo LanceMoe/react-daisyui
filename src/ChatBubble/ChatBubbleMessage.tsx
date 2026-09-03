@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ComponentColor, IComponentBaseProps } from '../types';
 
-export type ChatBubbleMessageProps = React.HTMLAttributes<HTMLDivElement> &
+export type ChatBubbleMessageProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     color?: ComponentColor;
   };

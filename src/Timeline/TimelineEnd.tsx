@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-type TimelineStartProps = React.HTMLAttributes<HTMLDivElement> & {
+type TimelineStartProps = React.ComponentPropsWithoutRef<'div'> & {
   box?: boolean;
 };
 

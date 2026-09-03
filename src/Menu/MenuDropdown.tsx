@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type MenuDropdownProps = React.HTMLAttributes<HTMLSpanElement> &
+export type MenuDropdownProps = React.ComponentPropsWithoutRef<'span'> &
   IComponentBaseProps & {
     label: ReactNode;
     open?: boolean;

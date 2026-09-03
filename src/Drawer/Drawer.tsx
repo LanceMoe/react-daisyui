@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { IComponentBaseProps } from '../types';
 
-export type DrawerProps = React.HTMLAttributes<HTMLDivElement> &
+export type DrawerProps = React.ComponentPropsWithoutRef<'div'> &
   IComponentBaseProps & {
     side: ReactNode;
     open?: boolean;

@@ -3,7 +3,7 @@ import React from 'react';
 import { classesFn, CollapseProps } from './Collapse';
 import { Summary } from './CollapseTitle';
 
-export type DetailsProps = Omit<CollapseProps<HTMLDetailsElement>, 'checkbox' | 'onOpen' | 'onClose' | 'onToggle'>;
+export type DetailsProps = Omit<CollapseProps<'details'>, 'checkbox' | 'onOpen' | 'onClose' | 'onToggle'>;
 const Details = React.forwardRef<HTMLDetailsElement, DetailsProps>(
   ({ children, icon, open, dataTheme, className, ...props }, ref): React.JSX.Element => {
     return (

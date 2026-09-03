@@ -33,7 +33,7 @@ export const wrapWithElementIfInvalid = ({
 }: {
   node: React.ReactNode;
   wrapper: React.ReactElement;
-  props?: React.HTMLAttributes<HTMLElement> & Record<string, unknown>;
+  props?: React.ComponentPropsWithoutRef<React.ElementType> & Record<string, unknown>;
 }) => {
   const wrapperElement = wrapper as React.ReactElement<Record<string, unknown>>;
 

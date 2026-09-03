@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { IComponentBaseProps } from '../types';
 import { wrapWithElementIfInvalid } from '../utils';
 
-export type SwapProps = Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'onClick' | 'onChange'> &
+export type SwapProps = Omit<React.ComponentPropsWithoutRef<'label'>, 'onClick' | 'onChange'> &
   IComponentBaseProps & {
     onElement: ReactNode | ReactNode[];
     offElement: ReactNode | ReactNode[];
