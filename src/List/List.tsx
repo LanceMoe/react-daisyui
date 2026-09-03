@@ -1,4 +1,4 @@
-import { type ComponentPropsWithoutRef,forwardRef } from 'react';
+import { type ComponentPropsWithoutRef, forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { IComponentBaseProps } from '../types';

@@ -77,3 +77,30 @@ FlipEffect.args = {
   onElement: <>😈</>,
   offElement: <>😇</>,
 };
+
+export const Indeterminate = Template.bind({});
+Indeterminate.args = {
+  indeterminate: true,
+  className: 'text-6xl',
+  onElement: <>😀</>,
+  offElement: <>😴</>,
+  indeterminateElement: <>😐</>,
+};
+
+export const AsDiv: Story<SwapProps> = (args) => {
+  return (
+    <div className="flex items-center gap-4">
+      <button type="button" className="btn btn-outline">
+        <Swap {...args} />
+      </button>
+    </div>
+  );
+};
+AsDiv.args = {
+  as: 'div',
+  active: true,
+  rotate: true,
+  className: 'text-2xl',
+  onElement: '☀️',
+  offElement: '🌙',
+};

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { type ComponentPropsWithoutRef,forwardRef } from 'react';
+import { type ComponentPropsWithoutRef, forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import type { ComponentColor, ComponentSize, IComponentBaseProps } from '../types';

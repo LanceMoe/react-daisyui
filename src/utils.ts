@@ -12,13 +12,13 @@ export const toTitleCase = (str: string) => {
 };
 
 // Returns true if an element is a react fragment
-export const isReactFragment = (node: React.ReactNode | typeof React.Fragment) => {
+export const isReactFragment = (node: unknown): node is React.ReactElement => {
   if (!node) {
     return false;
   }
 
-  if ((node as React.ReactElement)?.type) {
-    return (node as React.ReactElement)?.type === React.Fragment;
+  if (React.isValidElement(node)) {
+    return node.type === React.Fragment;
   }
 
   return node === React.Fragment;
@@ -37,34 +37,46 @@ export const wrapWithElementIfInvalid = ({
 }) => {
   const wrapperElement = wrapper as React.ReactElement<Record<string, unknown>>;
 
-  if (!node) {
+  if (node == null || typeof node === 'boolean') {
     return React.cloneElement(wrapperElement, props);
-  } else if (!React.isValidElement(node)) {
-    return React.cloneElement(wrapperElement, props, node);
-  } else if (isReactFragment(node)) {
-    const element = node as React.ReactElement<{
-      className?: string;
-      children?: React.ReactNode;
-      [key: string]: unknown;
-    }>;
-    return React.cloneElement(
-      wrapperElement,
-      { ...props, className: twMerge(element.props?.className, props?.className) },
-      element.props.children,
-    );
-  } else {
-    const element = node as React.ReactElement<{ className?: string }>;
-    return React.cloneElement(element, {
-      ...props,
-      className: twMerge(element.props?.className, props?.className),
-    });
   }
+
+  if (isReactFragment(node)) {
+    if (React.isValidElement(node)) {
+      const element = node as React.ReactElement<{
+        className?: string;
+        children?: React.ReactNode;
+        [key: string]: unknown;
+      }>;
+      const keyProp = element.key != null ? { key: element.key } : {};
+      return React.cloneElement(
+        wrapperElement,
+        {
+          ...keyProp,
+          ...props,
+          className: twMerge(element.props?.className, props?.className),
+        },
+        element.props?.children,
+      );
+    }
+    return React.cloneElement(wrapperElement, props);
+  }
+
+  if (!React.isValidElement(node)) {
+    return React.cloneElement(wrapperElement, props, node);
+  }
+
+  const element = node as React.ReactElement<{ className?: string }>;
+  return React.cloneElement(element, {
+    ...props,
+    className: twMerge(element.props?.className, props?.className),
+  });
 };
 
 // Returns true if there is a single, string child element
 export const isSingleStringChild = (children?: React.ReactNode) => {
   return (
-    children &&
+    children != null &&
     React.Children.count(children) === 1 &&
     React.isValidElement(children) &&
     typeof (children as React.ReactElement<{ children?: React.ReactNode }>).props.children === 'string'
