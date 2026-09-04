@@ -90,12 +90,12 @@ export function HomePage() {
 
               <CodeMockup className="border-base-content w-full max-w-sm flex-1 border-2 border-opacity-20 bg-transparent pb-6 text-left text-current lg:mx-0">
                 <CodeMockup.Line>
-                  npm i daisyui react-daisyui{' '}
+                  npm i daisyui @lancemoe/react-daisyui{' '}
                   <Tooltip message="Copy">
                     <CopyButton
                       color="ghost"
                       size="xs"
-                      text="npm i daisyui react-daisyui"
+                      text="npm i daisyui @lancemoe/react-daisyui"
                     />
                   </Tooltip>
                 </CodeMockup.Line>

@@ -18,7 +18,7 @@ export default meta;
 export const Default: Story<CodeMockupProps> = (args) => {
   return (
     <CodeMockup {...args}>
-      <CodeMockup.Line>yarn add daisyui react-daisyui</CodeMockup.Line>
+      <CodeMockup.Line>pnpm add daisyui @lancemoe/react-daisyui</CodeMockup.Line>
     </CodeMockup>
   );
 };
@@ -26,7 +26,7 @@ export const Default: Story<CodeMockupProps> = (args) => {
 export const LinePrefix: Story<CodeMockupProps> = (args) => {
   return (
     <CodeMockup {...args}>
-      <CodeMockup.Line dataPrefix="$">yarn add daisyui react-daisyui</CodeMockup.Line>
+      <CodeMockup.Line dataPrefix="$">pnpm add daisyui @lancemoe/react-daisyui</CodeMockup.Line>
     </CodeMockup>
   );
 };
@@ -34,7 +34,7 @@ export const LinePrefix: Story<CodeMockupProps> = (args) => {
 export const MultiLine: Story<CodeMockupProps> = (args) => {
   return (
     <CodeMockup {...args}>
-      <CodeMockup.Line>yarn add daisyui react-daisyui</CodeMockup.Line>
+      <CodeMockup.Line>pnpm add daisyui @lancemoe/react-daisyui</CodeMockup.Line>
       <CodeMockup.Line className="text-warning">installing...</CodeMockup.Line>
       <CodeMockup.Line className="text-success">Done!</CodeMockup.Line>
     </CodeMockup>
@@ -44,7 +44,7 @@ export const MultiLine: Story<CodeMockupProps> = (args) => {
 export const HighlightedLine: Story<CodeMockupProps> = (args) => {
   return (
     <CodeMockup {...args}>
-      <CodeMockup.Line>yarn add daisyui react-daisyui</CodeMockup.Line>
+      <CodeMockup.Line>pnpm add daisyui @lancemoe/react-daisyui</CodeMockup.Line>
       <CodeMockup.Line>installing...</CodeMockup.Line>
       <CodeMockup.Line status="warning">Error!</CodeMockup.Line>
     </CodeMockup>
