@@ -1,13 +1,24 @@
 # Changelog
 
-## [7.0.1](https://github.com/LanceMoe/react-daisyui/compare/v7.0.0...v7.0.1) (2026-09-03)
+## [5.7.29](https://github.com/LanceMoe/react-daisyui/compare/v5.7.28...v5.7.29) (2026-09-04)
+
+
+### Continuous Integration
+
+* publish releases through npm Trusted Publishing ([ca55e5f](https://github.com/LanceMoe/react-daisyui/commit/ca55e5f67a1a84895c23a7c6030368f7128123c2))
+
+
+### Documentation
+
+* update Storybook documentation ([c5028e6](https://github.com/LanceMoe/react-daisyui/commit/c5028e62d1b1323cd3f783282d1af254dffc938f))
+
+## [5.7.28](https://github.com/LanceMoe/react-daisyui/releases/tag/v5.7.28) (2026-09-04)
 
 
 ### Bug Fixes
 
 * build path ([1a48307](https://github.com/LanceMoe/react-daisyui/commit/1a483071adf70c54d4f8564e3376c1e7f43a1522))
 
-## [7.0.0](https://github.com/LanceMoe/react-daisyui/compare/v6.0.0...v7.0.0) (2026-09-03)
 
 
 ### ⚠ BREAKING CHANGES
@@ -431,7 +442,6 @@
 * use ComponentPropsWithoutRef ([7a867aa](https://github.com/LanceMoe/react-daisyui/commit/7a867aac200c98868d673e664b57b260dca75aac))
 * versioned up ([2823b6b](https://github.com/LanceMoe/react-daisyui/commit/2823b6b422b047370b0b30412e16db9699e4e7ac))
 
-## [6.0.0](https://github.com/LanceMoe/react-daisyui/compare/v5.0.5...v6.0.0) (2026-09-03)
 
 
 ### ⚠ BREAKING CHANGES
