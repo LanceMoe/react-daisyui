@@ -6,7 +6,7 @@
 
 React components for [daisyUI 5](https://daisyui.com/) and [Tailwind CSS 4](https://tailwindcss.com/).
 
-[Documentation](https://react.daisyui.com/) · [npm](https://www.npmjs.com/package/@lancemoe/react-daisyui) · [GitHub](https://github.com/LanceMoe/react-daisyui) · [Discord](https://discord.gg/4v2eS3VQNv)
+[Documentation](https://lancemoe.github.io/react-daisyui) · [npm](https://www.npmjs.com/package/@lancemoe/react-daisyui) · [GitHub](https://github.com/LanceMoe/react-daisyui) · [Discord](https://discord.gg/4v2eS3VQNv)
 
 [![npm version](https://img.shields.io/npm/v/%40lancemoe%2Freact-daisyui)](https://www.npmjs.com/package/@lancemoe/react-daisyui)
 [![npm downloads](https://img.shields.io/npm/dt/%40lancemoe%2Freact-daisyui?label=downloads)](https://www.npmjs.com/package/@lancemoe/react-daisyui)
@@ -111,7 +111,7 @@ export function ThemeExample() {
 
 ## Components
 
-The [interactive documentation](https://react.daisyui.com/) contains props, examples, and accessibility guidance for every component.
+The [interactive documentation](https://lancemoe.github.io/react-daisyui) contains props, examples, and accessibility guidance for every component.
 
 | Group        | Components                                                                                                                                                                                                |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
