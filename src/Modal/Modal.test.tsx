@@ -90,10 +90,10 @@ describe('useDialog', () => {
     originalShowModal = HTMLDialogElement.prototype.showModal;
     originalClose = HTMLDialogElement.prototype.close;
 
-    HTMLDialogElement.prototype.showModal = jest.fn(function (this: HTMLDialogElement) {
+    HTMLDialogElement.prototype.showModal = vi.fn(function (this: HTMLDialogElement) {
       this.open = true;
     });
-    HTMLDialogElement.prototype.close = jest.fn(function (this: HTMLDialogElement) {
+    HTMLDialogElement.prototype.close = vi.fn(function (this: HTMLDialogElement) {
       this.open = false;
       this.dispatchEvent(new Event('close'));
     });

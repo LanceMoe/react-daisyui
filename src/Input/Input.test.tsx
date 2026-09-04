@@ -14,7 +14,7 @@ describe('Input', () => {
   });
 
   it('Should call onChange once per change event', () => {
-    const mockType = jest.fn();
+    const mockType = vi.fn();
     render(<Input onChange={mockType} />);
     fireEvent.change(screen.getByRole('textbox'), {
       target: { value: 'test' },
@@ -23,7 +23,7 @@ describe('Input', () => {
   });
 
   it('Should not call onChange from change event if disabled', () => {
-    const mockType = jest.fn();
+    const mockType = vi.fn();
     render(<Input onClick={mockType} disabled />);
     fireEvent.change(screen.getByRole('textbox'), {
       target: { value: 'test' },

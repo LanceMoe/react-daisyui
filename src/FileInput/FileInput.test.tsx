@@ -43,7 +43,7 @@ describe('FileInput', () => {
   });
 
   test('Should call onChange when a file is selected', () => {
-    const onChangeMock = jest.fn();
+    const onChangeMock = vi.fn();
     const { container } = render(<FileInput onChange={onChangeMock} />);
     const input = container.querySelector('input[type="file"]') as HTMLInputElement;
     fireEvent.change(input, {

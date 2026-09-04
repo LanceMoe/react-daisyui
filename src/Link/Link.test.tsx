@@ -49,7 +49,7 @@ describe('Link', () => {
   });
 
   it('Should call onClick handler when clicked', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const { container } = render(<Link onClick={onClick}>Click me</Link>);
     const anchorElement = container.getElementsByClassName('link')[0];
     fireEvent.click(anchorElement);

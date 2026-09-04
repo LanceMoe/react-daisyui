@@ -27,21 +27,21 @@ describe('Collapse', () => {
   });
 
   test('Should call onOpen when opened', () => {
-    const handleOpen = jest.fn();
+    const handleOpen = vi.fn();
     const { getByTestId } = render(<Collapse onOpen={handleOpen} data-testid="collapse" />);
     fireEvent.focus(getByTestId('collapse'));
     expect(handleOpen).toHaveBeenCalled();
   });
 
   test('Should call onClose when closed', () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     const { getByTestId } = render(<Collapse onClose={handleClose} data-testid="collapse" />);
     fireEvent.blur(getByTestId('collapse'));
     expect(handleClose).toHaveBeenCalled();
   });
 
   test('Should call onToggle when checkbox is changed', () => {
-    const handleToggle = jest.fn();
+    const handleToggle = vi.fn();
     render(<Collapse checkbox onToggle={handleToggle} data-testid="collapse" />);
     const checkboxInput = screen.getByRole('checkbox');
     fireEvent.click(checkboxInput);

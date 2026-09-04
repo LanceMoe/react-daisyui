@@ -68,7 +68,7 @@ describe('Drawer component', () => {
   });
 
   test('Should call onClickOverlay when the overlay is clicked', () => {
-    const onClickOverlay = jest.fn();
+    const onClickOverlay = vi.fn();
     const { container } = render(
       <Drawer side={<div>Side content</div>} onClickOverlay={onClickOverlay}>
         Content

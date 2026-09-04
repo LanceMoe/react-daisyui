@@ -1,6 +1,4 @@
-import '@testing-library/jest-dom';
-
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import * as React from 'react';
 
 import { CodeMockup } from './CodeMockup';
@@ -30,6 +28,6 @@ describe('codeMockup', () => {
       </CodeMockup>,
     );
 
-    expect(getComputedStyle(screen.getByTestId('code-line'), ':before').getPropertyValue('content')).toEqual('');
+    expect(screen.getByTestId('code-line')).not.toHaveAttribute('data-prefix');
   });
 });

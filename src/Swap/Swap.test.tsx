@@ -30,7 +30,7 @@ describe('Swap', () => {
   });
 
   it('Should support checked and defaultChecked props', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     const { container } = render(<Swap onElement="On" offElement="Off" checked={true} onChange={onChange} />);
     const input = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
     expect(input.checked).toBe(true);
@@ -86,8 +86,8 @@ describe('Swap', () => {
   });
 
   it('Should trigger onChange and onClick on user interaction', () => {
-    const onClick = jest.fn();
-    const onChange = jest.fn();
+    const onClick = vi.fn();
+    const onChange = vi.fn();
     const { container } = render(<Swap onElement="On" offElement="Off" onClick={onClick} onChange={onChange} />);
     const input = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
     fireEvent.click(input);
