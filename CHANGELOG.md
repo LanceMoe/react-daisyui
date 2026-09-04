@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.0.2](https://github.com/LanceMoe/react-daisyui/compare/v7.0.1...v7.0.2) (2026-09-04)
+
+
+### Miscellaneous
+
+* update storybook ([c5028e6](https://github.com/LanceMoe/react-daisyui/commit/c5028e62d1b1323cd3f783282d1af254dffc938f))
+
 ## [7.0.1](https://github.com/LanceMoe/react-daisyui/compare/v7.0.0...v7.0.1) (2026-09-03)
 
 
