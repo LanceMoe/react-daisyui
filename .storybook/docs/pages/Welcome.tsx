@@ -68,7 +68,7 @@ export function HomePage() {
         <Hero.Content className="col-start-1 row-start-1 w-full max-w-7xl flex-col justify-between gap-10 pb-40 lg:flex-row lg:items-end lg:gap-0 xl:gap-20">
           <div className="flex-col gap-10 lg:px-10 lg:pb-32">
             <h1 className="font-title mb-2 py-4 font-extrabold lg:py-10">
-              <div className="mb-2 text-5xl lg:text-7xl">react-daisyUI</div>
+              <div className="mb-2 text-5xl lg:text-7xl">@lancemoe/react-daisyui</div>
               <div className="text-2xl lg:text-3xl">
                 A React wrapper for{' '}
                 <Link color="info" href="https://v5.daisyui.com/" target="_blank">
@@ -90,12 +90,12 @@ export function HomePage() {
 
               <CodeMockup className="border-base-content w-full max-w-sm flex-1 border-2 border-opacity-20 bg-transparent pb-6 text-left text-current lg:mx-0">
                 <CodeMockup.Line>
-                  npm i daisyui @lancemoe/react-daisyui{' '}
+                  pnpm i daisyui @lancemoe/react-daisyui{' '}
                   <Tooltip message="Copy">
                     <CopyButton
                       color="ghost"
                       size="xs"
-                      text="npm i daisyui @lancemoe/react-daisyui"
+                      text="pnpm i daisyui @lancemoe/react-daisyui"
                     />
                   </Tooltip>
                 </CodeMockup.Line>
@@ -108,7 +108,7 @@ export function HomePage() {
                 startIcon={githubMark}
                 size="lg"
                 color="ghost"
-                href="https://github.com/daisyui/react-daisyui"
+                href="https://github.com/LanceMoe/react-daisyui"
                 target="_blank"
               >
                 GitHub
@@ -116,7 +116,7 @@ export function HomePage() {
               <Button
                 tag="a"
                 size="lg"
-                href="https://www.npmjs.com/package/react-daisyui"
+                href="https://www.npmjs.com/package/@lancemoe/react-daisyui"
                 target="_blank"
               >
                 NPM

@@ -29,6 +29,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "start": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6006",
     "dist": "vite build && node node_modules/typescript-7/bin/tsc -p tsconfig.build.json --emitDeclarationOnly",
     "docs": "storybook build -o ./docs",
     "test": "vitest run",
